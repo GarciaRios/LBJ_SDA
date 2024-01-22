@@ -1,0 +1,68 @@
+---
+title: "Introduction to linear regression"
+author: "Name"
+date: "Enter date here"
+output: 
+  html_document: 
+    highlight: pygments
+---
+```{r setup, include=FALSE}
+# DO NOT ALTER CODE IN THIS CHUNK
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+
+
+* * *
+
+**Load MLB11 dataset:**
+```{r}
+load(url("https://github.com/GarciaRios/govt_3990/raw/gh-pages/Labs/lab7/mlb11.RData"))
+```
+
+
+## Exercises:
+
+#### Exercise 1: 
+
+
+#### Exercise 2: 
+
+
+#### Exercise 3: 
+
+
+#### Exercise 4: 
+
+
+#### Exercise 5:
+
+
+#### Exercise 6:
+
+
+#### Exercise 7:
+
+
+#### Exercise 8:
+
+* * *
+
+## On your own:
+
+#### 1: 
+
+
+#### 2: 
+
+
+#### 3:
+
+
+#### 4:
+
+
+#### 5: 
+

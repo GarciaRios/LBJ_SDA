@@ -1,0 +1,101 @@
+---
+title: "Lab 3 - Probability"
+author: "Name here"
+date: "Date of lab session"
+output: 
+  html_document: 
+    fig_height: 4
+    highlight: pygments
+    theme: cosmo
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+# DO NOT ALTER CODE IN THIS CHUNK
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+* * *
+
+## Lab report
+
+#### Load data:
+```{r}
+load(url("https://github.com/GarciaRios/govt_3990/raw/gh-pages/Labs/lab3/resources/hot_hand.RData"))
+```
+
+## Exercises:
+
+#### Exercise 1: 
+
+```{r}
+kobe_streak <- calc_streak(kobe_basket$shot)
+
+game1_data <- kobe_basket %>% filter(game == 1)
+
+
+
+kobe_streak_game1 <- calc_streak(game1_data$shot)
+
+kobe_streak_game1
+```
+
+
+
+#### Exercise 2: 
+
+
+```{r ex2}
+
+```
+
+
+#### Exercise 3: 
+
+
+```{r ex3}
+
+```
+
+
+#### Exercise 4: 
+
+
+```{r ex4}
+
+```
+
+
+* * *
+
+## On your own:
+
+#### 1: 
+
+
+```{r oyo1}
+
+```
+
+
+#### 2: 
+
+
+```{r oyo2}
+
+```
+
+
+#### 3: 
+
+
+#### 4: 
+
+
+#### 5:
+
+
+* * *

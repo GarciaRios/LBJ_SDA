@@ -1,0 +1,70 @@
+---
+title: "Lab 5 - Inference for numerical data"
+author: "Enter  name here"
+date: "Enter date here"
+output: 
+  html_document: 
+    highlight: pygments
+---
+
+```{r setup, include=FALSE}
+# DO NOT ALTER CODE IN THIS CHUNK
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache = TRUE)
+library(dplyr)
+library(ggplot2)
+library(mosaic)
+```
+
+
+* * *
+
+**Load NC dataset:**
+```{r}
+load(url("https://raw.githubusercontent.com/GarciaRios/govt_3990/gh-pages/Labs/lab5/nc.RData"))
+```
+
+**Load inference function:**
+```{r}
+load(url("https://raw.githubusercontent.com/GarciaRios/govt_3990/gh-pages/Labs/lab5/inference.RData"))
+```
+
+
+## Exercises:
+
+#### Exercise 1: 
+
+
+#### Exercise 2: 
+
+
+#### Exercise 3: 
+
+
+#### Exercise 4: 
+
+
+#### Exercise 5:
+
+
+
+* * *
+
+## On your own:
+
+#### 1: 
+
+
+#### 2: 
+
+
+#### 3:
+
+
+#### 4:
+
+
+#### 5: 
+
+
+
