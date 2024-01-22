@@ -1,11 +1,6 @@
 ---
-title: Puzzle Solving with Data - GOVT 3990
+title: Survey Design and Analysis - PA 397C
 ---
-***
-##### Statement from Government Department: 
-
-In fractious times, we reaffirm core principles.  The Government Department at Cornell studies and teaches about intolerance, but will not practice it.  We write about xenophobia and bigotry, but will not pretend they only exist elsewhere.  We research racism, homophobia, and misogyny, but will not permit them to pass unchallenged.  Our role as academics has never been inconsistent with our duty as citizens, and we pledge to honor the rich diversity of our students, staff, and faculty.  Those who come to us—as students, co-workers, and colleagues—must be free to learn and live without fear, and we urge the administration to declare—promptly and forcefully—that Cornell is a sanctuary campus.
-
 ***
 
 
@@ -14,7 +9,7 @@ In fractious times, we reaffirm core principles.  The Government Department at C
  **Sergio I Garcia-Rios**
 
 - <i class="fa fa-university fa-lg"></i> White Hall 308 
-- [<i class="fa fa-envelope fa-lg"></i> E-Mail](garcia.rios@cornell.edu)
+- [<i class="fa fa-envelope fa-lg"></i> E-Mail](garcia.rios@utexas.edu.edu)
 - [<i class="fa fa-desktop fa-lg"></i> Web](https://www.sergiogarciarios.com)
 - [<i class="fa fa-github-square fa-lg"></i> Github](http://github.com/GarciaRios)
 
@@ -24,7 +19,7 @@ In fractious times, we reaffirm core principles.  The Government Department at C
 
 |Day  |Time |Place|
 |:---:|:---:|:---:|
-| M & W | 10:10 pm - 11:25 pm | White Hall 110|
+| M  | 9:00 am - 12 pm | White Hall 110|
 
 
 ***
