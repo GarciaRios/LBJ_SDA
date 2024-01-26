@@ -1,9 +1,9 @@
 name: "LBJ-SDA"
 navbar:
   title: "LBJ Survey Design + Analysis"
-  #type: inverse
+  #type: warning
   left:
-    - icon: fa-file-pdf-o fa-2x
+    - icon: fa-file-o fa-2x
       href: index.html
       text: "Syllabus"
     - icon: fa-calendar fa-2x

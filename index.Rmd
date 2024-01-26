@@ -74,9 +74,9 @@ This seminar equips graduate students with the knowledge and skills needed to de
 
 ### Textbooks:
 
-1. *Polling and the Public: What Every Citizen Should Know* by Herbert Asher.
-2. *Internet, Phone, Mail, and Mixed-Mode Surveys* by Don A. Dillman.
-3.  *An Introduction to Survey Research, Polling, and Data Analysis. Sage Publishing.*  by Weisberg, Herbert, Jon A. Krosnick, and Bruce D. Bowen. 1996.
+1. **Polling and the Public: What Every Citizen Should Know** by Herbert Asher. _*Find it in class resources*_
+2. **Internet, Phone, Mail, and Mixed-Mode Surveys** by Don A. Dillman. [Find it here](https://search.lib.utexas.edu/permalink/01UTAU_INST/be14ds/alma991039449859706011)
+3.  **The Palgrave Handbook of Survey Research edited by David L. Vannette, Jon A. Krosnick.** Vannette, David L.; Krosnick, Jon A. editors. [Find it here](https://search.lib.utexas.edu/permalink/01UTAU_INST/be14ds/alma991057938339006011)
 
 
 ****
@@ -283,5 +283,3 @@ The source for the materials of this course including the source for this websit
 ### References
 
 This course has benefited from numerous open materials, which are listed [here](). 
-
-

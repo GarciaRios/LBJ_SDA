@@ -4,8 +4,43 @@
 @import url('https://fonts.googleapis.com/css?family=Spectral');
 
 
+.navbar-inverse{background-color:#cc5500; border-color:#222222}
 
-.navbar-inverse{background-color:#cc5500 border-color:#222222}
+.navbar {
+  background-color:#cc5500; 
+  }
+
+
+
+.navbar-brand {
+  color: #222222;
+}
+
+
+
+
+.navbar-inverse .navbar-brand {
+  color: #222222;
+}
+ .navbar-nav>li>a {
+  color: #cc5500;
+}
+ .navbar-nav>.active>a {
+  background-color: #cc5500;
+}
+.list-group-item.active {
+  background-color: #cc5500;
+  border-color: #cc5500;
+}
+item.active, .list-group-item.active:hover {
+  background-color: #cc5500;
+  border-color: #cc5500;
+}
+
+
+
+/*
+.navbar{background-color:#cc5500 border-color:#222222}
 
 .navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a:focus{background-color:transparent;color:#ffffff}
 
@@ -19,8 +54,9 @@
 
 
 .navbar-brand {
+  color: #cc5500;
   font-size: 25px;
-  font-family: 'Spectral', sans-serif;
+  font-family: 'Raleway', serif;
 }
 
 body{

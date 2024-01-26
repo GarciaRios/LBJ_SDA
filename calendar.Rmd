@@ -13,21 +13,17 @@ In particular, the pace of the course will be adjusted so that we move as possib
 
 ### Key
 
-<i class="fa fa-book"></i> Readings
-
+<ul class="fa-ul">
+<li><i class="fa fa-book"></i> Readings
 <!-- <i class="fa fa-code"></i> Data Camp courses -->
-
-<i class="fa fa-gears"></i> Actions to take
-
-<i class="fa fa-bar-chart"></i> Lessons
-
-<i class="fa fa-puzzle-piece"></i> Exams.
-
-<i class="fa fa-flask"></i> Labs.
-
-*OpenIntro* = *Open Intro Statistics*
+<li><i class="fa fa-gears"></i> Actions to take </a>
+<li><i class="fa fa-bar-chart"></i> Lessons </a>
+<li><i class="fa fa-puzzle-piece"></i> Exams. </a>
+<li><i class="fa fa-flask"></i> Labs. </a>
+</ul>
 
 
+* * *
 
 #### Week 1-2: Introduction to Survey Design and Research Process
 
@@ -37,13 +33,12 @@ In particular, the pace of the course will be adjusted so that we move as possib
 
 
 
-
-
 **Week 1**
 
 
 <ul class="fa-ul">
-<li><i class="fa-li fa fa-bar-chart"></i>  Jan 22 Introduction to the course <a target = "_blank" href="./Slides/00_intro/topic0.pdf">Deck 0</a>
+<li><i class="fa-li fa fa-bar-chart"></i>  Jan 22 Introduction to the course </a>
+<li><i class="fa-li fa fa-book"></i>    Good intentions bad applications (survey deck on Canvas) </a>
 <li><i class="fa-li fa fa-flask"></i>      Jan 22 Lab 0 - (Due Jan 26) <a target="_blank" href=./Labs/lab0/lab0.html>Introduction to the Course</a>
 
 </ul>
@@ -51,20 +46,18 @@ In particular, the pace of the course will be adjusted so that we move as possib
 
 **Week 2**
 
-<li><i class="fa-li fa fa-flask"></i>        Jan 29  Lab 1 (Due Feb 5) <a href=./Labs/lab1/intro_to_r.html>Intro to R</a>
+<ul class="fa-ul">
 
-
-- **Readings:**
-  - Chapters 1-3 of *Polling and the Public* by Herbert Asher.
-  - Chapters 1-3 of *Internet, Phone, Mail, and Mixed-Mode Surveys* by Don A. Dillman.
-
-
+<li><i class="fa-li fa fa-book"></i>    - Chapters 1-2 of  Asher. </a>
+<li><i class="fa-li fa fa-book"></i>   - Chapters 1-2 of  Dillman. </a>
+<li><i class="fa-li fa fa-flask"></i>      Jan 29  Lab 1 (Due Feb 5) <a href=./Labs/lab1/intro_to_r.html>Intro to R</a>
+</ul>
 
 <!--
   
 <li><i class="fa-li fa fa-bar-chart"></i>    Jan 27 Data Collection + Observational studies & experiments <a target="_blank" href="./Slides/01_unit1/deck1/deck-1-1.pdf"> Deck</a>
 
--->
+
 
 
 
