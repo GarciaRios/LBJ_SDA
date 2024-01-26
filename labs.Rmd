@@ -1,11 +1,11 @@
 ---
-title:  PA 397C Labs
+title:  SDA Labs
 output: 
   html_document:  
     theme: united
 ---
 ***
-# Labs
+
 
 
 <ul class="fa-ul">
