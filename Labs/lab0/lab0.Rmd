@@ -4,7 +4,7 @@ output:
   html_document:
     theme: united
     highlight: haddock
-    #css: ../labs.css
+    css: ../labs.css
     toc: yes
 ---
 
