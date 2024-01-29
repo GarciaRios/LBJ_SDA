@@ -31,7 +31,7 @@ library(ggplot2)
 
 This is how you load the data
 ```{r}
-load(url("https://github.com/GarciaRios/govt_3990/raw/gh-pages/Labs/lab1/Data/arbuthnot.RData"))
+download.file("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab1/lab1.Rmd", destfile = "lab1_2024.Rmd")
 ```
 
 
@@ -74,7 +74,7 @@ qplot(x = year, y = girls, data = arbuthnot)
 
 **Load present day data: **
 ```{r}
-load(url("https://github.com/GarciaRios/govt_3990/raw/gh-pages/Labs/lab1/Data/present.RData"))
+load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab1/Data/present.RData"))
 ```
 
 #### 1:
