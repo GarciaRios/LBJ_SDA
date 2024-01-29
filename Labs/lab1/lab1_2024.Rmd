@@ -3,10 +3,10 @@ title: "Lab 1 - Intro to R and RStudio"
 author: "SGR"
 date: "Jan 29, 2024"
 output:
-  pdf_document: default
   html_document:
     highlight: haddock
     theme: cosmo
+  pdf_document: default
 editor_options:
   chunk_output_type: console
 ---
