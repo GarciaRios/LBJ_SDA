@@ -1,0 +1,6 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Housekeeping}{2}{0}{1}
+\beamer@sectionintoc {2}{Case study: Is yawning contagious?}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{Competing claims}{19}{0}{2}
+\beamer@subsectionintoc {2}{2}{Testing via simulation}{23}{0}{2}
+\beamer@subsectionintoc {2}{3}{Checking for independence}{26}{0}{2}
