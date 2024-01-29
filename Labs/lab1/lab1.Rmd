@@ -31,7 +31,7 @@ library(ggplot2)
 
 This is how you load the data
 ```{r}
-download.file("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab1/lab1.Rmd", destfile = "lab1_2024.Rmd")
+load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab1/Data/arbuthnot.RData")))
 ```
 
 
