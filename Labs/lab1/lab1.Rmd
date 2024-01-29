@@ -3,7 +3,6 @@ title: "Lab 1 - Intro to R and RStudio"
 author: "SGR"
 date: "Jan 29, 2024"
 output:
-  pdf_document: default
   html_document:
     highlight: haddock
     theme: cosmo
@@ -31,7 +30,7 @@ library(ggplot2)
 
 This is how you load the data
 ```{r}
-load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab1/Data/arbuthnot.RData")))
+load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab1/Data/arbuthnot.RData"))
 ```
 
 
