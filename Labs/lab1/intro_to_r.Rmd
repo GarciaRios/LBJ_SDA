@@ -227,7 +227,7 @@ just type in a question mark followed by the name of the function that you're
 interested in. Try the following.
 
 ```{r plot-help, tidy = FALSE}
-?qplot
+?plot
 ```
 
 Notice that the help file replaces the plot in the lower right panel. You can 
