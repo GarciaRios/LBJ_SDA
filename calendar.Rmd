@@ -54,6 +54,14 @@ In particular, the pace of the course will be adjusted so that we move as possib
 <li><i class="fa-li fa fa-flask"></i>      Jan 29  Lab 1 (Due Feb 5)  <a href=./Labs/lab1/intro_to_r.html>Intro to R</a>
 </ul>
 
+
+**Week 3**
+
+<ul class="fa-ul">
+<li><i class="fa-li fa fa-flask"></i>      Feb 5  Lab 2 (Due Feb 12)  <a href=./Labs/lab2/introduction_to_data.html> Introduction to Data</a>
+
+</ul>
+
 <!--
   
 <li><i class="fa-li fa fa-bar-chart"></i>    Jan 27 Data Collection + Observational studies & experiments <a target="_blank" href="./Slides/01_unit1/deck1/deck-1-1.pdf"> Deck</a>
