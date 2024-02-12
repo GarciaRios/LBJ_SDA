@@ -119,6 +119,10 @@ Previously we used `qplot` which is the simplified version of `ggplot`
 Let's start with some histograms. We can create a the histogram for the age of our respondents with the following command:
 
 ```{r hist-age-geom}
+
+ggplot()
+
+
 ggplot(cdc, aes(x = age)) + 
   geom_histogram()
 ```
