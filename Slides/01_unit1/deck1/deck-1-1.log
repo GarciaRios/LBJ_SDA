@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2023.7.26)  29 JAN 2024 13:51
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2023.7.26)  12 FEB 2024 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1608,45 +1608,6 @@ Overfull \vbox (7.86809pt too high) detected at line 948
 
 ] [67
 
-] [68
-
-] [69
-
-] [70
-
-] [71
-
-] [72
-
-] [73
-
-] [74
-
-] [75
-
-] [76
-
-] [77
-
-] [78
-
-]
-[79
-
-] [80
-
-] [81
-
-] [82
-
-] [83
-
-] [84
-
-] [85
-
-] [86
-
 ]
 \tf@nav=\write6
 \openout6 = `deck-1-1.nav'.
@@ -1659,15 +1620,15 @@ Overfull \vbox (7.86809pt too high) detected at line 948
 
  (deck-1-1.aux)
 Package rerunfilecheck Info: File `deck-1-1.out' has not changed.
-(rerunfilecheck)             Checksum: 0B219A5F5DC9E06D46D39C67BC8AAE3D;4852.
+(rerunfilecheck)             Checksum: BDDC1478A32E7E855A807E1A518F36E2;4438.
  ) 
 Here is how much of TeX's memory you used:
- 28262 strings out of 410654
- 610372 string characters out of 2815690
- 922794 words of memory out of 3000000
- 48727 multiletter control sequences out of 15000+600000
+ 28234 strings out of 410654
+ 610120 string characters out of 2815690
+ 921836 words of memory out of 3000000
+ 48699 multiletter control sequences out of 15000+600000
  478780 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,13n,134p,1938b,760s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on deck-1-1.pdf (86 pages).
+Output written on deck-1-1.pdf (67 pages).

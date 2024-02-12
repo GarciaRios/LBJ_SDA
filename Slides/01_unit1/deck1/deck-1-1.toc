@@ -10,5 +10,3 @@
 \beamer@sectionintoc {10}{Robust statistics are not easily affected by outliers and extreme skew}{61}{0}{10}
 \beamer@sectionintoc {11}{Use box plots to display quartiles, median, and outliers}{63}{0}{11}
 \beamer@sectionintoc {12}{Summary}{66}{0}{12}
-\beamer@sectionintoc {13}{Polling and the Public}{68}{0}{13}
-\beamer@sectionintoc {14}{Sample surveys in our electronic world}{79}{0}{14}
