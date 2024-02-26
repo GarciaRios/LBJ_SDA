@@ -19,16 +19,15 @@ library(ggplot2)
 
 * * *
 
-# Title
-
-## Subtitle
-
-### Sub subtitle
 
 
 **Load Arbuthnot's data: **
 
-This is how you load the data
+
+**SGR: Make sure they use correct formating they should get rid of my comments and add their answers**
+
+
+
 ```{r}
 load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab1/Data/arbuthnot.RData"))
 ```
@@ -42,6 +41,10 @@ load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab1/Data/arbuthno
 #### Exercise 1: 
 
 and this is my answer for ex 1
+
+
+
+
 
 ```{r}
 qplot(x = year, y = girls, data = arbuthnot)

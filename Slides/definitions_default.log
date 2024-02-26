@@ -1,10 +1,11 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100) (preloaded format=xelatex 2016.11.7)  5 FEB 2017 20:53
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2023.7.26)  19 FEB 2024 13:51
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **./definitions_default.tex
 (definitions_default.tex
-LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 72 language(s) loaded.
-)
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-07-04>)
 ! Emergency stop.
 <*> ./definitions_default.tex
                              
@@ -12,11 +13,11 @@ Babel <3.9r> and hyphenation patterns for 72 language(s) loaded.
 
  
 Here is how much of TeX's memory you used:
- 15 strings out of 428441
- 203 string characters out of 3157317
- 52764 words of memory out of 3000000
- 3500 multiletter control sequences out of 15000+200000
- 3640 words of font info for 14 fonts, out of 3000000 for 9000
- 1314 hyphenation exceptions out of 8191
- 7i,0n,6p,103b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 26 strings out of 410654
+ 458 string characters out of 2815690
+ 306807 words of memory out of 3000000
+ 21172 multiletter control sequences out of 15000+600000
+ 469259 words of font info for 28 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 12i,0n,12p,103b,10s stack positions out of 10000i,1000n,20000p,200000b,80000s
 No pages of output.

@@ -116,7 +116,7 @@ in Ames between 2006 and 2010.  This collection represents our **population** of
 interest. Let's load the data...
 
 ```{r}
-load(url("https://raw.githubusercontent.com/GarciaRios/govt_3990/gh-pages/Labs/lab4/data/ames.RData"))
+load(url("https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab_ci/data/ames.RData"))
 
 
 ```
