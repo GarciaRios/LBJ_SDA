@@ -1,5 +1,5 @@
 ---
-title: "Lab 4 - Confidence intervals"
+title: "Confidence intervals"
 author: "Name"
 date: "Date of lab session"
 output: 
@@ -24,7 +24,7 @@ library(mosaic)
 
 #### Load data:
 ```{r load-data}
-download.file("https://raw.githubusercontent.com/GarciaRios/govt_3990/gh-pages/Labs/lab4/lab4.Rmd", destfile = "lab4.Rmd")
+load(url("https://github.com/GarciaRios//LBJ_SDA/raw/main/Labs/lab_ci/data/ames.RData"))
 ```
 
 #### Set a seed:
