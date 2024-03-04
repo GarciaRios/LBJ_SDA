@@ -24,7 +24,7 @@ library(mosaic)
 
 #### Load data:
 ```{r load-data}
-load(url("https://github.com/GarciaRios//LBJ_SDA/raw/main/Labs/lab_ci/data/ames.RData"))
+load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab_ci/data/ames.RData"))
 ```
 
 #### Set a seed:

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2023.7.26)  26 FEB 2024 13:52
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7) (preloaded format=xelatex 2023.7.26)  4 MAR 2024 13:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1323,10 +1323,6 @@ Package hyperref Info: Link coloring OFF on input line 69.
 \@outlinefile=\write6
 \openout6 = `u2_deck3.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
@@ -1840,20 +1836,14 @@ Overfull \hbox (5.0pt too wide) has occurred while \output is active
 \openout9 = `u2_deck3.snm'.
 
  (u2_deck3.aux)
-
-Package rerunfilecheck Warning: File `u2_deck3.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `u2_deck3.out':
-(rerunfilecheck)             Before: 063848CA5CD9F0815DEA43FEF54E2E9C;913
-(rerunfilecheck)             After:  574350A0A86DF46DA001052C5FC5FF67;3234.
+Package rerunfilecheck Info: File `u2_deck3.out' has not changed.
+(rerunfilecheck)             Checksum: 574350A0A86DF46DA001052C5FC5FF67;3234.
  ) 
 Here is how much of TeX's memory you used:
- 30757 strings out of 410654
- 646255 string characters out of 2815690
- 987603 words of memory out of 3000000
- 51138 multiletter control sequences out of 15000+600000
+ 30754 strings out of 410654
+ 646194 string characters out of 2815690
+ 990828 words of memory out of 3000000
+ 51135 multiletter control sequences out of 15000+600000
  476485 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  113i,14n,137p,1905b,592s stack positions out of 10000i,1000n,20000p,200000b,80000s
