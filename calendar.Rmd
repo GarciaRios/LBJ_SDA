@@ -89,7 +89,7 @@ In particular, the pace of the course will be adjusted so that we move as possib
 **Foundations for Inference** 
 
 <ul class="fa-ul">
-<li><i class="fa-li fa fa-bar-chart"></i>    Mar 4 	Variability in estimates and CLT  <a target="_blank" href="./Slides/03_unit3/deck1/u3_deck1"> Deck </a>
+<li><i class="fa-li fa fa-bar-chart"></i>    Mar 4 	Variability in estimates and CLT  <a target="_blank" href="./Slides/03_unit3/deck1/u3_deck1.pdf"> Deck </a>
 
 
 </ul>
