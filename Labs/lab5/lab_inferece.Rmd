@@ -1,5 +1,5 @@
 ---
-title: "Lab 5 - Inference for numerical data"
+title: "Lab - Inference for numerical data"
 author: "Enter  name here"
 date: "Enter date here"
 output: 
@@ -21,12 +21,12 @@ library(mosaic)
 
 **Load NC dataset:**
 ```{r}
-load(url("https://raw.githubusercontent.com/GarciaRios/govt_3990/gh-pages/Labs/lab5/nc.RData"))
+load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab5/nc.RData"))
 ```
 
 **Load inference function:**
 ```{r}
-load(url("https://raw.githubusercontent.com/GarciaRios/govt_3990/gh-pages/Labs/lab5/inference.RData"))
+download("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab5/lab_inferece.Rmd", destfile = "lab_inference.Rmd")
 ```
 
 
