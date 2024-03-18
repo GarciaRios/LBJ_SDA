@@ -20,7 +20,7 @@ library(ggplot2)
 **Your reproducible lab report:** Before you get started, download the R Markdown 
 template for this lab. Remember all of your code and answers go in this document:
 ```{r load-template, eval = FALSE}
-download("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab5/lab_inferece.Rmd", destfile = "lab_inference.Rmd")
+download.file("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab5/lab_inferece.Rmd", destfile = "lab_inference.Rmd")
 ```
 </div>
 
