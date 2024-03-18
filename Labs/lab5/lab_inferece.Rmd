@@ -26,7 +26,8 @@ load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab5/nc.RData"))
 
 **Load inference function:**
 ```{r}
-download.file("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab5/lab_inferece.Rmd", destfile = "lab_inference.Rmd")
+load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab5/inference.RData"))
+
 ```
 
 

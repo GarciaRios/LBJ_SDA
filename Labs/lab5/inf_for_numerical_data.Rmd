@@ -124,7 +124,7 @@ Next, we introduce a new function, `inference`, which was custom made for this c
 First, load the function:
 
 ```{r load-inference}
-load(url("https://raw.githubusercontent.com/GarciaRios/govt_3990/gh-pages/Labs/lab5/inference.RData"))
+load(url("https://github.com/GarciaRios/LBJ_SDA/raw/main/Labs/lab5/inference.RData"))
 ```
 
 Then, run the following:
