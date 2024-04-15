@@ -1,0 +1,10 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Housekeeping}{2}{0}{1}
+\beamer@sectionintoc {2}{Main ideas}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Not every statistically significant result is practically significant}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Hypothesis tests have error rates associated with them}{7}{0}{2}
+\beamer@subsectionintoc {2}{3}{Type 1 error rate = significance level}{15}{0}{2}
+\beamer@subsectionintoc {2}{4}{Calculating the power is a two step process}{28}{0}{2}
+\beamer@subsectionintoc {2}{5}{Power goes up with effect size and sample size, and is inversely proportional with significance level and standard error}{43}{0}{2}
+\beamer@subsectionintoc {2}{6}{A priori power calculations determine desired sample size}{50}{0}{2}
+\beamer@sectionintoc {3}{Summary}{55}{0}{3}

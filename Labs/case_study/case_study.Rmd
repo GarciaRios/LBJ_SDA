@@ -1,7 +1,7 @@
 ---
-title: 'Puzzle Solving Case Study:'
+title: 'Survey Analysis'
 author: "Sergio I Garcia-Rios"
-date: "null"
+date: ""
 output:
   html_document:
     highlight: haddock

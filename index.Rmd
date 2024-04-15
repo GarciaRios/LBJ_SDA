@@ -141,14 +141,17 @@ The course is divided into six learning units. For each unit a set of learning o
 
 <div style="padding-left:2em;padding-top:1em;">
 <table style="width:400px;">
-<tr> <td> Attendance & participation     </td> <td> 5% </td></tr>
-<tr> <td> Labs (4)                      </td> <td> 15% </td></tr>
+<tr> <td> Attendance & participation     </td><td> 10% </td></tr>
+<tr> <td> Labs (4)                      </td> <td> 20% </td></tr>
 <tr> <td> Short Writing Assignments (4) </td> <td> 25% </td></tr>
-<tr> <td> Group Project                </td> <td>  20% </td></tr>
-<tr> <td> Coauthored report            </td> <td>  10% </td></tr>
-<tr> <td> Final Paper                   </td> <td> 25% </td></tr>
+<tr> <td> Group Project                </td> <td>  30% </td></tr>
+<tr> <td> Coauthored report            </td> <td>  11% </td></tr>
 </table>
 </div>
+
+
+
+
 
 
 

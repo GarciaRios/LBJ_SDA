@@ -1,0 +1,27 @@
+\frametitle{If you're interested...}
+
+{\scriptsize
+\begin{verbatim}
+s = 2.2
+mu = 0
+delta = 0.5
+
+ns = 10:1000
+power = rep(NA, length(ns))
+
+for(i in 10:1000){
+  n = i
+  t_star = qt(0.95, df = n-1)
+  se = sqrt((s^2 / n) + (s^2 / n))
+  cutoff = t_star * se
+  t_cutoff = (cutoff - (mu+delta)) / se
+  power[i-9] = pt(t_cutoff, df = n-1, lower.tail = FALSE)
+}
+
+which_n = which.min(abs(power - 0.9))
+power[which_n]
+power[which_n + 1]
+ns[which_n + 1]
+\end{verbatim}
+}
+

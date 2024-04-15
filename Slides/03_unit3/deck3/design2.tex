@@ -1,0 +1,227 @@
+% -*- TeX-engine: xetex; eval: (auto-fill-mode 0); eval: (visual-line-mode 1); -*-
+% Compile with XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Option 1: Slides: (comment for handouts)   %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[slidestop,compress,mathserif,12pt,t,professionalfonts,xcolor=table]{beamer}
+
+% solution stuff
+\newcommand{\solnMult}[1]{
+\only<1>{#1}
+\only<2->{\red{\textbf{#1}}}
+}
+\newcommand{\soln}[1]{\textit{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 2: Handouts, without solutions (post before class)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{#1}
+% \newcommand{\soln}[1]{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Option 3: Handouts, with solutions (may post after class if need be)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[11pt,containsverbatim,handout,xcolor=xelatex,dvipsnames,table]{beamer}
+
+% % handout layout
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+
+% % solution stuff
+% \newcommand{\solnMult}[1]{\red{\textbf{#1}}}
+% \newcommand{\soln}[1]{\textit{#1}}
+
+%%%%%%%%%%
+% Load style file, defaults  %
+%%%%%%%%%%
+
+\input{../../lec_style.tex}
+\input{../../definitions_default.tex}
+% ALT ALT
+% \input{../../definitions_custom.tex}
+
+%%%%%%%%%%%
+% Cover slide info    %
+%%%%%%%%%%%
+
+\title{Survey Design Part 2}
+\subtitle{Concepts and Questions}
+\author{\CourseName}
+\date{}
+\institute{\InstituteName}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document and set Helvetica Neue font   %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%\fontspec[Ligatures=TeX]{Helvetica Neue Light}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+
+\begin{frame}[plain]
+
+\titlepage
+
+\vfill
+
+{\scriptsize \webLink{\PersonalSite}{Dr. \LastName{}} \hfill Slides posted at  \webURL{\CourseSite}}
+
+\addtocounter{framenumber}{-1} 
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{
+Further refinement of concepts}
+
+\begin{itemize}
+\item Concepts contain specific elements within them that relate to the broader idea of the concept.
+\item Concepts are composed of dimensions, sub-dimensions, and further sub-dimensions. 
+\item Dimensions and sub-dimensions vary in relevance to the needs of the research. 
+\item Identifying the most relevant dimensions and sub-dimensions of a concept is another step in clarifying concepts for measurement.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Dimensions}
+
+\begin{itemize}
+
+\item Different aspects of a common core experience 
+
+\item Clear indication of what the concept entails – how broad it is
+
+\item Specify the most relevant aspects of a concept to the research question. 
+
+\item What are key dimensions of: 
+\begin{itemize}
+
+
+\item Poverty?
+\item Homelessness?
+\item Middle Class?
+\item Health? 
+\item Education?
+\item Employment?
+
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Sub-dimensions}
+A sub-dimension is a further refinement of a dimension of a concept 
+
+Similar in nature to dimensions, but further reflect layers of complexity to do with a concept 
+Identifying SD’s allow greater focus and greater clarity for operationalization
+
+Clearer way to develop valid and reliable indicators
+\begin{itemize}
+ 
+\item Health ->  mental health  ->  personality disorders
+
+\end{itemize}
+
+What are the sub-dimensions of:
+
+\begin{itemize}
+\item Poverty? 
+\item Homelessness?
+\item Middle class?
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Deciding on dimensions and sub-dimensions}
+
+
+Context – place, institutional, social, political, economic
+Relevance  - Which dimensions and sub-dimensions are relevant?
+
+Necessity – Which are necessary and which are not?
+
+Research question specific – Are they intuitive or clearly embedded in your research question?
+
+Previous research – What has been done before? Do you need to innovate or expand on a concept and include dimensions and sub-dimensions?
+\end{frame}
+
+
+\begin{frame}{
+Indicators}
+The actual questions that populate a survey 
+Questions that are measures of the concepts (dimensions and sub-dimensions) embedded in research questions and theories
+
+
+Indicators need to be valid and reliable 
+
+\begin{itemize}
+\item Validity – that the question measures exactly what it is supposed to measure
+\item Reliability – as a measure it produces similar results under similar conditions 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{
+Validity}
+
+Three forms of validity for indicators
+Content validity – specific content, especially in dimensions and sub-dimensions 
+
+
+Criterion/expert validity – test against old measures, consult with relevant groups when developing an indicator 
+
+
+Construct validity – measures based on theories – is the measure sound/problematic or is the theory
+
+\end{frame}
+
+\begin{frame}{
+Reliability}
+
+A number of issues impact reliability
+Indicator construction – consistency, clear wording, and coding
+
+
+Recall – issues with memory in answering questions
+
+
+Testing and retesting – repeating questions to a sample should garner the same responses  
+
+\end{frame}
+
+\begin{frame}{
+Indicators}
+Considerations: 
+
+\begin{itemize}
+
+\item How many indicators – need vs. want 
+\item Design of indictors – wording and comprehension
+\item Arrangement of indicators in the survey – strategically placed so respondents can follow, continue, and complete the survey 
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
