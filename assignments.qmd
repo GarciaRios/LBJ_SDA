@@ -1,0 +1,79 @@
+---
+title: "Assignments and Assessment"
+---
+
+Assignments are designed as stages of one professional survey workflow. Detailed prompts, rubrics, templates, and submission links will be released on Canvas.
+
+## Assessment map
+
+| Category | Weight | Individual or collaborative? |
+|---|---:|---|
+| Preparation and professional participation | 10% | Individual |
+| Methods labs | 20% | Individual, with permitted collaboration |
+| Individual methods memos | 20% | Individual |
+| Univision project milestones | 25% | Primarily collaborative |
+| Coauthored LBJ/Univision report | 20% | Collaborative |
+| Reflection and contribution statement | 5% | Individual |
+
+## Methods labs · 20%
+
+Four labs build the analysis and production skills required for the project.
+
+1. **Reproducible survey workflow:** importing, labeling, recoding, documenting, and rendering.
+2. **Weighted estimates and uncertainty:** toplines, weighted proportions, confidence intervals, and effective sample size.
+3. **Subgroup analysis and visualization:** comparisons, design-aware interpretation, and publication-quality graphics.
+4. **From data to report:** reproducible tables, methods documentation, and quality checks.
+
+## Individual methods memos · 20%
+
+Four concise memos ask students to defend methodological decisions:
+
+1. **Poll autopsy:** evaluate what a published poll permits us to conclude.
+2. **Measurement memo:** diagnose and revise problematic survey questions.
+3. **Sampling and mode memo:** recommend a feasible design and explain its limitations.
+4. **Interpretation memo:** write defensible public claims from a set of survey estimates.
+
+## Univision project milestones · 25%
+
+Milestones make the collaborative process visible and accountable.
+
+| Milestone | Deliverable |
+|---|---|
+| Project charter | Research objectives, audiences, roles, decision rules, and timeline |
+| Measurement package | Construct map, proposed module, and design rationale |
+| Testing package | Cognitive-testing protocol, findings, and revisions |
+| Representation plan | Target population, sample/mode assessment, recruitment, and limitations |
+| Instrument QA | Integrated questionnaire review, test cases, issue log, and approval record |
+| Analysis plan | Planned outcomes, subgroups, derived variables, weighting use, tables, and graphics |
+
+## Coauthored LBJ/Univision report · 20%
+
+The class will develop a professional report using the project data. The report should include:
+
+- an executive summary;
+- a concise explanation of the research purpose;
+- a transparent methods statement;
+- substantive findings organized around clear research questions;
+- accurate tables and accessible graphics;
+- appropriate discussion of uncertainty and limitations; and
+- documentation sufficient to reproduce published figures and statistics.
+
+Authorship and branding will depend on the final partnership agreement and documented contributions.
+
+## Individual reflection and contribution statement · 5%
+
+The final reflection identifies the student's contributions, explains one consequential methodological decision, evaluates the strengths and weaknesses of the completed project, and proposes improvements for a future polling cycle.
+
+## Evaluation principles
+
+Work will be evaluated on:
+
+- methodological reasoning;
+- accuracy and reproducibility;
+- clarity and audience awareness;
+- ethical and professional judgment;
+- responsiveness to evidence and feedback;
+- documentation of decisions; and
+- contribution to the collaborative process.
+
+A polished output cannot compensate for an indefensible method, and technical sophistication cannot compensate for unclear communication.
