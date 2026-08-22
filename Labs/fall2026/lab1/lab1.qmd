@@ -153,7 +153,10 @@ lns_clean <- lns_raw |>
     generation = as_factor(newgen),
     age = as.numeric(age),
     female = as_factor(female),
-    income = as_factor(income)
+    income = as_factor(income),
+    poor_work = as_factor(poordisc),
+    latino_work = as_factor(latdisc),
+    discrimination_index = as.numeric(discindx)
   )
 ~~~
 
@@ -174,7 +177,7 @@ count(lns_clean, generation, sort = TRUE)
 
 ## 6. Missing and non-substantive responses
 
-“Don't know,” refusal, not asked, and legitimate categories such as “none” are not interchangeable. Inspect the questionnaire and make an explicit decision.
+`Don't know`, refusal, not asked, and legitimate categories such as `none` are not interchangeable. Inspect the questionnaire and make an explicit decision.
 
 ~~~{r}
 lns_clean |>
