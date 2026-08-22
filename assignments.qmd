@@ -29,6 +29,10 @@ Five substantial labs integrate R programming, statistical reasoning, and survey
 
 Most lab work will be completed together during class. Each lab concludes with a shorter **On Your Own** section completed alone. Labs are graded on statistical reasoning, readable and functioning code, reproducibility, appropriate checks, and clear interpretation.
 
+## Assignment materials
+
+- [Individual Assignment 1: Poll Autopsy](assignments/fall2026/poll-autopsy.qmd)
+
 ## Individual methods assignments · 15%
 
 Three concise assignments ask students to make and defend methodological decisions.
