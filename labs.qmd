@@ -1,14 +1,70 @@
 ---
-title: "Methods Labs"
+title: "R and Statistics Labs"
 ---
 
-The Fall 2026 labs are being redesigned around the Univision survey-production workflow. Existing R materials remain available in the repository while the revised labs are prepared.
+The labs form a second, cumulative spine of the course. Students will learn the statistical foundations of survey analysis while developing a reproducible workflow in R and Quarto. The live Univision project provides the principal application, but early labs use instructional or public data so that students can learn, experiment, and make mistakes before working with embargoed project data.
 
-## Planned labs
+No prior mastery of R is required. Each lab introduces a manageable set of programming tools, connects those tools to a statistical idea, and ends with a survey-research application.
 
-1. Reproducible survey workflow
-2. Weighted estimates and uncertainty
-3. Subgroup analysis and visualization
-4. From survey data to professional report
+## Lab sequence
 
-Each lab will include a source file, rendered instructions, data documentation, and a reproducible submission template.
+| Lab | R and statistical foundations | Survey application |
+|---:|---|---|
+| 0 | RStudio/Posit orientation, projects, scripts, objects, functions, packages, help, and Quarto | Reproducible workflow and responsible handling of survey files |
+| 1 | Importing data; data frames; variable types; missing values; filtering, selecting, mutating, recoding, and summarizing with the tidyverse | Reading a codebook; cleaning and documenting raw survey data |
+| 2 | Distributions, proportions, measures of center and spread, cross-tabulations, and ggplot2 | Describing respondents and visualizing survey responses accurately |
+| 3 | Probability, random sampling, simulation, sampling distributions, standard error, and margin of error | Why estimates vary from sample to sample and what a margin of error does—and does not—mean |
+| 4 | Confidence intervals, hypothesis tests, differences in proportions and means, and practical versus statistical significance | Evaluating toplines and subgroup differences without overstating evidence |
+| 5 | Scale construction, item coding, reliability, index creation, and exploratory measurement checks | Turning questionnaire items into defensible measures |
+| 6 | Survey weights, weighted estimates, effective sample size, design effects, and the R `survey` package | Comparing weighted and unweighted results and documenting weighting decisions |
+| 7 | Linear and logistic regression, categorical predictors, interactions, predicted probabilities, and model-based graphics | Explaining survey outcomes and communicating adjusted relationships |
+| 8 | Functions, quality checks, tables, figures, citations, and parameterized Quarto reporting | Producing a reproducible methods appendix and public-facing survey report |
+
+## Statistical scope
+
+The course will cover the statistical reasoning needed to analyze contemporary public-opinion surveys:
+
+- descriptive statistics and distributions;
+- probability and random variation;
+- samples, populations, estimators, and sampling distributions;
+- standard errors, margins of error, and confidence intervals;
+- hypothesis tests and differences across groups;
+- measurement, scales, and reliability;
+- survey weighting and design effects;
+- bivariate and multivariable relationships;
+- linear and logistic regression;
+- interactions and predicted probabilities; and
+- uncertainty, visualization, and responsible interpretation.
+
+The objective is not memorization of formulas. Students should understand the logic of each method, recognize when it is appropriate, implement it in R, check the result, and explain it to a nontechnical audience.
+
+## Lab format
+
+Most labs will contain four parts:
+
+1. **Concept:** a statistical or programming idea explained through a survey problem.
+2. **Guided coding:** annotated code completed together.
+3. **Practice:** short exercises using a second example.
+4. **Application:** an individually submitted analysis or project contribution.
+
+Students may discuss strategies and troubleshoot code together unless an assignment says otherwise, but each student must write, run, verify, and explain their own submitted work.
+
+## Software and reproducibility
+
+We will use R, RStudio or Posit Cloud, the tidyverse, ggplot2, the `survey` package, and Quarto. Additional packages will be introduced only when they solve a clear survey-research problem.
+
+Every submitted analysis should be reproducible from the source file. Students will learn to:
+
+- use projects and stable relative paths;
+- preserve raw data and create documented analysis files;
+- distinguish true missing data from substantive responses;
+- label variables and values;
+- write readable code and comments;
+- set seeds when simulation or randomization requires them;
+- separate exploratory work from final analysis;
+- check outputs against known quantities; and
+- render tables, figures, and prose from the same underlying code.
+
+## Relationship to existing course materials
+
+The repository already contains useful foundations in introductory R, data manipulation, probability, inference, regression, predicted probabilities, and a Latino National Survey case study. These materials will be audited and adapted into the new sequence. Generic examples will be replaced or supplemented with survey applications, and outdated R syntax will be modernized.
