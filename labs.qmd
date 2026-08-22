@@ -6,6 +6,10 @@ The five labs form the quantitative spine of the course. They teach R programmin
 
 No prior mastery of R is required. Most lab work will be completed together during class: the instructor will introduce the statistical idea, build the code with students, pause for interpretation and troubleshooting, and model how to check the results. Students will then complete a shorter **On Your Own** section individually.
 
+## Lab materials
+
+- [Lab 1: Your First Reproducible Survey Analysis](Labs/fall2026/lab1/lab1.qmd)
+
 ## Lab sequence
 
 | Lab | R and statistical foundations | Survey application |
