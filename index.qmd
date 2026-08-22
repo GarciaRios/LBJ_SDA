@@ -40,7 +40,9 @@ By the end of the semester, students will be able to:
 
 ## Course structure
 
-The semester follows the survey-production cycle:
+The course has two coordinated learning tracks. The **survey-production track** follows the lifecycle of the Univision poll. The **R and statistics track** builds the quantitative foundations students need to analyze survey data independently. Each week connects a methodological decision to a statistical or programming skill.
+
+The survey-production track follows this cycle:
 
 1. **Purpose and design:** research objectives, stakeholders, ethics, and total survey error.
 2. **Measurement:** concepts, question wording, response options, order effects, translation, and testing.
@@ -55,8 +57,8 @@ Class meetings will combine discussion, methodological workshops, R labs, projec
 | Component | Weight |
 |---|---:|
 | Preparation and professional participation | 10% |
-| Methods labs | 20% |
-| Individual methods memos | 20% |
+| R and statistics labs | 25% |
+| Individual methods memos | 15% |
 | Univision project milestones | 25% |
 | Coauthored LBJ/Univision report | 20% |
 | Individual reflection and contribution statement | 5% |
@@ -66,9 +68,9 @@ Class meetings will combine discussion, methodological workshops, R labs, projec
 
 Participation includes arriving prepared, contributing constructively, giving useful feedback, meeting production deadlines, documenting decisions, and supporting the work of the project team. Attendance matters because many workshops and partner activities cannot be recreated individually.
 
-### Methods labs
+### R and statistics labs
 
-Labs develop the reproducible workflow needed to work with survey data in R. They will emphasize practical survey tasks rather than a general statistics sequence.
+Nine cumulative labs, beginning with Lab 0, teach R programming and the statistical foundations of survey analysis. Topics include data structures and wrangling, descriptive statistics, visualization, probability, sampling distributions, confidence intervals, hypothesis tests, measurement and scales, survey weights, regression, predicted probabilities, and reproducible reporting. Every topic is connected to a survey-research decision or application.
 
 ### Individual methods memos
 
