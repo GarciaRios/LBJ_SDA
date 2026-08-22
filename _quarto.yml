@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "LBJ Survey Design and Analysis"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Syllabus
+      - href: schedule.qmd
+        text: Schedule
+      - href: assignments.qmd
+        text: Assignments
+      - href: project.qmd
+        text: Univision Project
+      - href: labs.qmd
+        text: Labs
+    right:
+      - icon: github
+        href: https://github.com/GarciaRios/LBJ_SDA
+        aria-label: GitHub repository
+  page-footer:
+    left: "PA 397C · Fall 2026 · LBJ School of Public Affairs"
+    right: "Course materials licensed CC BY 4.0 unless otherwise noted."
+
+format:
+  html:
+    theme:
+      light: cosmo
+    css: custom_style.css
+    toc: true
+    link-external-newwindow: true
+
+execute:
+  freeze: auto
