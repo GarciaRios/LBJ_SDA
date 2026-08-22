@@ -1,0 +1,14 @@
+---
+title: "Methods Labs"
+---
+
+The Fall 2026 labs are being redesigned around the Univision survey-production workflow. Existing R materials remain available in the repository while the revised labs are prepared.
+
+## Planned labs
+
+1. Reproducible survey workflow
+2. Weighted estimates and uncertainty
+3. Subgroup analysis and visualization
+4. From survey data to professional report
+
+Each lab will include a source file, rendered instructions, data documentation, and a reproducible submission template.
