@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 2: Describing and Visualizing Survey Responses – LBJ Survey Design and Analysis</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-e3adbaa939bcd423dddc8c8a834270b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../custom_style.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">LBJ Survey Design and Analysis</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../readings.html"> 
+<span class="menu-text">Readings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../assignments.html"> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../project.html"> 
+<span class="menu-text">Univision Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../labs.html"> 
+<span class="menu-text">Labs</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/GarciaRios/LBJ_SDA"> <i class="bi bi-github" role="img" aria-label="GitHub repository">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#load-packages-and-data" id="toc-load-packages-and-data" class="nav-link" data-scroll-target="#load-packages-and-data">1. Load packages and data</a></li>
+  <li><a href="#variable-types-and-analytical-choices" id="toc-variable-types-and-analytical-choices" class="nav-link" data-scroll-target="#variable-types-and-analytical-choices">2. Variable types and analytical choices</a></li>
+  <li><a href="#describe-a-quantitative-variable" id="toc-describe-a-quantitative-variable" class="nav-link" data-scroll-target="#describe-a-quantitative-variable">3. Describe a quantitative variable</a></li>
+  <li><a href="#counts-and-percentages-for-a-categorical-variable" id="toc-counts-and-percentages-for-a-categorical-variable" class="nav-link" data-scroll-target="#counts-and-percentages-for-a-categorical-variable">4. Counts and percentages for a categorical variable</a></li>
+  <li><a href="#prepare-an-ordinal-measure" id="toc-prepare-an-ordinal-measure" class="nav-link" data-scroll-target="#prepare-an-ordinal-measure">5. Prepare an ordinal measure</a></li>
+  <li><a href="#cross-tabulations-and-denominators" id="toc-cross-tabulations-and-denominators" class="nav-link" data-scroll-target="#cross-tabulations-and-denominators">6. Cross-tabulations and denominators</a></li>
+  <li><a href="#visualize-a-subgroup-comparison" id="toc-visualize-a-subgroup-comparison" class="nav-link" data-scroll-target="#visualize-a-subgroup-comparison">7. Visualize a subgroup comparison</a></li>
+  <li><a href="#items-indexes-and-scales" id="toc-items-indexes-and-scales" class="nav-link" data-scroll-target="#items-indexes-and-scales">8. Items, indexes, and scales</a></li>
+  <li><a href="#guided-work-checklist" id="toc-guided-work-checklist" class="nav-link" data-scroll-target="#guided-work-checklist">Guided-work checklist</a></li>
+  <li><a href="#on-your-own" id="toc-on-your-own" class="nav-link" data-scroll-target="#on-your-own">On Your Own</a>
+  <ul class="collapse">
+  <li><a href="#question-1-inspect-and-prepare-the-measure" id="toc-question-1-inspect-and-prepare-the-measure" class="nav-link" data-scroll-target="#question-1-inspect-and-prepare-the-measure">Question 1: Inspect and prepare the measure</a></li>
+  <li><a href="#question-2-describe-the-distribution" id="toc-question-2-describe-the-distribution" class="nav-link" data-scroll-target="#question-2-describe-the-distribution">Question 2: Describe the distribution</a></li>
+  <li><a href="#question-3-compare-generations" id="toc-question-3-compare-generations" class="nav-link" data-scroll-target="#question-3-compare-generations">Question 3: Compare generations</a></li>
+  <li><a href="#question-4-visualize-and-interpret" id="toc-question-4-visualize-and-interpret" class="nav-link" data-scroll-target="#question-4-visualize-and-interpret">Question 4: Visualize and interpret</a></li>
+  <li><a href="#question-5-measurement-reflection" id="toc-question-5-measurement-reflection" class="nav-link" data-scroll-target="#question-5-measurement-reflection">Question 5: Measurement reflection</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#reference-materials" id="toc-reference-materials" class="nav-link" data-scroll-target="#reference-materials">Reference materials</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 2: Describing and Visualizing Survey Responses</h1>
+<p class="subtitle lead">Descriptive statistics, cross-tabulations, measurement, and ggplot2</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>Survey analysis begins with careful description. Before fitting a model or testing a hypothesis, we need to understand what each variable measures, how responses are distributed, which cases are missing, and how patterns differ across groups.</p>
+<p>In this lab, we will use the cleaned Latino National Survey file created in Lab 1. We will calculate descriptive statistics, build cross-tabulations, create analysis-ready measures, and use ggplot2 to communicate results accurately.</p>
+<p>Most work will be completed together. The final <strong>On Your Own</strong> section asks you to repeat the workflow alone with a related survey measure.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this lab, you should be able to:</p>
+<ul>
+<li>distinguish categorical, ordinal, and quantitative variables;</li>
+<li>select an appropriate descriptive statistic for each type;</li>
+<li>calculate counts, proportions, means, medians, and measures of spread;</li>
+<li>create and interpret two-way tables;</li>
+<li>calculate percentages using the correct denominator;</li>
+<li>recode and order an ordinal survey item;</li>
+<li>explain the difference between a single item, an index, and a scale;</li>
+<li>produce clear bar charts and subgroup comparisons with ggplot2; and</li>
+<li>write an accurate descriptive interpretation.</li>
+</ul>
+</section>
+<section id="load-packages-and-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages-and-data">1. Load packages and data</h2>
+<p><sub></sub>~{r} library(tidyverse) library(here) library(scales)</p>
+<p>lns &lt;- read_rds( here(“Labs”, “fall2026”, “lab1”, “output”, “lns_clean.rds”) )</p>
+<p>glimpse(lns) <sub></sub>~</p>
+<p>If the file cannot be found, return to Lab 1, run all code, and confirm that lns_clean.rds was saved inside the Lab 1 output folder.</p>
+</section>
+<section id="variable-types-and-analytical-choices" class="level2">
+<h2 class="anchored" data-anchor-id="variable-types-and-analytical-choices">2. Variable types and analytical choices</h2>
+<p>A variable’s type affects what we can calculate and how we should display it.</p>
+<ul>
+<li><strong>Nominal categorical:</strong> categories have no inherent order, such as the most important problem.</li>
+<li><strong>Ordinal categorical:</strong> categories have a meaningful order, such as strongly disagree through strongly agree.</li>
+<li><strong>Quantitative:</strong> numeric distances are substantively meaningful, such as age.</li>
+<li><strong>Logical:</strong> values indicate TRUE or FALSE.</li>
+</ul>
+<p>Inspect several variables:</p>
+<p><sub></sub>~{r} class(lns<span class="math inline">\(main_problem)
+class(lns\)</span>generation) class(lns<span class="math inline">\(age)
+class(lns\)</span>poor_work) class(lns$discrimination_index) <sub></sub>~</p>
+<p><strong>Checkpoint 1:</strong> Classify each variable substantively, not only by the way R stores it. Why might an ordinal response be stored as a factor rather than as a number?</p>
+<p>Your response:</p>
+</section>
+<section id="describe-a-quantitative-variable" class="level2">
+<h2 class="anchored" data-anchor-id="describe-a-quantitative-variable">3. Describe a quantitative variable</h2>
+<p>Begin with respondent age.</p>
+<p><sub></sub>~{r} lns |&gt; summarize( valid_n = sum(!is.na(age)), missing_n = sum(is.na(age)), mean = mean(age, na.rm = TRUE), median = median(age, na.rm = TRUE), standard_deviation = sd(age, na.rm = TRUE), minimum = min(age, na.rm = TRUE), maximum = max(age, na.rm = TRUE) ) <sub></sub>~</p>
+<p>The mean uses every observed value and can be influenced by unusual values. The median identifies the midpoint of the ordered observations. The standard deviation summarizes how dispersed observations are around the mean.</p>
+<p>Check the distribution visually:</p>
+<p><sub></sub>~{r} ggplot(lns, aes(x = age)) + geom_histogram(binwidth = 5, boundary = 0, color = “white”, fill = “#5C8CC6”) + labs( title = “Age distribution in the Latino National Survey”, x = “Age”, y = “Number of respondents” ) + theme_minimal() <sub></sub>~</p>
+<p><strong>Checkpoint 2:</strong> Describe the center, spread, and shape of the age distribution. Are there values you would investigate before publishing?</p>
+<p>Your response:</p>
+</section>
+<section id="counts-and-percentages-for-a-categorical-variable" class="level2">
+<h2 class="anchored" data-anchor-id="counts-and-percentages-for-a-categorical-variable">4. Counts and percentages for a categorical variable</h2>
+<p>For a nominal variable, begin with counts and percentages.</p>
+<p><sub></sub>~{r} problem_table &lt;- lns |&gt; filter(!is.na(main_problem_analysis)) |&gt; count(main_problem_analysis, sort = TRUE) |&gt; mutate( percent = n / sum(n), percent_label = scales::percent(percent, accuracy = 0.1) )</p>
+<p>problem_table <sub></sub>~</p>
+<p>Notice the denominator: sum(n) includes only cases retained after the missing-data decision.</p>
+<p>Display the ten most common substantive responses:</p>
+<p><sub></sub>~{r} problem_top10 &lt;- problem_table |&gt; slice_max(order_by = n, n = 10) |&gt; mutate( main_problem_analysis = forcats::fct_reorder( main_problem_analysis, percent ) )</p>
+<p>ggplot(problem_top10, aes(x = percent, y = main_problem_analysis)) + geom_col(fill = “#5C8CC6”) + geom_text( aes(label = percent_label), hjust = -0.1 ) + scale_x_continuous( labels = scales::percent, limits = c(0, max(problem_top10$percent) * 1.18) ) + labs( title = “Most important problems facing the country”, subtitle = “Unweighted responses from Latino National Survey participants”, x = “Percent”, y = NULL, caption = “Missing and non-substantive responses excluded.” ) + theme_minimal() <sub></sub>~</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These are unweighted sample descriptions. Lab 4 will introduce survey weights and population estimates.</p>
+</div>
+</div>
+</section>
+<section id="prepare-an-ordinal-measure" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-an-ordinal-measure">5. Prepare an ordinal measure</h2>
+<p>The survey asked respondents how strongly they agreed or disagreed that poor people can get ahead in life if they work hard.</p>
+<p>Inspect every category before recoding:</p>
+<p><sub></sub>~{r} lns |&gt; count(poor_work, sort = FALSE, .drop = FALSE) <sub></sub>~</p>
+<p>Create an analysis version that treats “don’t know” as missing and orders the substantive responses.</p>
+<p><sub></sub>~{r} lns &lt;- lns |&gt; mutate( poor_work_analysis = poor_work, poor_work_analysis = na_if(poor_work_analysis, “dk”), poor_work_analysis = forcats::fct_relevel( poor_work_analysis, “strongly disagree”, “somewhat disagree”, “somewhat agree”, “strongly agree” ) ) <sub></sub>~</p>
+<p>Check the result:</p>
+<p><sub></sub>~{r} lns |&gt; count(poor_work, poor_work_analysis, .drop = FALSE) <sub></sub>~</p>
+<p><strong>Checkpoint 3:</strong> Why is the ordering important for both analysis and visualization? Why did we preserve poor_work?</p>
+<p>Your response:</p>
+</section>
+<section id="cross-tabulations-and-denominators" class="level2">
+<h2 class="anchored" data-anchor-id="cross-tabulations-and-denominators">6. Cross-tabulations and denominators</h2>
+<p>We want to compare responses across immigrant generations. First inspect generation:</p>
+<p><sub></sub>~{r} lns |&gt; count(generation, sort = TRUE, .drop = FALSE) <sub></sub>~</p>
+<p>Build a two-way table with counts and percentages within generation:</p>
+<p><sub></sub>~{r} poor_by_generation &lt;- lns |&gt; filter( !is.na(generation), !is.na(poor_work_analysis) ) |&gt; count(generation, poor_work_analysis) |&gt; group_by(generation) |&gt; mutate( group_total = sum(n), percent = n / group_total ) |&gt; ungroup()</p>
+<p>poor_by_generation <sub></sub>~</p>
+<p>Because we group by generation before calculating percent, responses within each generation sum to 100%.</p>
+<p>Verify that claim:</p>
+<p><sub></sub>~{r} poor_by_generation |&gt; group_by(generation) |&gt; summarize(total_percent = sum(percent)) <sub></sub>~</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The most common cross-tabulation mistake is using the wrong denominator. “Of each generation, what percentage selected each response?” differs from “Of each response category, what percentage belongs to each generation?”</p>
+</div>
+</div>
+</section>
+<section id="visualize-a-subgroup-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-a-subgroup-comparison">7. Visualize a subgroup comparison</h2>
+<p>A proportional stacked bar chart shows the full response distribution within each generation.</p>
+<p><sub></sub>~{r} ggplot( poor_by_generation, aes( x = generation, y = percent, fill = poor_work_analysis ) ) + geom_col(position = “fill”) + scale_y_continuous(labels = scales::percent) + scale_fill_brewer(palette = “Blues”, direction = 1) + labs( title = “Belief that poor people can get ahead through hard work”, subtitle = “Response distribution by immigrant generation”, x = “Generation”, y = “Percent within generation”, fill = “Response”, caption = “Unweighted LNS sample; don’t-know responses excluded.” ) + theme_minimal() + theme(legend.position = “bottom”) <sub></sub>~</p>
+<p>A grouped point display may make particular comparisons easier:</p>
+<p><sub></sub>~{r} ggplot( poor_by_generation, aes( x = generation, y = percent, color = poor_work_analysis, group = poor_work_analysis ) ) + geom_point(size = 3, position = position_dodge(width = 0.4)) + geom_line(position = position_dodge(width = 0.4)) + scale_y_continuous(labels = scales::percent) + labs( title = “Views of hard work and mobility across generations”, x = “Generation”, y = “Percent within generation”, color = “Response” ) + theme_minimal() + theme(legend.position = “bottom”) <sub></sub>~</p>
+<p><strong>Checkpoint 4:</strong> Which display better communicates the substantive pattern? Name one conclusion the figure supports and one conclusion it does not support.</p>
+<p>Your response:</p>
+</section>
+<section id="items-indexes-and-scales" class="level2">
+<h2 class="anchored" data-anchor-id="items-indexes-and-scales">8. Items, indexes, and scales</h2>
+<p>A <strong>survey item</strong> is one question or recorded measure. An <strong>index</strong> combines multiple indicators according to a rule, often by adding them. A <strong>scale</strong> uses multiple items intended to measure a common underlying construct and should be evaluated for conceptual and empirical coherence.</p>
+<p>The LNS includes an index of reported discrimination experiences.</p>
+<p><sub></sub>~{r} lns |&gt; count(discrimination_index, sort = FALSE, .drop = FALSE)</p>
+<p>lns |&gt; summarize( valid_n = sum(!is.na(discrimination_index)), mean = mean(discrimination_index, na.rm = TRUE), median = median(discrimination_index, na.rm = TRUE), standard_deviation = sd(discrimination_index, na.rm = TRUE) ) <sub></sub>~</p>
+<p>Create a simpler indicator of whether the respondent reports at least one experience:</p>
+<p><sub></sub>~{r} lns &lt;- lns |&gt; mutate( any_discrimination = case_when( is.na(discrimination_index) ~ NA, discrimination_index == 0 ~ “No reported experience”, discrimination_index &gt; 0 ~ “One or more experiences” ), any_discrimination = factor( any_discrimination, levels = c(“No reported experience”, “One or more experiences”) ) )</p>
+<p>lns |&gt; count(any_discrimination) |&gt; mutate(percent = n / sum(n)) <sub></sub>~</p>
+<p><strong>Checkpoint 5:</strong> What information is lost when the index is converted into a yes/no indicator? When might the simpler indicator still be useful?</p>
+<p>Your response:</p>
+</section>
+<section id="guided-work-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="guided-work-checklist">Guided-work checklist</h2>
+<p>Before beginning the independent section, confirm that you can:</p>
+<ul>
+<li>match descriptive statistics to variable types;</li>
+<li>distinguish counts from percentages;</li>
+<li>identify the denominator in a percentage;</li>
+<li>create an ordered factor;</li>
+<li>build a two-way table with within-group percentages;</li>
+<li>explain why a chart is a statistical argument, not decoration;</li>
+<li>distinguish an item, index, and scale; and</li>
+<li>describe results as unweighted sample patterns at this stage.</li>
+</ul>
+</section>
+<section id="on-your-own" class="level1">
+<h1>On Your Own</h1>
+<p>Complete this section alone. Use latino_work, which asks whether Latinos can get ahead in life if they work hard.</p>
+<section id="question-1-inspect-and-prepare-the-measure" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-inspect-and-prepare-the-measure">Question 1: Inspect and prepare the measure</h2>
+<p>Produce a complete frequency table for latino_work. Create latino_work_analysis by handling non-substantive responses and ordering the substantive categories.</p>
+<p>Show a table that verifies the recode.</p>
+<p><sub></sub>~{r} # Your code <sub></sub>~</p>
+<p>Explain each decision:</p>
+</section>
+<section id="question-2-describe-the-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-describe-the-distribution">Question 2: Describe the distribution</h2>
+<p>Create a table containing counts and percentages for latino_work_analysis. Then create a clearly labelled bar chart.</p>
+<p><sub></sub>~{r} # Your code <sub></sub>~</p>
+<p>Write two or three sentences describing the distribution. Identify the denominator and state that the estimates are unweighted.</p>
+</section>
+<section id="question-3-compare-generations" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-compare-generations">Question 3: Compare generations</h2>
+<p>Create a cross-tabulation of latino_work_analysis by generation with percentages calculated within generation. Verify that percentages sum to 100% within each generation.</p>
+<p><sub></sub>~{r} # Your code <sub></sub>~</p>
+</section>
+<section id="question-4-visualize-and-interpret" class="level2">
+<h2 class="anchored" data-anchor-id="question-4-visualize-and-interpret">Question 4: Visualize and interpret</h2>
+<p>Create one graphic that communicates the comparison across generations. You may adapt either guided example, but make deliberate choices about labels, ordering, colors, and the legend.</p>
+<p><sub></sub>~{r} # Your code <sub></sub>~</p>
+<p>Write a short interpretation containing:</p>
+<ol type="1">
+<li>the principal descriptive pattern;</li>
+<li>one comparison supported by the figure;</li>
+<li>one claim the analysis cannot support; and</li>
+<li>one question you would investigate next.</li>
+</ol>
+</section>
+<section id="question-5-measurement-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="question-5-measurement-reflection">Question 5: Measurement reflection</h2>
+<p>The survey asks separately whether poor people and Latinos can get ahead through hard work. In one paragraph, explain why these are not interchangeable measures. Discuss what each might capture and what we could learn by analyzing them together.</p>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>Submit the completed QMD source file and rendered HTML file. Restart R and render from a clean session before submitting.</p>
+</section>
+<section id="reference-materials" class="level2">
+<h2 class="anchored" data-anchor-id="reference-materials">Reference materials</h2>
+<ul>
+<li><a href="https://r4ds.hadley.nz/data-transform">R for Data Science: Data Transformation</a></li>
+<li><a href="https://r4ds.hadley.nz/data-visualize">R for Data Science: Data Visualization</a></li>
+<li><a href="https://ggplot2.tidyverse.org/">ggplot2 documentation</a></li>
+<li>Latino National Survey questionnaire and codebook in the course repository</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/garciarios\.github\.io\/LBJ_SDA\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>PA 397C · Fall 2026 · LBJ School of Public Affairs</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Course materials licensed CC BY 4.0 unless otherwise noted.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

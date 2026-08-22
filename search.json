@@ -1,0 +1,772 @@
+[
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html",
+    "href": "Labs/fall2026/lab2/lab2.html",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "",
+    "text": "Survey analysis begins with careful description. Before fitting a model or testing a hypothesis, we need to understand what each variable measures, how responses are distributed, which cases are missing, and how patterns differ across groups.\nIn this lab, we will use the cleaned Latino National Survey file created in Lab 1. We will calculate descriptive statistics, build cross-tabulations, create analysis-ready measures, and use ggplot2 to communicate results accurately.\nMost work will be completed together. The final On Your Own section asks you to repeat the workflow alone with a related survey measure."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#purpose",
+    "href": "Labs/fall2026/lab2/lab2.html#purpose",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "",
+    "text": "Survey analysis begins with careful description. Before fitting a model or testing a hypothesis, we need to understand what each variable measures, how responses are distributed, which cases are missing, and how patterns differ across groups.\nIn this lab, we will use the cleaned Latino National Survey file created in Lab 1. We will calculate descriptive statistics, build cross-tabulations, create analysis-ready measures, and use ggplot2 to communicate results accurately.\nMost work will be completed together. The final On Your Own section asks you to repeat the workflow alone with a related survey measure."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#learning-objectives",
+    "href": "Labs/fall2026/lab2/lab2.html#learning-objectives",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lab, you should be able to:\n\ndistinguish categorical, ordinal, and quantitative variables;\nselect an appropriate descriptive statistic for each type;\ncalculate counts, proportions, means, medians, and measures of spread;\ncreate and interpret two-way tables;\ncalculate percentages using the correct denominator;\nrecode and order an ordinal survey item;\nexplain the difference between a single item, an index, and a scale;\nproduce clear bar charts and subgroup comparisons with ggplot2; and\nwrite an accurate descriptive interpretation."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#load-packages-and-data",
+    "href": "Labs/fall2026/lab2/lab2.html#load-packages-and-data",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "1. Load packages and data",
+    "text": "1. Load packages and data\n~{r} library(tidyverse) library(here) library(scales)\nlns &lt;- read_rds( here(“Labs”, “fall2026”, “lab1”, “output”, “lns_clean.rds”) )\nglimpse(lns) ~\nIf the file cannot be found, return to Lab 1, run all code, and confirm that lns_clean.rds was saved inside the Lab 1 output folder."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#variable-types-and-analytical-choices",
+    "href": "Labs/fall2026/lab2/lab2.html#variable-types-and-analytical-choices",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "2. Variable types and analytical choices",
+    "text": "2. Variable types and analytical choices\nA variable’s type affects what we can calculate and how we should display it.\n\nNominal categorical: categories have no inherent order, such as the most important problem.\nOrdinal categorical: categories have a meaningful order, such as strongly disagree through strongly agree.\nQuantitative: numeric distances are substantively meaningful, such as age.\nLogical: values indicate TRUE or FALSE.\n\nInspect several variables:\n~{r} class(lns\\(main_problem)\nclass(lns\\)generation) class(lns\\(age)\nclass(lns\\)poor_work) class(lns$discrimination_index) ~\nCheckpoint 1: Classify each variable substantively, not only by the way R stores it. Why might an ordinal response be stored as a factor rather than as a number?\nYour response:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#describe-a-quantitative-variable",
+    "href": "Labs/fall2026/lab2/lab2.html#describe-a-quantitative-variable",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "3. Describe a quantitative variable",
+    "text": "3. Describe a quantitative variable\nBegin with respondent age.\n~{r} lns |&gt; summarize( valid_n = sum(!is.na(age)), missing_n = sum(is.na(age)), mean = mean(age, na.rm = TRUE), median = median(age, na.rm = TRUE), standard_deviation = sd(age, na.rm = TRUE), minimum = min(age, na.rm = TRUE), maximum = max(age, na.rm = TRUE) ) ~\nThe mean uses every observed value and can be influenced by unusual values. The median identifies the midpoint of the ordered observations. The standard deviation summarizes how dispersed observations are around the mean.\nCheck the distribution visually:\n~{r} ggplot(lns, aes(x = age)) + geom_histogram(binwidth = 5, boundary = 0, color = “white”, fill = “#5C8CC6”) + labs( title = “Age distribution in the Latino National Survey”, x = “Age”, y = “Number of respondents” ) + theme_minimal() ~\nCheckpoint 2: Describe the center, spread, and shape of the age distribution. Are there values you would investigate before publishing?\nYour response:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#counts-and-percentages-for-a-categorical-variable",
+    "href": "Labs/fall2026/lab2/lab2.html#counts-and-percentages-for-a-categorical-variable",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "4. Counts and percentages for a categorical variable",
+    "text": "4. Counts and percentages for a categorical variable\nFor a nominal variable, begin with counts and percentages.\n~{r} problem_table &lt;- lns |&gt; filter(!is.na(main_problem_analysis)) |&gt; count(main_problem_analysis, sort = TRUE) |&gt; mutate( percent = n / sum(n), percent_label = scales::percent(percent, accuracy = 0.1) )\nproblem_table ~\nNotice the denominator: sum(n) includes only cases retained after the missing-data decision.\nDisplay the ten most common substantive responses:\n~{r} problem_top10 &lt;- problem_table |&gt; slice_max(order_by = n, n = 10) |&gt; mutate( main_problem_analysis = forcats::fct_reorder( main_problem_analysis, percent ) )\nggplot(problem_top10, aes(x = percent, y = main_problem_analysis)) + geom_col(fill = “#5C8CC6”) + geom_text( aes(label = percent_label), hjust = -0.1 ) + scale_x_continuous( labels = scales::percent, limits = c(0, max(problem_top10$percent) * 1.18) ) + labs( title = “Most important problems facing the country”, subtitle = “Unweighted responses from Latino National Survey participants”, x = “Percent”, y = NULL, caption = “Missing and non-substantive responses excluded.” ) + theme_minimal() ~\n\n\n\n\n\n\nNote\n\n\n\nThese are unweighted sample descriptions. Lab 4 will introduce survey weights and population estimates."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#prepare-an-ordinal-measure",
+    "href": "Labs/fall2026/lab2/lab2.html#prepare-an-ordinal-measure",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "5. Prepare an ordinal measure",
+    "text": "5. Prepare an ordinal measure\nThe survey asked respondents how strongly they agreed or disagreed that poor people can get ahead in life if they work hard.\nInspect every category before recoding:\n~{r} lns |&gt; count(poor_work, sort = FALSE, .drop = FALSE) ~\nCreate an analysis version that treats “don’t know” as missing and orders the substantive responses.\n~{r} lns &lt;- lns |&gt; mutate( poor_work_analysis = poor_work, poor_work_analysis = na_if(poor_work_analysis, “dk”), poor_work_analysis = forcats::fct_relevel( poor_work_analysis, “strongly disagree”, “somewhat disagree”, “somewhat agree”, “strongly agree” ) ) ~\nCheck the result:\n~{r} lns |&gt; count(poor_work, poor_work_analysis, .drop = FALSE) ~\nCheckpoint 3: Why is the ordering important for both analysis and visualization? Why did we preserve poor_work?\nYour response:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#cross-tabulations-and-denominators",
+    "href": "Labs/fall2026/lab2/lab2.html#cross-tabulations-and-denominators",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "6. Cross-tabulations and denominators",
+    "text": "6. Cross-tabulations and denominators\nWe want to compare responses across immigrant generations. First inspect generation:\n~{r} lns |&gt; count(generation, sort = TRUE, .drop = FALSE) ~\nBuild a two-way table with counts and percentages within generation:\n~{r} poor_by_generation &lt;- lns |&gt; filter( !is.na(generation), !is.na(poor_work_analysis) ) |&gt; count(generation, poor_work_analysis) |&gt; group_by(generation) |&gt; mutate( group_total = sum(n), percent = n / group_total ) |&gt; ungroup()\npoor_by_generation ~\nBecause we group by generation before calculating percent, responses within each generation sum to 100%.\nVerify that claim:\n~{r} poor_by_generation |&gt; group_by(generation) |&gt; summarize(total_percent = sum(percent)) ~\n\n\n\n\n\n\nWarning\n\n\n\nThe most common cross-tabulation mistake is using the wrong denominator. “Of each generation, what percentage selected each response?” differs from “Of each response category, what percentage belongs to each generation?”"
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#visualize-a-subgroup-comparison",
+    "href": "Labs/fall2026/lab2/lab2.html#visualize-a-subgroup-comparison",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "7. Visualize a subgroup comparison",
+    "text": "7. Visualize a subgroup comparison\nA proportional stacked bar chart shows the full response distribution within each generation.\n~{r} ggplot( poor_by_generation, aes( x = generation, y = percent, fill = poor_work_analysis ) ) + geom_col(position = “fill”) + scale_y_continuous(labels = scales::percent) + scale_fill_brewer(palette = “Blues”, direction = 1) + labs( title = “Belief that poor people can get ahead through hard work”, subtitle = “Response distribution by immigrant generation”, x = “Generation”, y = “Percent within generation”, fill = “Response”, caption = “Unweighted LNS sample; don’t-know responses excluded.” ) + theme_minimal() + theme(legend.position = “bottom”) ~\nA grouped point display may make particular comparisons easier:\n~{r} ggplot( poor_by_generation, aes( x = generation, y = percent, color = poor_work_analysis, group = poor_work_analysis ) ) + geom_point(size = 3, position = position_dodge(width = 0.4)) + geom_line(position = position_dodge(width = 0.4)) + scale_y_continuous(labels = scales::percent) + labs( title = “Views of hard work and mobility across generations”, x = “Generation”, y = “Percent within generation”, color = “Response” ) + theme_minimal() + theme(legend.position = “bottom”) ~\nCheckpoint 4: Which display better communicates the substantive pattern? Name one conclusion the figure supports and one conclusion it does not support.\nYour response:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#items-indexes-and-scales",
+    "href": "Labs/fall2026/lab2/lab2.html#items-indexes-and-scales",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "8. Items, indexes, and scales",
+    "text": "8. Items, indexes, and scales\nA survey item is one question or recorded measure. An index combines multiple indicators according to a rule, often by adding them. A scale uses multiple items intended to measure a common underlying construct and should be evaluated for conceptual and empirical coherence.\nThe LNS includes an index of reported discrimination experiences.\n~{r} lns |&gt; count(discrimination_index, sort = FALSE, .drop = FALSE)\nlns |&gt; summarize( valid_n = sum(!is.na(discrimination_index)), mean = mean(discrimination_index, na.rm = TRUE), median = median(discrimination_index, na.rm = TRUE), standard_deviation = sd(discrimination_index, na.rm = TRUE) ) ~\nCreate a simpler indicator of whether the respondent reports at least one experience:\n~{r} lns &lt;- lns |&gt; mutate( any_discrimination = case_when( is.na(discrimination_index) ~ NA, discrimination_index == 0 ~ “No reported experience”, discrimination_index &gt; 0 ~ “One or more experiences” ), any_discrimination = factor( any_discrimination, levels = c(“No reported experience”, “One or more experiences”) ) )\nlns |&gt; count(any_discrimination) |&gt; mutate(percent = n / sum(n)) ~\nCheckpoint 5: What information is lost when the index is converted into a yes/no indicator? When might the simpler indicator still be useful?\nYour response:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#guided-work-checklist",
+    "href": "Labs/fall2026/lab2/lab2.html#guided-work-checklist",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "Guided-work checklist",
+    "text": "Guided-work checklist\nBefore beginning the independent section, confirm that you can:\n\nmatch descriptive statistics to variable types;\ndistinguish counts from percentages;\nidentify the denominator in a percentage;\ncreate an ordered factor;\nbuild a two-way table with within-group percentages;\nexplain why a chart is a statistical argument, not decoration;\ndistinguish an item, index, and scale; and\ndescribe results as unweighted sample patterns at this stage."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#question-1-inspect-and-prepare-the-measure",
+    "href": "Labs/fall2026/lab2/lab2.html#question-1-inspect-and-prepare-the-measure",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "Question 1: Inspect and prepare the measure",
+    "text": "Question 1: Inspect and prepare the measure\nProduce a complete frequency table for latino_work. Create latino_work_analysis by handling non-substantive responses and ordering the substantive categories.\nShow a table that verifies the recode.\n~{r} # Your code ~\nExplain each decision:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#question-2-describe-the-distribution",
+    "href": "Labs/fall2026/lab2/lab2.html#question-2-describe-the-distribution",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "Question 2: Describe the distribution",
+    "text": "Question 2: Describe the distribution\nCreate a table containing counts and percentages for latino_work_analysis. Then create a clearly labelled bar chart.\n~{r} # Your code ~\nWrite two or three sentences describing the distribution. Identify the denominator and state that the estimates are unweighted."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#question-3-compare-generations",
+    "href": "Labs/fall2026/lab2/lab2.html#question-3-compare-generations",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "Question 3: Compare generations",
+    "text": "Question 3: Compare generations\nCreate a cross-tabulation of latino_work_analysis by generation with percentages calculated within generation. Verify that percentages sum to 100% within each generation.\n~{r} # Your code ~"
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#question-4-visualize-and-interpret",
+    "href": "Labs/fall2026/lab2/lab2.html#question-4-visualize-and-interpret",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "Question 4: Visualize and interpret",
+    "text": "Question 4: Visualize and interpret\nCreate one graphic that communicates the comparison across generations. You may adapt either guided example, but make deliberate choices about labels, ordering, colors, and the legend.\n~{r} # Your code ~\nWrite a short interpretation containing:\n\nthe principal descriptive pattern;\none comparison supported by the figure;\none claim the analysis cannot support; and\none question you would investigate next."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#question-5-measurement-reflection",
+    "href": "Labs/fall2026/lab2/lab2.html#question-5-measurement-reflection",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "Question 5: Measurement reflection",
+    "text": "Question 5: Measurement reflection\nThe survey asks separately whether poor people and Latinos can get ahead through hard work. In one paragraph, explain why these are not interchangeable measures. Discuss what each might capture and what we could learn by analyzing them together."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#submission",
+    "href": "Labs/fall2026/lab2/lab2.html#submission",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "Submission",
+    "text": "Submission\nSubmit the completed QMD source file and rendered HTML file. Restart R and render from a clean session before submitting."
+  },
+  {
+    "objectID": "Labs/fall2026/lab2/lab2.html#reference-materials",
+    "href": "Labs/fall2026/lab2/lab2.html#reference-materials",
+    "title": "Lab 2: Describing and Visualizing Survey Responses",
+    "section": "Reference materials",
+    "text": "Reference materials\n\nR for Data Science: Data Transformation\nR for Data Science: Data Visualization\nggplot2 documentation\nLatino National Survey questionnaire and codebook in the course repository"
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html",
+    "href": "assignments/fall2026/poll-autopsy.html",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "",
+    "text": "Poll results often reach the public as a headline, a chart, or a sentence about what “Americans think.” A responsible analyst must work backward from those claims to the research design.\nIn this assignment, you will select a recently published public-opinion poll, reconstruct how it was conducted, identify its principal strengths and vulnerabilities, and determine whether one public claim is supported by the evidence.\nThis assignment is an evaluation of methodological reasoning—not a hunt for a “bad poll.” Every survey involves tradeoffs. Your task is to identify those tradeoffs accurately and explain their consequences."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#purpose",
+    "href": "assignments/fall2026/poll-autopsy.html#purpose",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "",
+    "text": "Poll results often reach the public as a headline, a chart, or a sentence about what “Americans think.” A responsible analyst must work backward from those claims to the research design.\nIn this assignment, you will select a recently published public-opinion poll, reconstruct how it was conducted, identify its principal strengths and vulnerabilities, and determine whether one public claim is supported by the evidence.\nThis assignment is an evaluation of methodological reasoning—not a hunt for a “bad poll.” Every survey involves tradeoffs. Your task is to identify those tradeoffs accurately and explain their consequences."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#learning-objectives",
+    "href": "assignments/fall2026/poll-autopsy.html#learning-objectives",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nThis assignment assesses whether you can:\n\ndistinguish the target population, sampling frame, sample, and respondents;\nidentify the sampling or recruitment method and survey mode;\nevaluate question wording, ordering, and measurement;\ndistinguish sampling error from coverage, nonresponse, measurement, and processing error;\nassess transparency and missing methodological information;\nevaluate whether a public claim matches the population, question, estimate, and uncertainty; and\ncommunicate a technical assessment clearly to a nontechnical reader."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#select-a-poll",
+    "href": "assignments/fall2026/poll-autopsy.html#select-a-poll",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Select a poll",
+    "text": "Select a poll\nChoose a public-opinion poll released within the last two years. The poll must include enough public documentation to locate:\n\na report, article, or release presenting findings;\nthe exact questionnaire or topline wording; and\na methodology statement.\n\nElection, policy, social, and public-affairs polls are all acceptable. A news story that mentions a poll but does not link to the questionnaire or methodology is not sufficient by itself.\nYou may select a poll from a news organization, university, government agency, nonprofit research center, professional polling firm, or advocacy organization. The sponsor’s identity is relevant context, but it is not evidence that a poll is either credible or flawed.\nObtain approval before using a poll that does not provide the three required forms of documentation."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#deliverables",
+    "href": "assignments/fall2026/poll-autopsy.html#deliverables",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Deliverables",
+    "text": "Deliverables\nSubmit:\n\na Word document or PDF; and\nworking links or saved copies of the results release, questionnaire, and methodology.\n\nQuarto is optional for this assignment. The assignment evaluates survey-methodological reasoning, not document-production software.\nRecommended length: approximately 1,000–1,250 words, excluding the design summary and references."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#part-1-identify-the-public-claim",
+    "href": "assignments/fall2026/poll-autopsy.html#part-1-identify-the-public-claim",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Part 1: Identify the public claim",
+    "text": "Part 1: Identify the public claim\nSelect one consequential claim from the poll’s report, headline, chart, press release, or related news coverage.\nRecord:\n\nthe claim in a short quotation or precise paraphrase;\nwhere it appeared;\nthe population to which the claim refers;\nthe estimate or comparison supporting it; and\nwhy the claim matters.\n\nDo not evaluate the claim yet."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#part-2-reconstruct-the-design",
+    "href": "assignments/fall2026/poll-autopsy.html#part-2-reconstruct-the-design",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Part 2: Reconstruct the design",
+    "text": "Part 2: Reconstruct the design\nComplete the following table. Write “not disclosed” when information cannot be located. Do not infer an answer merely because a particular method is common.\n\n\n\nDesign element\nWhat the poll reports\nWhere you found it\n\n\n\n\nSponsor and research organization\n\n\n\n\nTarget population\n\n\n\n\nGeographic coverage\n\n\n\n\nSampling frame or respondent source\n\n\n\n\nProbability or nonprobability selection\n\n\n\n\nRecruitment method\n\n\n\n\nSurvey mode\n\n\n\n\nLanguages offered\n\n\n\n\nField dates\n\n\n\n\nSample size\n\n\n\n\nEligibility or screening rules\n\n\n\n\nCompletion or quality rules\n\n\n\n\nWeighting variables and method\n\n\n\n\nReported uncertainty\n\n\n\n\nQuestionnaire and order available?\n\n\n\n\nResponse rate or participation metric\n\n\n\n\nFunding, sponsor, and data disclosure\n\n\n\n\n\nAfter completing the table, write one paragraph explaining how a person moved from the target population into the final analytic sample. Be explicit about what remains unknown."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#part-3-examine-the-measure",
+    "href": "assignments/fall2026/poll-autopsy.html#part-3-examine-the-measure",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Part 3: Examine the measure",
+    "text": "Part 3: Examine the measure\nLocate the exact question or questions underlying your selected claim.\nEvaluate:\n\nthe concept the question is intended to measure;\ncomprehension and potentially ambiguous terms;\nthe information respondents must retrieve;\nthe judgment respondents must make;\nresponse options and their ordering;\nwhether “don’t know,” refusal, “none,” or neutral options are available;\nrelevant preceding questions or experimental conditions;\nwhether the mode could affect responses;\nwhether the question wording matches the language used in the public claim; and\nwhether multilingual measurement or translation raises a comparability question.\n\nPropose one revision only if a change would meaningfully improve the measure. Explain both the likely benefit and any new tradeoff created by your revision."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#part-4-diagnose-potential-error",
+    "href": "assignments/fall2026/poll-autopsy.html#part-4-diagnose-potential-error",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Part 4: Diagnose potential error",
+    "text": "Part 4: Diagnose potential error\nUse the total survey error framework. Discuss the most relevant threats rather than mechanically listing every possible error.\nAddress at least three of the following:\n\ncoverage error;\nsampling error;\nnonresponse or participation bias;\nmeasurement error;\ninterviewer or mode effects;\nrespondent quality or fraud;\ncoding or processing error;\nweighting or adjustment error; and\nerrors introduced through analysis, visualization, or reporting.\n\nFor each threat:\n\nidentify the feature of the design that creates or limits the risk;\nexplain the direction or consequence when it can be anticipated;\ndistinguish evidence from speculation; and\nidentify information that would help evaluate the risk.\n\nA methodological limitation does not automatically invalidate a poll. Explain how much it matters for the selected claim."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#part-5-evaluate-the-claim",
+    "href": "assignments/fall2026/poll-autopsy.html#part-5-evaluate-the-claim",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Part 5: Evaluate the claim",
+    "text": "Part 5: Evaluate the claim\nReturn to the claim from Part 1 and answer:\n\nDoes the claim match the target population and observed sample?\nDoes it accurately represent the question wording and response options?\nIs it based on a level, difference, trend, or subgroup comparison?\nIs uncertainty handled appropriately?\nDoes the claim imply causation, change, consensus, or precision the design cannot establish?\nWould a more defensible formulation materially change its meaning?\n\nConclude with one of these judgments:\n\nSupported as written\nSupported with qualifications\nNot supported as written\nCannot be assessed from the disclosed information\n\nThen rewrite the claim in the strongest form you believe the evidence supports."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#part-6-transparency-assessment",
+    "href": "assignments/fall2026/poll-autopsy.html#part-6-transparency-assessment",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Part 6: Transparency assessment",
+    "text": "Part 6: Transparency assessment\nUsing the AAPOR Disclosure Standards, identify:\n\ntwo disclosure practices the poll handles well;\ntwo important details that are absent or difficult to locate; and\nthe single additional piece of information that would most improve your evaluation."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#submission-checklist",
+    "href": "assignments/fall2026/poll-autopsy.html#submission-checklist",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Submission checklist",
+    "text": "Submission checklist\nBefore submitting, confirm that:\n\nall three required source documents are included;\nthe exact question wording has been checked;\nthe design table distinguishes “not disclosed” from inference;\nat least three relevant sources of error are analyzed;\nthe selected public claim receives an explicit judgment;\nthe final rewritten claim matches the evidence;\nsources are cited and links work;\nquotations are brief and accurate; and\nthe submitted document is complete, readable, and professionally formatted."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#grading-rubric",
+    "href": "assignments/fall2026/poll-autopsy.html#grading-rubric",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Grading rubric",
+    "text": "Grading rubric\n\n\n\n\n\n\n\n\n\nCriterion\nExcellent\nDeveloping\nPoints\n\n\n\n\nDesign reconstruction\nAccurately identifies the population, sample source, recruitment, mode, fieldwork, weighting, and uncertainty; clearly labels missing information\nConfuses key design elements, guesses at undisclosed information, or omits consequential features\n20\n\n\nMeasurement analysis\nConnects exact wording and response design to the construct and response process; revision is justified and tradeoffs are recognized\nRelies on general reactions to wording or proposes changes without explaining measurement consequences\n20\n\n\nTotal survey error reasoning\nPrioritizes relevant errors, connects each to design evidence, distinguishes evidence from speculation, and explains consequences\nLists generic errors without showing how they arise or why they matter for the selected claim\n25\n\n\nEvaluation of public claim\nJudgment follows from population, measurement, estimate, comparison, and uncertainty; rewritten claim is precise\nJudgment is asserted rather than demonstrated or does not match the documented evidence\n20\n\n\nTransparency and sources\nUses release, questionnaire, methods, and AAPOR standards; citations and links make the evaluation auditable\nRelies primarily on secondary coverage or leaves evidence difficult to verify\n10\n\n\nClarity and professional presentation\nOrganized, concise, readable, proofread, and professionally formatted\nDifficult to follow, substantially over length, or incomplete\n5\n\n\nTotal\n\n\n100"
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#use-of-ai",
+    "href": "assignments/fall2026/poll-autopsy.html#use-of-ai",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Use of AI",
+    "text": "Use of AI\nGenerative AI may be used to improve organization or edit prose if such use is disclosed. You remain responsible for locating and reading the original documentation, verifying every factual statement, evaluating the methodology, and writing the final judgment. Do not ask an AI system to evaluate a poll from a summary you have not independently checked."
+  },
+  {
+    "objectID": "assignments/fall2026/poll-autopsy.html#useful-references",
+    "href": "assignments/fall2026/poll-autopsy.html#useful-references",
+    "title": "Individual Assignment 1: Poll Autopsy",
+    "section": "Useful references",
+    "text": "Useful references\n\nAAPOR Best Practices for Survey Research\nAAPOR Disclosure Standards\nAAPOR Polling Accuracy\nCourse readings on total survey error, question wording, sampling, modes, and uncertainty"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "",
+    "text": "The class will collaborate with Univision News on a live 2026 public-opinion research project. An additional University of Texas unit may join the partnership; that collaboration will be announced once confirmed.\nStudents will encounter the linked decisions that shape professional polling: what stakeholders need to know, what a survey can measure, who must be represented, how respondents will be recruited, how the instrument will perform in English and Spanish, how fieldwork will be monitored, and how findings can be communicated responsibly."
+  },
+  {
+    "objectID": "project.html#the-central-course-project",
+    "href": "project.html#the-central-course-project",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "",
+    "text": "The class will collaborate with Univision News on a live 2026 public-opinion research project. An additional University of Texas unit may join the partnership; that collaboration will be announced once confirmed.\nStudents will encounter the linked decisions that shape professional polling: what stakeholders need to know, what a survey can measure, who must be represented, how respondents will be recruited, how the instrument will perform in English and Spanish, how fieldwork will be monitored, and how findings can be communicated responsibly."
+  },
+  {
+    "objectID": "project.html#final-products",
+    "href": "project.html#final-products",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Final products",
+    "text": "Final products\nThe project culminates in three connected products:\n\nOne coauthored class report for a public and policy audience.\nA partner briefing or public presentation communicating the principal findings.\nIndividual analysis memos demonstrating that every student can independently analyze and interpret the poll.\n\nThe class report will not be an anthology of separate student papers. Section teams will have primary ownership of particular research questions, but the class will use common definitions, methods, graphics standards, and editorial review so the final product reads as one coherent report."
+  },
+  {
+    "objectID": "project.html#production-workflow-and-milestones",
+    "href": "project.html#production-workflow-and-milestones",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Production workflow and milestones",
+    "text": "Production workflow and milestones\n\n1. Project charter\nDefine the research objectives, intended audiences, claims the study should support, roles, decision rules, confidentiality expectations, production calendar, and approval process.\n\n\n2. Measurement package\nMap concepts to indicators; identify established questions where appropriate; draft new items; document response options, order, randomization, and design rationale; and identify questions requiring partner decisions.\n\n\n3. Testing package\nConduct cognitive interviews or structured pretesting, document problems consistently, assess English/Spanish equivalence, revise the instrument, and preserve an issue and decision log.\n\n\n4. Representation plan\nDefine the target population and evaluate sampling frames, sources, modes, recruitment, coverage, nonresponse, language access, weighting needs, and inferential limitations.\n\n\n5. Instrument quality assurance\nTest survey flow, branching, randomization, mobile display, response requirements, bilingual presentation, embedded data, quotas, terminations, and respondent-facing messages.\n\n\n6. Fieldwork and data quality\nDevelop monitoring expectations for completes, sample composition, response patterns, speed, duplication, open-ended quality, missingness, and other indicators. Document decisions rather than creating post hoc rules after seeing results.\n\n\n7. Analysis plan\nSpecify priority outcomes, subgroup definitions, derived variables, use of weights, uncertainty, planned tables and graphics, multiple-comparison risks, and rules for interpreting differences.\n\n\n8. Analysis production\nCreate a common quality-controlled data file and shared functions or templates. Section teams conduct reproducible analysis, peer-check one another’s estimates, and maintain a results log.\n\n\n9. Report and briefing\nIntegrate an executive summary, methods, substantive sections, tables, graphics, limitations, and supporting documentation. Rehearse the briefing and verify that every spoken and written claim is supported by an approved result.\n\n\n10. Handoff and retrospective\nArchive approved code and documentation, identify unresolved questions, record lessons for a future polling cycle, and complete individual contribution statements."
+  },
+  {
+    "objectID": "project.html#team-structure",
+    "href": "project.html#team-structure",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Team structure",
+    "text": "Team structure\nThe expected enrollment is 12 students. The default structure will be four stable groups of three. If enrollment changes:\n\n12–13 students: four groups of three to four;\n14–15 students: five groups of approximately three; and\nanother enrollment total: groups will be adjusted to avoid isolating a student or creating an unnecessarily large team.\n\n\nStable substantive groups\nEach group will take primary responsibility for:\n\none research domain or question module;\ncognitive testing and revision of that module;\nits portion of the analysis plan;\nreproducible analysis of the corresponding results; and\none substantive section of the final report and presentation.\n\nThe substantive domains will be assigned after the research objectives and partner priorities are confirmed.\n\n\nCross-group production teams\nSeveral responsibilities affect the entire poll and should not belong permanently to one substantive group. At major production stages, one member from each group will join a temporary cross-group team for tasks such as:\n\nEnglish/Spanish consistency and cognitive-testing synthesis;\ninstrument programming and quality assurance;\ndata cleaning, weighting, and estimate verification;\ngraphics and editorial consistency; and\npresentation and partner-briefing preparation.\n\nThis matrix structure gives groups continuity while distributing the less visible technical and editorial labor. Roles may rotate so students experience more than one part of the production process.\nSpecialization does not excuse students from understanding the full research design."
+  },
+  {
+    "objectID": "project.html#analytical-accountability",
+    "href": "project.html#analytical-accountability",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Analytical accountability",
+    "text": "Analytical accountability\nThe class may share a clean analysis file, variable dictionary, weighting instructions, graphic theme, and approved helper functions. Each published estimate must nevertheless have:\n\nreproducible code;\na named primary analyst;\nan independent checker;\na link to its exact table or figure;\na documented denominator and weight;\nan interpretation that matches the evidence; and\napproval for release."
+  },
+  {
+    "objectID": "project.html#working-with-a-live-partner",
+    "href": "project.html#working-with-a-live-partner",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Working with a live partner",
+    "text": "Working with a live partner\nPartner needs and production constraints may require schedule changes. Such changes are part of the learning experience, but grading expectations will remain transparent.\nSome materials may be confidential, embargoed, or restricted. Students may not circulate instruments, data, partner communications, preliminary estimates, or unpublished findings unless explicitly authorized. Restricted materials may not be entered into public generative-AI systems."
+  },
+  {
+    "objectID": "project.html#authorship-branding-and-data-access",
+    "href": "project.html#authorship-branding-and-data-access",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Authorship, branding, and data access",
+    "text": "Authorship, branding, and data access\nThe intention is to recognize meaningful student contributions and, when feasible, allow students to use the data for subsequent research or teaching portfolios. Final authorship, acknowledgement, branding, release, and continuing data access will follow the partnership agreement, consent and data-use restrictions, and documented contributions. Enrollment in the course alone does not guarantee public authorship or unrestricted data access."
+  },
+  {
+    "objectID": "readings.html",
+    "href": "readings.html",
+    "title": "Readings",
+    "section": "",
+    "text": "The reading plan combines foundational survey methodology with current professional guidance and applied cases. Required readings should normally total approximately 40–70 pages per week; selections marked Recommended provide depth, alternative explanations, or useful reference material.\nReadings that require library access will be distributed through Canvas. Public resources are linked below."
+  },
+  {
+    "objectID": "readings.html#core-references-used-across-the-semester",
+    "href": "readings.html#core-references-used-across-the-semester",
+    "title": "Readings",
+    "section": "Core references used across the semester",
+    "text": "Core references used across the semester\n\nGroves, Robert M., Floyd J. Fowler Jr., Mick P. Couper, James M. Lepkowski, Eleanor Singer, and Roger Tourangeau. Survey Methodology, 2nd ed.\nTourangeau, Roger, Lance J. Rips, and Kenneth Rasinski. The Psychology of Survey Response.\nDillman, Don A., Jolene D. Smyth, and Leah Melani Christian. Internet, Phone, Mail, and Mixed-Mode Surveys: The Tailored Design Method, 4th ed.\nVannette, David L., and Jon A. Krosnick, eds. The Palgrave Handbook of Survey Research.\nAmerican Association for Public Opinion Research. Standards, ethics, reports, and professional guidance.\n\nStudents are not expected to read every core reference cover to cover."
+  },
+  {
+    "objectID": "readings.html#session-1-polls-evidence-and-error",
+    "href": "readings.html#session-1-polls-evidence-and-error",
+    "title": "Readings",
+    "section": "Session 1 · Polls, evidence, and error",
+    "text": "Session 1 · Polls, evidence, and error\nRequired\n\nAAPOR. 2024 Pre-Election Polling: Executive Summary.\nAAPOR. Polling Accuracy.\nGroves et al., Survey Methodology, chapter 2, “Inference and Error in Surveys” (selected sections).\n\nRecommended\n\nAAPOR. Full Task Force Report on 2024 Pre-Election Polling.\nAsher, Herbert. Polling and the Public, introductory chapter."
+  },
+  {
+    "objectID": "readings.html#session-2-research-objectives-ethics-and-total-survey-error",
+    "href": "readings.html#session-2-research-objectives-ethics-and-total-survey-error",
+    "title": "Readings",
+    "section": "Session 2 · Research objectives, ethics, and total survey error",
+    "text": "Session 2 · Research objectives, ethics, and total survey error\nRequired\n\nAAPOR. Code of Professional Ethics and Practices.\nAAPOR. Best Practices for Survey Research.\nGroves et al., chapter 3, “Target Populations, Sampling Frames, and Coverage Error” (overview) and the total survey error framework from chapter 2.\n\nRecommended\n\nAAPOR. Disclosure Standards.\nBiemer, Paul P. “Total Survey Error: Design, Implementation, and Evaluation” (selection)."
+  },
+  {
+    "objectID": "readings.html#session-3-concepts-measurement-and-questionnaire-architecture",
+    "href": "readings.html#session-3-concepts-measurement-and-questionnaire-architecture",
+    "title": "Readings",
+    "section": "Session 3 · Concepts, measurement, and questionnaire architecture",
+    "text": "Session 3 · Concepts, measurement, and questionnaire architecture\nRequired\n\nFowler, Floyd J. Survey Research Methods, selections on measurement and question design.\nTourangeau, Rips, and Rasinski, selections on the four-stage response process: comprehension, retrieval, judgment, and response.\nSchuman, Howard, and Stanley Presser. Questions and Answers in Attitude Surveys, selected examples.\n\nRecommended\n\nKrosnick, Jon A., and Stanley Presser. “Question and Questionnaire Design,” in Handbook of Survey Research.\nConverse, Jean M., and Stanley Presser. Survey Questions: Handcrafting the Standardized Questionnaire."
+  },
+  {
+    "objectID": "readings.html#session-4-wording-response-options-order-and-sensitive-questions",
+    "href": "readings.html#session-4-wording-response-options-order-and-sensitive-questions",
+    "title": "Readings",
+    "section": "Session 4 · Wording, response options, order, and sensitive questions",
+    "text": "Session 4 · Wording, response options, order, and sensitive questions\nRequired\n\nPew Research Center. Methods 101: Survey Question Wording.\nSchwarz, Norbert. “Self-Reports: How the Questions Shape the Answers.”\nTourangeau and Yan. “Sensitive Questions in Surveys.”\n\nRecommended\n\nPew Research Center. When Online Survey Respondents Only ‘Select Some That Apply’.\nHolbrook, Allyson L., et al. selections on social desirability and survey mode."
+  },
+  {
+    "objectID": "readings.html#session-5-cognitive-testing-and-multilingual-equivalence",
+    "href": "readings.html#session-5-cognitive-testing-and-multilingual-equivalence",
+    "title": "Readings",
+    "section": "Session 5 · Cognitive testing and multilingual equivalence",
+    "text": "Session 5 · Cognitive testing and multilingual equivalence\nRequired\n\nWillis, Gordon B. Cognitive Interviewing: A Tool for Improving Questionnaire Design, selected chapters.\nU.S. Census Bureau. Cognitive Interview Protocol Guide, selected sections.\nSurvey Research Center. Guidelines for Best Practice in Cross-Cultural Surveys, selections on questionnaire development, translation, adaptation, and pretesting.\n\nRecommended\n\nHarkness, Janet A., et al. selections on translation and cultural comparability.\nU.S. Census Bureau, selected bilingual cognitive-testing report on race and Hispanic-origin measurement."
+  },
+  {
+    "objectID": "readings.html#session-6-sampling-and-representation",
+    "href": "readings.html#session-6-sampling-and-representation",
+    "title": "Readings",
+    "section": "Session 6 · Sampling and representation",
+    "text": "Session 6 · Sampling and representation\nRequired\n\nGroves et al., chapters on sampling and coverage.\nPew Research Center. Comparing Two Types of Online Survey Samples.\nBaker et al. “Report of the AAPOR Task Force on Non-Probability Sampling,” executive summary and selected sections.\n\nRecommended\n\nMercer, Andrew, and Arnold Lau. Benchmarking Methodology.\nKennedy et al. “Evaluating Online Nonprobability Surveys.”"
+  },
+  {
+    "objectID": "readings.html#session-7-modes-recruitment-coverage-and-nonresponse",
+    "href": "readings.html#session-7-modes-recruitment-coverage-and-nonresponse",
+    "title": "Readings",
+    "section": "Session 7 · Modes, recruitment, coverage, and nonresponse",
+    "text": "Session 7 · Modes, recruitment, coverage, and nonresponse\nRequired\n\nDillman, Smyth, and Christian, selected chapters on tailored design and mixed modes.\nPew Research Center. The Challenge of Mode-of-Interview Effects in Public Opinion Polls.\nGroves and Peytcheva. “The Impact of Nonresponse Rates on Nonresponse Bias.”\n\nRecommended\n\nAAPOR, Transitions from Telephone Surveys to Self-Administered and Mixed-Mode Surveys, executive summary.\nPew Research Center. Text Message Notification for Web Surveys.\nAAPOR, Texting for Research: A Brief Guide to the Regulatory Environment and Operational Considerations."
+  },
+  {
+    "objectID": "readings.html#session-8-programming-mobile-design-randomization-and-qa",
+    "href": "readings.html#session-8-programming-mobile-design-randomization-and-qa",
+    "title": "Readings",
+    "section": "Session 8 · Programming, mobile design, randomization, and QA",
+    "text": "Session 8 · Programming, mobile design, randomization, and QA\nRequired\n\nU.S. Census Bureau. Design Guidelines for U.S. Census Bureau Web Surveys and Digital Forms, selected sections.\nDillman, Smyth, and Christian, selections on visual design and web/mobile questionnaires.\nCourse instrument quality-assurance protocol and test-case template.\n\nRecommended\n\nCouper, Mick P. selections on web survey design.\nAAPOR disclosure checklist as a design-stage audit tool."
+  },
+  {
+    "objectID": "readings.html#session-9-fieldwork-paradata-fraud-and-respondent-quality",
+    "href": "readings.html#session-9-fieldwork-paradata-fraud-and-respondent-quality",
+    "title": "Readings",
+    "section": "Session 9 · Fieldwork, paradata, fraud, and respondent quality",
+    "text": "Session 9 · Fieldwork, paradata, fraud, and respondent quality\nRequired\n\nAAPOR. Data Quality Metrics for Online Samples: Considerations for Study Design and Analysis, executive summary and selected sections.\nPew Research Center. Assessing the Risks to Online Polls From Bogus Respondents, selected sections.\nAAPOR, selected guidance on falsification and quality controls.\n\nRecommended\n\nPew Research Center. Answers That Did Not Match the Question Were Concentrated in Opt-In Polls.\nCourse fieldwork monitoring examples."
+  },
+  {
+    "objectID": "readings.html#session-10-cleaning-coding-weighting-and-documentation",
+    "href": "readings.html#session-10-cleaning-coding-weighting-and-documentation",
+    "title": "Readings",
+    "section": "Session 10 · Cleaning, coding, weighting, and documentation",
+    "text": "Session 10 · Cleaning, coding, weighting, and documentation\nRequired\n\nValliant, Richard, Jill A. Dever, and Frauke Kreuter. Practical Tools for Designing and Weighting Survey Samples, selected weighting chapters.\nPew Research Center. For Weighting Online Opt-In Samples, What Matters Most?.\nLumley, Thomas. Complex Surveys: A Guide to Analysis Using R, introductory selections.\n\nRecommended\n\nPew Research Center. How Different Weighting Methods Work.\nPew Research Center. Variability of Survey Estimates."
+  },
+  {
+    "objectID": "readings.html#session-11-estimation-uncertainty-and-subgroup-analysis",
+    "href": "readings.html#session-11-estimation-uncertainty-and-subgroup-analysis",
+    "title": "Readings",
+    "section": "Session 11 · Estimation, uncertainty, and subgroup analysis",
+    "text": "Session 11 · Estimation, uncertainty, and subgroup analysis\nRequired\n\nGelman, Andrew, and Jennifer Hill, selected discussion of estimates, uncertainty, and comparisons.\nLumley, Complex Surveys, selections on weighted estimation and regression.\nAAPOR guidance on interpreting margins of sampling error for probability and nonprobability samples.\n\nRecommended\n\nWasserstein, Schirm, and Lazar. “Moving to a World Beyond ‘p &lt; 0.05.’”\nCourse case study comparing unweighted, weighted, and model-based estimates."
+  },
+  {
+    "objectID": "readings.html#session-12-visualization-and-public-interpretation",
+    "href": "readings.html#session-12-visualization-and-public-interpretation",
+    "title": "Readings",
+    "section": "Session 12 · Visualization and public interpretation",
+    "text": "Session 12 · Visualization and public interpretation\nRequired\n\nCairo, Alberto. How Charts Lie, selected chapters.\nSchwabish, Jonathan A. Better Data Visualizations, selected chapters.\nAAPOR. Disclosure Standards.\nTwo contrasting public polling releases selected during the semester.\n\nRecommended\n\nHealy, Kieran. Data Visualization: A Practical Introduction, selected chapters.\nEvergreen, Stephanie D. H. Effective Data Visualization, selections on accessibility."
+  },
+  {
+    "objectID": "readings.html#session-13-reporting-peer-review-and-partner-briefing",
+    "href": "readings.html#session-13-reporting-peer-review-and-partner-briefing",
+    "title": "Readings",
+    "section": "Session 13 · Reporting, peer review, and partner briefing",
+    "text": "Session 13 · Reporting, peer review, and partner briefing\nRequired\n\nAAPOR Transparency Initiative disclosure checklist.\nSelected high-quality public polling reports from Univision, Pew Research Center, and other news or research organizations.\nCourse report style guide and reproducibility checklist.\n\nNo additional long reading will be assigned so teams can concentrate on the full report draft."
+  },
+  {
+    "objectID": "readings.html#session-14-presentation-and-retrospective",
+    "href": "readings.html#session-14-presentation-and-retrospective",
+    "title": "Readings",
+    "section": "Session 14 · Presentation and retrospective",
+    "text": "Session 14 · Presentation and retrospective\nThere is no new reading. Students will review the final report, peer feedback, decision log, and their own contribution record before class."
+  },
+  {
+    "objectID": "readings.html#reading-list-principles",
+    "href": "readings.html#reading-list-principles",
+    "title": "Readings",
+    "section": "Reading-list principles",
+    "text": "Reading-list principles\nThe final list will be adjusted to:\n\nkeep weekly workload realistic;\nprovide accessible alternatives for highly technical material;\ninclude work by a diverse set of survey methodologists;\nconnect readings directly to that week’s project decision;\ndistinguish required selections from useful reference works; and\nincorporate timely materials that emerge during the 2026 polling cycle."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Survey Design and Analysis",
+    "section": "",
+    "text": "Instructor\nSergio I. García-Ríos\n\n\nMeeting\nMondays, 9:00 a.m.–12:00 p.m.\n\n\nLocation\nSRH 3.214\n\n\nOffice hours\nBy appointment\n\n\nTeaching assistant\nTo be announced\n\n\nCourse partners\nUnivision News and an additional UT unit to be announced"
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "Survey Design and Analysis",
+    "section": "",
+    "text": "Instructor\nSergio I. García-Ríos\n\n\nMeeting\nMondays, 9:00 a.m.–12:00 p.m.\n\n\nLocation\nSRH 3.214\n\n\nOffice hours\nBy appointment\n\n\nTeaching assistant\nTo be announced\n\n\nCourse partners\nUnivision News and an additional UT unit to be announced"
+  },
+  {
+    "objectID": "index.html#course-overview",
+    "href": "index.html#course-overview",
+    "title": "Survey Design and Analysis",
+    "section": "Course overview",
+    "text": "Course overview\nThis course teaches students how to design, execute, evaluate, analyze, and communicate rigorous survey research. Rather than treating survey methodology as a collection of isolated techniques, we will organize the semester around the complete lifecycle of a major public-opinion poll.\nThe central applied experience will be a live partnership with Univision News. Students will participate in the stages of developing and executing a 2026 public-opinion poll, from defining research objectives and writing questions through quality assurance, analysis, and public communication. An additional University of Texas partner may join the collaboration.\nThe partnership gives students access to the practical decisions, compromises, deadlines, and ethical responsibilities that shape professional survey research. Because this is a real polling project, some dates and deliverables may change as fieldwork and partner needs evolve."
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Survey Design and Analysis",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of the semester, students will be able to:\n\nTranslate substantive and policy questions into a feasible survey research design.\nEvaluate probability and nonprobability samples using the total survey error framework.\nWrite, revise, translate, and test survey questions that measure concepts reliably and validly.\nAssess tradeoffs among survey modes, sampling frames, recruitment strategies, and fieldwork protocols.\nDevelop a questionnaire, survey flow, and quality-assurance plan suitable for professional fielding.\nDiagnose coverage, nonresponse, measurement, and data-quality problems.\nClean, document, weight, analyze, and visualize survey data reproducibly in R.\nQuantify and communicate uncertainty without overstating what a poll can establish.\nProduce accessible, ethical, and decision-relevant survey findings for academic, policy, and public audiences.\nCollaborate effectively on a time-sensitive research project with external partners."
+  },
+  {
+    "objectID": "index.html#course-structure",
+    "href": "index.html#course-structure",
+    "title": "Survey Design and Analysis",
+    "section": "Course structure",
+    "text": "Course structure\nThe course has two coordinated learning tracks. The survey-production track follows the lifecycle of the Univision poll. The R and statistics track builds the quantitative foundations students need to analyze survey data independently. Each week connects a methodological decision to a statistical or programming skill.\nThe survey-production track follows this cycle:\n\nPurpose and design: research objectives, stakeholders, ethics, and total survey error.\nMeasurement: concepts, question wording, response options, order effects, translation, and testing.\nRepresentation: target populations, frames, sampling, modes, recruitment, nonresponse, and weighting.\nProduction: questionnaire integration, programming, quality assurance, fieldwork, and documentation.\nAnalysis and communication: cleaning, uncertainty, subgroup analysis, visualization, reporting, and release.\n\nClass meetings will combine discussion, methodological workshops, R labs, project meetings, and production sprints. The schedule identifies the planned focus for each Monday."
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "Survey Design and Analysis",
+    "section": "Assessment",
+    "text": "Assessment\n\n\n\nComponent\nWeight\n\n\n\n\nPreparation and professional participation\n10%\n\n\nR and statistics labs\n25%\n\n\nIndividual methods assignments\n15%\n\n\nUnivision project milestones\n15%\n\n\nIndividual poll analysis memo\n10%\n\n\nCoauthored LBJ/Univision report and presentation\n20%\n\n\nIndividual reflection and contribution statement\n5%\n\n\nTotal\n100%\n\n\n\n\nPreparation and professional participation\nParticipation includes arriving prepared, contributing constructively, giving useful feedback, meeting production deadlines, documenting decisions, and supporting the work of the project team. Attendance matters because many workshops and partner activities cannot be recreated individually.\n\n\nR and statistics labs\nFive substantial labs teach R programming and the statistical foundations of survey analysis. Most of each lab is completed together during class through guided coding, interpretation, and troubleshooting. Students then complete a shorter “On Your Own” application individually. Topics include data wrangling, descriptive statistics, visualization, sampling and inference, survey weights, regression, predicted probabilities, and reproducible reporting.\n\n\nIndividual methods assignments\nThree short assignments require students to evaluate a published poll, diagnose and improve survey measurement, and defend a sampling and mode recommendation. These assignments ensure that each student develops independent methodological judgment.\n\n\nUnivision project milestones\nTeams will complete staged products such as a project charter, measurement module, cognitive-testing report, representation plan, instrument quality-assurance review, and analysis plan. Milestones are working documents that feed directly into the live poll and final report.\n\n\nIndividual poll analysis memo\nEach student will independently analyze a substantive question using the poll data. The memo must include reproducible R code, appropriate use of weights and uncertainty, at least one effective visualization, and a concise interpretation written for a policy or public audience.\n\n\nCoauthored report and presentation\nThe class will produce one coherent report using data from the poll. Teams will take primary responsibility for different substantive sections while reviewing and revising the full document. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.\n\n\nIndividual reflection and contribution statement\nEach student will document their contributions, explain important methodological decisions, evaluate the collaboration, and identify what they would change in a future survey project."
+  },
+  {
+    "objectID": "index.html#course-materials-and-software",
+    "href": "index.html#course-materials-and-software",
+    "title": "Survey Design and Analysis",
+    "section": "Course materials and software",
+    "text": "Course materials and software\nThere is no single textbook that covers the full course. Required readings will combine foundational survey-methodology research, recent methodological reports, applied examples, and documentation. Readings will be posted on the schedule and Canvas.\nWe will use R and RStudio or Posit Cloud for analysis and Quarto for reproducible documents. No prior mastery of R is required, but students are expected to practice consistently and seek help early."
+  },
+  {
+    "objectID": "index.html#communication-and-submission",
+    "href": "index.html#communication-and-submission",
+    "title": "Survey Design and Analysis",
+    "section": "Communication and submission",
+    "text": "Communication and submission\nThe course website is the public home for the syllabus, schedule, assignments, and labs. Canvas will be used for protected readings, grades, and assignment submission. The teaching team will explain the channel used for project communication during the first class.\nUnless an assignment says otherwise, reproducible work should include both the source file and the rendered output."
+  },
+  {
+    "objectID": "index.html#use-of-artificial-intelligence",
+    "href": "index.html#use-of-artificial-intelligence",
+    "title": "Survey Design and Analysis",
+    "section": "Use of artificial intelligence",
+    "text": "Use of artificial intelligence\nGenerative AI can support brainstorming, coding, editing, and troubleshooting, but it cannot substitute for methodological judgment or individual learning. Students must follow the instructions for each assignment, verify all AI-assisted work, protect confidential or embargoed project information, and disclose substantive AI assistance. No restricted survey instrument, respondent data, partner communication, or unpublished result may be entered into a public AI system without explicit authorization."
+  },
+  {
+    "objectID": "index.html#professional-and-ethical-responsibilities",
+    "href": "index.html#professional-and-ethical-responsibilities",
+    "title": "Survey Design and Analysis",
+    "section": "Professional and ethical responsibilities",
+    "text": "Professional and ethical responsibilities\nThis course may involve embargoed instruments, partner discussions, and unpublished results. Students must follow all confidentiality, data-security, attribution, and release rules established for the project. Participation in a course does not authorize independent public release of project materials or findings.\nCourse policies on accommodations, academic integrity, safety, religious observances, names and pronouns, and university resources will be aligned with current University and LBJ guidance and posted before the semester begins."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Fall 2026 Schedule",
+    "section": "",
+    "text": "The schedule follows the official UT Austin Fall 2026 calendar and the anticipated Univision polling cycle. Because this is a live project, milestone dates may shift. Changes will be announced in class and posted here."
+  },
+  {
+    "objectID": "schedule.html#at-a-glance",
+    "href": "schedule.html#at-a-glance",
+    "title": "Fall 2026 Schedule",
+    "section": "At a glance",
+    "text": "At a glance\n\n\n\n\n\n\n\n\n\nSession\nDate\nSurvey-production focus\nR/statistics lab or principal product\n\n\n\n\n1\nAug. 24\nWhy polls fail—and what good survey design requires\nPoll autopsy; R/Quarto setup\n\n\n2\nAug. 31\nResearch objectives, ethics, and total survey error\nLab 1: R workflow and survey data\n\n\n—\nSept. 7\nLabor Day—no class\n\n\n\n3\nSept. 14\nConcepts, measurement, and questionnaire architecture\nConstruct map\n\n\n4\nSept. 21\nQuestion wording, response options, order, and sensitive questions\nDraft question module\n\n\n5\nSept. 28\nCognitive interviewing, multilingual equivalence, and revision\nLab 2: Descriptives, measures, and visualization\n\n\n6\nOct. 5\nTarget populations, frames, probability and nonprobability samples\nSampling assessment\n\n\n7\nOct. 12\nModes, recruitment, coverage, nonresponse, and inference\nLab 3: Sampling, uncertainty, and comparisons\n\n\n8\nOct. 19\nQuestionnaire integration, programming, randomization, and QA\nProgrammed instrument and QA log\n\n\n9\nOct. 26\nFieldwork, paradata, fraud, respondent quality, and documentation\nFieldwork dashboard plan\n\n\n10\nNov. 2\nCleaning, coding, missing data, weights, and design effects\nLab 4: Weighted survey estimates\n\n\n11\nNov. 9\nEstimation, uncertainty, subgroup comparisons, and modeling\nAnalysis plan and production sprint\n\n\n12\nNov. 16\nModeling, visualization, interpretation, and communication\nLab 5: Regression and reproducible reporting\n\n\n—\nNov. 23\nFall break—no class\n\n\n\n13\nNov. 30\nReport production, peer review, and partner briefing rehearsal\nFull report draft\n\n\n14\nDec. 7\nFinal presentations, project retrospective, and handoff\nFinal report and presentation"
+  },
+  {
+    "objectID": "schedule.html#detailed-schedule",
+    "href": "schedule.html#detailed-schedule",
+    "title": "Fall 2026 Schedule",
+    "section": "Detailed schedule",
+    "text": "Detailed schedule\n\nSession 1 · August 24\nWhy polls fail—and what good survey design requires\nWe begin with several real polls and work backward from their claims to their design decisions. The goal is to establish a shared language for evaluating survey evidence and introduce the semester partnership.\n\n\nSession 2 · August 31\nResearch objectives, stakeholders, ethics, and total survey error\nWe translate stakeholder questions into researchable objectives, identify the target population and intended claims, and use total survey error to anticipate threats before writing questions.\nLab 1 begins in class: RStudio projects, Quarto, importing survey data, reading a codebook, missing values, recoding, summarizing, and reproducible workflow.\n\n\nSeptember 7\nLabor Day—no class\n\n\nSession 3 · September 14\nConcepts, measurement, and questionnaire architecture\nWe move from abstract concepts to indicators, distinguish measurement from operational convenience, and design the overall flow of a questionnaire.\n\n\nSession 4 · September 21\nQuestion wording and response design\nWe examine comprehension, retrieval, judgment, response mapping, acquiescence, social desirability, question order, response scales, and treatment of uncertainty.\n\n\nSession 5 · September 28\nTesting and multilingual equivalence\nStudents conduct and evaluate cognitive interviews, identify systematic problems, and revise modules. We address translation, cultural adaptation, and equivalence across English and Spanish instruments.\nLab 2 begins in class: distributions, proportions, cross-tabulations, grouped summaries, measurement, scales, and accurate visualization with ggplot2.\n\n\nSession 6 · October 5\nSampling and representation\nWe define the inferential population, compare sampling frames and recruitment sources, and assess probability and nonprobability approaches.\n\n\nSession 7 · October 12\nModes, recruitment, and nonresponse\nWe analyze mode effects, coverage, contact strategies, incentives, accessibility, response rates, and nonresponse bias.\nLab 3 begins in class: simulation, sampling distributions, standard errors, margins of error, confidence intervals, hypothesis tests, and subgroup comparisons.\n\n\nSession 8 · October 19\nProgramming and quality assurance\nThe class integrates modules, reviews logic and randomization, tests mobile and bilingual displays, and maintains a formal issue log.\n\n\nSession 9 · October 26\nFieldwork and data quality\nWe establish fieldwork monitoring rules, examine paradata and fraud indicators, and distinguish defensible quality controls from post hoc deletion of inconvenient respondents.\n\n\nSession 10 · November 2\nCleaning, coding, and weighting\nStudents develop a reproducible workflow for labels, missingness, derived variables, open-ended coding, weighting, effective sample size, and documentation.\nLab 4 begins in class: the R survey package, weighted and unweighted estimates, design effects, effective sample size, and defensible toplines.\n\n\nSession 11 · November 9\nAnalysis and uncertainty\nWe estimate toplines, compare subgroups, quantify uncertainty, account for weights and design effects, and avoid common errors in interpreting close differences.\n\n\nSession 12 · November 16\nVisualization and public interpretation\nStudents turn results into accurate, accessible graphics and write claims that match the strength of the design and evidence.\nLab 5 begins in class: introductory linear and logistic regression, categorical predictors, interactions, predicted probabilities, model-based graphics, and reproducible Quarto reporting.\n\n\nNovember 23\nFall break—no class\n\n\nSession 13 · November 30\nReport production and briefing rehearsal\nTeams integrate the substantive narrative, methods statement, tables, graphics, limitations, and partner feedback into a coherent report.\n\n\nSession 14 · December 7\nFinal presentation and project retrospective\nThe class presents the final work, evaluates the production process, documents remaining decisions, and completes the project handoff."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments and Assessment",
+    "section": "",
+    "text": "Assignments are stages of one professional survey workflow. Students will demonstrate individual methodological understanding, individual ability to analyze survey data, and effective collaboration on a public-facing research product. Detailed prompts, rubrics, templates, and submission links will be released on Canvas."
+  },
+  {
+    "objectID": "assignments.html#assessment-map",
+    "href": "assignments.html#assessment-map",
+    "title": "Assignments and Assessment",
+    "section": "Assessment map",
+    "text": "Assessment map\n\n\n\n\n\n\n\n\nCategory\nWeight\nResponsibility\n\n\n\n\nPreparation and professional participation\n10%\nIndividual\n\n\nR and statistics labs\n25%\nIndividual, following guided class work\n\n\nIndividual methods assignments\n15%\nIndividual\n\n\nUnivision project milestones\n15%\nTeam\n\n\nIndividual poll analysis memo\n10%\nIndividual\n\n\nCoauthored report and presentation\n20%\nClass and section teams\n\n\nReflection and contribution statement\n5%\nIndividual\n\n\nTotal\n100%"
+  },
+  {
+    "objectID": "assignments.html#r-and-statistics-labs-25",
+    "href": "assignments.html#r-and-statistics-labs-25",
+    "title": "Assignments and Assessment",
+    "section": "R and statistics labs · 25%",
+    "text": "R and statistics labs · 25%\nFive substantial labs integrate R programming, statistical reasoning, and survey analysis:\n\nR, Quarto, importing, cleaning, recoding, and documenting survey data.\nDescriptive statistics, cross-tabulations, measurement, and visualization.\nSampling, simulation, margins of error, confidence intervals, and basic hypothesis tests.\nSurvey weights, design effects, and weighted estimation.\nRegression, predicted probabilities, graphics, and reproducible reporting.\n\nMost lab work will be completed together during class. Each lab concludes with a shorter On Your Own section completed alone. Labs are graded on statistical reasoning, readable and functioning code, reproducibility, appropriate checks, and clear interpretation."
+  },
+  {
+    "objectID": "assignments.html#assignment-materials",
+    "href": "assignments.html#assignment-materials",
+    "title": "Assignments and Assessment",
+    "section": "Assignment materials",
+    "text": "Assignment materials\n\nIndividual Assignment 1: Poll Autopsy"
+  },
+  {
+    "objectID": "assignments.html#individual-methods-assignments-15",
+    "href": "assignments.html#individual-methods-assignments-15",
+    "title": "Assignments and Assessment",
+    "section": "Individual methods assignments · 15%",
+    "text": "Individual methods assignments · 15%\nThree concise assignments ask students to make and defend methodological decisions.\n\n1. Poll autopsy · 5%\nEvaluate a published poll from its public release and methodological disclosure. Identify the target population, sample source, mode, field dates, question wording, weighting, reported uncertainty, principal claims, and important information that is absent. Conclude with what the poll does and does not permit readers to claim.\n\n\n2. Measurement and questionnaire critique · 5%\nDiagnose a set of survey questions using principles of comprehension, retrieval, judgment, response mapping, question order, response-option design, and sensitive measurement. Revise selected questions and explain how the revisions improve validity, reliability, comparability, or respondent experience.\n\n\n3. Sampling and mode recommendation · 5%\nGiven a research objective, population, budget, timeline, and reporting needs, recommend a sample and data-collection design. Address coverage, recruitment, nonresponse, language access, feasibility, weighting, uncertainty, and the limitations that should accompany published results."
+  },
+  {
+    "objectID": "assignments.html#univision-project-milestones-15",
+    "href": "assignments.html#univision-project-milestones-15",
+    "title": "Assignments and Assessment",
+    "section": "Univision project milestones · 15%",
+    "text": "Univision project milestones · 15%\nMilestones make the collaborative process visible and keep the live project on schedule. They are working products rather than unrelated homework.\n\n\n\n\n\n\n\nMilestone\nCollaborative deliverable\n\n\n\n\nProject charter\nObjectives, audiences, claims, roles, decision rules, confidentiality, and timeline\n\n\nMeasurement package\nConstruct map, proposed question module, source questions, and design rationale\n\n\nTesting package\nCognitive-testing protocol, findings matrix, English/Spanish revisions, and unresolved issues\n\n\nRepresentation plan\nTarget population, sampling and mode assessment, recruitment, language access, and limitations\n\n\nInstrument QA\nIntegrated questionnaire review, test cases, mobile/bilingual checks, issue log, and approval record\n\n\nAnalysis plan\nOutcomes, subgroups, derived variables, weighting use, planned tables and figures, and decision rules\n\n\n\nMilestones will normally be evaluated with a short common rubric:\n\nmethodological justification;\ncompleteness and accuracy;\nuse of evidence and testing;\ndocumentation and version control;\nresponsiveness to feedback; and\nreadiness for the next production stage."
+  },
+  {
+    "objectID": "assignments.html#individual-poll-analysis-memo-10",
+    "href": "assignments.html#individual-poll-analysis-memo-10",
+    "title": "Assignments and Assessment",
+    "section": "Individual poll analysis memo · 10%",
+    "text": "Individual poll analysis memo · 10%\nEach student will independently answer one focused substantive question using the final poll data.\nThe memo will normally include:\n\na clearly stated research question;\na brief explanation of the relevant survey measures;\ndocumented cleaning and recoding decisions;\nappropriate use of survey weights;\ndescriptive estimates and uncertainty;\none justified subgroup comparison or introductory model;\nat least one publication-quality visualization;\na concise interpretation for a policy or public audience;\nlimitations; and\nreproducible Quarto source code.\n\nStudents may work from a shared, quality-controlled analysis file, but the analytical choices, code, verification, and prose in the memo must be their own."
+  },
+  {
+    "objectID": "assignments.html#coauthored-lbjunivision-report-and-presentation-20",
+    "href": "assignments.html#coauthored-lbjunivision-report-and-presentation-20",
+    "title": "Assignments and Assessment",
+    "section": "Coauthored LBJ/Univision report and presentation · 20%",
+    "text": "Coauthored LBJ/Univision report and presentation · 20%\nThe class will produce one coherent professional report. Teams will take primary responsibility for substantive sections, but all students are responsible for reviewing the complete report and ensuring that its claims, methods, graphics, and tone are consistent.\nThe report should include:\n\nan executive summary;\na concise explanation of the research purpose;\na transparent methods statement;\nsubstantive sections organized around clear research questions;\naccurate tables and accessible graphics;\nappropriate discussion of uncertainty and limitations;\ndocumentation sufficient to reproduce all published statistics; and\na short partner briefing or public presentation.\n\nA section-team model gives students meaningful ownership without producing a collection of disconnected papers. The final document must read as one report rather than several assignments pasted together.\nPublic release, authorship order, branding, acknowledgement of student contributors, and access to the data after the semester will follow the final partnership agreement."
+  },
+  {
+    "objectID": "assignments.html#individual-reflection-and-contribution-statement-5",
+    "href": "assignments.html#individual-reflection-and-contribution-statement-5",
+    "title": "Assignments and Assessment",
+    "section": "Individual reflection and contribution statement · 5%",
+    "text": "Individual reflection and contribution statement · 5%\nThe final reflection will:\n\ndocument the student’s specific contributions;\nidentify evidence of those contributions in the project record;\nexplain one consequential methodological decision;\nevaluate the strengths and weaknesses of the completed project;\ndescribe what the student learned about collaboration; and\npropose one improvement for a future polling cycle.\n\nThe contribution statement provides accountability, but it is not a competition over who reports the greatest number of tasks. Quality, reliability, documentation, and support for the team matter."
+  },
+  {
+    "objectID": "assignments.html#evaluation-principles",
+    "href": "assignments.html#evaluation-principles",
+    "title": "Assignments and Assessment",
+    "section": "Evaluation principles",
+    "text": "Evaluation principles\nAcross assignments, work will be evaluated on:\n\nmethodological reasoning;\nstatistical accuracy;\nreproducibility and documentation;\nclarity and audience awareness;\nethical and professional judgment;\nresponsiveness to evidence and feedback; and\ncontribution to the collaborative process.\n\nA polished output cannot compensate for an indefensible method, and technical sophistication cannot compensate for unclear communication."
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "R and Statistics Labs",
+    "section": "",
+    "text": "The five labs form the quantitative spine of the course. They teach R programming and foundational statistics through practical survey problems, with the live Univision project providing the principal application.\nNo prior mastery of R is required. Most lab work will be completed together during class: the instructor will introduce the statistical idea, build the code with students, pause for interpretation and troubleshooting, and model how to check the results. Students will then complete a shorter On Your Own section individually."
+  },
+  {
+    "objectID": "labs.html#lab-materials",
+    "href": "labs.html#lab-materials",
+    "title": "R and Statistics Labs",
+    "section": "Lab materials",
+    "text": "Lab materials\n\nLab 1: Your First Reproducible Survey Analysis\nLab 2: Describing and Visualizing Survey Responses"
+  },
+  {
+    "objectID": "labs.html#lab-sequence",
+    "href": "labs.html#lab-sequence",
+    "title": "R and Statistics Labs",
+    "section": "Lab sequence",
+    "text": "Lab sequence\n\n\n\n\n\n\n\n\nLab\nR and statistical foundations\nSurvey application\n\n\n\n\n1\nRStudio projects, Quarto, objects, functions, packages, importing data, variable types, missing values, filtering, recoding, summarizing, and readable code\nImporting a survey, reading its codebook, cleaning variables, and creating a documented analysis file\n\n\n2\nDistributions, proportions, means and medians, cross-tabulations, grouped summaries, scales and indexes, and ggplot2\nDescribing respondents, evaluating measures, and visualizing survey responses accurately\n\n\n3\nProbability, random sampling, simulation, sampling distributions, standard errors, margins of error, confidence intervals, and basic hypothesis tests\nUnderstanding why poll estimates vary and evaluating topline and subgroup differences\n\n\n4\nSurvey weights, weighted estimates, effective sample size, design effects, and the R survey package\nComparing weighted and unweighted results and producing defensible estimates from survey data\n\n\n5\nLinear and logistic regression, categorical predictors, interactions, predicted probabilities, tables, graphics, and Quarto reporting\nExplaining survey outcomes and producing a reproducible section of the final report"
+  },
+  {
+    "objectID": "labs.html#lab-format",
+    "href": "labs.html#lab-format",
+    "title": "R and Statistics Labs",
+    "section": "Lab format",
+    "text": "Lab format\nEach lab has two connected parts.\n\nGuided workshop\nMost of the lab is completed together during class. We will:\n\nintroduce the statistical logic through a survey question;\nbuild and run the R code step by step;\ninterpret the output in plain language;\ndiagnose common errors;\ncheck whether the result is plausible; and\nconnect the technique to the Univision project.\n\n\n\nOn Your Own\nStudents will independently complete a shorter application using a new variable, question, or subset of the data. This section assesses whether each student can adapt the guided workflow, make appropriate choices, and explain the result.\nThe individual portion should normally be finishable in approximately 60–90 minutes after class when a student has participated in the guided workshop."
+  },
+  {
+    "objectID": "labs.html#what-students-should-learn",
+    "href": "labs.html#what-students-should-learn",
+    "title": "R and Statistics Labs",
+    "section": "What students should learn",
+    "text": "What students should learn\nBy the end of the lab sequence, students should be able to:\n\ncreate and navigate an RStudio project;\nimport and inspect common survey-data formats;\nuse a codebook and distinguish variable types;\nclean, label, recode, and document variables;\nidentify and handle missing values appropriately;\ncalculate and interpret descriptive statistics;\ncreate cross-tabulations and clear survey graphics;\nexplain sampling variability, standard errors, margins of error, and confidence intervals;\nevaluate basic differences across groups;\ncalculate and interpret weighted survey estimates;\nrecognize the consequences of extreme weights and design effects;\nestimate and interpret introductory linear and logistic regression models;\ncommunicate interactions with predicted probabilities and graphics; and\nproduce a reproducible Quarto analysis.\n\nThe objective is not memorizing formulas or R commands. Students should understand the logic of a method, recognize when it is appropriate, implement it with a documented workflow, check the output, and explain the result to a nontechnical audience."
+  },
+  {
+    "objectID": "labs.html#submission-and-evaluation",
+    "href": "labs.html#submission-and-evaluation",
+    "title": "R and Statistics Labs",
+    "section": "Submission and evaluation",
+    "text": "Submission and evaluation\nStudents submit the completed Quarto source file and rendered output. Labs are evaluated on:\n\ncompletion of the independent section;\ncorrect statistical reasoning;\nfunctioning and readable code;\nappropriate checks and documentation;\naccurate interpretation; and\nreproducibility.\n\nBecause programming involves troubleshooting, a minor syntax error will matter less than evidence that the student understands the intended analysis, can diagnose the problem, and can explain what the code and output mean."
+  },
+  {
+    "objectID": "labs.html#relationship-to-existing-materials",
+    "href": "labs.html#relationship-to-existing-materials",
+    "title": "R and Statistics Labs",
+    "section": "Relationship to existing materials",
+    "text": "Relationship to existing materials\nThe repository already contains useful foundations in introductory R, data manipulation, probability, inference, regression, predicted probabilities, and a Latino National Survey case study. These materials will be adapted into the five-lab sequence. Outdated syntax will be modernized, and generic exercises will be replaced or supplemented with survey applications."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html",
+    "href": "Labs/fall2026/lab1/lab1.html",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "",
+    "text": "This lab introduces the workflow we will use throughout the semester. We will work with a real public-opinion survey, the Latino National Survey (LNS), and learn how to move from a raw data file to a small, documented analysis file.\nMost of the lab will be completed together in class. The final On Your Own section asks you to adapt the same workflow alone."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#purpose",
+    "href": "Labs/fall2026/lab1/lab1.html#purpose",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "",
+    "text": "This lab introduces the workflow we will use throughout the semester. We will work with a real public-opinion survey, the Latino National Survey (LNS), and learn how to move from a raw data file to a small, documented analysis file.\nMost of the lab will be completed together in class. The final On Your Own section asks you to adapt the same workflow alone."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#learning-objectives",
+    "href": "Labs/fall2026/lab1/lab1.html#learning-objectives",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lab, you should be able to:\n\nidentify the main parts of RStudio;\nwork inside an RStudio project;\ndistinguish a Quarto source file from the Console;\ninstall and load packages;\nimport a Stata survey file with haven;\ninspect a data frame and use its codebook;\nrecognize common variable types and labelled variables;\nselect, filter, recode, mutate, count, and summarize with dplyr;\ndistinguish substantive responses from missing values;\nsave a clean analysis file; and\nrender a reproducible HTML document."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#before-class",
+    "href": "Labs/fall2026/lab1/lab1.html#before-class",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Before class",
+    "text": "Before class\nInstall current versions of R, RStudio Desktop, and Quarto.\nOpen the course project rather than opening this file by itself. A project keeps the data, code, and output in a stable relationship and helps us avoid fragile computer-specific paths."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#the-rstudio-workspace",
+    "href": "Labs/fall2026/lab1/lab1.html#the-rstudio-workspace",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "The RStudio workspace",
+    "text": "The RStudio workspace\nR is the programming language. RStudio is the interface we use to write, run, organize, and inspect R code.\nThe four panes normally contain:\n\nSource: the Quarto document or script we are writing;\nConsole: commands R has executed and messages it returns;\nEnvironment/History: objects created during the current session;\nFiles/Plots/Packages/Help: project files, graphics, packages, and documentation.\n\n\n\n\n\n\n\nTip\n\n\n\nWrite code in the source document and run it from there. Code typed only in the Console is easy to lose and cannot produce a reproducible analysis."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#a-quarto-document",
+    "href": "Labs/fall2026/lab1/lab1.html#a-quarto-document",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "1. A Quarto document",
+    "text": "1. A Quarto document\nThis file combines prose, executable R code, results, and document settings. Add your name below, save the file, and render it before continuing.\nStudent: Your name here\nIf the document renders, Quarto can execute the code in a fresh session and build the output."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#packages",
+    "href": "Labs/fall2026/lab1/lab1.html#packages",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "2. Packages",
+    "text": "2. Packages\nA package adds functions to R. We will use tidyverse for data work, haven for Stata files, labelled for survey labels, and here for stable project paths.\nInstall a package once with install.packages(). Load it in every new R session with library().\n~{r} # Run this only if a package is not already installed: # install.packages(c(“tidyverse”, “haven”, “labelled”, “here”))\nlibrary(tidyverse) library(haven) library(labelled) library(here) ~\n\n\n\n\n\n\nImportant\n\n\n\nDo not place install.packages() in a document you submit. Installing changes the computer; loading declares what the analysis needs."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#import-the-latino-national-survey",
+    "href": "Labs/fall2026/lab1/lab1.html#import-the-latino-national-survey",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "3. Import the Latino National Survey",
+    "text": "3. Import the Latino National Survey\nThe LNS interviewed more than 8,000 Latino adults in 2006. Its questionnaire contains measures of political attitudes, identity, discrimination, policy preferences, demographic characteristics, and incorporation.\nThe raw file is stored in Stata format. We import it with read_dta().\n~{r} lns_raw &lt;- read_dta( here(“Labs”, “case_study”, “data”, “lns_full.dta”) ) ~\nThe assignment operator stores the result on its left. We use the name lns_raw deliberately: the raw data should remain unchanged.\n\nCheck the import\n~{r} dim(lns_raw) names(lns_raw)[1:20] glimpse(lns_raw) ~\n\ndim() reports rows and columns.\nnames() reports variable names.\nglimpse() gives a compact view of names, types, and example values.\n\nCheckpoint 1: How many respondents and variables are in the raw file? Why is the number of rows not necessarily the same as the number of people in the target population?\nYour response:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#survey-data-and-labelled-variables",
+    "href": "Labs/fall2026/lab1/lab1.html#survey-data-and-labelled-variables",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "4. Survey data and labelled variables",
+    "text": "4. Survey data and labelled variables\nSurvey files frequently store a short variable name, a longer variable label describing the question, and value labels explaining what numeric codes mean.\n~{r} var_label(lns_raw\\(natprob)\nval_labels(lns_raw\\)natprob)\nvar_label(lns_raw\\(age)\nsummary(lns_raw\\)age) ~\nThe variable natprob records what respondents named as the most important problem facing the country. The variable age records respondent age.\nConvert labelled response categories to readable factors when needed:\n~{r} lns_raw |&gt; count(as_factor(natprob), sort = TRUE) ~\n\n\n\n\n\n\nWarning\n\n\n\nA numeric code is not automatically a quantity. A code of 4 for “strongly agree” does not mean the respondent possesses twice as much agreement as someone coded 2. Consult the labels and questionnaire before calculating.\n\n\nCheckpoint 2: What is the most common response to natprob? Identify at least one category that may represent missing information rather than a substantive answer.\nYour response:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#build-a-small-analysis-file",
+    "href": "Labs/fall2026/lab1/lab1.html#build-a-small-analysis-file",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "5. Build a small analysis file",
+    "text": "5. Build a small analysis file\nA professional workflow rarely modifies the full raw file directly. Create a smaller analysis object containing the variables required for the current task.\n~{r} lns_clean &lt;- lns_raw |&gt; transmute( main_problem = as_factor(natprob), latino_problem = as_factor(latprob), generation = as_factor(newgen), age = as.numeric(age), female = as_factor(female), income = as_factor(income), poor_work = as_factor(poordisc), latino_work = as_factor(latdisc), discrimination_index = as.numeric(discindx) ) ~\nThis introduces several important ideas:\n\nthe pipe sends the result from one step into the next;\ntransmute() creates a new data frame containing only the listed variables;\ndescriptive names document what variables mean; and\nconversion is performed one variable at a time.\n\nInspect the result:\n~{r} glimpse(lns_clean) summary(lns_clean$age) count(lns_clean, generation, sort = TRUE) ~"
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#missing-and-non-substantive-responses",
+    "href": "Labs/fall2026/lab1/lab1.html#missing-and-non-substantive-responses",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "6. Missing and non-substantive responses",
+    "text": "6. Missing and non-substantive responses\nDon't know, refusal, not asked, and legitimate categories such as none are not interchangeable. Inspect the questionnaire and make an explicit decision.\n~{r} lns_clean |&gt; count(main_problem, sort = TRUE) ~\nRetain the original variable and create an analysis version:\n~{r} lns_clean &lt;- lns_clean |&gt; mutate( main_problem_analysis = main_problem, main_problem_analysis = na_if(main_problem_analysis, “dk/na”) ) ~\nCheck the result:\n~{r} lns_clean |&gt; summarize( total_rows = n(), observed_main_problem = sum(!is.na(main_problem_analysis)), missing_main_problem = sum(is.na(main_problem_analysis)), percent_missing = mean(is.na(main_problem_analysis)) * 100 ) ~\n\n\n\n\n\n\nNote\n\n\n\nThe text used for a missing category must match its value label exactly. If the code produces no change, inspect the frequency table and revise the text.\n\n\nCheckpoint 3: Why did we create main_problem_analysis instead of overwriting main_problem?\nYour response:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#filter-count-and-summarize",
+    "href": "Labs/fall2026/lab1/lab1.html#filter-count-and-summarize",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "7. Filter, count, and summarize",
+    "text": "7. Filter, count, and summarize\nCreate an object containing respondents ages 18–29.\n~{r} young_adults &lt;- lns_clean |&gt; filter(age &gt;= 18, age &lt;= 29)\nnrow(young_adults) ~\nSummarize their age:\n~{r} young_adults |&gt; summarize( respondents = n(), mean_age = mean(age, na.rm = TRUE), median_age = median(age, na.rm = TRUE), minimum_age = min(age, na.rm = TRUE), maximum_age = max(age, na.rm = TRUE) ) ~\nCount the most important problems they named:\n~{r} young_adults |&gt; count(main_problem_analysis, sort = TRUE) |&gt; mutate(percent = n / sum(n) * 100) ~\nCheckpoint 4: In plain language, explain what one row of the table tells us. Why should we not yet describe these as nationally representative estimates?\nYour response:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#save-the-analysis-file",
+    "href": "Labs/fall2026/lab1/lab1.html#save-the-analysis-file",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "8. Save the analysis file",
+    "text": "8. Save the analysis file\nSave the smaller analysis object, not a modified version of the raw file.\n~{r} dir.create( here(“Labs”, “fall2026”, “lab1”, “output”), recursive = TRUE, showWarnings = FALSE )\nwrite_rds( lns_clean, here(“Labs”, “fall2026”, “lab1”, “output”, “lns_clean.rds”) ) ~\nAn RDS file stores one R object and preserves its structure."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#guided-work-checklist",
+    "href": "Labs/fall2026/lab1/lab1.html#guided-work-checklist",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Guided-work checklist",
+    "text": "Guided-work checklist\nBefore moving to the independent section, confirm that you can:\n\nrender the document;\nexplain installing versus loading a package;\nlocate data using a project-relative path;\nidentify the dimensions and variables of a data frame;\ninspect variable and value labels;\npreserve a raw object while building a clean object;\nexplain the principal dplyr functions used above; and\nidentify an unresolved methodological question instead of silently making a coding decision."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#question-1-inspect-the-variable",
+    "href": "Labs/fall2026/lab1/lab1.html#question-1-inspect-the-variable",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Question 1: Inspect the variable",
+    "text": "Question 1: Inspect the variable\nProduce a frequency table for latino_problem, sorted from most to least frequent.\n\nWhat is the most common response?\nWhich categories should be treated as non-substantive or missing?\nExplain your decision in two or three sentences.\n\n~{r} # Your code ~\nYour interpretation:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#question-2-create-an-analysis-version",
+    "href": "Labs/fall2026/lab1/lab1.html#question-2-create-an-analysis-version",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Question 2: Create an analysis version",
+    "text": "Question 2: Create an analysis version\nCreate latino_problem_analysis. Preserve latino_problem and recode the appropriate non-substantive categories to NA. Show the number and percentage missing.\n~{r} # Your code ~\nYour interpretation:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#question-3-select-a-group",
+    "href": "Labs/fall2026/lab1/lab1.html#question-3-select-a-group",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Question 3: Select a group",
+    "text": "Question 3: Select a group\nChoose one generation category and create a filtered data frame for that group. Report the category, number of respondents, mean and median age, and percentage missing latino_problem_analysis.\n~{r} # Your code ~\nYour interpretation:"
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#question-4-produce-a-substantive-table",
+    "href": "Labs/fall2026/lab1/lab1.html#question-4-produce-a-substantive-table",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Question 4: Produce a substantive table",
+    "text": "Question 4: Produce a substantive table\nWithin the selected generation, calculate the count and percentage naming each substantive problem facing Latinos. Sort from highest to lowest and display the five most common responses.\n~{r} # Your code ~\nInterpret the leading response accurately without making a causal or population-level claim."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#question-5-document-one-decision",
+    "href": "Labs/fall2026/lab1/lab1.html#question-5-document-one-decision",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Question 5: Document one decision",
+    "text": "Question 5: Document one decision\nWrite a short paragraph explaining one decision made while cleaning, filtering, or summarizing. State what you decided, what evidence you used, how it affects the result, and what you would verify before publishing."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#submission",
+    "href": "Labs/fall2026/lab1/lab1.html#submission",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Submission",
+    "text": "Submission\nSubmit the completed QMD source file, rendered HTML file, and lns_clean.rds analysis file. Before submitting, restart R and render again. A successful clean render is the final reproducibility check."
+  },
+  {
+    "objectID": "Labs/fall2026/lab1/lab1.html#reference-materials",
+    "href": "Labs/fall2026/lab1/lab1.html#reference-materials",
+    "title": "Lab 1: Your First Reproducible Survey Analysis",
+    "section": "Reference materials",
+    "text": "Reference materials\n\nLatino National Survey questionnaire and codebook in the repository\nR for Data Science, 2nd edition\nQuarto documentation\nPosit cheat sheets"
+  }
+]
