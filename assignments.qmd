@@ -17,19 +17,15 @@ Assignments are designed as stages of one professional survey workflow. Detailed
 
 ## R and statistics labs · 25%
 
-Nine cumulative labs, numbered 0–8, integrate R programming, statistical reasoning, and survey analysis:
+Five substantial labs integrate R programming, statistical reasoning, and survey analysis:
 
-1. R, projects, and reproducible Quarto documents.
-2. Importing, wrangling, recoding, and documenting survey data.
-3. Descriptive statistics, cross-tabulations, and visualization.
-4. Probability, simulation, sampling distributions, and margins of error.
-5. Confidence intervals, hypothesis tests, and subgroup comparisons.
-6. Measurement, index construction, and reliability.
-7. Survey weights, design effects, and weighted estimation.
-8. Regression, interactions, and predicted probabilities.
-9. Reproducible tables, graphics, and report production.
+1. R, Quarto, importing, cleaning, recoding, and documenting survey data.
+2. Descriptive statistics, cross-tabulations, measurement, and visualization.
+3. Sampling, simulation, margins of error, confidence intervals, and basic hypothesis tests.
+4. Survey weights, design effects, and weighted estimation.
+5. Regression, predicted probabilities, graphics, and reproducible reporting.
 
-Labs are graded on correct statistical reasoning, functioning and readable code, reproducibility, appropriate checks, and clear interpretation. Minor syntax mistakes will matter less than whether students can diagnose them and explain the analysis.
+Most lab work will be completed together during class. Each lab concludes with a shorter **On Your Own** section that students complete and submit individually. Labs are graded on statistical reasoning, readable and functioning code, reproducibility, appropriate checks, and clear interpretation.
 
 ## Individual methods memos · 15%
 
