@@ -1,0 +1,200 @@
+---
+title: "Individual Assignment 1: Poll Autopsy"
+subtitle: "Reconstruct, evaluate, and communicate what a published poll can tell us"
+format:
+  html:
+    toc: true
+---
+
+## Purpose
+
+Poll results often reach the public as a headline, a chart, or a sentence about what “Americans think.” A responsible analyst must work backward from those claims to the research design.
+
+In this assignment, you will select a recently published public-opinion poll, reconstruct how it was conducted, identify its principal strengths and vulnerabilities, and determine whether one public claim is supported by the evidence.
+
+This assignment is an evaluation of methodological reasoning—not a hunt for a “bad poll.” Every survey involves tradeoffs. Your task is to identify those tradeoffs accurately and explain their consequences.
+
+## Learning objectives
+
+This assignment assesses whether you can:
+
+- distinguish the target population, sampling frame, sample, and respondents;
+- identify the sampling or recruitment method and survey mode;
+- evaluate question wording, ordering, and measurement;
+- distinguish sampling error from coverage, nonresponse, measurement, and processing error;
+- assess transparency and missing methodological information;
+- evaluate whether a public claim matches the population, question, estimate, and uncertainty; and
+- communicate a technical assessment clearly to a nontechnical reader.
+
+## Select a poll
+
+Choose a public-opinion poll released within the last two years. The poll must include enough public documentation to locate:
+
+1. a report, article, or release presenting findings;
+2. the exact questionnaire or topline wording; and
+3. a methodology statement.
+
+Election, policy, social, and public-affairs polls are all acceptable. A news story that mentions a poll but does not link to the questionnaire or methodology is not sufficient by itself.
+
+You may select a poll from a news organization, university, government agency, nonprofit research center, professional polling firm, or advocacy organization. The sponsor's identity is relevant context, but it is not evidence that a poll is either credible or flawed.
+
+Obtain approval before using a poll that does not provide the three required forms of documentation.
+
+## Deliverables
+
+Submit:
+
+- a Quarto source file;
+- the rendered HTML file; and
+- working links or saved copies of the results release, questionnaire, and methodology.
+
+Recommended length: approximately 1,000–1,250 words, excluding the design summary and references.
+
+## Part 1: Identify the public claim
+
+Select one consequential claim from the poll's report, headline, chart, press release, or related news coverage.
+
+Record:
+
+- the claim in a short quotation or precise paraphrase;
+- where it appeared;
+- the population to which the claim refers;
+- the estimate or comparison supporting it; and
+- why the claim matters.
+
+Do not evaluate the claim yet.
+
+## Part 2: Reconstruct the design
+
+Complete the following table. Write “not disclosed” when information cannot be located. Do not infer an answer merely because a particular method is common.
+
+| Design element | What the poll reports | Where you found it |
+|---|---|---|
+| Sponsor and research organization | | |
+| Target population | | |
+| Geographic coverage | | |
+| Sampling frame or respondent source | | |
+| Probability or nonprobability selection | | |
+| Recruitment method | | |
+| Survey mode | | |
+| Languages offered | | |
+| Field dates | | |
+| Sample size | | |
+| Eligibility or screening rules | | |
+| Completion or quality rules | | |
+| Weighting variables and method | | |
+| Reported uncertainty | | |
+| Questionnaire and order available? | | |
+| Response rate or participation metric | | |
+| Funding, sponsor, and data disclosure | | |
+
+After completing the table, write one paragraph explaining how a person moved from the target population into the final analytic sample. Be explicit about what remains unknown.
+
+## Part 3: Examine the measure
+
+Locate the exact question or questions underlying your selected claim.
+
+Evaluate:
+
+- the concept the question is intended to measure;
+- comprehension and potentially ambiguous terms;
+- the information respondents must retrieve;
+- the judgment respondents must make;
+- response options and their ordering;
+- whether “don't know,” refusal, “none,” or neutral options are available;
+- relevant preceding questions or experimental conditions;
+- whether the mode could affect responses;
+- whether the question wording matches the language used in the public claim; and
+- whether multilingual measurement or translation raises a comparability question.
+
+Propose one revision only if a change would meaningfully improve the measure. Explain both the likely benefit and any new tradeoff created by your revision.
+
+## Part 4: Diagnose potential error
+
+Use the total survey error framework. Discuss the most relevant threats rather than mechanically listing every possible error.
+
+Address at least three of the following:
+
+- coverage error;
+- sampling error;
+- nonresponse or participation bias;
+- measurement error;
+- interviewer or mode effects;
+- respondent quality or fraud;
+- coding or processing error;
+- weighting or adjustment error; and
+- errors introduced through analysis, visualization, or reporting.
+
+For each threat:
+
+1. identify the feature of the design that creates or limits the risk;
+2. explain the direction or consequence when it can be anticipated;
+3. distinguish evidence from speculation; and
+4. identify information that would help evaluate the risk.
+
+A methodological limitation does not automatically invalidate a poll. Explain how much it matters for the selected claim.
+
+## Part 5: Evaluate the claim
+
+Return to the claim from Part 1 and answer:
+
+- Does the claim match the target population and observed sample?
+- Does it accurately represent the question wording and response options?
+- Is it based on a level, difference, trend, or subgroup comparison?
+- Is uncertainty handled appropriately?
+- Does the claim imply causation, change, consensus, or precision the design cannot establish?
+- Would a more defensible formulation materially change its meaning?
+
+Conclude with one of these judgments:
+
+- **Supported as written**
+- **Supported with qualifications**
+- **Not supported as written**
+- **Cannot be assessed from the disclosed information**
+
+Then rewrite the claim in the strongest form you believe the evidence supports.
+
+## Part 6: Transparency assessment
+
+Using the [AAPOR Disclosure Standards](https://aapor.org/standards-and-ethics/disclosure-standards/), identify:
+
+- two disclosure practices the poll handles well;
+- two important details that are absent or difficult to locate; and
+- the single additional piece of information that would most improve your evaluation.
+
+## Submission checklist
+
+Before submitting, confirm that:
+
+- all three required source documents are included;
+- the exact question wording has been checked;
+- the design table distinguishes “not disclosed” from inference;
+- at least three relevant sources of error are analyzed;
+- the selected public claim receives an explicit judgment;
+- the final rewritten claim matches the evidence;
+- sources are cited and links work;
+- quotations are brief and accurate; and
+- the Quarto document renders from a clean session.
+
+## Grading rubric
+
+| Criterion | Excellent | Developing | Points |
+|---|---|---|---:|
+| Design reconstruction | Accurately identifies the population, sample source, recruitment, mode, fieldwork, weighting, and uncertainty; clearly labels missing information | Confuses key design elements, guesses at undisclosed information, or omits consequential features | 20 |
+| Measurement analysis | Connects exact wording and response design to the construct and response process; revision is justified and tradeoffs are recognized | Relies on general reactions to wording or proposes changes without explaining measurement consequences | 20 |
+| Total survey error reasoning | Prioritizes relevant errors, connects each to design evidence, distinguishes evidence from speculation, and explains consequences | Lists generic errors without showing how they arise or why they matter for the selected claim | 25 |
+| Evaluation of public claim | Judgment follows from population, measurement, estimate, comparison, and uncertainty; rewritten claim is precise | Judgment is asserted rather than demonstrated or does not match the documented evidence | 20 |
+| Transparency and sources | Uses release, questionnaire, methods, and AAPOR standards; citations and links make the evaluation auditable | Relies primarily on secondary coverage or leaves evidence difficult to verify | 10 |
+| Clarity and professional presentation | Organized, concise, readable, proofread, and successfully rendered | Difficult to follow, substantially over length, or incomplete as a reproducible document | 5 |
+| **Total** | | | **100** |
+
+## Use of AI
+
+Generative AI may be used to troubleshoot Quarto, improve organization, or edit prose if such use is disclosed. You remain responsible for locating and reading the original documentation, verifying every factual statement, evaluating the methodology, and writing the final judgment. Do not ask an AI system to evaluate a poll from a summary you have not independently checked.
+
+## Useful references
+
+- [AAPOR Best Practices for Survey Research](https://aapor.org/standards-and-ethics/best-practices/)
+- [AAPOR Disclosure Standards](https://aapor.org/standards-and-ethics/disclosure-standards/)
+- [AAPOR Polling Accuracy](https://aapor.org/polling-accuracy/)
+- Course readings on total survey error, question wording, sampling, modes, and uncertainty
