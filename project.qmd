@@ -62,17 +62,37 @@ Archive approved code and documentation, identify unresolved questions, record l
 
 ## Team structure
 
-Final teams will depend on enrollment and partner needs. Likely functions include:
+The expected enrollment is 12 students. The default structure will be **four stable groups of three**. If enrollment changes:
 
-- questionnaire and measurement;
-- cognitive testing and bilingual review;
-- sampling, fieldwork, and quality assurance;
-- data management and weighting;
-- substantive analysis sections;
-- visualization and report production; and
-- presentation and partner briefing.
+- 12–13 students: four groups of three to four;
+- 14–15 students: five groups of approximately three; and
+- another enrollment total: groups will be adjusted to avoid isolating a student or creating an unnecessarily large team.
 
-Roles may rotate. Specialization does not excuse students from understanding the full design.
+### Stable substantive groups
+
+Each group will take primary responsibility for:
+
+- one research domain or question module;
+- cognitive testing and revision of that module;
+- its portion of the analysis plan;
+- reproducible analysis of the corresponding results; and
+- one substantive section of the final report and presentation.
+
+The substantive domains will be assigned after the research objectives and partner priorities are confirmed.
+
+### Cross-group production teams
+
+Several responsibilities affect the entire poll and should not belong permanently to one substantive group. At major production stages, one member from each group will join a temporary cross-group team for tasks such as:
+
+- English/Spanish consistency and cognitive-testing synthesis;
+- instrument programming and quality assurance;
+- data cleaning, weighting, and estimate verification;
+- graphics and editorial consistency; and
+- presentation and partner-briefing preparation.
+
+This matrix structure gives groups continuity while distributing the less visible technical and editorial labor. Roles may rotate so students experience more than one part of the production process.
+
+Specialization does not excuse students from understanding the full research design.
 
 ## Analytical accountability
 
