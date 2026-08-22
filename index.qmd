@@ -70,7 +70,7 @@ Participation includes arriving prepared, contributing constructively, giving us
 
 ### R and statistics labs
 
-Nine cumulative labs, beginning with Lab 0, teach R programming and the statistical foundations of survey analysis. Topics include data structures and wrangling, descriptive statistics, visualization, probability, sampling distributions, confidence intervals, hypothesis tests, measurement and scales, survey weights, regression, predicted probabilities, and reproducible reporting. Every topic is connected to a survey-research decision or application.
+Five substantial labs teach R programming and the statistical foundations of survey analysis. Most of each lab is completed together during class through guided coding, interpretation, and troubleshooting. Students then complete a shorter “On Your Own” application individually. Topics include data wrangling, descriptive statistics, visualization, sampling and inference, survey weights, regression, predicted probabilities, and reproducible reporting.
 
 ### Individual methods memos
 
