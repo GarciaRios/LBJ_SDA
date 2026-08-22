@@ -1,9 +1,20 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - index.qmd
+    - schedule.qmd
+    - readings.qmd
+    - assignments.qmd
+    - project.qmd
+    - labs.qmd
+    - assignments/fall2026/poll-autopsy.qmd
+    - Labs/fall2026/lab1/lab1.qmd
+    - Labs/fall2026/lab2/lab2.qmd
 
 website:
   title: "LBJ Survey Design and Analysis"
+  site-url: "https://garciarios.github.io/LBJ_SDA/"
   navbar:
     left:
       - href: index.qmd
