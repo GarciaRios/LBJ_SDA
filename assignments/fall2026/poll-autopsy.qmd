@@ -44,9 +44,10 @@ Obtain approval before using a poll that does not provide the three required for
 
 Submit:
 
-- a Quarto source file;
-- the rendered HTML file; and
+- a Word document or PDF; and
 - working links or saved copies of the results release, questionnaire, and methodology.
+
+Quarto is optional for this assignment. The assignment evaluates survey-methodological reasoning, not document-production software.
 
 Recommended length: approximately 1,000–1,250 words, excluding the design summary and references.
 
@@ -174,7 +175,7 @@ Before submitting, confirm that:
 - the final rewritten claim matches the evidence;
 - sources are cited and links work;
 - quotations are brief and accurate; and
-- the Quarto document renders from a clean session.
+- the submitted document is complete, readable, and professionally formatted.
 
 ## Grading rubric
 
@@ -185,12 +186,12 @@ Before submitting, confirm that:
 | Total survey error reasoning | Prioritizes relevant errors, connects each to design evidence, distinguishes evidence from speculation, and explains consequences | Lists generic errors without showing how they arise or why they matter for the selected claim | 25 |
 | Evaluation of public claim | Judgment follows from population, measurement, estimate, comparison, and uncertainty; rewritten claim is precise | Judgment is asserted rather than demonstrated or does not match the documented evidence | 20 |
 | Transparency and sources | Uses release, questionnaire, methods, and AAPOR standards; citations and links make the evaluation auditable | Relies primarily on secondary coverage or leaves evidence difficult to verify | 10 |
-| Clarity and professional presentation | Organized, concise, readable, proofread, and successfully rendered | Difficult to follow, substantially over length, or incomplete as a reproducible document | 5 |
+| Clarity and professional presentation | Organized, concise, readable, proofread, and professionally formatted | Difficult to follow, substantially over length, or incomplete | 5 |
 | **Total** | | | **100** |
 
 ## Use of AI
 
-Generative AI may be used to troubleshoot Quarto, improve organization, or edit prose if such use is disclosed. You remain responsible for locating and reading the original documentation, verifying every factual statement, evaluating the methodology, and writing the final judgment. Do not ask an AI system to evaluate a poll from a summary you have not independently checked.
+Generative AI may be used to improve organization or edit prose if such use is disclosed. You remain responsible for locating and reading the original documentation, verifying every factual statement, evaluating the methodology, and writing the final judgment. Do not ask an AI system to evaluate a poll from a summary you have not independently checked.
 
 ## Useful references
 
