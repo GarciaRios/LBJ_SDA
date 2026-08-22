@@ -58,9 +58,10 @@ Class meetings will combine discussion, methodological workshops, R labs, projec
 |---|---:|
 | Preparation and professional participation | 10% |
 | R and statistics labs | 25% |
-| Individual methods memos | 15% |
-| Univision project milestones | 25% |
-| Coauthored LBJ/Univision report | 20% |
+| Individual methods assignments | 15% |
+| Univision project milestones | 15% |
+| Individual poll analysis memo | 10% |
+| Coauthored LBJ/Univision report and presentation | 20% |
 | Individual reflection and contribution statement | 5% |
 | **Total** | **100%** |
 
@@ -72,17 +73,21 @@ Participation includes arriving prepared, contributing constructively, giving us
 
 Five substantial labs teach R programming and the statistical foundations of survey analysis. Most of each lab is completed together during class through guided coding, interpretation, and troubleshooting. Students then complete a shorter “On Your Own” application individually. Topics include data wrangling, descriptive statistics, visualization, sampling and inference, survey weights, regression, predicted probabilities, and reproducible reporting.
 
-### Individual methods memos
+### Individual methods assignments
 
-Short memos require students to make and defend methodological decisions. These assignments ensure that each student develops independent expertise even when much of the semester's work is collaborative.
+Three short assignments require students to evaluate a published poll, diagnose and improve survey measurement, and defend a sampling and mode recommendation. These assignments ensure that each student develops independent methodological judgment.
 
 ### Univision project milestones
 
-Teams will complete defined products such as a research-objectives memo, question module, cognitive-testing report, sampling and mode assessment, instrument quality-assurance review, and analysis plan.
+Teams will complete staged products such as a project charter, measurement module, cognitive-testing report, representation plan, instrument quality-assurance review, and analysis plan. Milestones are working documents that feed directly into the live poll and final report.
 
-### Coauthored report
+### Individual poll analysis memo
 
-The class will produce a substantive report using data from the poll. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.
+Each student will independently analyze a substantive question using the poll data. The memo must include reproducible R code, appropriate use of weights and uncertainty, at least one effective visualization, and a concise interpretation written for a policy or public audience.
+
+### Coauthored report and presentation
+
+The class will produce one coherent report using data from the poll. Teams will take primary responsibility for different substantive sections while reviewing and revising the full document. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.
 
 ### Individual reflection and contribution statement
 
