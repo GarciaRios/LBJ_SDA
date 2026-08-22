@@ -2,18 +2,20 @@
 title: "Assignments and Assessment"
 ---
 
-Assignments are designed as stages of one professional survey workflow. Detailed prompts, rubrics, templates, and submission links will be released on Canvas.
+Assignments are stages of one professional survey workflow. Students will demonstrate individual methodological understanding, individual ability to analyze survey data, and effective collaboration on a public-facing research product. Detailed prompts, rubrics, templates, and submission links will be released on Canvas.
 
 ## Assessment map
 
-| Category | Weight | Individual or collaborative? |
+| Category | Weight | Responsibility |
 |---|---:|---|
 | Preparation and professional participation | 10% | Individual |
-| R and statistics labs | 25% | Individual, with permitted collaboration |
-| Individual methods memos | 15% | Individual |
-| Univision project milestones | 25% | Primarily collaborative |
-| Coauthored LBJ/Univision report | 20% | Collaborative |
+| R and statistics labs | 25% | Individual, following guided class work |
+| Individual methods assignments | 15% | Individual |
+| Univision project milestones | 15% | Team |
+| Individual poll analysis memo | 10% | Individual |
+| Coauthored report and presentation | 20% | Class and section teams |
 | Reflection and contribution statement | 5% | Individual |
+| **Total** | **100%** | |
 
 ## R and statistics labs · 25%
 
@@ -25,58 +27,107 @@ Five substantial labs integrate R programming, statistical reasoning, and survey
 4. Survey weights, design effects, and weighted estimation.
 5. Regression, predicted probabilities, graphics, and reproducible reporting.
 
-Most lab work will be completed together during class. Each lab concludes with a shorter **On Your Own** section that students complete and submit individually. Labs are graded on statistical reasoning, readable and functioning code, reproducibility, appropriate checks, and clear interpretation.
+Most lab work will be completed together during class. Each lab concludes with a shorter **On Your Own** section completed alone. Labs are graded on statistical reasoning, readable and functioning code, reproducibility, appropriate checks, and clear interpretation.
 
-## Individual methods memos · 15%
+## Individual methods assignments · 15%
 
-Four concise memos ask students to defend methodological decisions:
+Three concise assignments ask students to make and defend methodological decisions.
 
-1. **Poll autopsy:** evaluate what a published poll permits us to conclude.
-2. **Measurement memo:** diagnose and revise problematic survey questions.
-3. **Sampling and mode memo:** recommend a feasible design and explain its limitations.
-4. **Interpretation memo:** write defensible public claims from a set of survey estimates.
+### 1. Poll autopsy · 5%
 
-## Univision project milestones · 25%
+Evaluate a published poll from its public release and methodological disclosure. Identify the target population, sample source, mode, field dates, question wording, weighting, reported uncertainty, principal claims, and important information that is absent. Conclude with what the poll does and does not permit readers to claim.
 
-Milestones make the collaborative process visible and accountable.
+### 2. Measurement and questionnaire critique · 5%
 
-| Milestone | Deliverable |
+Diagnose a set of survey questions using principles of comprehension, retrieval, judgment, response mapping, question order, response-option design, and sensitive measurement. Revise selected questions and explain how the revisions improve validity, reliability, comparability, or respondent experience.
+
+### 3. Sampling and mode recommendation · 5%
+
+Given a research objective, population, budget, timeline, and reporting needs, recommend a sample and data-collection design. Address coverage, recruitment, nonresponse, language access, feasibility, weighting, uncertainty, and the limitations that should accompany published results.
+
+## Univision project milestones · 15%
+
+Milestones make the collaborative process visible and keep the live project on schedule. They are working products rather than unrelated homework.
+
+| Milestone | Collaborative deliverable |
 |---|---|
-| Project charter | Research objectives, audiences, roles, decision rules, and timeline |
-| Measurement package | Construct map, proposed module, and design rationale |
-| Testing package | Cognitive-testing protocol, findings, and revisions |
-| Representation plan | Target population, sample/mode assessment, recruitment, and limitations |
-| Instrument QA | Integrated questionnaire review, test cases, issue log, and approval record |
-| Analysis plan | Planned outcomes, subgroups, derived variables, weighting use, tables, and graphics |
+| Project charter | Objectives, audiences, claims, roles, decision rules, confidentiality, and timeline |
+| Measurement package | Construct map, proposed question module, source questions, and design rationale |
+| Testing package | Cognitive-testing protocol, findings matrix, English/Spanish revisions, and unresolved issues |
+| Representation plan | Target population, sampling and mode assessment, recruitment, language access, and limitations |
+| Instrument QA | Integrated questionnaire review, test cases, mobile/bilingual checks, issue log, and approval record |
+| Analysis plan | Outcomes, subgroups, derived variables, weighting use, planned tables and figures, and decision rules |
 
-## Coauthored LBJ/Univision report · 20%
+Milestones will normally be evaluated with a short common rubric:
 
-The class will develop a professional report using the project data. The report should include:
+- methodological justification;
+- completeness and accuracy;
+- use of evidence and testing;
+- documentation and version control;
+- responsiveness to feedback; and
+- readiness for the next production stage.
+
+## Individual poll analysis memo · 10%
+
+Each student will independently answer one focused substantive question using the final poll data.
+
+The memo will normally include:
+
+- a clearly stated research question;
+- a brief explanation of the relevant survey measures;
+- documented cleaning and recoding decisions;
+- appropriate use of survey weights;
+- descriptive estimates and uncertainty;
+- one justified subgroup comparison or introductory model;
+- at least one publication-quality visualization;
+- a concise interpretation for a policy or public audience;
+- limitations; and
+- reproducible Quarto source code.
+
+Students may work from a shared, quality-controlled analysis file, but the analytical choices, code, verification, and prose in the memo must be their own.
+
+## Coauthored LBJ/Univision report and presentation · 20%
+
+The class will produce one coherent professional report. Teams will take primary responsibility for substantive sections, but all students are responsible for reviewing the complete report and ensuring that its claims, methods, graphics, and tone are consistent.
+
+The report should include:
 
 - an executive summary;
 - a concise explanation of the research purpose;
 - a transparent methods statement;
-- substantive findings organized around clear research questions;
+- substantive sections organized around clear research questions;
 - accurate tables and accessible graphics;
-- appropriate discussion of uncertainty and limitations; and
-- documentation sufficient to reproduce published figures and statistics.
+- appropriate discussion of uncertainty and limitations;
+- documentation sufficient to reproduce all published statistics; and
+- a short partner briefing or public presentation.
 
-Authorship and branding will depend on the final partnership agreement and documented contributions.
+A section-team model gives students meaningful ownership without producing a collection of disconnected papers. The final document must read as one report rather than several assignments pasted together.
+
+Public release, authorship order, branding, acknowledgement of student contributors, and access to the data after the semester will follow the final partnership agreement.
 
 ## Individual reflection and contribution statement · 5%
 
-The final reflection identifies the student's contributions, explains one consequential methodological decision, evaluates the strengths and weaknesses of the completed project, and proposes improvements for a future polling cycle.
+The final reflection will:
+
+1. document the student's specific contributions;
+2. identify evidence of those contributions in the project record;
+3. explain one consequential methodological decision;
+4. evaluate the strengths and weaknesses of the completed project;
+5. describe what the student learned about collaboration; and
+6. propose one improvement for a future polling cycle.
+
+The contribution statement provides accountability, but it is not a competition over who reports the greatest number of tasks. Quality, reliability, documentation, and support for the team matter.
 
 ## Evaluation principles
 
-Work will be evaluated on:
+Across assignments, work will be evaluated on:
 
 - methodological reasoning;
-- accuracy and reproducibility;
+- statistical accuracy;
+- reproducibility and documentation;
 - clarity and audience awareness;
 - ethical and professional judgment;
-- responsiveness to evidence and feedback;
-- documentation of decisions; and
+- responsiveness to evidence and feedback; and
 - contribution to the collaborative process.
 
 A polished output cannot compensate for an indefensible method, and technical sophistication cannot compensate for unclear communication.
