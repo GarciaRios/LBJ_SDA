@@ -9,6 +9,7 @@ No prior mastery of R is required. Most lab work will be completed together duri
 ## Lab materials
 
 - [Lab 1: Your First Reproducible Survey Analysis](Labs/fall2026/lab1/lab1.qmd)
+- [Lab 2: Describing and Visualizing Survey Responses](Labs/fall2026/lab2/lab2.qmd)
 
 ## Lab sequence
 
