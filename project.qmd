@@ -1,0 +1,34 @@
+---
+title: "The 2026 Univision Polling Partnership"
+---
+
+## The central course project
+
+The class will collaborate with Univision News on a live 2026 public-opinion research project. An additional University of Texas unit may join the partnership; that collaboration will be announced once confirmed.
+
+Students will encounter the same linked decisions that shape professional polling: what stakeholders need to know, what a survey can measure, who must be represented, how respondents will be recruited, how the instrument will perform in English and Spanish, how fieldwork will be monitored, and how findings can be communicated responsibly.
+
+## Production workflow
+
+1. Define the research objectives and intended audiences.
+2. Map concepts and develop question modules.
+3. Test and revise questions in English and Spanish.
+4. Evaluate sampling, mode, coverage, and recruitment options.
+5. Integrate and quality-check the instrument.
+6. Develop a fieldwork monitoring and data-quality plan.
+7. Clean, label, weight, and document the data.
+8. Analyze the principal research questions.
+9. Produce tables, graphics, memos, and a coauthored report.
+10. Brief partners and document lessons for the next polling cycle.
+
+## Working with a live partner
+
+Partner needs and production constraints may require schedule changes. Changes will be treated as part of the learning experience, but expectations and grading criteria will remain transparent.
+
+Some materials may be confidential, embargoed, or restricted. Students may not circulate instruments, data, partner communications, preliminary estimates, or unpublished findings unless explicitly authorized.
+
+## Roles and accountability
+
+Students will work in teams with defined responsibilities, but all students are expected to understand the full research design. Project work will use version control, decision logs, reproducible analysis, peer review, and individual contribution statements.
+
+Final authorship, public release, data access after the course, and the use of LBJ, Univision, or other partner branding will follow the final partnership agreement.
