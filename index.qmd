@@ -2,7 +2,41 @@
 title: "Survey Design and Analysis"
 subtitle: "PA 397C · Fall 2026"
 page-layout: full
+title-block-banner: false
 ---
+
+::: {.course-hero}
+<p class="course-eyebrow">LBJ School of Public Affairs · Fall 2026</p>
+
+# Survey Design and Analysis
+
+<p class="course-deck">Learn the complete lifecycle of professional survey research while helping design, execute, analyze, and communicate a live 2026 public-opinion poll with Univision News.</p>
+
+<div class="course-meta">
+  <span>Mondays · 9:00 a.m.–12:00 p.m.</span>
+  <span>SRH 3.214</span>
+  <span>Sergio I. García-Ríos</span>
+</div>
+:::
+
+<div class="quick-grid">
+  <a class="quick-card" href="schedule.html">
+    <strong>Schedule</strong>
+    <span>Thirteen sessions from research design through the final briefing.</span>
+  </a>
+  <a class="quick-card" href="assignments.html">
+    <strong>Assignments</strong>
+    <span>Individual methods work, project milestones, and the final report.</span>
+  </a>
+  <a class="quick-card" href="labs.html">
+    <strong>R & Statistics Labs</strong>
+    <span>Guided coding workshops with shorter independent applications.</span>
+  </a>
+  <a class="quick-card" href="project.html">
+    <strong>Univision Project</strong>
+    <span>The live polling partnership at the center of the semester.</span>
+  </a>
+</div>
 
 ## Course information
 
@@ -14,6 +48,21 @@ page-layout: full
 | **Office hours** | By appointment |
 | **Teaching assistant** | To be announced |
 | **Course partners** | Univision News and an additional UT unit to be announced |
+
+## One course, two connected tracks
+
+<div class="track-grid">
+  <div class="track-card">
+    <span class="track-number">1</span>
+    <strong>Survey design and production</strong>
+    <p>Move from research objectives and measurement through sampling, questionnaire testing, fieldwork, quality assurance, weighting, and public release.</p>
+  </div>
+  <div class="track-card">
+    <span class="track-number">2</span>
+    <strong>R programming and statistical analysis</strong>
+    <p>Build a reproducible workflow for cleaning survey data, describing responses, quantifying uncertainty, estimating models, and communicating results.</p>
+  </div>
+</div>
 
 ## Course overview
 
@@ -39,8 +88,6 @@ By the end of the semester, students will be able to:
 10. Collaborate effectively on a time-sensitive research project with external partners.
 
 ## Course structure
-
-The course has two coordinated learning tracks. The **survey-production track** follows the lifecycle of the Univision poll. The **R and statistics track** builds the quantitative foundations students need to analyze survey data independently. Each week connects a methodological decision to a statistical or programming skill.
 
 The survey-production track follows this cycle:
 
