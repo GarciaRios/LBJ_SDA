@@ -417,14 +417,21 @@
     "href": "index.html",
     "title": "Survey Design and Analysis",
     "section": "",
-    "text": "Instructor\nSergio I. García-Ríos\n\n\nMeeting\nMondays, 9:00 a.m.–12:00 p.m.\n\n\nLocation\nSRH 3.214\n\n\nOffice hours\nBy appointment\n\n\nTeaching assistant\nTo be announced\n\n\nCourse partners\nUnivision News and an additional UT unit to be announced"
+    "text": "LBJ School of Public Affairs · Fall 2026\n\n\n\n\nLearn the complete lifecycle of professional survey research while helping design, execute, analyze, and communicate a live 2026 public-opinion poll with Univision News.\n\n\nMondays · 9:00 a.m.–12:00 p.m. SRH 3.214 Sergio I. García-Ríos"
   },
   {
     "objectID": "index.html#course-information",
     "href": "index.html#course-information",
     "title": "Survey Design and Analysis",
-    "section": "",
-    "text": "Instructor\nSergio I. García-Ríos\n\n\nMeeting\nMondays, 9:00 a.m.–12:00 p.m.\n\n\nLocation\nSRH 3.214\n\n\nOffice hours\nBy appointment\n\n\nTeaching assistant\nTo be announced\n\n\nCourse partners\nUnivision News and an additional UT unit to be announced"
+    "section": "Course information",
+    "text": "Course information\n\n\n\n\n\n\n\nInstructor\nSergio I. García-Ríos\n\n\nMeeting\nMondays, 9:00 a.m.–12:00 p.m.\n\n\nLocation\nSRH 3.214\n\n\nOffice hours\nBy appointment\n\n\nTeaching assistant\nTo be announced\n\n\nCourse partners\nUnivision News and an additional UT unit to be announced"
+  },
+  {
+    "objectID": "index.html#one-course-two-connected-tracks",
+    "href": "index.html#one-course-two-connected-tracks",
+    "title": "Survey Design and Analysis",
+    "section": "One course, two connected tracks",
+    "text": "One course, two connected tracks\n\n\n&lt;span class=\"track-number\"&gt;1&lt;/span&gt;\n&lt;strong&gt;Survey design and production&lt;/strong&gt;\n&lt;p&gt;Move from research objectives and measurement through sampling, questionnaire testing, fieldwork, quality assurance, weighting, and public release.&lt;/p&gt;\n\n\n&lt;span class=\"track-number\"&gt;2&lt;/span&gt;\n&lt;strong&gt;R programming and statistical analysis&lt;/strong&gt;\n&lt;p&gt;Build a reproducible workflow for cleaning survey data, describing responses, quantifying uncertainty, estimating models, and communicating results.&lt;/p&gt;"
   },
   {
     "objectID": "index.html#course-overview",
@@ -445,7 +452,7 @@
     "href": "index.html#course-structure",
     "title": "Survey Design and Analysis",
     "section": "Course structure",
-    "text": "Course structure\nThe course has two coordinated learning tracks. The survey-production track follows the lifecycle of the Univision poll. The R and statistics track builds the quantitative foundations students need to analyze survey data independently. Each week connects a methodological decision to a statistical or programming skill.\nThe survey-production track follows this cycle:\n\nPurpose and design: research objectives, stakeholders, ethics, and total survey error.\nMeasurement: concepts, question wording, response options, order effects, translation, and testing.\nRepresentation: target populations, frames, sampling, modes, recruitment, nonresponse, and weighting.\nProduction: questionnaire integration, programming, quality assurance, fieldwork, and documentation.\nAnalysis and communication: cleaning, uncertainty, subgroup analysis, visualization, reporting, and release.\n\nClass meetings will combine discussion, methodological workshops, R labs, project meetings, and production sprints. The schedule identifies the planned focus for each Monday."
+    "text": "Course structure\nThe survey-production track follows this cycle:\n\nPurpose and design: research objectives, stakeholders, ethics, and total survey error.\nMeasurement: concepts, question wording, response options, order effects, translation, and testing.\nRepresentation: target populations, frames, sampling, modes, recruitment, nonresponse, and weighting.\nProduction: questionnaire integration, programming, quality assurance, fieldwork, and documentation.\nAnalysis and communication: cleaning, uncertainty, subgroup analysis, visualization, reporting, and release.\n\nClass meetings will combine discussion, methodological workshops, R labs, project meetings, and production sprints. The schedule identifies the planned focus for each Monday."
   },
   {
     "objectID": "index.html#assessment",
