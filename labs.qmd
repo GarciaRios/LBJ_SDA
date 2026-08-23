@@ -8,8 +8,17 @@ No prior mastery of R is required. Most lab work will be completed together duri
 
 ## Lab materials
 
-- [Lab 1: Your First Reproducible Survey Analysis](Labs/fall2026/lab1/lab1.qmd)
-- [Lab 2: Describing and Visualizing Survey Responses](Labs/fall2026/lab2/lab2.qmd)
+### Lab 1: Your First Reproducible Survey Analysis
+
+[Read Lab 1](Labs/fall2026/lab1/lab1.qmd) · [Download the Lab 1 student template](Labs/fall2026/templates/lab1-template.qmd){download=""}
+
+### Lab 2: Describing and Visualizing Survey Responses
+
+[Read Lab 2](Labs/fall2026/lab2/lab2.qmd) · [Download the Lab 2 student template](Labs/fall2026/templates/lab2-template.qmd){download=""}
+
+::: {.callout-note}
+The website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning.
+:::
 
 ## Lab sequence
 
