@@ -1,0 +1,66 @@
+---
+title: "Initial Survey Autopsy"
+subtitle: "A first-day diagnostic"
+format:
+  html:
+    toc: true
+---
+
+::: {.callout-important}
+**Completed in class:** Monday, August 24, 2026  
+**Grading:** Serious completion receives full credit  
+**Outside research:** Not required
+:::
+
+## Purpose
+
+This activity helps us understand what you—and the class as a whole—already know about survey methodology before we introduce formal frameworks.
+
+Everyone will examine the same published survey report. Your task is to identify what gives you confidence in the study, what concerns you, and what additional information you would need before using or reporting its results.
+
+This is not **Individual Assignment 1: Poll Autopsy**, which will be assigned later in the semester.
+
+## Materials
+
+- [Download the Diverse Political Tracker report](../../materials/diverse-political-tracker-jan-2024.pdf){download=""}
+
+The report is *Diverse Political Tracker: Voting for a New Year of Health and Prosperity*, published by Intelligence Center from My Code in January 2024.
+
+::: {.callout-note}
+The available document is the published results report, not the complete questionnaire. Treat the absence of information as analytically meaningful: distinguish what the report demonstrates, what it claims, and what cannot be assessed from the disclosed materials.
+:::
+
+## Your task
+
+Based only on the report provided, write a concise initial assessment addressing:
+
+- What features of the survey or report give you confidence?
+- What features raise concerns?
+- What claims appear well supported?
+- What claims may go beyond the disclosed evidence?
+- What additional information would you want before using or reporting the findings?
+
+You do not need to answer every question below. They are prompts to help you begin:
+
+- Who does the survey claim to represent?
+- What do we know about how respondents were recruited?
+- How might question wording or response options affect the results?
+- Are comparisons across demographic groups presented appropriately?
+- How might the charts, percentages, or headlines influence interpretation?
+- What ethical or transparency questions arise?
+
+## Submission
+
+Aim for approximately one page. Clear reasoning and specific examples matter more than technical vocabulary.
+
+You will first work independently, then compare observations in a group of three. Submit your initial individual response through Canvas at the end of class or by the deadline announced in class.
+
+## What happens later
+
+During the final class, you will return to this initial assessment and identify:
+
+- what you noticed correctly;
+- what you missed;
+- which criticisms were justified;
+- which criticisms lacked sufficient evidence; and
+- how your evaluation changed after studying survey methodology.

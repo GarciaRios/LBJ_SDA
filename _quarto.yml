@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - Labs/fall2026/templates/*.qmd
+    - materials/*.pdf
   render:
     - index.qmd
     - schedule.qmd
@@ -10,6 +11,7 @@ project:
     - assignments.qmd
     - project.qmd
     - labs.qmd
+    - assignments/fall2026/initial-survey-autopsy.qmd
     - assignments/fall2026/poll-autopsy.qmd
     - Labs/fall2026/lab1/lab1.qmd
     - Labs/fall2026/lab2/lab2.qmd
