@@ -6,6 +6,12 @@ format:
     toc: true
 ---
 
+::: {.callout-important}
+**Assigned:** Monday, October 12, 2026  
+**Due:** Sunday, October 18, 2026, by 11:59 p.m.  
+**Weight:** 5% of the course grade
+:::
+
 ## Purpose
 
 Poll results often reach the public as a headline, a chart, or a sentence about what “Americans think.” A responsible analyst must work backward from those claims to the research design.

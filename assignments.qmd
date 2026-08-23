@@ -29,6 +29,10 @@ Five substantial labs integrate R programming, statistical reasoning, and survey
 
 Most lab work will be completed together during class. Each lab concludes with a shorter **On Your Own** section completed alone. Labs are graded on statistical reasoning, readable and functioning code, reproducibility, appropriate checks, and clear interpretation.
 
+## Initial Survey Autopsy diagnostic
+
+During the first class on August 24, all students will evaluate the same intentionally problematic survey before receiving formal instruction in survey methodology. This short exercise is completion-based and is used to identify the class's starting knowledge. It is **not** Individual Assignment 1.
+
 ## Assignment materials
 
 - [Individual Assignment 1: Poll Autopsy](assignments/fall2026/poll-autopsy.qmd)
@@ -38,6 +42,8 @@ Most lab work will be completed together during class. Each lab concludes with a
 Three concise assignments ask students to make and defend methodological decisions.
 
 ### 1. Poll autopsy · 5%
+
+**Assigned:** October 12 · **Due:** October 18 at 11:59 p.m.
 
 Evaluate a published poll from its public release and methodological disclosure. Identify the target population, sample source, mode, field dates, question wording, weighting, reported uncertainty, principal claims, and important information that is absent. Conclude with what the poll does and does not permit readers to claim.
 

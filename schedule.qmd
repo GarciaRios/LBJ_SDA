@@ -8,7 +8,7 @@ The schedule follows the official UT Austin Fall 2026 calendar and the anticipat
 
 | Session | Date | Survey-production focus | R/statistics lab or principal product |
 |---:|---|---|---|
-| 1 | Aug. 24 | Why polls fail—and what good survey design requires | Poll autopsy; R/Quarto setup |
+| 1 | Aug. 24 | Why polls fail—and what good survey design requires | Initial Survey Autopsy diagnostic; R/Quarto setup |
 | 2 | Aug. 31 | Research objectives, ethics, and total survey error | **Lab 1:** R workflow and survey data |
 | — | Sept. 7 | **Labor Day—no class** | |
 | 3 | Sept. 14 | Concepts, measurement, and questionnaire architecture | Construct map |
@@ -70,6 +70,8 @@ We define the inferential population, compare sampling frames and recruitment so
 We analyze mode effects, coverage, contact strategies, incentives, accessibility, response rates, and nonresponse bias.
 
 **Lab 3 begins in class:** simulation, sampling distributions, standard errors, margins of error, confidence intervals, hypothesis tests, and subgroup comparisons.
+
+**Individual Assignment 1: Poll Autopsy assigned. Due Sunday, October 18, by 11:59 p.m.**
 
 ### Session 8 · October 19  
 **Programming and quality assurance**
