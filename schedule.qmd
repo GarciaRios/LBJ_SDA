@@ -9,7 +9,7 @@ The schedule follows the official UT Austin Fall 2026 calendar and the anticipat
 | Session | Date | Survey-production focus | R/statistics lab or principal product |
 |---:|---|---|---|
 <<<<<<< HEAD
-| 1 | Aug. 24 | Why polls fail, and what good survey design requires | Initial Survey Autopsy diagnostic; R/Quarto setup |
+| 1 | Aug. 24 | Why polls fail and what good survey design requires | Initial Survey Autopsy diagnostic; R/Quarto setup |
 =======
 | 1 | Aug. 24 | Why polls fail—and what good survey design requires | [Initial Survey Autopsy diagnostic](assignments/fall2026/initial-survey-autopsy.qmd); R/Quarto setup |
 >>>>>>> 639fe53750483d92d2556f3aedf0b4528024fd65
