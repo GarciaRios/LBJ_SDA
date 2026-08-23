@@ -592,7 +592,7 @@
     "href": "labs.html#lab-materials",
     "title": "R and Statistics Labs",
     "section": "Lab materials",
-    "text": "Lab materials\n\nLab 1: Your First Reproducible Survey Analysis\nLab 2: Describing and Visualizing Survey Responses"
+    "text": "Lab materials\n\nLab 1: Your First Reproducible Survey Analysis\nRead Lab 1 · Download the Lab 1 student template\n\n\nLab 2: Describing and Visualizing Survey Responses\nRead Lab 2 · Download the Lab 2 student template\n\n\n\n\n\n\nNote\n\n\n\nThe website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning."
   },
   {
     "objectID": "labs.html#lab-sequence",
