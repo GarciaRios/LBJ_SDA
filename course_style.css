@@ -6,12 +6,12 @@
   --ink: #17212b;
   --muted: #5f6b76;
   --navy: #182b49;
-  --paper: #fbfaf7;
+  --paper: #fcfcfb;
   --surface: #ffffff;
   --line: #dfe3e6;
   --soft-orange: #fff2e8;
   --soft-blue: #eef4f8;
-  --shadow: 0 12px 32px rgba(24, 43, 73, 0.09);
+  --shadow: 0 6px 18px rgba(24, 43, 73, 0.07);
 }
 
 /* Typography and page rhythm */
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6,
 h2 {
   margin-top: 2.6rem;
   padding-bottom: 0.45rem;
-  border-bottom: 2px solid #ead9cc;
+  border-bottom: 1px solid #e5e7e9;
 }
 
 h3 {
@@ -59,10 +59,10 @@ a:hover {
 /* High-contrast navigation */
 
 .navbar {
-  min-height: 68px;
+  min-height: 60px;
   background: var(--navy) !important;
-  border-bottom: 4px solid var(--ut-burnt-orange);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
+  border-bottom: 2px solid var(--ut-burnt-orange);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.10);
 }
 
 .navbar .navbar-brand,
@@ -106,29 +106,20 @@ a:hover {
   position: relative;
   overflow: hidden;
   margin: 0 0 2.2rem;
-  padding: clamp(2rem, 5vw, 4.8rem);
+  padding: clamp(1.8rem, 4vw, 3.25rem);
   color: #ffffff;
-  background:
-    radial-gradient(circle at 88% 18%, rgba(191, 87, 0, 0.75), transparent 31%),
-    linear-gradient(125deg, #13243d 0%, var(--navy) 58%, #263f65 100%);
-  border-radius: 0 0 1.1rem 1.1rem;
+  background: linear-gradient(125deg, #162842 0%, var(--navy) 68%, #213a5c 100%);
+  border-radius: 0 0 0.7rem 0.7rem;
   box-shadow: var(--shadow);
 }
 
 .course-hero::after {
-  content: "";
-  position: absolute;
-  right: -5rem;
-  bottom: -8rem;
-  width: 19rem;
-  height: 19rem;
-  border: 2px solid rgba(255, 255, 255, 0.14);
-  border-radius: 50%;
+  content: none;
 }
 
 .course-eyebrow {
   margin: 0 0 0.8rem;
-  color: #ffc999;
+  color: #eeb58a;
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.13em;
@@ -139,15 +130,15 @@ a:hover {
   max-width: 18ch;
   margin: 0;
   color: #ffffff;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
-  line-height: 1.02;
+  font-size: clamp(2.15rem, 5vw, 3.65rem);
+  line-height: 1.06;
 }
 
 .course-deck {
   max-width: 62ch;
   margin: 1.25rem 0 0;
-  color: #edf2f7;
-  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  color: #e7edf3;
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
 }
 
 .course-meta {
@@ -162,7 +153,7 @@ a:hover {
 
 .course-meta span {
   padding-left: 0.8rem;
-  border-left: 3px solid #e88942;
+  border-left: 2px solid #cf7b3b;
 }
 
 /* Quick links and course-track cards */
@@ -199,20 +190,20 @@ a:hover {
 .track-card {
   display: block;
   height: 100%;
-  padding: 1.25rem;
+  padding: 1.1rem;
   color: var(--ink) !important;
   text-decoration: none;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-top: 4px solid var(--ut-burnt-orange);
-  border-radius: 0.65rem;
-  box-shadow: 0 4px 16px rgba(24, 43, 73, 0.05);
+  border-top: 2px solid #cf7b3b;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(24, 43, 73, 0.04);
   transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
 }
 
 .quick-card:hover,
 .track-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: #d0a17e;
   box-shadow: var(--shadow);
 }
@@ -233,8 +224,8 @@ a:hover {
 }
 
 .track-card {
-  padding: 1.6rem;
-  border-top-color: var(--navy);
+  padding: 1.35rem;
+  border-top-color: #728096;
 }
 
 .track-number {
@@ -245,7 +236,7 @@ a:hover {
   height: 2rem;
   margin-bottom: 0.8rem;
   color: #ffffff;
-  background: var(--ut-burnt-orange);
+  background: #9e4b12;
   border-radius: 50%;
   font-weight: 800;
 }
@@ -300,7 +291,7 @@ div.sourceCode {
   margin-top: 4rem;
   color: #dce4ec;
   background: var(--navy);
-  border-top: 4px solid var(--ut-burnt-orange);
+  border-top: 2px solid var(--ut-burnt-orange);
 }
 
 .page-footer a {
