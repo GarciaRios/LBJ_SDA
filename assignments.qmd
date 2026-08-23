@@ -33,6 +33,8 @@ Most lab work will be completed together during class. Each lab concludes with a
 
 During the first class on August 24, all students will evaluate the same intentionally problematic survey before receiving formal instruction in survey methodology. This short exercise is completion-based and is used to identify the class's starting knowledge. It is **not** Individual Assignment 1.
 
+[Open the Initial Survey Autopsy instructions and download the report](assignments/fall2026/initial-survey-autopsy.qmd)
+
 ## Assignment materials
 
 - [Individual Assignment 1: Poll Autopsy](assignments/fall2026/poll-autopsy.qmd)
