@@ -238,60 +238,228 @@
     "text": "Useful references\n\nAAPOR Best Practices for Survey Research\nAAPOR Disclosure Standards\nAAPOR Polling Accuracy\nCourse readings on total survey error, question wording, sampling, modes, and uncertainty"
   },
   {
-    "objectID": "project.html",
-    "href": "project.html",
-    "title": "The 2026 Univision Polling Partnership",
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "R and Statistics Labs",
     "section": "",
-    "text": "The class will collaborate with Univision News on a live 2026 public-opinion research project. An additional University of Texas unit may join the partnership; that collaboration will be announced once confirmed.\nStudents will encounter the linked decisions that shape professional polling: what stakeholders need to know, what a survey can measure, who must be represented, how respondents will be recruited, how the instrument will perform in English and Spanish, how fieldwork will be monitored, and how findings can be communicated responsibly."
+    "text": "The five labs form the quantitative spine of the course. They teach R programming and foundational statistics through practical survey problems, with the live Univision project providing the principal application.\nNo prior mastery of R is required. Most lab work will be completed together during class: the instructor will introduce the statistical idea, build the code with students, pause for interpretation and troubleshooting, and model how to check the results. Students will then complete a shorter On Your Own section individually."
   },
   {
-    "objectID": "project.html#the-central-course-project",
-    "href": "project.html#the-central-course-project",
-    "title": "The 2026 Univision Polling Partnership",
+    "objectID": "labs.html#lab-materials",
+    "href": "labs.html#lab-materials",
+    "title": "R and Statistics Labs",
+    "section": "Lab materials",
+    "text": "Lab materials\n\nLab 1: Your First Reproducible Survey Analysis\nRead Lab 1 · Download the Lab 1 student template\n\n\nLab 2: Describing and Visualizing Survey Responses\nRead Lab 2 · Download the Lab 2 student template\n\n\n\n\n\n\nNote\n\n\n\nThe website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning."
+  },
+  {
+    "objectID": "labs.html#lab-sequence",
+    "href": "labs.html#lab-sequence",
+    "title": "R and Statistics Labs",
+    "section": "Lab sequence",
+    "text": "Lab sequence\n\n\n\n\n\n\n\n\nLab\nR and statistical foundations\nSurvey application\n\n\n\n\n1\nRStudio projects, Quarto, objects, functions, packages, importing data, variable types, missing values, filtering, recoding, summarizing, and readable code\nImporting a survey, reading its codebook, cleaning variables, and creating a documented analysis file\n\n\n2\nDistributions, proportions, means and medians, cross-tabulations, grouped summaries, scales and indexes, and ggplot2\nDescribing respondents, evaluating measures, and visualizing survey responses accurately\n\n\n3\nProbability, random sampling, simulation, sampling distributions, standard errors, margins of error, confidence intervals, and basic hypothesis tests\nUnderstanding why poll estimates vary and evaluating topline and subgroup differences\n\n\n4\nSurvey weights, weighted estimates, effective sample size, design effects, and the R survey package\nComparing weighted and unweighted results and producing defensible estimates from survey data\n\n\n5\nLinear and logistic regression, categorical predictors, interactions, predicted probabilities, tables, graphics, and Quarto reporting\nExplaining survey outcomes and producing a reproducible section of the final report"
+  },
+  {
+    "objectID": "labs.html#lab-format",
+    "href": "labs.html#lab-format",
+    "title": "R and Statistics Labs",
+    "section": "Lab format",
+    "text": "Lab format\nEach lab has two connected parts.\n\nGuided workshop\nMost of the lab is completed together during class. We will:\n\nintroduce the statistical logic through a survey question;\nbuild and run the R code step by step;\ninterpret the output in plain language;\ndiagnose common errors;\ncheck whether the result is plausible; and\nconnect the technique to the Univision project.\n\n\n\nOn Your Own\nStudents will independently complete a shorter application using a new variable, question, or subset of the data. This section assesses whether each student can adapt the guided workflow, make appropriate choices, and explain the result.\nThe individual portion should normally be finishable in approximately 60–90 minutes after class when a student has participated in the guided workshop."
+  },
+  {
+    "objectID": "labs.html#what-students-should-learn",
+    "href": "labs.html#what-students-should-learn",
+    "title": "R and Statistics Labs",
+    "section": "What students should learn",
+    "text": "What students should learn\nBy the end of the lab sequence, students should be able to:\n\ncreate and navigate an RStudio project;\nimport and inspect common survey-data formats;\nuse a codebook and distinguish variable types;\nclean, label, recode, and document variables;\nidentify and handle missing values appropriately;\ncalculate and interpret descriptive statistics;\ncreate cross-tabulations and clear survey graphics;\nexplain sampling variability, standard errors, margins of error, and confidence intervals;\nevaluate basic differences across groups;\ncalculate and interpret weighted survey estimates;\nrecognize the consequences of extreme weights and design effects;\nestimate and interpret introductory linear and logistic regression models;\ncommunicate interactions with predicted probabilities and graphics; and\nproduce a reproducible Quarto analysis.\n\nThe objective is not memorizing formulas or R commands. Students should understand the logic of a method, recognize when it is appropriate, implement it with a documented workflow, check the output, and explain the result to a nontechnical audience."
+  },
+  {
+    "objectID": "labs.html#submission-and-evaluation",
+    "href": "labs.html#submission-and-evaluation",
+    "title": "R and Statistics Labs",
+    "section": "Submission and evaluation",
+    "text": "Submission and evaluation\nStudents submit the completed Quarto source file and rendered output. Labs are evaluated on:\n\ncompletion of the independent section;\ncorrect statistical reasoning;\nfunctioning and readable code;\nappropriate checks and documentation;\naccurate interpretation; and\nreproducibility.\n\nBecause programming involves troubleshooting, a minor syntax error will matter less than evidence that the student understands the intended analysis, can diagnose the problem, and can explain what the code and output mean."
+  },
+  {
+    "objectID": "labs.html#relationship-to-existing-materials",
+    "href": "labs.html#relationship-to-existing-materials",
+    "title": "R and Statistics Labs",
+    "section": "Relationship to existing materials",
+    "text": "Relationship to existing materials\nThe repository already contains useful foundations in introductory R, data manipulation, probability, inference, regression, predicted probabilities, and a Latino National Survey case study. These materials will be adapted into the five-lab sequence. Outdated syntax will be updated as as needed."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments and Assessment",
     "section": "",
-    "text": "The class will collaborate with Univision News on a live 2026 public-opinion research project. An additional University of Texas unit may join the partnership; that collaboration will be announced once confirmed.\nStudents will encounter the linked decisions that shape professional polling: what stakeholders need to know, what a survey can measure, who must be represented, how respondents will be recruited, how the instrument will perform in English and Spanish, how fieldwork will be monitored, and how findings can be communicated responsibly."
+    "text": "Assignments are stages of one professional survey workflow. Students will demonstrate individual methodological understanding, individual ability to analyze survey data, and effective collaboration on a public-facing research product. Detailed prompts, rubrics, templates, and submission links will be released on Canvas."
   },
   {
-    "objectID": "project.html#final-products",
-    "href": "project.html#final-products",
-    "title": "The 2026 Univision Polling Partnership",
-    "section": "Final products",
-    "text": "Final products\nThe project culminates in three connected products:\n\nOne coauthored class report for a public and policy audience.\nA partner briefing or public presentation communicating the principal findings.\nIndividual analysis memos demonstrating that every student can independently analyze and interpret the poll.\n\nThe class report will not be an anthology of separate student papers. Section teams will have primary ownership of particular research questions, but the class will use common definitions, methods, graphics standards, and editorial review so the final product reads as one coherent report."
+    "objectID": "assignments.html#assessment-map",
+    "href": "assignments.html#assessment-map",
+    "title": "Assignments and Assessment",
+    "section": "Assessment map",
+    "text": "Assessment map\n\n\n\n\n\n\n\n\nCategory\nWeight\nResponsibility\n\n\n\n\nPreparation and professional participation\n10%\nIndividual\n\n\nR and statistics labs\n25%\nIndividual, following guided class work\n\n\nIndividual methods assignments\n15%\nIndividual\n\n\nUnivision project milestones\n15%\nTeam\n\n\nIndividual poll analysis memo\n10%\nIndividual\n\n\nCoauthored report and presentation\n20%\nClass and section teams\n\n\nReflection and contribution statement\n5%\nIndividual\n\n\nTotal\n100%"
   },
   {
-    "objectID": "project.html#production-workflow-and-milestones",
-    "href": "project.html#production-workflow-and-milestones",
-    "title": "The 2026 Univision Polling Partnership",
-    "section": "Production workflow and milestones",
-    "text": "Production workflow and milestones\n\n1. Project charter\nDefine the research objectives, intended audiences, claims the study should support, roles, decision rules, confidentiality expectations, production calendar, and approval process.\n\n\n2. Measurement package\nMap concepts to indicators; identify established questions where appropriate; draft new items; document response options, order, randomization, and design rationale; and identify questions requiring partner decisions.\n\n\n3. Testing package\nConduct cognitive interviews or structured pretesting, document problems consistently, assess English/Spanish equivalence, revise the instrument, and preserve an issue and decision log.\n\n\n4. Representation plan\nDefine the target population and evaluate sampling frames, sources, modes, recruitment, coverage, nonresponse, language access, weighting needs, and inferential limitations.\n\n\n5. Instrument quality assurance\nTest survey flow, branching, randomization, mobile display, response requirements, bilingual presentation, embedded data, quotas, terminations, and respondent-facing messages.\n\n\n6. Fieldwork and data quality\nDevelop monitoring expectations for completes, sample composition, response patterns, speed, duplication, open-ended quality, missingness, and other indicators. Document decisions rather than creating post hoc rules after seeing results.\n\n\n7. Analysis plan\nSpecify priority outcomes, subgroup definitions, derived variables, use of weights, uncertainty, planned tables and graphics, multiple-comparison risks, and rules for interpreting differences.\n\n\n8. Analysis production\nCreate a common quality-controlled data file and shared functions or templates. Section teams conduct reproducible analysis, peer-check one another’s estimates, and maintain a results log.\n\n\n9. Report and briefing\nIntegrate an executive summary, methods, substantive sections, tables, graphics, limitations, and supporting documentation. Rehearse the briefing and verify that every spoken and written claim is supported by an approved result.\n\n\n10. Handoff and retrospective\nArchive approved code and documentation, identify unresolved questions, record lessons for a future polling cycle, and complete individual contribution statements."
+    "objectID": "assignments.html#r-and-statistics-labs-25",
+    "href": "assignments.html#r-and-statistics-labs-25",
+    "title": "Assignments and Assessment",
+    "section": "R and statistics labs · 25%",
+    "text": "R and statistics labs · 25%\nFive substantial labs integrate R programming, statistical reasoning, and survey analysis:\n\nR, Quarto, importing, cleaning, recoding, and documenting survey data.\nDescriptive statistics, cross-tabulations, measurement, and visualization.\nSampling, simulation, margins of error, confidence intervals, and basic hypothesis tests.\nSurvey weights, design effects, and weighted estimation.\nRegression, predicted probabilities, graphics, and reproducible reporting.\n\nMost lab work will be completed together during class. Each lab concludes with a shorter On Your Own section completed alone. Labs are graded on statistical reasoning, readable and functioning code, reproducibility, appropriate checks, and clear interpretation."
   },
   {
-    "objectID": "project.html#team-structure",
-    "href": "project.html#team-structure",
-    "title": "The 2026 Univision Polling Partnership",
-    "section": "Team structure",
-    "text": "Team structure\nThe expected enrollment is 12 students. The default structure will be four stable groups of three. If enrollment changes:\n\n12–13 students: four groups of three to four;\n14–15 students: five groups of approximately three; and\nanother enrollment total: groups will be adjusted to avoid isolating a student or creating an unnecessarily large team.\n\n\nStable substantive groups\nEach group will take primary responsibility for:\n\none research domain or question module;\ncognitive testing and revision of that module;\nits portion of the analysis plan;\nreproducible analysis of the corresponding results; and\none substantive section of the final report and presentation.\n\nThe substantive domains will be assigned after the research objectives and partner priorities are confirmed.\n\n\nCross-group production teams\nSeveral responsibilities affect the entire poll and should not belong permanently to one substantive group. At major production stages, one member from each group will join a temporary cross-group team for tasks such as:\n\nEnglish/Spanish consistency and cognitive-testing synthesis;\ninstrument programming and quality assurance;\ndata cleaning, weighting, and estimate verification;\ngraphics and editorial consistency; and\npresentation and partner-briefing preparation.\n\nThis matrix structure gives groups continuity while distributing the less visible technical and editorial labor. Roles may rotate so students experience more than one part of the production process.\nSpecialization does not excuse students from understanding the full research design."
+    "objectID": "assignments.html#initial-survey-autopsy-diagnostic",
+    "href": "assignments.html#initial-survey-autopsy-diagnostic",
+    "title": "Assignments and Assessment",
+    "section": "Initial Survey Autopsy diagnostic",
+    "text": "Initial Survey Autopsy diagnostic\nDuring the first class on August 24, all students will evaluate the same intentionally problematic survey before receiving formal instruction in survey methodology. This short exercise is completion-based and is used to identify the class’s starting knowledge. It is not Individual Assignment 1."
   },
   {
-    "objectID": "project.html#analytical-accountability",
-    "href": "project.html#analytical-accountability",
-    "title": "The 2026 Univision Polling Partnership",
-    "section": "Analytical accountability",
-    "text": "Analytical accountability\nThe class may share a clean analysis file, variable dictionary, weighting instructions, graphic theme, and approved helper functions. Each published estimate must nevertheless have:\n\nreproducible code;\na named primary analyst;\nan independent checker;\na link to its exact table or figure;\na documented denominator and weight;\nan interpretation that matches the evidence; and\napproval for release."
+    "objectID": "assignments.html#assignment-materials",
+    "href": "assignments.html#assignment-materials",
+    "title": "Assignments and Assessment",
+    "section": "Assignment materials",
+    "text": "Assignment materials\n\nIndividual Assignment 1: Poll Autopsy"
   },
   {
-    "objectID": "project.html#working-with-a-live-partner",
-    "href": "project.html#working-with-a-live-partner",
-    "title": "The 2026 Univision Polling Partnership",
-    "section": "Working with a live partner",
-    "text": "Working with a live partner\nPartner needs and production constraints may require schedule changes. Such changes are part of the learning experience, but grading expectations will remain transparent.\nSome materials may be confidential, embargoed, or restricted. Students may not circulate instruments, data, partner communications, preliminary estimates, or unpublished findings unless explicitly authorized. Restricted materials may not be entered into public generative-AI systems."
+    "objectID": "assignments.html#individual-methods-assignments-15",
+    "href": "assignments.html#individual-methods-assignments-15",
+    "title": "Assignments and Assessment",
+    "section": "Individual methods assignments · 15%",
+    "text": "Individual methods assignments · 15%\nThree concise assignments ask students to make and defend methodological decisions.\n\n1. Poll autopsy · 5%\nAssigned: October 12 · Due: October 18 at 11:59 p.m.\nEvaluate a published poll from its public release and methodological disclosure. Identify the target population, sample source, mode, field dates, question wording, weighting, reported uncertainty, principal claims, and important information that is absent. Conclude with what the poll does and does not permit readers to claim.\n\n\n2. Measurement and questionnaire critique · 5%\nDiagnose a set of survey questions using principles of comprehension, retrieval, judgment, response mapping, question order, response-option design, and sensitive measurement. Revise selected questions and explain how the revisions improve validity, reliability, comparability, or respondent experience.\n\n\n3. Sampling and mode recommendation · 5%\nGiven a research objective, population, budget, timeline, and reporting needs, recommend a sample and data-collection design. Address coverage, recruitment, nonresponse, language access, feasibility, weighting, uncertainty, and the limitations that should accompany published results."
   },
   {
-    "objectID": "project.html#authorship-branding-and-data-access",
-    "href": "project.html#authorship-branding-and-data-access",
-    "title": "The 2026 Univision Polling Partnership",
-    "section": "Authorship, branding, and data access",
-    "text": "Authorship, branding, and data access\nThe intention is to recognize meaningful student contributions and, when feasible, allow students to use the data for subsequent research or teaching portfolios. Final authorship, acknowledgement, branding, release, and continuing data access will follow the partnership agreement, consent and data-use restrictions, and documented contributions. Enrollment in the course alone does not guarantee public authorship or unrestricted data access."
+    "objectID": "assignments.html#univision-project-milestones-15",
+    "href": "assignments.html#univision-project-milestones-15",
+    "title": "Assignments and Assessment",
+    "section": "Univision project milestones · 15%",
+    "text": "Univision project milestones · 15%\nMilestones make the collaborative process visible and keep the live project on schedule. They are working products rather than unrelated homework.\n\n\n\n\n\n\n\nMilestone\nCollaborative deliverable\n\n\n\n\nProject charter\nObjectives, audiences, claims, roles, decision rules, confidentiality, and timeline\n\n\nMeasurement package\nConstruct map, proposed question module, source questions, and design rationale\n\n\nTesting package\nCognitive-testing protocol, findings matrix, English/Spanish revisions, and unresolved issues\n\n\nRepresentation plan\nTarget population, sampling and mode assessment, recruitment, language access, and limitations\n\n\nInstrument QA\nIntegrated questionnaire review, test cases, mobile/bilingual checks, issue log, and approval record\n\n\nAnalysis plan\nOutcomes, subgroups, derived variables, weighting use, planned tables and figures, and decision rules\n\n\n\nMilestones will normally be evaluated with a short common rubric:\n\nmethodological justification;\ncompleteness and accuracy;\nuse of evidence and testing;\ndocumentation and version control;\nresponsiveness to feedback; and\nreadiness for the next production stage."
+  },
+  {
+    "objectID": "assignments.html#individual-poll-analysis-memo-10",
+    "href": "assignments.html#individual-poll-analysis-memo-10",
+    "title": "Assignments and Assessment",
+    "section": "Individual poll analysis memo · 10%",
+    "text": "Individual poll analysis memo · 10%\nEach student will independently answer one focused substantive question using the final poll data.\nThe memo will normally include:\n\na clearly stated research question;\na brief explanation of the relevant survey measures;\ndocumented cleaning and recoding decisions;\nappropriate use of survey weights;\ndescriptive estimates and uncertainty;\none justified subgroup comparison or introductory model;\nat least one publication-quality visualization;\na concise interpretation for a policy or public audience;\nlimitations; and\nreproducible Quarto source code.\n\nStudents may work from a shared, quality-controlled analysis file, but the analytical choices, code, verification, and prose in the memo must be their own."
+  },
+  {
+    "objectID": "assignments.html#coauthored-lbjunivision-report-and-presentation-20",
+    "href": "assignments.html#coauthored-lbjunivision-report-and-presentation-20",
+    "title": "Assignments and Assessment",
+    "section": "Coauthored LBJ/Univision report and presentation · 20%",
+    "text": "Coauthored LBJ/Univision report and presentation · 20%\nThe class will produce one coherent professional report. Teams will take primary responsibility for substantive sections, but all students are responsible for reviewing the complete report and ensuring that its claims, methods, graphics, and tone are consistent.\nThe report should include:\n\nan executive summary;\na concise explanation of the research purpose;\na transparent methods statement;\nsubstantive sections organized around clear research questions;\naccurate tables and accessible graphics;\nappropriate discussion of uncertainty and limitations;\ndocumentation sufficient to reproduce all published statistics; and\na short partner briefing or public presentation.\n\nA section-team model gives students meaningful ownership without producing a collection of disconnected papers. The final document must read as one report rather than several assignments pasted together.\nPublic release, authorship order, branding, acknowledgement of student contributors, and access to the data after the semester will follow the final partnership agreement."
+  },
+  {
+    "objectID": "assignments.html#individual-reflection-and-contribution-statement-5",
+    "href": "assignments.html#individual-reflection-and-contribution-statement-5",
+    "title": "Assignments and Assessment",
+    "section": "Individual reflection and contribution statement · 5%",
+    "text": "Individual reflection and contribution statement · 5%\nThe final reflection will:\n\ndocument the student’s specific contributions;\nidentify evidence of those contributions in the project record;\nexplain one consequential methodological decision;\nevaluate the strengths and weaknesses of the completed project;\ndescribe what the student learned about collaboration; and\npropose one improvement for a future polling cycle.\n\nThe contribution statement provides accountability, but it is not a competition over who reports the greatest number of tasks. Quality, reliability, documentation, and support for the team matter."
+  },
+  {
+    "objectID": "assignments.html#evaluation-principles",
+    "href": "assignments.html#evaluation-principles",
+    "title": "Assignments and Assessment",
+    "section": "Evaluation principles",
+    "text": "Evaluation principles\nAcross assignments, work will be evaluated on:\n\nmethodological reasoning;\nstatistical accuracy;\nreproducibility and documentation;\nclarity and audience awareness;\nethical and professional judgment;\nresponsiveness to evidence and feedback; and\ncontribution to the collaborative process.\n\nA polished output cannot compensate for an indefensible method, and technical sophistication cannot compensate for unclear communication."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Fall 2026 Schedule",
+    "section": "",
+    "text": "The schedule follows the official UT Austin Fall 2026 calendar and the anticipated Univision polling cycle. Because this is a live project, milestone dates may shift. Changes will be announced in class and posted here."
+  },
+  {
+    "objectID": "schedule.html#at-a-glance",
+    "href": "schedule.html#at-a-glance",
+    "title": "Fall 2026 Schedule",
+    "section": "At a glance",
+    "text": "At a glance\n\n\n\n\n\n\n\n\n\nSession\nDate\nSurvey-production focus\nR/statistics lab or principal product\n\n\n\n\n1\nAug. 24\nWhy polls fail—and what good survey design requires\nInitial Survey Autopsy diagnostic; R/Quarto setup\n\n\n2\nAug. 31\nResearch objectives, ethics, and total survey error\nLab 1: R workflow and survey data\n\n\n—\nSept. 7\nLabor Day—no class\n\n\n\n3\nSept. 14\nConcepts, measurement, and questionnaire architecture\nConstruct map\n\n\n4\nSept. 21\nQuestion wording, response options, order, and sensitive questions\nDraft question module\n\n\n5\nSept. 28\nCognitive interviewing, multilingual equivalence, and revision\nLab 2: Descriptives, measures, and visualization\n\n\n6\nOct. 5\nTarget populations, frames, probability and nonprobability samples\nSampling assessment\n\n\n7\nOct. 12\nModes, recruitment, coverage, nonresponse, and inference\nLab 3: Sampling, uncertainty, and comparisons\n\n\n8\nOct. 19\nQuestionnaire integration, programming, randomization, and QA\nProgrammed instrument and QA log\n\n\n9\nOct. 26\nFieldwork, paradata, fraud, respondent quality, and documentation\nFieldwork dashboard plan\n\n\n10\nNov. 2\nCleaning, coding, missing data, weights, and design effects\nLab 4: Weighted survey estimates\n\n\n11\nNov. 9\nEstimation, uncertainty, subgroup comparisons, and modeling\nAnalysis plan and production sprint\n\n\n12\nNov. 16\nModeling, visualization, interpretation, and communication\nLab 5: Regression and reproducible reporting\n\n\n—\nNov. 23\nFall break—no class\n\n\n\n13\nNov. 30\nReport production, peer review, and partner briefing rehearsal\nFull report draft\n\n\n14\nDec. 7\nFinal presentations, project retrospective, and handoff\nFinal report and presentation"
+  },
+  {
+    "objectID": "schedule.html#detailed-schedule",
+    "href": "schedule.html#detailed-schedule",
+    "title": "Fall 2026 Schedule",
+    "section": "Detailed schedule",
+    "text": "Detailed schedule\n\nSession 1 · August 24\nWhy polls fail—and what good survey design requires\nWe begin with several real polls and work backward from their claims to their design decisions. The goal is to establish a shared language for evaluating survey evidence and introduce the semester partnership.\n\n\nSession 2 · August 31\nResearch objectives, stakeholders, ethics, and total survey error\nWe translate stakeholder questions into researchable objectives, identify the target population and intended claims, and use total survey error to anticipate threats before writing questions.\nLab 1 begins in class: RStudio projects, Quarto, importing survey data, reading a codebook, missing values, recoding, summarizing, and reproducible workflow.\n\n\nSeptember 7\nLabor Day—no class\n\n\nSession 3 · September 14\nConcepts, measurement, and questionnaire architecture\nWe move from abstract concepts to indicators, distinguish measurement from operational convenience, and design the overall flow of a questionnaire.\n\n\nSession 4 · September 21\nQuestion wording and response design\nWe examine comprehension, retrieval, judgment, response mapping, acquiescence, social desirability, question order, response scales, and treatment of uncertainty.\n\n\nSession 5 · September 28\nTesting and multilingual equivalence\nStudents conduct and evaluate cognitive interviews, identify systematic problems, and revise modules. We address translation, cultural adaptation, and equivalence across English and Spanish instruments.\nLab 2 begins in class: distributions, proportions, cross-tabulations, grouped summaries, measurement, scales, and accurate visualization with ggplot2.\n\n\nSession 6 · October 5\nSampling and representation\nWe define the inferential population, compare sampling frames and recruitment sources, and assess probability and nonprobability approaches.\n\n\nSession 7 · October 12\nModes, recruitment, and nonresponse\nWe analyze mode effects, coverage, contact strategies, incentives, accessibility, response rates, and nonresponse bias.\nLab 3 begins in class: simulation, sampling distributions, standard errors, margins of error, confidence intervals, hypothesis tests, and subgroup comparisons.\nIndividual Assignment 1: Poll Autopsy assigned. Due Sunday, October 18, by 11:59 p.m.\n\n\nSession 8 · October 19\nProgramming and quality assurance\nThe class integrates modules, reviews logic and randomization, tests mobile and bilingual displays, and maintains a formal issue log.\n\n\nSession 9 · October 26\nFieldwork and data quality\nWe establish fieldwork monitoring rules, examine paradata and fraud indicators, and distinguish defensible quality controls from post hoc deletion of inconvenient respondents.\n\n\nSession 10 · November 2\nCleaning, coding, and weighting\nStudents develop a reproducible workflow for labels, missingness, derived variables, open-ended coding, weighting, effective sample size, and documentation.\nLab 4 begins in class: the R survey package, weighted and unweighted estimates, design effects, effective sample size, and defensible toplines.\n\n\nSession 11 · November 9\nAnalysis and uncertainty\nWe estimate toplines, compare subgroups, quantify uncertainty, account for weights and design effects, and avoid common errors in interpreting close differences.\n\n\nSession 12 · November 16\nVisualization and public interpretation\nStudents turn results into accurate, accessible graphics and write claims that match the strength of the design and evidence.\nLab 5 begins in class: introductory linear and logistic regression, categorical predictors, interactions, predicted probabilities, model-based graphics, and reproducible Quarto reporting.\n\n\nNovember 23\nFall break—no class\n\n\nSession 13 · November 30\nReport production and briefing rehearsal\nTeams integrate the substantive narrative, methods statement, tables, graphics, limitations, and partner feedback into a coherent report.\n\n\nSession 14 · December 7\nFinal presentation and project retrospective\nThe class presents the final work, evaluates the production process, documents remaining decisions, and completes the project handoff."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Survey Design and Analysis",
+    "section": "",
+    "text": "LBJ School of Public Affairs · Fall 2026\n\n\n\n\nLearn the complete lifecycle of professional survey research while helping design, execute, analyze, and communicate a live 2026 public-opinion poll with Univision News.\n\n\nMondays · 9:00 a.m.–12:00 p.m. SRH 3.214 Sergio I. García-Ríos"
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "Survey Design and Analysis",
+    "section": "Course information",
+    "text": "Course information\n\n\n\n\n\n\n\nInstructor\nSergio I. García-Ríos\n\n\nMeeting\nMondays, 9:00 a.m.–12:00 p.m.\n\n\nLocation\nSRH 3.214\n\n\nOffice hours\nBy appointment\n\n\nTeaching assistant\nTo be announced\n\n\nCourse partners\nUnivision News and an additional UT unit to be announced"
+  },
+  {
+    "objectID": "index.html#one-course-two-connected-tracks",
+    "href": "index.html#one-course-two-connected-tracks",
+    "title": "Survey Design and Analysis",
+    "section": "One course, two connected tracks",
+    "text": "One course, two connected tracks\n\n\n1\nSurvey design and production\nMove from research objectives and measurement through sampling, questionnaire testing, fieldwork, quality assurance, weighting, and public release.\n\n\n2\nR programming and statistical analysis\nBuild a reproducible workflow for cleaning survey data, describing responses, quantifying uncertainty, estimating models, and communicating results."
+  },
+  {
+    "objectID": "index.html#course-overview",
+    "href": "index.html#course-overview",
+    "title": "Survey Design and Analysis",
+    "section": "Course overview",
+    "text": "Course overview\nThis course teaches students how to design, execute, evaluate, analyze, and communicate rigorous survey research. Rather than treating survey methodology as a collection of isolated techniques, we will organize the semester around the complete lifecycle of a major public-opinion poll.\nThe central applied experience will be a live partnership with Univision News. Students will participate in the stages of developing and executing a 2026 public-opinion poll, from defining research objectives and writing questions through quality assurance, analysis, and public communication. An additional University of Texas partner may join the collaboration.\nThe partnership gives students access to the practical decisions, compromises, deadlines, and ethical responsibilities that shape professional survey research. Because this is a real polling project, some dates and deliverables may change as fieldwork and partner needs evolve."
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Survey Design and Analysis",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of the semester, students will be able to:\n\nTranslate substantive and policy questions into a feasible survey research design.\nEvaluate probability and nonprobability samples using the total survey error framework.\nWrite, revise, translate, and test survey questions that measure concepts reliably and validly.\nAssess tradeoffs among survey modes, sampling frames, recruitment strategies, and fieldwork protocols.\nDevelop a questionnaire, survey flow, and quality-assurance plan suitable for professional fielding.\nDiagnose coverage, nonresponse, measurement, and data-quality problems.\nClean, document, weight, analyze, and visualize survey data reproducibly in R.\nQuantify and communicate uncertainty without overstating what a poll can establish.\nProduce accessible, ethical, and decision-relevant survey findings for academic, policy, and public audiences.\nCollaborate effectively on a time-sensitive research project with external partners."
+  },
+  {
+    "objectID": "index.html#course-structure",
+    "href": "index.html#course-structure",
+    "title": "Survey Design and Analysis",
+    "section": "Course structure",
+    "text": "Course structure\nThe survey-production track follows this cycle:\n\nPurpose and design: research objectives, stakeholders, ethics, and total survey error.\nMeasurement: concepts, question wording, response options, order effects, translation, and testing.\nRepresentation: target populations, frames, sampling, modes, recruitment, nonresponse, and weighting.\nProduction: questionnaire integration, programming, quality assurance, fieldwork, and documentation.\nAnalysis and communication: cleaning, uncertainty, subgroup analysis, visualization, reporting, and release.\n\nClass meetings will combine discussion, methodological workshops, R labs, project meetings, and production sprints. The schedule identifies the planned focus for each Monday."
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "Survey Design and Analysis",
+    "section": "Assessment",
+    "text": "Assessment\n\n\n\nComponent\nWeight\n\n\n\n\nPreparation and professional participation\n10%\n\n\nR and statistics labs\n25%\n\n\nIndividual methods assignments\n15%\n\n\nUnivision project milestones\n15%\n\n\nIndividual poll analysis memo\n10%\n\n\nCoauthored LBJ/Univision report and presentation\n20%\n\n\nIndividual reflection and contribution statement\n5%\n\n\nTotal\n100%\n\n\n\n\nPreparation and professional participation\nParticipation includes arriving prepared, contributing constructively, giving useful feedback, meeting production deadlines, documenting decisions, and supporting the work of the project team. Attendance matters because many workshops and partner activities cannot be recreated individually.\n\n\nR and statistics labs\nFive substantial labs teach R programming and the statistical foundations of survey analysis. Most of each lab is completed together during class through guided coding, interpretation, and troubleshooting. Students then complete a shorter “On Your Own” application individually. Topics include data wrangling, descriptive statistics, visualization, sampling and inference, survey weights, regression, predicted probabilities, and reproducible reporting.\n\n\nIndividual methods assignments\nThree short assignments require students to evaluate a published poll, diagnose and improve survey measurement, and defend a sampling and mode recommendation. These assignments ensure that each student develops independent methodological judgment.\n\n\nUnivision project milestones\nTeams will complete staged products such as a project charter, measurement module, cognitive-testing report, representation plan, instrument quality-assurance review, and analysis plan. Milestones are working documents that feed directly into the live poll and final report.\n\n\nIndividual poll analysis memo\nEach student will independently analyze a substantive question using the poll data. The memo must include reproducible R code, appropriate use of weights and uncertainty, at least one effective visualization, and a concise interpretation written for a policy or public audience.\n\n\nCoauthored report and presentation\nThe class will produce one coherent report using data from the poll. Teams will take primary responsibility for different substantive sections while reviewing and revising the full document. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.\n\n\nIndividual reflection and contribution statement\nEach student will document their contributions, explain important methodological decisions, evaluate the collaboration, and identify what they would change in a future survey project."
+  },
+  {
+    "objectID": "index.html#course-materials-and-software",
+    "href": "index.html#course-materials-and-software",
+    "title": "Survey Design and Analysis",
+    "section": "Course materials and software",
+    "text": "Course materials and software\nThere is no single textbook that covers the full course. Required readings will combine foundational survey-methodology research, recent methodological reports, applied examples, and documentation. Readings will be posted on the schedule and Canvas.\nWe will use R and RStudio or Posit Cloud for analysis and Quarto for reproducible documents. No prior mastery of R is required, but students are expected to practice consistently and seek help early."
+  },
+  {
+    "objectID": "index.html#communication-and-submission",
+    "href": "index.html#communication-and-submission",
+    "title": "Survey Design and Analysis",
+    "section": "Communication and submission",
+    "text": "Communication and submission\nThe course website is the public home for the syllabus, schedule, assignments, and labs. Canvas will be used for protected readings, grades, and assignment submission. The teaching team will explain the channel used for project communication during the first class.\nUnless an assignment says otherwise, reproducible work should include both the source file and the rendered output."
+  },
+  {
+    "objectID": "index.html#use-of-artificial-intelligence",
+    "href": "index.html#use-of-artificial-intelligence",
+    "title": "Survey Design and Analysis",
+    "section": "Use of artificial intelligence",
+    "text": "Use of artificial intelligence\nGenerative AI can support brainstorming, coding, editing, and troubleshooting, but it cannot substitute for methodological judgment or individual learning. Students must follow the instructions for each assignment, verify all AI-assisted work, protect confidential or embargoed project information, and disclose substantive AI assistance. No restricted survey instrument, respondent data, partner communication, or unpublished result may be entered into a public AI system without explicit authorization."
+  },
+  {
+    "objectID": "index.html#professional-and-ethical-responsibilities",
+    "href": "index.html#professional-and-ethical-responsibilities",
+    "title": "Survey Design and Analysis",
+    "section": "Professional and ethical responsibilities",
+    "text": "Professional and ethical responsibilities\nThis course may involve embargoed instruments, partner discussions, and unpublished results. Students must follow all confidentiality, data-security, attribution, and release rules established for the project. Participation in a course does not authorize independent public release of project materials or findings.\nCourse policies on accommodations, academic integrity, safety, religious observances, names and pronouns, and university resources will be aligned with current University and LBJ guidance and posted before the semester begins."
   },
   {
     "objectID": "readings.html",
@@ -413,228 +581,102 @@
     "text": "Reading-list principles\nThe final list will be adjusted to:\n\nkeep weekly workload realistic;\nprovide accessible alternatives for highly technical material;\ninclude work by a diverse set of survey methodologists;\nconnect readings directly to that week’s project decision;\ndistinguish required selections from useful reference works; and\nincorporate timely materials that emerge during the 2026 polling cycle."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Survey Design and Analysis",
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "The 2026 Univision Polling Partnership",
     "section": "",
-    "text": "LBJ School of Public Affairs · Fall 2026\n\n\n\n\nLearn the complete lifecycle of professional survey research while helping design, execute, analyze, and communicate a live 2026 public-opinion poll with Univision News.\n\n\nMondays · 9:00 a.m.–12:00 p.m. SRH 3.214 Sergio I. García-Ríos"
+    "text": "The class will collaborate with Univision News on a live 2026 public-opinion research project. An additional University of Texas unit may join the partnership; that collaboration will be announced once confirmed.\nStudents will encounter the linked decisions that shape professional polling: what stakeholders need to know, what a survey can measure, who must be represented, how respondents will be recruited, how the instrument will perform in English and Spanish, how fieldwork will be monitored, and how findings can be communicated responsibly."
   },
   {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "Survey Design and Analysis",
-    "section": "Course information",
-    "text": "Course information\n\n\n\n\n\n\n\nInstructor\nSergio I. García-Ríos\n\n\nMeeting\nMondays, 9:00 a.m.–12:00 p.m.\n\n\nLocation\nSRH 3.214\n\n\nOffice hours\nBy appointment\n\n\nTeaching assistant\nTo be announced\n\n\nCourse partners\nUnivision News and an additional UT unit to be announced"
-  },
-  {
-    "objectID": "index.html#one-course-two-connected-tracks",
-    "href": "index.html#one-course-two-connected-tracks",
-    "title": "Survey Design and Analysis",
-    "section": "One course, two connected tracks",
-    "text": "One course, two connected tracks\n\n\n1\nSurvey design and production\nMove from research objectives and measurement through sampling, questionnaire testing, fieldwork, quality assurance, weighting, and public release.\n\n\n2\nR programming and statistical analysis\nBuild a reproducible workflow for cleaning survey data, describing responses, quantifying uncertainty, estimating models, and communicating results."
-  },
-  {
-    "objectID": "index.html#course-overview",
-    "href": "index.html#course-overview",
-    "title": "Survey Design and Analysis",
-    "section": "Course overview",
-    "text": "Course overview\nThis course teaches students how to design, execute, evaluate, analyze, and communicate rigorous survey research. Rather than treating survey methodology as a collection of isolated techniques, we will organize the semester around the complete lifecycle of a major public-opinion poll.\nThe central applied experience will be a live partnership with Univision News. Students will participate in the stages of developing and executing a 2026 public-opinion poll, from defining research objectives and writing questions through quality assurance, analysis, and public communication. An additional University of Texas partner may join the collaboration.\nThe partnership gives students access to the practical decisions, compromises, deadlines, and ethical responsibilities that shape professional survey research. Because this is a real polling project, some dates and deliverables may change as fieldwork and partner needs evolve."
-  },
-  {
-    "objectID": "index.html#learning-objectives",
-    "href": "index.html#learning-objectives",
-    "title": "Survey Design and Analysis",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of the semester, students will be able to:\n\nTranslate substantive and policy questions into a feasible survey research design.\nEvaluate probability and nonprobability samples using the total survey error framework.\nWrite, revise, translate, and test survey questions that measure concepts reliably and validly.\nAssess tradeoffs among survey modes, sampling frames, recruitment strategies, and fieldwork protocols.\nDevelop a questionnaire, survey flow, and quality-assurance plan suitable for professional fielding.\nDiagnose coverage, nonresponse, measurement, and data-quality problems.\nClean, document, weight, analyze, and visualize survey data reproducibly in R.\nQuantify and communicate uncertainty without overstating what a poll can establish.\nProduce accessible, ethical, and decision-relevant survey findings for academic, policy, and public audiences.\nCollaborate effectively on a time-sensitive research project with external partners."
-  },
-  {
-    "objectID": "index.html#course-structure",
-    "href": "index.html#course-structure",
-    "title": "Survey Design and Analysis",
-    "section": "Course structure",
-    "text": "Course structure\nThe survey-production track follows this cycle:\n\nPurpose and design: research objectives, stakeholders, ethics, and total survey error.\nMeasurement: concepts, question wording, response options, order effects, translation, and testing.\nRepresentation: target populations, frames, sampling, modes, recruitment, nonresponse, and weighting.\nProduction: questionnaire integration, programming, quality assurance, fieldwork, and documentation.\nAnalysis and communication: cleaning, uncertainty, subgroup analysis, visualization, reporting, and release.\n\nClass meetings will combine discussion, methodological workshops, R labs, project meetings, and production sprints. The schedule identifies the planned focus for each Monday."
-  },
-  {
-    "objectID": "index.html#assessment",
-    "href": "index.html#assessment",
-    "title": "Survey Design and Analysis",
-    "section": "Assessment",
-    "text": "Assessment\n\n\n\nComponent\nWeight\n\n\n\n\nPreparation and professional participation\n10%\n\n\nR and statistics labs\n25%\n\n\nIndividual methods assignments\n15%\n\n\nUnivision project milestones\n15%\n\n\nIndividual poll analysis memo\n10%\n\n\nCoauthored LBJ/Univision report and presentation\n20%\n\n\nIndividual reflection and contribution statement\n5%\n\n\nTotal\n100%\n\n\n\n\nPreparation and professional participation\nParticipation includes arriving prepared, contributing constructively, giving useful feedback, meeting production deadlines, documenting decisions, and supporting the work of the project team. Attendance matters because many workshops and partner activities cannot be recreated individually.\n\n\nR and statistics labs\nFive substantial labs teach R programming and the statistical foundations of survey analysis. Most of each lab is completed together during class through guided coding, interpretation, and troubleshooting. Students then complete a shorter “On Your Own” application individually. Topics include data wrangling, descriptive statistics, visualization, sampling and inference, survey weights, regression, predicted probabilities, and reproducible reporting.\n\n\nIndividual methods assignments\nThree short assignments require students to evaluate a published poll, diagnose and improve survey measurement, and defend a sampling and mode recommendation. These assignments ensure that each student develops independent methodological judgment.\n\n\nUnivision project milestones\nTeams will complete staged products such as a project charter, measurement module, cognitive-testing report, representation plan, instrument quality-assurance review, and analysis plan. Milestones are working documents that feed directly into the live poll and final report.\n\n\nIndividual poll analysis memo\nEach student will independently analyze a substantive question using the poll data. The memo must include reproducible R code, appropriate use of weights and uncertainty, at least one effective visualization, and a concise interpretation written for a policy or public audience.\n\n\nCoauthored report and presentation\nThe class will produce one coherent report using data from the poll. Teams will take primary responsibility for different substantive sections while reviewing and revising the full document. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.\n\n\nIndividual reflection and contribution statement\nEach student will document their contributions, explain important methodological decisions, evaluate the collaboration, and identify what they would change in a future survey project."
-  },
-  {
-    "objectID": "index.html#course-materials-and-software",
-    "href": "index.html#course-materials-and-software",
-    "title": "Survey Design and Analysis",
-    "section": "Course materials and software",
-    "text": "Course materials and software\nThere is no single textbook that covers the full course. Required readings will combine foundational survey-methodology research, recent methodological reports, applied examples, and documentation. Readings will be posted on the schedule and Canvas.\nWe will use R and RStudio or Posit Cloud for analysis and Quarto for reproducible documents. No prior mastery of R is required, but students are expected to practice consistently and seek help early."
-  },
-  {
-    "objectID": "index.html#communication-and-submission",
-    "href": "index.html#communication-and-submission",
-    "title": "Survey Design and Analysis",
-    "section": "Communication and submission",
-    "text": "Communication and submission\nThe course website is the public home for the syllabus, schedule, assignments, and labs. Canvas will be used for protected readings, grades, and assignment submission. The teaching team will explain the channel used for project communication during the first class.\nUnless an assignment says otherwise, reproducible work should include both the source file and the rendered output."
-  },
-  {
-    "objectID": "index.html#use-of-artificial-intelligence",
-    "href": "index.html#use-of-artificial-intelligence",
-    "title": "Survey Design and Analysis",
-    "section": "Use of artificial intelligence",
-    "text": "Use of artificial intelligence\nGenerative AI can support brainstorming, coding, editing, and troubleshooting, but it cannot substitute for methodological judgment or individual learning. Students must follow the instructions for each assignment, verify all AI-assisted work, protect confidential or embargoed project information, and disclose substantive AI assistance. No restricted survey instrument, respondent data, partner communication, or unpublished result may be entered into a public AI system without explicit authorization."
-  },
-  {
-    "objectID": "index.html#professional-and-ethical-responsibilities",
-    "href": "index.html#professional-and-ethical-responsibilities",
-    "title": "Survey Design and Analysis",
-    "section": "Professional and ethical responsibilities",
-    "text": "Professional and ethical responsibilities\nThis course may involve embargoed instruments, partner discussions, and unpublished results. Students must follow all confidentiality, data-security, attribution, and release rules established for the project. Participation in a course does not authorize independent public release of project materials or findings.\nCourse policies on accommodations, academic integrity, safety, religious observances, names and pronouns, and university resources will be aligned with current University and LBJ guidance and posted before the semester begins."
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Fall 2026 Schedule",
+    "objectID": "project.html#the-central-course-project",
+    "href": "project.html#the-central-course-project",
+    "title": "The 2026 Univision Polling Partnership",
     "section": "",
-    "text": "The schedule follows the official UT Austin Fall 2026 calendar and the anticipated Univision polling cycle. Because this is a live project, milestone dates may shift. Changes will be announced in class and posted here."
+    "text": "The class will collaborate with Univision News on a live 2026 public-opinion research project. An additional University of Texas unit may join the partnership; that collaboration will be announced once confirmed.\nStudents will encounter the linked decisions that shape professional polling: what stakeholders need to know, what a survey can measure, who must be represented, how respondents will be recruited, how the instrument will perform in English and Spanish, how fieldwork will be monitored, and how findings can be communicated responsibly."
   },
   {
-    "objectID": "schedule.html#at-a-glance",
-    "href": "schedule.html#at-a-glance",
-    "title": "Fall 2026 Schedule",
-    "section": "At a glance",
-    "text": "At a glance\n\n\n\n\n\n\n\n\n\nSession\nDate\nSurvey-production focus\nR/statistics lab or principal product\n\n\n\n\n1\nAug. 24\nWhy polls fail—and what good survey design requires\nInitial Survey Autopsy diagnostic; R/Quarto setup\n\n\n2\nAug. 31\nResearch objectives, ethics, and total survey error\nLab 1: R workflow and survey data\n\n\n—\nSept. 7\nLabor Day—no class\n\n\n\n3\nSept. 14\nConcepts, measurement, and questionnaire architecture\nConstruct map\n\n\n4\nSept. 21\nQuestion wording, response options, order, and sensitive questions\nDraft question module\n\n\n5\nSept. 28\nCognitive interviewing, multilingual equivalence, and revision\nLab 2: Descriptives, measures, and visualization\n\n\n6\nOct. 5\nTarget populations, frames, probability and nonprobability samples\nSampling assessment\n\n\n7\nOct. 12\nModes, recruitment, coverage, nonresponse, and inference\nLab 3: Sampling, uncertainty, and comparisons\n\n\n8\nOct. 19\nQuestionnaire integration, programming, randomization, and QA\nProgrammed instrument and QA log\n\n\n9\nOct. 26\nFieldwork, paradata, fraud, respondent quality, and documentation\nFieldwork dashboard plan\n\n\n10\nNov. 2\nCleaning, coding, missing data, weights, and design effects\nLab 4: Weighted survey estimates\n\n\n11\nNov. 9\nEstimation, uncertainty, subgroup comparisons, and modeling\nAnalysis plan and production sprint\n\n\n12\nNov. 16\nModeling, visualization, interpretation, and communication\nLab 5: Regression and reproducible reporting\n\n\n—\nNov. 23\nFall break—no class\n\n\n\n13\nNov. 30\nReport production, peer review, and partner briefing rehearsal\nFull report draft\n\n\n14\nDec. 7\nFinal presentations, project retrospective, and handoff\nFinal report and presentation"
+    "objectID": "project.html#final-products",
+    "href": "project.html#final-products",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Final products",
+    "text": "Final products\nThe project culminates in three connected products:\n\nOne coauthored class report for a public and policy audience.\nA partner briefing or public presentation communicating the principal findings.\nIndividual analysis memos demonstrating that every student can independently analyze and interpret the poll.\n\nThe class report will not be an anthology of separate student papers. Section teams will have primary ownership of particular research questions, but the class will use common definitions, methods, graphics standards, and editorial review so the final product reads as one coherent report."
   },
   {
-    "objectID": "schedule.html#detailed-schedule",
-    "href": "schedule.html#detailed-schedule",
-    "title": "Fall 2026 Schedule",
-    "section": "Detailed schedule",
-    "text": "Detailed schedule\n\nSession 1 · August 24\nWhy polls fail—and what good survey design requires\nWe begin with several real polls and work backward from their claims to their design decisions. The goal is to establish a shared language for evaluating survey evidence and introduce the semester partnership.\n\n\nSession 2 · August 31\nResearch objectives, stakeholders, ethics, and total survey error\nWe translate stakeholder questions into researchable objectives, identify the target population and intended claims, and use total survey error to anticipate threats before writing questions.\nLab 1 begins in class: RStudio projects, Quarto, importing survey data, reading a codebook, missing values, recoding, summarizing, and reproducible workflow.\n\n\nSeptember 7\nLabor Day—no class\n\n\nSession 3 · September 14\nConcepts, measurement, and questionnaire architecture\nWe move from abstract concepts to indicators, distinguish measurement from operational convenience, and design the overall flow of a questionnaire.\n\n\nSession 4 · September 21\nQuestion wording and response design\nWe examine comprehension, retrieval, judgment, response mapping, acquiescence, social desirability, question order, response scales, and treatment of uncertainty.\n\n\nSession 5 · September 28\nTesting and multilingual equivalence\nStudents conduct and evaluate cognitive interviews, identify systematic problems, and revise modules. We address translation, cultural adaptation, and equivalence across English and Spanish instruments.\nLab 2 begins in class: distributions, proportions, cross-tabulations, grouped summaries, measurement, scales, and accurate visualization with ggplot2.\n\n\nSession 6 · October 5\nSampling and representation\nWe define the inferential population, compare sampling frames and recruitment sources, and assess probability and nonprobability approaches.\n\n\nSession 7 · October 12\nModes, recruitment, and nonresponse\nWe analyze mode effects, coverage, contact strategies, incentives, accessibility, response rates, and nonresponse bias.\nLab 3 begins in class: simulation, sampling distributions, standard errors, margins of error, confidence intervals, hypothesis tests, and subgroup comparisons.\nIndividual Assignment 1: Poll Autopsy assigned. Due Sunday, October 18, by 11:59 p.m.\n\n\nSession 8 · October 19\nProgramming and quality assurance\nThe class integrates modules, reviews logic and randomization, tests mobile and bilingual displays, and maintains a formal issue log.\n\n\nSession 9 · October 26\nFieldwork and data quality\nWe establish fieldwork monitoring rules, examine paradata and fraud indicators, and distinguish defensible quality controls from post hoc deletion of inconvenient respondents.\n\n\nSession 10 · November 2\nCleaning, coding, and weighting\nStudents develop a reproducible workflow for labels, missingness, derived variables, open-ended coding, weighting, effective sample size, and documentation.\nLab 4 begins in class: the R survey package, weighted and unweighted estimates, design effects, effective sample size, and defensible toplines.\n\n\nSession 11 · November 9\nAnalysis and uncertainty\nWe estimate toplines, compare subgroups, quantify uncertainty, account for weights and design effects, and avoid common errors in interpreting close differences.\n\n\nSession 12 · November 16\nVisualization and public interpretation\nStudents turn results into accurate, accessible graphics and write claims that match the strength of the design and evidence.\nLab 5 begins in class: introductory linear and logistic regression, categorical predictors, interactions, predicted probabilities, model-based graphics, and reproducible Quarto reporting.\n\n\nNovember 23\nFall break—no class\n\n\nSession 13 · November 30\nReport production and briefing rehearsal\nTeams integrate the substantive narrative, methods statement, tables, graphics, limitations, and partner feedback into a coherent report.\n\n\nSession 14 · December 7\nFinal presentation and project retrospective\nThe class presents the final work, evaluates the production process, documents remaining decisions, and completes the project handoff."
+    "objectID": "project.html#production-workflow-and-milestones",
+    "href": "project.html#production-workflow-and-milestones",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Production workflow and milestones",
+    "text": "Production workflow and milestones\n\n1. Project charter\nDefine the research objectives, intended audiences, claims the study should support, roles, decision rules, confidentiality expectations, production calendar, and approval process.\n\n\n2. Measurement package\nMap concepts to indicators; identify established questions where appropriate; draft new items; document response options, order, randomization, and design rationale; and identify questions requiring partner decisions.\n\n\n3. Testing package\nConduct cognitive interviews or structured pretesting, document problems consistently, assess English/Spanish equivalence, revise the instrument, and preserve an issue and decision log.\n\n\n4. Representation plan\nDefine the target population and evaluate sampling frames, sources, modes, recruitment, coverage, nonresponse, language access, weighting needs, and inferential limitations.\n\n\n5. Instrument quality assurance\nTest survey flow, branching, randomization, mobile display, response requirements, bilingual presentation, embedded data, quotas, terminations, and respondent-facing messages.\n\n\n6. Fieldwork and data quality\nDevelop monitoring expectations for completes, sample composition, response patterns, speed, duplication, open-ended quality, missingness, and other indicators. Document decisions rather than creating post hoc rules after seeing results.\n\n\n7. Analysis plan\nSpecify priority outcomes, subgroup definitions, derived variables, use of weights, uncertainty, planned tables and graphics, multiple-comparison risks, and rules for interpreting differences.\n\n\n8. Analysis production\nCreate a common quality-controlled data file and shared functions or templates. Section teams conduct reproducible analysis, peer-check one another’s estimates, and maintain a results log.\n\n\n9. Report and briefing\nIntegrate an executive summary, methods, substantive sections, tables, graphics, limitations, and supporting documentation. Rehearse the briefing and verify that every spoken and written claim is supported by an approved result.\n\n\n10. Handoff and retrospective\nArchive approved code and documentation, identify unresolved questions, record lessons for a future polling cycle, and complete individual contribution statements."
   },
   {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments and Assessment",
+    "objectID": "project.html#team-structure",
+    "href": "project.html#team-structure",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Team structure",
+    "text": "Team structure\nThe expected enrollment is 12 students. The default structure will be four stable groups of three. If enrollment changes:\n\n12–13 students: four groups of three to four;\n14–15 students: five groups of approximately three; and\nanother enrollment total: groups will be adjusted to avoid isolating a student or creating an unnecessarily large team.\n\n\nStable substantive groups\nEach group will take primary responsibility for:\n\none research domain or question module;\ncognitive testing and revision of that module;\nits portion of the analysis plan;\nreproducible analysis of the corresponding results; and\none substantive section of the final report and presentation.\n\nThe substantive domains will be assigned after the research objectives and partner priorities are confirmed.\n\n\nCross-group production teams\nSeveral responsibilities affect the entire poll and should not belong permanently to one substantive group. At major production stages, one member from each group will join a temporary cross-group team for tasks such as:\n\nEnglish/Spanish consistency and cognitive-testing synthesis;\ninstrument programming and quality assurance;\ndata cleaning, weighting, and estimate verification;\ngraphics and editorial consistency; and\npresentation and partner-briefing preparation.\n\nThis matrix structure gives groups continuity while distributing the less visible technical and editorial labor. Roles may rotate so students experience more than one part of the production process.\nSpecialization does not excuse students from understanding the full research design."
+  },
+  {
+    "objectID": "project.html#analytical-accountability",
+    "href": "project.html#analytical-accountability",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Analytical accountability",
+    "text": "Analytical accountability\nThe class may share a clean analysis file, variable dictionary, weighting instructions, graphic theme, and approved helper functions. Each published estimate must nevertheless have:\n\nreproducible code;\na named primary analyst;\nan independent checker;\na link to its exact table or figure;\na documented denominator and weight;\nan interpretation that matches the evidence; and\napproval for release."
+  },
+  {
+    "objectID": "project.html#working-with-a-live-partner",
+    "href": "project.html#working-with-a-live-partner",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Working with a live partner",
+    "text": "Working with a live partner\nPartner needs and production constraints may require schedule changes. Such changes are part of the learning experience, but grading expectations will remain transparent.\nSome materials may be confidential, embargoed, or restricted. Students may not circulate instruments, data, partner communications, preliminary estimates, or unpublished findings unless explicitly authorized. Restricted materials may not be entered into public generative-AI systems."
+  },
+  {
+    "objectID": "project.html#authorship-branding-and-data-access",
+    "href": "project.html#authorship-branding-and-data-access",
+    "title": "The 2026 Univision Polling Partnership",
+    "section": "Authorship, branding, and data access",
+    "text": "Authorship, branding, and data access\nThe intention is to recognize meaningful student contributions and, when feasible, allow students to use the data for subsequent research or teaching portfolios. Final authorship, acknowledgement, branding, release, and continuing data access will follow the partnership agreement, consent and data-use restrictions, and documented contributions. Enrollment in the course alone does not guarantee public authorship or unrestricted data access."
+  },
+  {
+    "objectID": "assignments/fall2026/initial-survey-autopsy.html",
+    "href": "assignments/fall2026/initial-survey-autopsy.html",
+    "title": "Initial Survey Autopsy",
     "section": "",
-    "text": "Assignments are stages of one professional survey workflow. Students will demonstrate individual methodological understanding, individual ability to analyze survey data, and effective collaboration on a public-facing research product. Detailed prompts, rubrics, templates, and submission links will be released on Canvas."
+    "text": "Important\n\n\n\nCompleted in class: Monday, August 24, 2026\nGrading: Serious completion receives full credit\nOutside research: Not required"
   },
   {
-    "objectID": "assignments.html#assessment-map",
-    "href": "assignments.html#assessment-map",
-    "title": "Assignments and Assessment",
-    "section": "Assessment map",
-    "text": "Assessment map\n\n\n\n\n\n\n\n\nCategory\nWeight\nResponsibility\n\n\n\n\nPreparation and professional participation\n10%\nIndividual\n\n\nR and statistics labs\n25%\nIndividual, following guided class work\n\n\nIndividual methods assignments\n15%\nIndividual\n\n\nUnivision project milestones\n15%\nTeam\n\n\nIndividual poll analysis memo\n10%\nIndividual\n\n\nCoauthored report and presentation\n20%\nClass and section teams\n\n\nReflection and contribution statement\n5%\nIndividual\n\n\nTotal\n100%"
+    "objectID": "assignments/fall2026/initial-survey-autopsy.html#purpose",
+    "href": "assignments/fall2026/initial-survey-autopsy.html#purpose",
+    "title": "Initial Survey Autopsy",
+    "section": "Purpose",
+    "text": "Purpose\nThis activity helps us understand what you—and the class as a whole—already know about survey methodology before we introduce formal frameworks.\nEveryone will examine the same published survey report. Your task is to identify what gives you confidence in the study, what concerns you, and what additional information you would need before using or reporting its results.\nThis is not Individual Assignment 1: Poll Autopsy, which will be assigned later in the semester."
   },
   {
-    "objectID": "assignments.html#r-and-statistics-labs-25",
-    "href": "assignments.html#r-and-statistics-labs-25",
-    "title": "Assignments and Assessment",
-    "section": "R and statistics labs · 25%",
-    "text": "R and statistics labs · 25%\nFive substantial labs integrate R programming, statistical reasoning, and survey analysis:\n\nR, Quarto, importing, cleaning, recoding, and documenting survey data.\nDescriptive statistics, cross-tabulations, measurement, and visualization.\nSampling, simulation, margins of error, confidence intervals, and basic hypothesis tests.\nSurvey weights, design effects, and weighted estimation.\nRegression, predicted probabilities, graphics, and reproducible reporting.\n\nMost lab work will be completed together during class. Each lab concludes with a shorter On Your Own section completed alone. Labs are graded on statistical reasoning, readable and functioning code, reproducibility, appropriate checks, and clear interpretation."
+    "objectID": "assignments/fall2026/initial-survey-autopsy.html#materials",
+    "href": "assignments/fall2026/initial-survey-autopsy.html#materials",
+    "title": "Initial Survey Autopsy",
+    "section": "Materials",
+    "text": "Materials\n\nDownload the Diverse Political Tracker report\n\nThe report is Diverse Political Tracker: Voting for a New Year of Health and Prosperity, published by Intelligence Center from My Code in January 2024.\n\n\n\n\n\n\nNote\n\n\n\nThe available document is the published results report, not the complete questionnaire. Treat the absence of information as analytically meaningful: distinguish what the report demonstrates, what it claims, and what cannot be assessed from the disclosed materials."
   },
   {
-    "objectID": "assignments.html#initial-survey-autopsy-diagnostic",
-    "href": "assignments.html#initial-survey-autopsy-diagnostic",
-    "title": "Assignments and Assessment",
-    "section": "Initial Survey Autopsy diagnostic",
-    "text": "Initial Survey Autopsy diagnostic\nDuring the first class on August 24, all students will evaluate the same intentionally problematic survey before receiving formal instruction in survey methodology. This short exercise is completion-based and is used to identify the class’s starting knowledge. It is not Individual Assignment 1."
+    "objectID": "assignments/fall2026/initial-survey-autopsy.html#your-task",
+    "href": "assignments/fall2026/initial-survey-autopsy.html#your-task",
+    "title": "Initial Survey Autopsy",
+    "section": "Your task",
+    "text": "Your task\nBased only on the report provided, write a concise initial assessment addressing:\n\nWhat features of the survey or report give you confidence?\nWhat features raise concerns?\nWhat claims appear well supported?\nWhat claims may go beyond the disclosed evidence?\nWhat additional information would you want before using or reporting the findings?\n\nYou do not need to answer every question below. They are prompts to help you begin:\n\nWho does the survey claim to represent?\nWhat do we know about how respondents were recruited?\nHow might question wording or response options affect the results?\nAre comparisons across demographic groups presented appropriately?\nHow might the charts, percentages, or headlines influence interpretation?\nWhat ethical or transparency questions arise?"
   },
   {
-    "objectID": "assignments.html#assignment-materials",
-    "href": "assignments.html#assignment-materials",
-    "title": "Assignments and Assessment",
-    "section": "Assignment materials",
-    "text": "Assignment materials\n\nIndividual Assignment 1: Poll Autopsy"
+    "objectID": "assignments/fall2026/initial-survey-autopsy.html#submission",
+    "href": "assignments/fall2026/initial-survey-autopsy.html#submission",
+    "title": "Initial Survey Autopsy",
+    "section": "Submission",
+    "text": "Submission\nAim for approximately one page. Clear reasoning and specific examples matter more than technical vocabulary.\nYou will first work independently, then compare observations in a group of three. Submit your initial individual response through Canvas at the end of class or by the deadline announced in class."
   },
   {
-    "objectID": "assignments.html#individual-methods-assignments-15",
-    "href": "assignments.html#individual-methods-assignments-15",
-    "title": "Assignments and Assessment",
-    "section": "Individual methods assignments · 15%",
-    "text": "Individual methods assignments · 15%\nThree concise assignments ask students to make and defend methodological decisions.\n\n1. Poll autopsy · 5%\nAssigned: October 12 · Due: October 18 at 11:59 p.m.\nEvaluate a published poll from its public release and methodological disclosure. Identify the target population, sample source, mode, field dates, question wording, weighting, reported uncertainty, principal claims, and important information that is absent. Conclude with what the poll does and does not permit readers to claim.\n\n\n2. Measurement and questionnaire critique · 5%\nDiagnose a set of survey questions using principles of comprehension, retrieval, judgment, response mapping, question order, response-option design, and sensitive measurement. Revise selected questions and explain how the revisions improve validity, reliability, comparability, or respondent experience.\n\n\n3. Sampling and mode recommendation · 5%\nGiven a research objective, population, budget, timeline, and reporting needs, recommend a sample and data-collection design. Address coverage, recruitment, nonresponse, language access, feasibility, weighting, uncertainty, and the limitations that should accompany published results."
-  },
-  {
-    "objectID": "assignments.html#univision-project-milestones-15",
-    "href": "assignments.html#univision-project-milestones-15",
-    "title": "Assignments and Assessment",
-    "section": "Univision project milestones · 15%",
-    "text": "Univision project milestones · 15%\nMilestones make the collaborative process visible and keep the live project on schedule. They are working products rather than unrelated homework.\n\n\n\n\n\n\n\nMilestone\nCollaborative deliverable\n\n\n\n\nProject charter\nObjectives, audiences, claims, roles, decision rules, confidentiality, and timeline\n\n\nMeasurement package\nConstruct map, proposed question module, source questions, and design rationale\n\n\nTesting package\nCognitive-testing protocol, findings matrix, English/Spanish revisions, and unresolved issues\n\n\nRepresentation plan\nTarget population, sampling and mode assessment, recruitment, language access, and limitations\n\n\nInstrument QA\nIntegrated questionnaire review, test cases, mobile/bilingual checks, issue log, and approval record\n\n\nAnalysis plan\nOutcomes, subgroups, derived variables, weighting use, planned tables and figures, and decision rules\n\n\n\nMilestones will normally be evaluated with a short common rubric:\n\nmethodological justification;\ncompleteness and accuracy;\nuse of evidence and testing;\ndocumentation and version control;\nresponsiveness to feedback; and\nreadiness for the next production stage."
-  },
-  {
-    "objectID": "assignments.html#individual-poll-analysis-memo-10",
-    "href": "assignments.html#individual-poll-analysis-memo-10",
-    "title": "Assignments and Assessment",
-    "section": "Individual poll analysis memo · 10%",
-    "text": "Individual poll analysis memo · 10%\nEach student will independently answer one focused substantive question using the final poll data.\nThe memo will normally include:\n\na clearly stated research question;\na brief explanation of the relevant survey measures;\ndocumented cleaning and recoding decisions;\nappropriate use of survey weights;\ndescriptive estimates and uncertainty;\none justified subgroup comparison or introductory model;\nat least one publication-quality visualization;\na concise interpretation for a policy or public audience;\nlimitations; and\nreproducible Quarto source code.\n\nStudents may work from a shared, quality-controlled analysis file, but the analytical choices, code, verification, and prose in the memo must be their own."
-  },
-  {
-    "objectID": "assignments.html#coauthored-lbjunivision-report-and-presentation-20",
-    "href": "assignments.html#coauthored-lbjunivision-report-and-presentation-20",
-    "title": "Assignments and Assessment",
-    "section": "Coauthored LBJ/Univision report and presentation · 20%",
-    "text": "Coauthored LBJ/Univision report and presentation · 20%\nThe class will produce one coherent professional report. Teams will take primary responsibility for substantive sections, but all students are responsible for reviewing the complete report and ensuring that its claims, methods, graphics, and tone are consistent.\nThe report should include:\n\nan executive summary;\na concise explanation of the research purpose;\na transparent methods statement;\nsubstantive sections organized around clear research questions;\naccurate tables and accessible graphics;\nappropriate discussion of uncertainty and limitations;\ndocumentation sufficient to reproduce all published statistics; and\na short partner briefing or public presentation.\n\nA section-team model gives students meaningful ownership without producing a collection of disconnected papers. The final document must read as one report rather than several assignments pasted together.\nPublic release, authorship order, branding, acknowledgement of student contributors, and access to the data after the semester will follow the final partnership agreement."
-  },
-  {
-    "objectID": "assignments.html#individual-reflection-and-contribution-statement-5",
-    "href": "assignments.html#individual-reflection-and-contribution-statement-5",
-    "title": "Assignments and Assessment",
-    "section": "Individual reflection and contribution statement · 5%",
-    "text": "Individual reflection and contribution statement · 5%\nThe final reflection will:\n\ndocument the student’s specific contributions;\nidentify evidence of those contributions in the project record;\nexplain one consequential methodological decision;\nevaluate the strengths and weaknesses of the completed project;\ndescribe what the student learned about collaboration; and\npropose one improvement for a future polling cycle.\n\nThe contribution statement provides accountability, but it is not a competition over who reports the greatest number of tasks. Quality, reliability, documentation, and support for the team matter."
-  },
-  {
-    "objectID": "assignments.html#evaluation-principles",
-    "href": "assignments.html#evaluation-principles",
-    "title": "Assignments and Assessment",
-    "section": "Evaluation principles",
-    "text": "Evaluation principles\nAcross assignments, work will be evaluated on:\n\nmethodological reasoning;\nstatistical accuracy;\nreproducibility and documentation;\nclarity and audience awareness;\nethical and professional judgment;\nresponsiveness to evidence and feedback; and\ncontribution to the collaborative process.\n\nA polished output cannot compensate for an indefensible method, and technical sophistication cannot compensate for unclear communication."
-  },
-  {
-    "objectID": "labs.html",
-    "href": "labs.html",
-    "title": "R and Statistics Labs",
-    "section": "",
-    "text": "The five labs form the quantitative spine of the course. They teach R programming and foundational statistics through practical survey problems, with the live Univision project providing the principal application.\nNo prior mastery of R is required. Most lab work will be completed together during class: the instructor will introduce the statistical idea, build the code with students, pause for interpretation and troubleshooting, and model how to check the results. Students will then complete a shorter On Your Own section individually."
-  },
-  {
-    "objectID": "labs.html#lab-materials",
-    "href": "labs.html#lab-materials",
-    "title": "R and Statistics Labs",
-    "section": "Lab materials",
-    "text": "Lab materials\n\nLab 1: Your First Reproducible Survey Analysis\nRead Lab 1 · Download the Lab 1 student template\n\n\nLab 2: Describing and Visualizing Survey Responses\nRead Lab 2 · Download the Lab 2 student template\n\n\n\n\n\n\nNote\n\n\n\nThe website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning."
-  },
-  {
-    "objectID": "labs.html#lab-sequence",
-    "href": "labs.html#lab-sequence",
-    "title": "R and Statistics Labs",
-    "section": "Lab sequence",
-    "text": "Lab sequence\n\n\n\n\n\n\n\n\nLab\nR and statistical foundations\nSurvey application\n\n\n\n\n1\nRStudio projects, Quarto, objects, functions, packages, importing data, variable types, missing values, filtering, recoding, summarizing, and readable code\nImporting a survey, reading its codebook, cleaning variables, and creating a documented analysis file\n\n\n2\nDistributions, proportions, means and medians, cross-tabulations, grouped summaries, scales and indexes, and ggplot2\nDescribing respondents, evaluating measures, and visualizing survey responses accurately\n\n\n3\nProbability, random sampling, simulation, sampling distributions, standard errors, margins of error, confidence intervals, and basic hypothesis tests\nUnderstanding why poll estimates vary and evaluating topline and subgroup differences\n\n\n4\nSurvey weights, weighted estimates, effective sample size, design effects, and the R survey package\nComparing weighted and unweighted results and producing defensible estimates from survey data\n\n\n5\nLinear and logistic regression, categorical predictors, interactions, predicted probabilities, tables, graphics, and Quarto reporting\nExplaining survey outcomes and producing a reproducible section of the final report"
-  },
-  {
-    "objectID": "labs.html#lab-format",
-    "href": "labs.html#lab-format",
-    "title": "R and Statistics Labs",
-    "section": "Lab format",
-    "text": "Lab format\nEach lab has two connected parts.\n\nGuided workshop\nMost of the lab is completed together during class. We will:\n\nintroduce the statistical logic through a survey question;\nbuild and run the R code step by step;\ninterpret the output in plain language;\ndiagnose common errors;\ncheck whether the result is plausible; and\nconnect the technique to the Univision project.\n\n\n\nOn Your Own\nStudents will independently complete a shorter application using a new variable, question, or subset of the data. This section assesses whether each student can adapt the guided workflow, make appropriate choices, and explain the result.\nThe individual portion should normally be finishable in approximately 60–90 minutes after class when a student has participated in the guided workshop."
-  },
-  {
-    "objectID": "labs.html#what-students-should-learn",
-    "href": "labs.html#what-students-should-learn",
-    "title": "R and Statistics Labs",
-    "section": "What students should learn",
-    "text": "What students should learn\nBy the end of the lab sequence, students should be able to:\n\ncreate and navigate an RStudio project;\nimport and inspect common survey-data formats;\nuse a codebook and distinguish variable types;\nclean, label, recode, and document variables;\nidentify and handle missing values appropriately;\ncalculate and interpret descriptive statistics;\ncreate cross-tabulations and clear survey graphics;\nexplain sampling variability, standard errors, margins of error, and confidence intervals;\nevaluate basic differences across groups;\ncalculate and interpret weighted survey estimates;\nrecognize the consequences of extreme weights and design effects;\nestimate and interpret introductory linear and logistic regression models;\ncommunicate interactions with predicted probabilities and graphics; and\nproduce a reproducible Quarto analysis.\n\nThe objective is not memorizing formulas or R commands. Students should understand the logic of a method, recognize when it is appropriate, implement it with a documented workflow, check the output, and explain the result to a nontechnical audience."
-  },
-  {
-    "objectID": "labs.html#submission-and-evaluation",
-    "href": "labs.html#submission-and-evaluation",
-    "title": "R and Statistics Labs",
-    "section": "Submission and evaluation",
-    "text": "Submission and evaluation\nStudents submit the completed Quarto source file and rendered output. Labs are evaluated on:\n\ncompletion of the independent section;\ncorrect statistical reasoning;\nfunctioning and readable code;\nappropriate checks and documentation;\naccurate interpretation; and\nreproducibility.\n\nBecause programming involves troubleshooting, a minor syntax error will matter less than evidence that the student understands the intended analysis, can diagnose the problem, and can explain what the code and output mean."
-  },
-  {
-    "objectID": "labs.html#relationship-to-existing-materials",
-    "href": "labs.html#relationship-to-existing-materials",
-    "title": "R and Statistics Labs",
-    "section": "Relationship to existing materials",
-    "text": "Relationship to existing materials\nThe repository already contains useful foundations in introductory R, data manipulation, probability, inference, regression, predicted probabilities, and a Latino National Survey case study. These materials will be adapted into the five-lab sequence. Outdated syntax will be updated as as needed."
+    "objectID": "assignments/fall2026/initial-survey-autopsy.html#what-happens-later",
+    "href": "assignments/fall2026/initial-survey-autopsy.html#what-happens-later",
+    "title": "Initial Survey Autopsy",
+    "section": "What happens later",
+    "text": "What happens later\nDuring the final class, you will return to this initial assessment and identify:\n\nwhat you noticed correctly;\nwhat you missed;\nwhich criticisms were justified;\nwhich criticisms lacked sufficient evidence; and\nhow your evaluation changed after studying survey methodology."
   },
   {
     "objectID": "Labs/fall2026/lab1/lab1.html",
