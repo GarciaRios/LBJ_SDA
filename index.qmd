@@ -3,6 +3,7 @@ title: "Survey Design and Analysis"
 subtitle: "PA 397C · Fall 2026"
 page-layout: full
 title-block-banner: false
+toc: false
 ---
 
 ::: {.course-hero}
