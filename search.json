@@ -627,7 +627,7 @@
     "href": "labs.html#relationship-to-existing-materials",
     "title": "R and Statistics Labs",
     "section": "Relationship to existing materials",
-    "text": "Relationship to existing materials\nThe repository already contains useful foundations in introductory R, data manipulation, probability, inference, regression, predicted probabilities, and a Latino National Survey case study. These materials will be adapted into the five-lab sequence. Outdated syntax will be modernized, and generic exercises will be replaced or supplemented with survey applications."
+    "text": "Relationship to existing materials\nThe repository already contains useful foundations in introductory R, data manipulation, probability, inference, regression, predicted probabilities, and a Latino National Survey case study. These materials will be adapted into the five-lab sequence. Outdated syntax will be updated as as needed."
   },
   {
     "objectID": "Labs/fall2026/lab1/lab1.html",
