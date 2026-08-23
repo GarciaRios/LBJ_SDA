@@ -180,8 +180,15 @@ a:hover {
 
 /* Quarto wraps adjacent card links in a paragraph. Let the links
    participate directly in the grid instead of stacking in one column. */
+.quick-grid {
+  display: block;
+}
+
 .quick-grid > p {
-  display: contents;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
 }
 
 .track-grid {
@@ -303,7 +310,7 @@ div.sourceCode {
 /* Responsive behavior */
 
 @media (max-width: 991px) {
-  .quick-grid {
+  .quick-grid > p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -320,7 +327,7 @@ div.sourceCode {
     border-radius: 0;
   }
 
-  .quick-grid,
+  .quick-grid > p,
   .track-grid {
     grid-template-columns: 1fr;
   }
