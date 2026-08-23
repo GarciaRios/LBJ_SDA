@@ -431,7 +431,7 @@
     "href": "index.html#one-course-two-connected-tracks",
     "title": "Survey Design and Analysis",
     "section": "One course, two connected tracks",
-    "text": "One course, two connected tracks\n\n\n&lt;span class=\"track-number\"&gt;1&lt;/span&gt;\n&lt;strong&gt;Survey design and production&lt;/strong&gt;\n&lt;p&gt;Move from research objectives and measurement through sampling, questionnaire testing, fieldwork, quality assurance, weighting, and public release.&lt;/p&gt;\n\n\n&lt;span class=\"track-number\"&gt;2&lt;/span&gt;\n&lt;strong&gt;R programming and statistical analysis&lt;/strong&gt;\n&lt;p&gt;Build a reproducible workflow for cleaning survey data, describing responses, quantifying uncertainty, estimating models, and communicating results.&lt;/p&gt;"
+    "text": "One course, two connected tracks\n\n\n1\nSurvey design and production\nMove from research objectives and measurement through sampling, questionnaire testing, fieldwork, quality assurance, weighting, and public release.\n\n\n2\nR programming and statistical analysis\nBuild a reproducible workflow for cleaning survey data, describing responses, quantifying uncertainty, estimating models, and communicating results."
   },
   {
     "objectID": "index.html#course-overview",
