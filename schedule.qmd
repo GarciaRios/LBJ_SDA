@@ -8,7 +8,7 @@ The schedule follows the official UT Austin Fall 2026 calendar and the anticipat
 
 | Session | Date | Survey-production focus | R/statistics lab or principal product |
 |---:|---|---|---|
-| 1 | Aug. 24 | Why polls fail—and what good survey design requires | Initial Survey Autopsy diagnostic; R/Quarto setup |
+| 1 | Aug. 24 | Why polls fail—and what good survey design requires | [Initial Survey Autopsy diagnostic](assignments/fall2026/initial-survey-autopsy.qmd); R/Quarto setup |
 | 2 | Aug. 31 | Research objectives, ethics, and total survey error | **Lab 1:** R workflow and survey data |
 | — | Sept. 7 | **Labor Day—no class** | |
 | 3 | Sept. 14 | Concepts, measurement, and questionnaire architecture | Construct map |
@@ -30,7 +30,7 @@ The schedule follows the official UT Austin Fall 2026 calendar and the anticipat
 ### Session 1 · August 24  
 **Why polls fail—and what good survey design requires**
 
-We begin with several real polls and work backward from their claims to their design decisions. The goal is to establish a shared language for evaluating survey evidence and introduce the semester partnership.
+We begin with the [Initial Survey Autopsy diagnostic](assignments/fall2026/initial-survey-autopsy.qmd), completed before formal instruction in survey methodology. Students work backward from a published report's claims to the design information provided—or omitted. The goal is to establish a shared language for evaluating survey evidence and introduce the semester partnership.
 
 ### Session 2 · August 31  
 **Research objectives, stakeholders, ethics, and total survey error**
