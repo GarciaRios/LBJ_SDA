@@ -68,7 +68,7 @@ A package adds functions to R. We will use tidyverse for data work, haven for St
 
 Install a package once with install.packages(). Load it in every new R session with library().
 
-~~~{r}
+```{r}
 # Run this only if a package is not already installed:
 # install.packages(c("tidyverse", "haven", "labelled", "here"))
 
@@ -76,7 +76,7 @@ library(tidyverse)
 library(haven)
 library(labelled)
 library(here)
-~~~
+```
 
 ::: {.callout-important}
 Do not place install.packages() in a document you submit. Installing changes the computer; loading declares what the analysis needs.
@@ -88,21 +88,21 @@ The LNS interviewed more than 8,000 Latino adults in 2006. Its questionnaire con
 
 The raw file is stored in Stata format. We import it with read_dta().
 
-~~~{r}
+```{r}
 lns_raw <- read_dta(
   here("Labs", "case_study", "data", "lns_full.dta")
 )
-~~~
+```
 
 The assignment operator stores the result on its left. We use the name lns_raw deliberately: the raw data should remain unchanged.
 
 ### Check the import
 
-~~~{r}
+```{r}
 dim(lns_raw)
 names(lns_raw)[1:20]
 glimpse(lns_raw)
-~~~
+```
 
 - dim() reports rows and columns.
 - names() reports variable names.
@@ -116,22 +116,22 @@ Your response:
 
 Survey files frequently store a short variable name, a longer variable label describing the question, and value labels explaining what numeric codes mean.
 
-~~~{r}
+```{r}
 var_label(lns_raw$natprob)
 val_labels(lns_raw$natprob)
 
 var_label(lns_raw$age)
 summary(lns_raw$age)
-~~~
+```
 
 The variable natprob records what respondents named as the most important problem facing the country. The variable age records respondent age.
 
 Convert labelled response categories to readable factors when needed:
 
-~~~{r}
+```{r}
 lns_raw |>
   count(as_factor(natprob), sort = TRUE)
-~~~
+```
 
 ::: {.callout-warning}
 A numeric code is not automatically a quantity. A code of 4 for “strongly agree” does not mean the respondent possesses twice as much agreement as someone coded 2. Consult the labels and questionnaire before calculating.
@@ -145,7 +145,7 @@ Your response:
 
 A professional workflow rarely modifies the full raw file directly. Create a smaller analysis object containing the variables required for the current task.
 
-~~~{r}
+```{r}
 lns_clean <- lns_raw |>
   transmute(
     main_problem = as_factor(natprob),
@@ -158,7 +158,7 @@ lns_clean <- lns_raw |>
     latino_work = as_factor(latdisc),
     discrimination_index = as.numeric(discindx)
   )
-~~~
+```
 
 This introduces several important ideas:
 
@@ -169,34 +169,34 @@ This introduces several important ideas:
 
 Inspect the result:
 
-~~~{r}
+```{r}
 glimpse(lns_clean)
 summary(lns_clean$age)
 count(lns_clean, generation, sort = TRUE)
-~~~
+```
 
 ## 6. Missing and non-substantive responses
 
 `Don't know`, refusal, not asked, and legitimate categories such as `none` are not interchangeable. Inspect the questionnaire and make an explicit decision.
 
-~~~{r}
+```{r}
 lns_clean |>
   count(main_problem, sort = TRUE)
-~~~
+```
 
 Retain the original variable and create an analysis version:
 
-~~~{r}
+```{r}
 lns_clean <- lns_clean |>
   mutate(
     main_problem_analysis = main_problem,
     main_problem_analysis = na_if(main_problem_analysis, "dk/na")
   )
-~~~
+```
 
 Check the result:
 
-~~~{r}
+```{r}
 lns_clean |>
   summarize(
     total_rows = n(),
@@ -204,7 +204,7 @@ lns_clean |>
     missing_main_problem = sum(is.na(main_problem_analysis)),
     percent_missing = mean(is.na(main_problem_analysis)) * 100
   )
-~~~
+```
 
 ::: {.callout-note}
 The text used for a missing category must match its value label exactly. If the code produces no change, inspect the frequency table and revise the text.
@@ -218,16 +218,16 @@ Your response:
 
 Create an object containing respondents ages 18–29.
 
-~~~{r}
+```{r}
 young_adults <- lns_clean |>
   filter(age >= 18, age <= 29)
 
 nrow(young_adults)
-~~~
+```
 
 Summarize their age:
 
-~~~{r}
+```{r}
 young_adults |>
   summarize(
     respondents = n(),
@@ -236,15 +236,15 @@ young_adults |>
     minimum_age = min(age, na.rm = TRUE),
     maximum_age = max(age, na.rm = TRUE)
   )
-~~~
+```
 
 Count the most important problems they named:
 
-~~~{r}
+```{r}
 young_adults |>
   count(main_problem_analysis, sort = TRUE) |>
   mutate(percent = n / sum(n) * 100)
-~~~
+```
 
 **Checkpoint 4:** In plain language, explain what one row of the table tells us. Why should we not yet describe these as nationally representative estimates?
 
@@ -254,7 +254,7 @@ Your response:
 
 Save the smaller analysis object, not a modified version of the raw file.
 
-~~~{r}
+```{r}
 dir.create(
   here("Labs", "fall2026", "lab1", "output"),
   recursive = TRUE,
@@ -265,7 +265,7 @@ write_rds(
   lns_clean,
   here("Labs", "fall2026", "lab1", "output", "lns_clean.rds")
 )
-~~~
+```
 
 An RDS file stores one R object and preserves its structure.
 
@@ -296,9 +296,9 @@ Produce a frequency table for latino_problem, sorted from most to least frequent
 - Which categories should be treated as non-substantive or missing?
 - Explain your decision in two or three sentences.
 
-~~~{r}
+```{r}
 # Your code
-~~~
+```
 
 Your interpretation:
 
@@ -306,9 +306,9 @@ Your interpretation:
 
 Create latino_problem_analysis. Preserve latino_problem and recode the appropriate non-substantive categories to NA. Show the number and percentage missing.
 
-~~~{r}
+```{r}
 # Your code
-~~~
+```
 
 Your interpretation:
 
@@ -316,9 +316,9 @@ Your interpretation:
 
 Choose one generation category and create a filtered data frame for that group. Report the category, number of respondents, mean and median age, and percentage missing latino_problem_analysis.
 
-~~~{r}
+```{r}
 # Your code
-~~~
+```
 
 Your interpretation:
 
@@ -326,9 +326,9 @@ Your interpretation:
 
 Within the selected generation, calculate the count and percentage naming each substantive problem facing Latinos. Sort from highest to lowest and display the five most common responses.
 
-~~~{r}
+```{r}
 # Your code
-~~~
+```
 
 Interpret the leading response accurately without making a causal or population-level claim.
 
