@@ -178,6 +178,12 @@ a:hover {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+/* Quarto wraps adjacent card links in a paragraph. Let the links
+   participate directly in the grid instead of stacking in one column. */
+.quick-grid > p {
+  display: contents;
+}
+
 .track-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
