@@ -1,0 +1,81 @@
+---
+title: "R and Statistics Labs"
+---
+
+The five labs form the quantitative spine of the course. They teach R programming and foundational statistics through practical survey problems, with the live Univision project providing the principal application.
+
+No prior mastery of R is required. Most lab work will be completed together during class: the instructor will introduce the statistical idea, build the code with students, pause for interpretation and troubleshooting, and model how to check the results. Students will then complete a shorter **On Your Own** section individually.
+
+## Lab materials
+
+- [Lab 1: Your First Reproducible Survey Analysis](Labs/fall2026/lab1/lab1.qmd)
+- [Lab 2: Describing and Visualizing Survey Responses](Labs/fall2026/lab2/lab2.qmd)
+
+## Lab sequence
+
+| Lab | R and statistical foundations | Survey application |
+|---:|---|---|
+| 1 | RStudio projects, Quarto, objects, functions, packages, importing data, variable types, missing values, filtering, recoding, summarizing, and readable code | Importing a survey, reading its codebook, cleaning variables, and creating a documented analysis file |
+| 2 | Distributions, proportions, means and medians, cross-tabulations, grouped summaries, scales and indexes, and ggplot2 | Describing respondents, evaluating measures, and visualizing survey responses accurately |
+| 3 | Probability, random sampling, simulation, sampling distributions, standard errors, margins of error, confidence intervals, and basic hypothesis tests | Understanding why poll estimates vary and evaluating topline and subgroup differences |
+| 4 | Survey weights, weighted estimates, effective sample size, design effects, and the R `survey` package | Comparing weighted and unweighted results and producing defensible estimates from survey data |
+| 5 | Linear and logistic regression, categorical predictors, interactions, predicted probabilities, tables, graphics, and Quarto reporting | Explaining survey outcomes and producing a reproducible section of the final report |
+
+## Lab format
+
+Each lab has two connected parts.
+
+### Guided workshop
+
+Most of the lab is completed together during class. We will:
+
+1. introduce the statistical logic through a survey question;
+2. build and run the R code step by step;
+3. interpret the output in plain language;
+4. diagnose common errors;
+5. check whether the result is plausible; and
+6. connect the technique to the Univision project.
+
+### On Your Own
+
+Students will independently complete a shorter application using a new variable, question, or subset of the data. This section assesses whether each student can adapt the guided workflow, make appropriate choices, and explain the result.
+
+The individual portion should normally be finishable in approximately 60–90 minutes after class when a student has participated in the guided workshop.
+
+## What students should learn
+
+By the end of the lab sequence, students should be able to:
+
+- create and navigate an RStudio project;
+- import and inspect common survey-data formats;
+- use a codebook and distinguish variable types;
+- clean, label, recode, and document variables;
+- identify and handle missing values appropriately;
+- calculate and interpret descriptive statistics;
+- create cross-tabulations and clear survey graphics;
+- explain sampling variability, standard errors, margins of error, and confidence intervals;
+- evaluate basic differences across groups;
+- calculate and interpret weighted survey estimates;
+- recognize the consequences of extreme weights and design effects;
+- estimate and interpret introductory linear and logistic regression models;
+- communicate interactions with predicted probabilities and graphics; and
+- produce a reproducible Quarto analysis.
+
+The objective is not memorizing formulas or R commands. Students should understand the logic of a method, recognize when it is appropriate, implement it with a documented workflow, check the output, and explain the result to a nontechnical audience.
+
+## Submission and evaluation
+
+Students submit the completed Quarto source file and rendered output. Labs are evaluated on:
+
+- completion of the independent section;
+- correct statistical reasoning;
+- functioning and readable code;
+- appropriate checks and documentation;
+- accurate interpretation; and
+- reproducibility.
+
+Because programming involves troubleshooting, a minor syntax error will matter less than evidence that the student understands the intended analysis, can diagnose the problem, and can explain what the code and output mean.
+
+## Relationship to existing materials
+
+The repository already contains useful foundations in introductory R, data manipulation, probability, inference, regression, predicted probabilities, and a Latino National Survey case study. These materials will be adapted into the five-lab sequence. Outdated syntax will be modernized, and generic exercises will be replaced or supplemented with survey applications.

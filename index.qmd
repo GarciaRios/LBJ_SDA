@@ -1,0 +1,116 @@
+---
+title: "Survey Design and Analysis"
+subtitle: "PA 397C · Fall 2026"
+page-layout: full
+---
+
+## Course information
+
+| | |
+|---|---|
+| **Instructor** | Sergio I. García-Ríos |
+| **Meeting** | Mondays, 9:00 a.m.–12:00 p.m. |
+| **Location** | SRH 3.214 |
+| **Office hours** | By appointment |
+| **Teaching assistant** | To be announced |
+| **Course partners** | Univision News and an additional UT unit to be announced |
+
+## Course overview
+
+This course teaches students how to design, execute, evaluate, analyze, and communicate rigorous survey research. Rather than treating survey methodology as a collection of isolated techniques, we will organize the semester around the complete lifecycle of a major public-opinion poll.
+
+The central applied experience will be a live partnership with Univision News. Students will participate in the stages of developing and executing a 2026 public-opinion poll, from defining research objectives and writing questions through quality assurance, analysis, and public communication. An additional University of Texas partner may join the collaboration.
+
+The partnership gives students access to the practical decisions, compromises, deadlines, and ethical responsibilities that shape professional survey research. Because this is a real polling project, some dates and deliverables may change as fieldwork and partner needs evolve.
+
+## Learning objectives
+
+By the end of the semester, students will be able to:
+
+1. Translate substantive and policy questions into a feasible survey research design.
+2. Evaluate probability and nonprobability samples using the total survey error framework.
+3. Write, revise, translate, and test survey questions that measure concepts reliably and validly.
+4. Assess tradeoffs among survey modes, sampling frames, recruitment strategies, and fieldwork protocols.
+5. Develop a questionnaire, survey flow, and quality-assurance plan suitable for professional fielding.
+6. Diagnose coverage, nonresponse, measurement, and data-quality problems.
+7. Clean, document, weight, analyze, and visualize survey data reproducibly in R.
+8. Quantify and communicate uncertainty without overstating what a poll can establish.
+9. Produce accessible, ethical, and decision-relevant survey findings for academic, policy, and public audiences.
+10. Collaborate effectively on a time-sensitive research project with external partners.
+
+## Course structure
+
+The course has two coordinated learning tracks. The **survey-production track** follows the lifecycle of the Univision poll. The **R and statistics track** builds the quantitative foundations students need to analyze survey data independently. Each week connects a methodological decision to a statistical or programming skill.
+
+The survey-production track follows this cycle:
+
+1. **Purpose and design:** research objectives, stakeholders, ethics, and total survey error.
+2. **Measurement:** concepts, question wording, response options, order effects, translation, and testing.
+3. **Representation:** target populations, frames, sampling, modes, recruitment, nonresponse, and weighting.
+4. **Production:** questionnaire integration, programming, quality assurance, fieldwork, and documentation.
+5. **Analysis and communication:** cleaning, uncertainty, subgroup analysis, visualization, reporting, and release.
+
+Class meetings will combine discussion, methodological workshops, R labs, project meetings, and production sprints. The [schedule](schedule.qmd) identifies the planned focus for each Monday.
+
+## Assessment
+
+| Component | Weight |
+|---|---:|
+| Preparation and professional participation | 10% |
+| R and statistics labs | 25% |
+| Individual methods assignments | 15% |
+| Univision project milestones | 15% |
+| Individual poll analysis memo | 10% |
+| Coauthored LBJ/Univision report and presentation | 20% |
+| Individual reflection and contribution statement | 5% |
+| **Total** | **100%** |
+
+### Preparation and professional participation
+
+Participation includes arriving prepared, contributing constructively, giving useful feedback, meeting production deadlines, documenting decisions, and supporting the work of the project team. Attendance matters because many workshops and partner activities cannot be recreated individually.
+
+### R and statistics labs
+
+Five substantial labs teach R programming and the statistical foundations of survey analysis. Most of each lab is completed together during class through guided coding, interpretation, and troubleshooting. Students then complete a shorter “On Your Own” application individually. Topics include data wrangling, descriptive statistics, visualization, sampling and inference, survey weights, regression, predicted probabilities, and reproducible reporting.
+
+### Individual methods assignments
+
+Three short assignments require students to evaluate a published poll, diagnose and improve survey measurement, and defend a sampling and mode recommendation. These assignments ensure that each student develops independent methodological judgment.
+
+### Univision project milestones
+
+Teams will complete staged products such as a project charter, measurement module, cognitive-testing report, representation plan, instrument quality-assurance review, and analysis plan. Milestones are working documents that feed directly into the live poll and final report.
+
+### Individual poll analysis memo
+
+Each student will independently analyze a substantive question using the poll data. The memo must include reproducible R code, appropriate use of weights and uncertainty, at least one effective visualization, and a concise interpretation written for a policy or public audience.
+
+### Coauthored report and presentation
+
+The class will produce one coherent report using data from the poll. Teams will take primary responsibility for different substantive sections while reviewing and revising the full document. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.
+
+### Individual reflection and contribution statement
+
+Each student will document their contributions, explain important methodological decisions, evaluate the collaboration, and identify what they would change in a future survey project.
+
+## Course materials and software
+
+There is no single textbook that covers the full course. Required readings will combine foundational survey-methodology research, recent methodological reports, applied examples, and documentation. Readings will be posted on the schedule and Canvas.
+
+We will use R and RStudio or Posit Cloud for analysis and Quarto for reproducible documents. No prior mastery of R is required, but students are expected to practice consistently and seek help early.
+
+## Communication and submission
+
+The course website is the public home for the syllabus, schedule, assignments, and labs. Canvas will be used for protected readings, grades, and assignment submission. The teaching team will explain the channel used for project communication during the first class.
+
+Unless an assignment says otherwise, reproducible work should include both the source file and the rendered output.
+
+## Use of artificial intelligence
+
+Generative AI can support brainstorming, coding, editing, and troubleshooting, but it cannot substitute for methodological judgment or individual learning. Students must follow the instructions for each assignment, verify all AI-assisted work, protect confidential or embargoed project information, and disclose substantive AI assistance. No restricted survey instrument, respondent data, partner communication, or unpublished result may be entered into a public AI system without explicit authorization.
+
+## Professional and ethical responsibilities
+
+This course may involve embargoed instruments, partner discussions, and unpublished results. Students must follow all confidentiality, data-security, attribution, and release rules established for the project. Participation in a course does not authorize independent public release of project materials or findings.
+
+Course policies on accommodations, academic integrity, safety, religious observances, names and pronouns, and university resources will be aligned with current University and LBJ guidance and posted before the semester begins.

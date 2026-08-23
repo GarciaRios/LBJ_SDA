@@ -1,0 +1,6 @@
+/.quarto/
+/_site/
+/_freeze/
+Labs/fall2026/lab1/output/
+.Rhistory
+.RData

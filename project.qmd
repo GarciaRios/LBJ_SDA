@@ -1,0 +1,117 @@
+---
+title: "The 2026 Univision Polling Partnership"
+---
+
+## The central course project
+
+The class will collaborate with Univision News on a live 2026 public-opinion research project. An additional University of Texas unit may join the partnership; that collaboration will be announced once confirmed.
+
+Students will encounter the linked decisions that shape professional polling: what stakeholders need to know, what a survey can measure, who must be represented, how respondents will be recruited, how the instrument will perform in English and Spanish, how fieldwork will be monitored, and how findings can be communicated responsibly.
+
+## Final products
+
+The project culminates in three connected products:
+
+1. **One coauthored class report** for a public and policy audience.
+2. **A partner briefing or public presentation** communicating the principal findings.
+3. **Individual analysis memos** demonstrating that every student can independently analyze and interpret the poll.
+
+The class report will not be an anthology of separate student papers. Section teams will have primary ownership of particular research questions, but the class will use common definitions, methods, graphics standards, and editorial review so the final product reads as one coherent report.
+
+## Production workflow and milestones
+
+### 1. Project charter
+
+Define the research objectives, intended audiences, claims the study should support, roles, decision rules, confidentiality expectations, production calendar, and approval process.
+
+### 2. Measurement package
+
+Map concepts to indicators; identify established questions where appropriate; draft new items; document response options, order, randomization, and design rationale; and identify questions requiring partner decisions.
+
+### 3. Testing package
+
+Conduct cognitive interviews or structured pretesting, document problems consistently, assess English/Spanish equivalence, revise the instrument, and preserve an issue and decision log.
+
+### 4. Representation plan
+
+Define the target population and evaluate sampling frames, sources, modes, recruitment, coverage, nonresponse, language access, weighting needs, and inferential limitations.
+
+### 5. Instrument quality assurance
+
+Test survey flow, branching, randomization, mobile display, response requirements, bilingual presentation, embedded data, quotas, terminations, and respondent-facing messages.
+
+### 6. Fieldwork and data quality
+
+Develop monitoring expectations for completes, sample composition, response patterns, speed, duplication, open-ended quality, missingness, and other indicators. Document decisions rather than creating post hoc rules after seeing results.
+
+### 7. Analysis plan
+
+Specify priority outcomes, subgroup definitions, derived variables, use of weights, uncertainty, planned tables and graphics, multiple-comparison risks, and rules for interpreting differences.
+
+### 8. Analysis production
+
+Create a common quality-controlled data file and shared functions or templates. Section teams conduct reproducible analysis, peer-check one another's estimates, and maintain a results log.
+
+### 9. Report and briefing
+
+Integrate an executive summary, methods, substantive sections, tables, graphics, limitations, and supporting documentation. Rehearse the briefing and verify that every spoken and written claim is supported by an approved result.
+
+### 10. Handoff and retrospective
+
+Archive approved code and documentation, identify unresolved questions, record lessons for a future polling cycle, and complete individual contribution statements.
+
+## Team structure
+
+The expected enrollment is 12 students. The default structure will be **four stable groups of three**. If enrollment changes:
+
+- 12–13 students: four groups of three to four;
+- 14–15 students: five groups of approximately three; and
+- another enrollment total: groups will be adjusted to avoid isolating a student or creating an unnecessarily large team.
+
+### Stable substantive groups
+
+Each group will take primary responsibility for:
+
+- one research domain or question module;
+- cognitive testing and revision of that module;
+- its portion of the analysis plan;
+- reproducible analysis of the corresponding results; and
+- one substantive section of the final report and presentation.
+
+The substantive domains will be assigned after the research objectives and partner priorities are confirmed.
+
+### Cross-group production teams
+
+Several responsibilities affect the entire poll and should not belong permanently to one substantive group. At major production stages, one member from each group will join a temporary cross-group team for tasks such as:
+
+- English/Spanish consistency and cognitive-testing synthesis;
+- instrument programming and quality assurance;
+- data cleaning, weighting, and estimate verification;
+- graphics and editorial consistency; and
+- presentation and partner-briefing preparation.
+
+This matrix structure gives groups continuity while distributing the less visible technical and editorial labor. Roles may rotate so students experience more than one part of the production process.
+
+Specialization does not excuse students from understanding the full research design.
+
+## Analytical accountability
+
+The class may share a clean analysis file, variable dictionary, weighting instructions, graphic theme, and approved helper functions. Each published estimate must nevertheless have:
+
+- reproducible code;
+- a named primary analyst;
+- an independent checker;
+- a link to its exact table or figure;
+- a documented denominator and weight;
+- an interpretation that matches the evidence; and
+- approval for release.
+
+## Working with a live partner
+
+Partner needs and production constraints may require schedule changes. Such changes are part of the learning experience, but grading expectations will remain transparent.
+
+Some materials may be confidential, embargoed, or restricted. Students may not circulate instruments, data, partner communications, preliminary estimates, or unpublished findings unless explicitly authorized. Restricted materials may not be entered into public generative-AI systems.
+
+## Authorship, branding, and data access
+
+The intention is to recognize meaningful student contributions and, when feasible, allow students to use the data for subsequent research or teaching portfolios. Final authorship, acknowledgement, branding, release, and continuing data access will follow the partnership agreement, consent and data-use restrictions, and documented contributions. Enrollment in the course alone does not guarantee public authorship or unrestricted data access.

@@ -1,0 +1,424 @@
+---
+title: "Lab 2: Describing and Visualizing Survey Responses"
+subtitle: "Descriptive statistics, cross-tabulations, measurement, and ggplot2"
+format:
+  html:
+    toc: true
+    code-fold: false
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Purpose
+
+Survey analysis begins with careful description. Before fitting a model or testing a hypothesis, we need to understand what each variable measures, how responses are distributed, which cases are missing, and how patterns differ across groups.
+
+In this lab, we will use the cleaned Latino National Survey file created in Lab 1. We will calculate descriptive statistics, build cross-tabulations, create analysis-ready measures, and use ggplot2 to communicate results accurately.
+
+Most work will be completed together. The final **On Your Own** section asks you to repeat the workflow alone with a related survey measure.
+
+## Learning objectives
+
+By the end of this lab, you should be able to:
+
+- distinguish categorical, ordinal, and quantitative variables;
+- select an appropriate descriptive statistic for each type;
+- calculate counts, proportions, means, medians, and measures of spread;
+- create and interpret two-way tables;
+- calculate percentages using the correct denominator;
+- recode and order an ordinal survey item;
+- explain the difference between a single item, an index, and a scale;
+- produce clear bar charts and subgroup comparisons with ggplot2; and
+- write an accurate descriptive interpretation.
+
+## 1. Load packages and data
+
+~~~{r}
+library(tidyverse)
+library(here)
+library(scales)
+
+lns <- read_rds(
+  here("Labs", "fall2026", "lab1", "output", "lns_clean.rds")
+)
+
+glimpse(lns)
+~~~
+
+If the file cannot be found, return to Lab 1, run all code, and confirm that lns_clean.rds was saved inside the Lab 1 output folder.
+
+## 2. Variable types and analytical choices
+
+A variable's type affects what we can calculate and how we should display it.
+
+- **Nominal categorical:** categories have no inherent order, such as the most important problem.
+- **Ordinal categorical:** categories have a meaningful order, such as strongly disagree through strongly agree.
+- **Quantitative:** numeric distances are substantively meaningful, such as age.
+- **Logical:** values indicate TRUE or FALSE.
+
+Inspect several variables:
+
+~~~{r}
+class(lns$main_problem)
+class(lns$generation)
+class(lns$age)
+class(lns$poor_work)
+class(lns$discrimination_index)
+~~~
+
+**Checkpoint 1:** Classify each variable substantively, not only by the way R stores it. Why might an ordinal response be stored as a factor rather than as a number?
+
+Your response:
+
+## 3. Describe a quantitative variable
+
+Begin with respondent age.
+
+~~~{r}
+lns |>
+  summarize(
+    valid_n = sum(!is.na(age)),
+    missing_n = sum(is.na(age)),
+    mean = mean(age, na.rm = TRUE),
+    median = median(age, na.rm = TRUE),
+    standard_deviation = sd(age, na.rm = TRUE),
+    minimum = min(age, na.rm = TRUE),
+    maximum = max(age, na.rm = TRUE)
+  )
+~~~
+
+The mean uses every observed value and can be influenced by unusual values. The median identifies the midpoint of the ordered observations. The standard deviation summarizes how dispersed observations are around the mean.
+
+Check the distribution visually:
+
+~~~{r}
+ggplot(lns, aes(x = age)) +
+  geom_histogram(binwidth = 5, boundary = 0, color = "white",
+                 fill = "#5C8CC6") +
+  labs(
+    title = "Age distribution in the Latino National Survey",
+    x = "Age",
+    y = "Number of respondents"
+  ) +
+  theme_minimal()
+~~~
+
+**Checkpoint 2:** Describe the center, spread, and shape of the age distribution. Are there values you would investigate before publishing?
+
+Your response:
+
+## 4. Counts and percentages for a categorical variable
+
+For a nominal variable, begin with counts and percentages.
+
+~~~{r}
+problem_table <- lns |>
+  filter(!is.na(main_problem_analysis)) |>
+  count(main_problem_analysis, sort = TRUE) |>
+  mutate(
+    percent = n / sum(n),
+    percent_label = scales::percent(percent, accuracy = 0.1)
+  )
+
+problem_table
+~~~
+
+Notice the denominator: sum(n) includes only cases retained after the missing-data decision.
+
+Display the ten most common substantive responses:
+
+~~~{r}
+problem_top10 <- problem_table |>
+  slice_max(order_by = n, n = 10) |>
+  mutate(
+    main_problem_analysis = forcats::fct_reorder(
+      main_problem_analysis,
+      percent
+    )
+  )
+
+ggplot(problem_top10,
+       aes(x = percent, y = main_problem_analysis)) +
+  geom_col(fill = "#5C8CC6") +
+  geom_text(
+    aes(label = percent_label),
+    hjust = -0.1
+  ) +
+  scale_x_continuous(
+    labels = scales::percent,
+    limits = c(0, max(problem_top10$percent) * 1.18)
+  ) +
+  labs(
+    title = "Most important problems facing the country",
+    subtitle = "Unweighted responses from Latino National Survey participants",
+    x = "Percent",
+    y = NULL,
+    caption = "Missing and non-substantive responses excluded."
+  ) +
+  theme_minimal()
+~~~
+
+::: {.callout-note}
+These are unweighted sample descriptions. Lab 4 will introduce survey weights and population estimates.
+:::
+
+## 5. Prepare an ordinal measure
+
+The survey asked respondents how strongly they agreed or disagreed that poor people can get ahead in life if they work hard.
+
+Inspect every category before recoding:
+
+~~~{r}
+lns |>
+  count(poor_work, sort = FALSE, .drop = FALSE)
+~~~
+
+Create an analysis version that treats “don't know” as missing and orders the substantive responses.
+
+~~~{r}
+lns <- lns |>
+  mutate(
+    poor_work_analysis = poor_work,
+    poor_work_analysis = na_if(poor_work_analysis, "dk"),
+    poor_work_analysis = forcats::fct_relevel(
+      poor_work_analysis,
+      "strongly disagree",
+      "somewhat disagree",
+      "somewhat agree",
+      "strongly agree"
+    )
+  )
+~~~
+
+Check the result:
+
+~~~{r}
+lns |>
+  count(poor_work, poor_work_analysis, .drop = FALSE)
+~~~
+
+**Checkpoint 3:** Why is the ordering important for both analysis and visualization? Why did we preserve poor_work?
+
+Your response:
+
+## 6. Cross-tabulations and denominators
+
+We want to compare responses across immigrant generations. First inspect generation:
+
+~~~{r}
+lns |>
+  count(generation, sort = TRUE, .drop = FALSE)
+~~~
+
+Build a two-way table with counts and percentages within generation:
+
+~~~{r}
+poor_by_generation <- lns |>
+  filter(
+    !is.na(generation),
+    !is.na(poor_work_analysis)
+  ) |>
+  count(generation, poor_work_analysis) |>
+  group_by(generation) |>
+  mutate(
+    group_total = sum(n),
+    percent = n / group_total
+  ) |>
+  ungroup()
+
+poor_by_generation
+~~~
+
+Because we group by generation before calculating percent, responses within each generation sum to 100%.
+
+Verify that claim:
+
+~~~{r}
+poor_by_generation |>
+  group_by(generation) |>
+  summarize(total_percent = sum(percent))
+~~~
+
+::: {.callout-warning}
+The most common cross-tabulation mistake is using the wrong denominator. “Of each generation, what percentage selected each response?” differs from “Of each response category, what percentage belongs to each generation?”
+:::
+
+## 7. Visualize a subgroup comparison
+
+A proportional stacked bar chart shows the full response distribution within each generation.
+
+~~~{r}
+ggplot(
+  poor_by_generation,
+  aes(
+    x = generation,
+    y = percent,
+    fill = poor_work_analysis
+  )
+) +
+  geom_col(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_brewer(palette = "Blues", direction = 1) +
+  labs(
+    title = "Belief that poor people can get ahead through hard work",
+    subtitle = "Response distribution by immigrant generation",
+    x = "Generation",
+    y = "Percent within generation",
+    fill = "Response",
+    caption = "Unweighted LNS sample; don't-know responses excluded."
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+~~~
+
+A grouped point display may make particular comparisons easier:
+
+~~~{r}
+ggplot(
+  poor_by_generation,
+  aes(
+    x = generation,
+    y = percent,
+    color = poor_work_analysis,
+    group = poor_work_analysis
+  )
+) +
+  geom_point(size = 3, position = position_dodge(width = 0.4)) +
+  geom_line(position = position_dodge(width = 0.4)) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    title = "Views of hard work and mobility across generations",
+    x = "Generation",
+    y = "Percent within generation",
+    color = "Response"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+~~~
+
+**Checkpoint 4:** Which display better communicates the substantive pattern? Name one conclusion the figure supports and one conclusion it does not support.
+
+Your response:
+
+## 8. Items, indexes, and scales
+
+A **survey item** is one question or recorded measure. An **index** combines multiple indicators according to a rule, often by adding them. A **scale** uses multiple items intended to measure a common underlying construct and should be evaluated for conceptual and empirical coherence.
+
+The LNS includes an index of reported discrimination experiences.
+
+~~~{r}
+lns |>
+  count(discrimination_index, sort = FALSE, .drop = FALSE)
+
+lns |>
+  summarize(
+    valid_n = sum(!is.na(discrimination_index)),
+    mean = mean(discrimination_index, na.rm = TRUE),
+    median = median(discrimination_index, na.rm = TRUE),
+    standard_deviation = sd(discrimination_index, na.rm = TRUE)
+  )
+~~~
+
+Create a simpler indicator of whether the respondent reports at least one experience:
+
+~~~{r}
+lns <- lns |>
+  mutate(
+    any_discrimination = case_when(
+      is.na(discrimination_index) ~ NA,
+      discrimination_index == 0 ~ "No reported experience",
+      discrimination_index > 0 ~ "One or more experiences"
+    ),
+    any_discrimination = factor(
+      any_discrimination,
+      levels = c("No reported experience", "One or more experiences")
+    )
+  )
+
+lns |>
+  count(any_discrimination) |>
+  mutate(percent = n / sum(n))
+~~~
+
+**Checkpoint 5:** What information is lost when the index is converted into a yes/no indicator? When might the simpler indicator still be useful?
+
+Your response:
+
+## Guided-work checklist
+
+Before beginning the independent section, confirm that you can:
+
+- match descriptive statistics to variable types;
+- distinguish counts from percentages;
+- identify the denominator in a percentage;
+- create an ordered factor;
+- build a two-way table with within-group percentages;
+- explain why a chart is a statistical argument, not decoration;
+- distinguish an item, index, and scale; and
+- describe results as unweighted sample patterns at this stage.
+
+# On Your Own
+
+Complete this section alone. Use latino_work, which asks whether Latinos can get ahead in life if they work hard.
+
+## Question 1: Inspect and prepare the measure
+
+Produce a complete frequency table for latino_work. Create latino_work_analysis by handling non-substantive responses and ordering the substantive categories.
+
+Show a table that verifies the recode.
+
+~~~{r}
+# Your code
+~~~
+
+Explain each decision:
+
+## Question 2: Describe the distribution
+
+Create a table containing counts and percentages for latino_work_analysis. Then create a clearly labelled bar chart.
+
+~~~{r}
+# Your code
+~~~
+
+Write two or three sentences describing the distribution. Identify the denominator and state that the estimates are unweighted.
+
+## Question 3: Compare generations
+
+Create a cross-tabulation of latino_work_analysis by generation with percentages calculated within generation. Verify that percentages sum to 100% within each generation.
+
+~~~{r}
+# Your code
+~~~
+
+## Question 4: Visualize and interpret
+
+Create one graphic that communicates the comparison across generations. You may adapt either guided example, but make deliberate choices about labels, ordering, colors, and the legend.
+
+~~~{r}
+# Your code
+~~~
+
+Write a short interpretation containing:
+
+1. the principal descriptive pattern;
+2. one comparison supported by the figure;
+3. one claim the analysis cannot support; and
+4. one question you would investigate next.
+
+## Question 5: Measurement reflection
+
+The survey asks separately whether poor people and Latinos can get ahead through hard work. In one paragraph, explain why these are not interchangeable measures. Discuss what each might capture and what we could learn by analyzing them together.
+
+## Submission
+
+Submit the completed QMD source file and rendered HTML file. Restart R and render from a clean session before submitting.
+
+## Reference materials
+
+- [R for Data Science: Data Transformation](https://r4ds.hadley.nz/data-transform)
+- [R for Data Science: Data Visualization](https://r4ds.hadley.nz/data-visualize)
+- [ggplot2 documentation](https://ggplot2.tidyverse.org/)
+- Latino National Survey questionnaire and codebook in the course repository

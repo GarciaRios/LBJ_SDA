@@ -1,0 +1,114 @@
+---
+title: "Fall 2026 Schedule"
+---
+
+The schedule follows the official UT Austin Fall 2026 calendar and the anticipated Univision polling cycle. Because this is a live project, milestone dates may shift. Changes will be announced in class and posted here.
+
+## At a glance
+
+| Session | Date | Survey-production focus | R/statistics lab or principal product |
+|---:|---|---|---|
+| 1 | Aug. 24 | Why polls fail—and what good survey design requires | Poll autopsy; R/Quarto setup |
+| 2 | Aug. 31 | Research objectives, ethics, and total survey error | **Lab 1:** R workflow and survey data |
+| — | Sept. 7 | **Labor Day—no class** | |
+| 3 | Sept. 14 | Concepts, measurement, and questionnaire architecture | Construct map |
+| 4 | Sept. 21 | Question wording, response options, order, and sensitive questions | Draft question module |
+| 5 | Sept. 28 | Cognitive interviewing, multilingual equivalence, and revision | **Lab 2:** Descriptives, measures, and visualization |
+| 6 | Oct. 5 | Target populations, frames, probability and nonprobability samples | Sampling assessment |
+| 7 | Oct. 12 | Modes, recruitment, coverage, nonresponse, and inference | **Lab 3:** Sampling, uncertainty, and comparisons |
+| 8 | Oct. 19 | Questionnaire integration, programming, randomization, and QA | Programmed instrument and QA log |
+| 9 | Oct. 26 | Fieldwork, paradata, fraud, respondent quality, and documentation | Fieldwork dashboard plan |
+| 10 | Nov. 2 | Cleaning, coding, missing data, weights, and design effects | **Lab 4:** Weighted survey estimates |
+| 11 | Nov. 9 | Estimation, uncertainty, subgroup comparisons, and modeling | Analysis plan and production sprint |
+| 12 | Nov. 16 | Modeling, visualization, interpretation, and communication | **Lab 5:** Regression and reproducible reporting |
+| — | Nov. 23 | **Fall break—no class** | |
+| 13 | Nov. 30 | Report production, peer review, and partner briefing rehearsal | Full report draft |
+| 14 | Dec. 7 | Final presentations, project retrospective, and handoff | Final report and presentation |
+
+## Detailed schedule
+
+### Session 1 · August 24  
+**Why polls fail—and what good survey design requires**
+
+We begin with several real polls and work backward from their claims to their design decisions. The goal is to establish a shared language for evaluating survey evidence and introduce the semester partnership.
+
+### Session 2 · August 31  
+**Research objectives, stakeholders, ethics, and total survey error**
+
+We translate stakeholder questions into researchable objectives, identify the target population and intended claims, and use total survey error to anticipate threats before writing questions.
+
+**Lab 1 begins in class:** RStudio projects, Quarto, importing survey data, reading a codebook, missing values, recoding, summarizing, and reproducible workflow.
+
+### September 7  
+**Labor Day—no class**
+
+### Session 3 · September 14  
+**Concepts, measurement, and questionnaire architecture**
+
+We move from abstract concepts to indicators, distinguish measurement from operational convenience, and design the overall flow of a questionnaire.
+
+### Session 4 · September 21  
+**Question wording and response design**
+
+We examine comprehension, retrieval, judgment, response mapping, acquiescence, social desirability, question order, response scales, and treatment of uncertainty.
+
+### Session 5 · September 28  
+**Testing and multilingual equivalence**
+
+Students conduct and evaluate cognitive interviews, identify systematic problems, and revise modules. We address translation, cultural adaptation, and equivalence across English and Spanish instruments.
+
+**Lab 2 begins in class:** distributions, proportions, cross-tabulations, grouped summaries, measurement, scales, and accurate visualization with ggplot2.
+
+### Session 6 · October 5  
+**Sampling and representation**
+
+We define the inferential population, compare sampling frames and recruitment sources, and assess probability and nonprobability approaches.
+
+### Session 7 · October 12  
+**Modes, recruitment, and nonresponse**
+
+We analyze mode effects, coverage, contact strategies, incentives, accessibility, response rates, and nonresponse bias.
+
+**Lab 3 begins in class:** simulation, sampling distributions, standard errors, margins of error, confidence intervals, hypothesis tests, and subgroup comparisons.
+
+### Session 8 · October 19  
+**Programming and quality assurance**
+
+The class integrates modules, reviews logic and randomization, tests mobile and bilingual displays, and maintains a formal issue log.
+
+### Session 9 · October 26  
+**Fieldwork and data quality**
+
+We establish fieldwork monitoring rules, examine paradata and fraud indicators, and distinguish defensible quality controls from post hoc deletion of inconvenient respondents.
+
+### Session 10 · November 2  
+**Cleaning, coding, and weighting**
+
+Students develop a reproducible workflow for labels, missingness, derived variables, open-ended coding, weighting, effective sample size, and documentation.
+
+**Lab 4 begins in class:** the R `survey` package, weighted and unweighted estimates, design effects, effective sample size, and defensible toplines.
+
+### Session 11 · November 9  
+**Analysis and uncertainty**
+
+We estimate toplines, compare subgroups, quantify uncertainty, account for weights and design effects, and avoid common errors in interpreting close differences.
+
+### Session 12 · November 16  
+**Visualization and public interpretation**
+
+Students turn results into accurate, accessible graphics and write claims that match the strength of the design and evidence.
+
+**Lab 5 begins in class:** introductory linear and logistic regression, categorical predictors, interactions, predicted probabilities, model-based graphics, and reproducible Quarto reporting.
+
+### November 23  
+**Fall break—no class**
+
+### Session 13 · November 30  
+**Report production and briefing rehearsal**
+
+Teams integrate the substantive narrative, methods statement, tables, graphics, limitations, and partner feedback into a coherent report.
+
+### Session 14 · December 7  
+**Final presentation and project retrospective**
+
+The class presents the final work, evaluates the production process, documents remaining decisions, and completes the project handoff.
