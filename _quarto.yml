@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - Labs/fall2026/templates/*.qmd
   render:
     - index.qmd
     - schedule.qmd
