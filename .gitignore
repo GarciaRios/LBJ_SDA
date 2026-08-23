@@ -4,3 +4,5 @@
 Labs/fall2026/lab1/output/
 .Rhistory
 .RData
+
+**/*.quarto_ipynb

@@ -78,4 +78,4 @@ Because programming involves troubleshooting, a minor syntax error will matter l
 
 ## Relationship to existing materials
 
-The repository already contains useful foundations in introductory R, data manipulation, probability, inference, regression, predicted probabilities, and a Latino National Survey case study. These materials will be adapted into the five-lab sequence. Outdated syntax will be modernized, and generic exercises will be replaced or supplemented with survey applications.
+The repository already contains useful foundations in introductory R, data manipulation, probability, inference, regression, predicted probabilities, and a Latino National Survey case study. These materials will be adapted into the five-lab sequence. Outdated syntax will be updated as as needed.
