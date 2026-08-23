@@ -41,7 +41,7 @@ format:
   html:
     theme:
       light: cosmo
-    css: custom_style.css
+    css: course_style.css
     toc: true
     link-external-newwindow: true
 
