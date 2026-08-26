@@ -1,4 +1,4 @@
-project:
+# Published at https://garciarios.github.io/LBJ_SDA/\nproject:
   type: website
   output-dir: _site
   resources:
