@@ -10,7 +10,7 @@ No prior mastery of R is required. Most lab work will be completed together duri
 
 ### Lab 1: Your First Reproducible Survey Analysis
 
-[Read Lab 1](Labs/fall2026/lab1/lab1.qmd) · [Download the Lab 1 student template](Labs/fall2026/templates/lab1-template.qmd){download=""}
+[Read Lab 1](Labs/fall2026/lab1/lab1.qmd) · [Download the Lab 1 student template](Labs/fall2026/templates/lab1-template.qmd){download=""} · [Download the LNS data](Labs/case_study/data/lns_full.dta){download=""}
 
 ### Lab 2: Describing and Visualizing Survey Responses
 
