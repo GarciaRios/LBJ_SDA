@@ -1,4 +1,5 @@
-# Published at https://garciarios.github.io/LBJ_SDA/\nproject:
+# Published at https://garciarios.github.io/LBJ_SDA/
+project:
   type: website
   output-dir: _site
   resources:
@@ -25,8 +26,6 @@ website:
         text: Syllabus
       - href: schedule.qmd
         text: Schedule
-      - href: readings.qmd
-        text: Readings
       - href: assignments.qmd
         text: Assignments
       - href: project.qmd
