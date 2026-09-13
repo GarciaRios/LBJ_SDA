@@ -249,7 +249,7 @@
     "href": "labs.html#lab-materials",
     "title": "R and Statistics Labs",
     "section": "Lab materials",
-    "text": "Lab materials\n\nLab 1: Your First Reproducible Survey Analysis\nRead Lab 1 · Download the Lab 1 student template\n\n\nLab 2: Describing and Visualizing Survey Responses\nRead Lab 2 · Download the Lab 2 student template\n\n\n\n\n\n\nNote\n\n\n\nThe website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning."
+    "text": "Lab materials\n\nLab 1: Your First Reproducible Survey Analysis\nRead Lab 1 · Download the Lab 1 student template · Download the LNS data\n\n\nLab 2: Describing and Visualizing Survey Responses\nRead Lab 2 · Download the Lab 2 student template\n\n\n\n\n\n\nNote\n\n\n\nThe website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning."
   },
   {
     "objectID": "labs.html#lab-sequence",
@@ -466,119 +466,119 @@
     "href": "readings.html",
     "title": "Readings",
     "section": "",
-    "text": "The reading plan combines foundational survey methodology with current professional guidance and applied cases. Required readings should normally total approximately 40–70 pages per week; selections marked Recommended provide depth, alternative explanations, or useful reference material.\nReadings that require library access will be distributed through Canvas. Public resources are linked below."
+    "text": "Readings are listed by class session. Complete the Required readings before class. Recommended readings are optional references for students who want additional depth or need them for the semester project."
   },
   {
-    "objectID": "readings.html#core-references-used-across-the-semester",
-    "href": "readings.html#core-references-used-across-the-semester",
+    "objectID": "readings.html#access",
+    "href": "readings.html#access",
     "title": "Readings",
-    "section": "Core references used across the semester",
-    "text": "Core references used across the semester\n\nGroves, Robert M., Floyd J. Fowler Jr., Mick P. Couper, James M. Lepkowski, Eleanor Singer, and Roger Tourangeau. Survey Methodology, 2nd ed.\nTourangeau, Roger, Lance J. Rips, and Kenneth Rasinski. The Psychology of Survey Response.\nDillman, Don A., Jolene D. Smyth, and Leah Melani Christian. Internet, Phone, Mail, and Mixed-Mode Surveys: The Tailored Design Method, 4th ed.\nVannette, David L., and Jon A. Krosnick, eds. The Palgrave Handbook of Survey Research.\nAmerican Association for Public Opinion Research. Standards, ethics, reports, and professional guidance.\n\nStudents are not expected to read every core reference cover to cover."
+    "section": "Access",
+    "text": "Access\n\nOpen access links lead directly to material available without a subscription.\nUT Libraries links lead to the publisher or DOI record. Sign in through UT Libraries when prompted. A course copy will also be posted on Canvas when permitted.\nPage ranges refer to the editions listed below. You are responsible only for the chapters, pages, or named sections specified."
+  },
+  {
+    "objectID": "readings.html#core-books",
+    "href": "readings.html#core-books",
+    "title": "Readings",
+    "section": "Core books",
+    "text": "Core books\n\nGroves, Robert M., Floyd J. Fowler Jr., Mick P. Couper, James M. Lepkowski, Eleanor Singer, and Roger Tourangeau. 2009. Survey Methodology. 2nd ed. Wiley. Book information. UT Libraries/Canvas.\nTourangeau, Roger, Lance J. Rips, and Kenneth Rasinski. 2000. The Psychology of Survey Response. Cambridge University Press. Book information. UT Libraries/Canvas.\n\nStudents are not expected to read either book cover to cover."
   },
   {
     "objectID": "readings.html#session-1-polls-evidence-and-error",
     "href": "readings.html#session-1-polls-evidence-and-error",
     "title": "Readings",
     "section": "Session 1 · Polls, evidence, and error",
-    "text": "Session 1 · Polls, evidence, and error\nRequired\n\nAAPOR. 2024 Pre-Election Polling: Executive Summary.\nAAPOR. Polling Accuracy.\nGroves et al., Survey Methodology, chapter 2, “Inference and Error in Surveys” (selected sections).\n\nRecommended\n\nAAPOR. Full Task Force Report on 2024 Pre-Election Polling.\nAsher, Herbert. Polling and the Public, introductory chapter."
+    "text": "Session 1 · Polls, evidence, and error\nRequired\n\nAmerican Association for Public Opinion Research (AAPOR). 2025. “2024 Pre-Election Polling: An Evaluation of the 2024 General Election Polls,” Executive Summary. Read the complete executive summary. Open access.\nAAPOR. “Polling Accuracy.” Read the complete webpage. Open access.\nGroves et al. 2009. Chapter 2, “Inference and Error in Surveys,” pp. 39–64. UT Libraries/Canvas.\n\nRecommended\n\nAAPOR. 2025. Full report on 2024 pre-election polling. Open access."
   },
   {
     "objectID": "readings.html#session-2-research-objectives-ethics-and-total-survey-error",
     "href": "readings.html#session-2-research-objectives-ethics-and-total-survey-error",
     "title": "Readings",
     "section": "Session 2 · Research objectives, ethics, and total survey error",
-    "text": "Session 2 · Research objectives, ethics, and total survey error\nRequired\n\nAAPOR. Code of Professional Ethics and Practices.\nAAPOR. Best Practices for Survey Research.\nGroves et al., chapter 3, “Target Populations, Sampling Frames, and Coverage Error” (overview) and the total survey error framework from chapter 2.\n\nRecommended\n\nAAPOR. Disclosure Standards.\nBiemer, Paul P. “Total Survey Error: Design, Implementation, and Evaluation” (selection)."
+    "text": "Session 2 · Research objectives, ethics, and total survey error\nRequired\n\nAAPOR. “Code of Professional Ethics and Practices.” Read sections I–III: Principles of Professional Responsibility, Principles of Professional Practice in the Conduct of Our Work, and Standards for Disclosure. Open access.\nAAPOR. “Best Practices for Survey Research.” Read the complete webpage. Open access.\nGroves et al. 2009. Re-read Chapter 2, pp. 48–64, focusing on Figure 2.5 and the individual components of total survey error. UT Libraries/Canvas.\n\nRecommended\n\nAAPOR. “Disclosure Standards.” Open access."
   },
   {
     "objectID": "readings.html#session-3-concepts-measurement-and-questionnaire-architecture",
     "href": "readings.html#session-3-concepts-measurement-and-questionnaire-architecture",
     "title": "Readings",
     "section": "Session 3 · Concepts, measurement, and questionnaire architecture",
-    "text": "Session 3 · Concepts, measurement, and questionnaire architecture\nRequired\n\nFowler, Floyd J. Survey Research Methods, selections on measurement and question design.\nTourangeau, Rips, and Rasinski, selections on the four-stage response process: comprehension, retrieval, judgment, and response.\nSchuman, Howard, and Stanley Presser. Questions and Answers in Attitude Surveys, selected examples.\n\nRecommended\n\nKrosnick, Jon A., and Stanley Presser. “Question and Questionnaire Design,” in Handbook of Survey Research.\nConverse, Jean M., and Stanley Presser. Survey Questions: Handcrafting the Standardized Questionnaire."
+    "text": "Session 3 · Concepts, measurement, and questionnaire architecture\nRequired\n\nGroves et al. 2009. Chapter 7, “Questions and Answers in Surveys,” pp. 217–253. Focus on the relationship among constructs, measurements, responses, and response error. UT Libraries/Canvas.\nKrosnick, Jon A., and Stanley Presser. 2010. “Question and Questionnaire Design.” In Handbook of Survey Research, 2nd ed., pp. 263–313. Read pp. 263–286, through the end of the section on open versus closed questions. Open-access resource page; course PDF on Canvas.\nPew Research Center. “Writing Survey Questions.” Read the sections “Question development,” “Measuring change over time,” and “Open- and closed-ended questions.” Open access.\n\nRecommended\n\nTourangeau, Rips, and Rasinski. 2000. Chapter 1, “The Psychology of Survey Response,” pp. 1–22. UT Libraries/Canvas.\nConverse, Jean M., and Stanley Presser. 1986. Survey Questions: Handcrafting the Standardized Questionnaire, Chapter 2, “The Logic of Survey Questions,” pp. 9–30. UT Libraries."
   },
   {
     "objectID": "readings.html#session-4-wording-response-options-order-and-sensitive-questions",
     "href": "readings.html#session-4-wording-response-options-order-and-sensitive-questions",
     "title": "Readings",
     "section": "Session 4 · Wording, response options, order, and sensitive questions",
-    "text": "Session 4 · Wording, response options, order, and sensitive questions\nRequired\n\nPew Research Center. Methods 101: Survey Question Wording.\nSchwarz, Norbert. “Self-Reports: How the Questions Shape the Answers.”\nTourangeau and Yan. “Sensitive Questions in Surveys.”\n\nRecommended\n\nPew Research Center. When Online Survey Respondents Only ‘Select Some That Apply’.\nHolbrook, Allyson L., et al. selections on social desirability and survey mode."
+    "text": "Session 4 · Wording, response options, order, and sensitive questions\nRequired\n\nSchwarz, Norbert. 1999. “Self-Reports: How the Questions Shape the Answers.” American Psychologist 54(2): 93–105. Read the complete article. UT Libraries.\nTourangeau, Roger, and Ting Yan. 2007. “Sensitive Questions in Surveys.” Psychological Bulletin 133(5): 859–883. Read pp. 859–870 and the conclusion on pp. 878–879. UT Libraries.\nPew Research Center. 2018. “Methods 101: Survey Question Wording.” Watch the video and review the examples on the page. Open access.\n\nRecommended\n\nPew Research Center. 2019. “When Online Survey Respondents Only ‘Select Some That Apply.’” Open access."
   },
   {
     "objectID": "readings.html#session-5-cognitive-testing-and-multilingual-equivalence",
     "href": "readings.html#session-5-cognitive-testing-and-multilingual-equivalence",
     "title": "Readings",
     "section": "Session 5 · Cognitive testing and multilingual equivalence",
-    "text": "Session 5 · Cognitive testing and multilingual equivalence\nRequired\n\nWillis, Gordon B. Cognitive Interviewing: A Tool for Improving Questionnaire Design, selected chapters.\nU.S. Census Bureau. Cognitive Interview Protocol Guide, selected sections.\nSurvey Research Center. Guidelines for Best Practice in Cross-Cultural Surveys, selections on questionnaire development, translation, adaptation, and pretesting.\n\nRecommended\n\nHarkness, Janet A., et al. selections on translation and cultural comparability.\nU.S. Census Bureau, selected bilingual cognitive-testing report on race and Hispanic-origin measurement."
+    "text": "Session 5 · Cognitive testing and multilingual equivalence\nRequired\n\nWillis, Gordon B. 2005. Cognitive Interviewing: A Tool for Improving Questionnaire Design. Chapter 1, “An Introduction to Cognitive Interviewing,” pp. 1–15, and Chapter 4, “The Practice of Cognitive Interviewing,” pp. 42–65. UT Libraries/Canvas.\nSurvey Research Center. 2016. Guidelines for Best Practice in Cross-Cultural Surveys. Read the chapter “Pretesting: Cognitive Interviewing” and its guidelines, rationale, and procedural steps. Open access.\nSurvey Research Center. 2016. “Translation: Overview.” Read Guidelines 1–4 and their rationales. Open access.\n\nRecommended\n\nPan, Yuling, and Mandy Sha. 2019. The Sociolinguistics of Survey Translation, Chapter 2, “A Sociolinguistic Perspective on Survey Question Design and Translation,” pp. 21–39. UT Libraries."
   },
   {
     "objectID": "readings.html#session-6-sampling-and-representation",
     "href": "readings.html#session-6-sampling-and-representation",
     "title": "Readings",
     "section": "Session 6 · Sampling and representation",
-    "text": "Session 6 · Sampling and representation\nRequired\n\nGroves et al., chapters on sampling and coverage.\nPew Research Center. Comparing Two Types of Online Survey Samples.\nBaker et al. “Report of the AAPOR Task Force on Non-Probability Sampling,” executive summary and selected sections.\n\nRecommended\n\nMercer, Andrew, and Arnold Lau. Benchmarking Methodology.\nKennedy et al. “Evaluating Online Nonprobability Surveys.”"
+    "text": "Session 6 · Sampling and representation\nRequired\n\nGroves et al. 2009. Chapter 3, “Target Populations, Sampling Frames, and Coverage Error,” pp. 69–94. UT Libraries/Canvas.\nGroves et al. 2009. Chapter 4, “Sample Design and Sampling Error,” pp. 97–118 only, stopping before “Systematic Sampling.” UT Libraries/Canvas.\nPew Research Center. 2023. “Comparing Two Types of Online Survey Samples.” Read the overview and “How the probability and opt-in samples compare.” Open access.\n\nRecommended\n\nAAPOR. 2013. “Report of the Task Force on Non-Probability Sampling.” Open the report from the AAPOR reports page and read the executive summary. Open access.\nKennedy, Courtney, et al. 2016. “Evaluating Online Nonprobability Surveys.” Open access."
   },
   {
     "objectID": "readings.html#session-7-modes-recruitment-coverage-and-nonresponse",
     "href": "readings.html#session-7-modes-recruitment-coverage-and-nonresponse",
     "title": "Readings",
     "section": "Session 7 · Modes, recruitment, coverage, and nonresponse",
-    "text": "Session 7 · Modes, recruitment, coverage, and nonresponse\nRequired\n\nDillman, Smyth, and Christian, selected chapters on tailored design and mixed modes.\nPew Research Center. The Challenge of Mode-of-Interview Effects in Public Opinion Polls.\nGroves and Peytcheva. “The Impact of Nonresponse Rates on Nonresponse Bias.”\n\nRecommended\n\nAAPOR, Transitions from Telephone Surveys to Self-Administered and Mixed-Mode Surveys, executive summary.\nPew Research Center. Text Message Notification for Web Surveys.\nAAPOR, Texting for Research: A Brief Guide to the Regulatory Environment and Operational Considerations."
+    "text": "Session 7 · Modes, recruitment, coverage, and nonresponse\nRequired\n\nGroves et al. 2009. Chapter 5, “Methods of Data Collection,” pp. 149–177. UT Libraries/Canvas.\nGroves, Robert M., and Emilia Peytcheva. 2008. “The Impact of Nonresponse Rates on Nonresponse Bias.” Public Opinion Quarterly 72(2): 167–189. Read pp. 167–181 and the conclusion on pp. 186–187. UT Libraries.\nPew Research Center. 2015. “From Telephone to the Web: The Challenge of Mode-of-Interview Effects in Public Opinion Polls.” Read the overview and “Mode differences by question content.” Open access.\n\nRecommended\n\nAAPOR. 2019. “Transitions from Telephone Surveys to Self-Administered and Mixed-Mode Surveys.” Open the report from the AAPOR reports page and read the executive summary. Open access."
   },
   {
     "objectID": "readings.html#session-8-programming-mobile-design-randomization-and-qa",
     "href": "readings.html#session-8-programming-mobile-design-randomization-and-qa",
     "title": "Readings",
     "section": "Session 8 · Programming, mobile design, randomization, and QA",
-    "text": "Session 8 · Programming, mobile design, randomization, and QA\nRequired\n\nU.S. Census Bureau. Design Guidelines for U.S. Census Bureau Web Surveys and Digital Forms, selected sections.\nDillman, Smyth, and Christian, selections on visual design and web/mobile questionnaires.\nCourse instrument quality-assurance protocol and test-case template.\n\nRecommended\n\nCouper, Mick P. selections on web survey design.\nAAPOR disclosure checklist as a design-stage audit tool."
+    "text": "Session 8 · Programming, mobile design, randomization, and QA\nRequired\n\nU.S. Census Bureau. 2026. Design Guidelines for U.S. Census Bureau Web Surveys and Censuses. Read “Overall Look and Feel,” “Screen Elements,” and the entries for single-select, multi-select, grids, and open-text questions under “Question Components.” Open access.\nMartin, Elizabeth, et al. 2007. “Guidelines for Designing Questionnaires for Administration in Different Modes.” Read the introduction and Guidelines 1–12. Open access.\nCourse instrument QA protocol. Read the complete checklist posted on Canvas and bring it to class. Canvas.\n\nRecommended\n\nAAPOR. “Disclosure Standards.” Revisit as a design-stage audit tool. Open access."
   },
   {
     "objectID": "readings.html#session-9-fieldwork-paradata-fraud-and-respondent-quality",
     "href": "readings.html#session-9-fieldwork-paradata-fraud-and-respondent-quality",
     "title": "Readings",
     "section": "Session 9 · Fieldwork, paradata, fraud, and respondent quality",
-    "text": "Session 9 · Fieldwork, paradata, fraud, and respondent quality\nRequired\n\nAAPOR. Data Quality Metrics for Online Samples: Considerations for Study Design and Analysis, executive summary and selected sections.\nPew Research Center. Assessing the Risks to Online Polls From Bogus Respondents, selected sections.\nAAPOR, selected guidance on falsification and quality controls.\n\nRecommended\n\nPew Research Center. Answers That Did Not Match the Question Were Concentrated in Opt-In Polls.\nCourse fieldwork monitoring examples."
+    "text": "Session 9 · Fieldwork, paradata, fraud, and respondent quality\nRequired\n\nAAPOR. 2022. Data Quality Metrics for Online Samples: Considerations for Study Design and Analysis. Read Section 1, “Introduction and Scope,” pp. 1–2, and Section 6, “Summary and Recommendations,” pp. 49–51. Open access.\nKennedy, Courtney, et al. 2020. Assessing the Risks to Online Polls From Bogus Respondents. Read the overview, pp. 2–8, and the report’s concluding recommendations. Open access.\nAAPOR. 2020. “Falsification in Surveys.” Open the report from the AAPOR reports page and read the executive summary and recommendations. Open access.\n\nRecommended\n\nPew Research Center. 2020. “Answers That Did Not Match the Question Were Concentrated in Opt-In Polls.” Open access."
   },
   {
     "objectID": "readings.html#session-10-cleaning-coding-weighting-and-documentation",
     "href": "readings.html#session-10-cleaning-coding-weighting-and-documentation",
     "title": "Readings",
     "section": "Session 10 · Cleaning, coding, weighting, and documentation",
-    "text": "Session 10 · Cleaning, coding, weighting, and documentation\nRequired\n\nValliant, Richard, Jill A. Dever, and Frauke Kreuter. Practical Tools for Designing and Weighting Survey Samples, selected weighting chapters.\nPew Research Center. For Weighting Online Opt-In Samples, What Matters Most?.\nLumley, Thomas. Complex Surveys: A Guide to Analysis Using R, introductory selections.\n\nRecommended\n\nPew Research Center. How Different Weighting Methods Work.\nPew Research Center. Variability of Survey Estimates."
+    "text": "Session 10 · Cleaning, coding, weighting, and documentation\nRequired\n\nGroves et al. 2009. Chapter 10, “Postcollection Processing of Survey Data,” pp. 343–365. UT Libraries/Canvas.\nPew Research Center. 2018. “For Weighting Online Opt-In Samples, What Matters Most?” Read the overview and conclusion. Open access.\nPew Research Center. 2018. “How Different Weighting Methods Work.” Read the complete methods explainer. Open access.\n\nRecommended\n\nLumley, Thomas. 2010. Complex Surveys: A Guide to Analysis Using R, Chapter 1, “Basic Tools,” pp. 1–14. UT Libraries/Canvas."
   },
   {
     "objectID": "readings.html#session-11-estimation-uncertainty-and-subgroup-analysis",
     "href": "readings.html#session-11-estimation-uncertainty-and-subgroup-analysis",
     "title": "Readings",
     "section": "Session 11 · Estimation, uncertainty, and subgroup analysis",
-    "text": "Session 11 · Estimation, uncertainty, and subgroup analysis\nRequired\n\nGelman, Andrew, and Jennifer Hill, selected discussion of estimates, uncertainty, and comparisons.\nLumley, Complex Surveys, selections on weighted estimation and regression.\nAAPOR guidance on interpreting margins of sampling error for probability and nonprobability samples.\n\nRecommended\n\nWasserstein, Schirm, and Lazar. “Moving to a World Beyond ‘p &lt; 0.05.’”\nCourse case study comparing unweighted, weighted, and model-based estimates."
+    "text": "Session 11 · Estimation, uncertainty, and subgroup analysis\nRequired\n\nPew Research Center. 2021. “Why Pew Research Center Will Display Margins of Error in Some Graphics.” Read the complete explainer. Open access.\nPew Research Center. 2018. “Variability of Survey Estimates.” Read the complete methods explainer. Open access.\nWasserstein, Ronald L., Allen L. Schirm, and Nicole A. Lazar. 2019. “Moving to a World Beyond ‘p &lt; 0.05.’” The American Statistician 73(sup1): 1–19. Read pp. 1–10. Open access.\n\nRecommended\n\nLumley, Thomas. 2010. Complex Surveys, Chapter 2, “Simple and Stratified Sampling,” pp. 15–31. UT Libraries/Canvas."
   },
   {
     "objectID": "readings.html#session-12-visualization-and-public-interpretation",
     "href": "readings.html#session-12-visualization-and-public-interpretation",
     "title": "Readings",
     "section": "Session 12 · Visualization and public interpretation",
-    "text": "Session 12 · Visualization and public interpretation\nRequired\n\nCairo, Alberto. How Charts Lie, selected chapters.\nSchwabish, Jonathan A. Better Data Visualizations, selected chapters.\nAAPOR. Disclosure Standards.\nTwo contrasting public polling releases selected during the semester.\n\nRecommended\n\nHealy, Kieran. Data Visualization: A Practical Introduction, selected chapters.\nEvergreen, Stephanie D. H. Effective Data Visualization, selections on accessibility."
+    "text": "Session 12 · Visualization and public interpretation\nRequired\n\nHealy, Kieran. 2018. Data Visualization: A Practical Introduction. Read Chapter 1, “Look at Data,” and Chapter 2, “Get Started.” Open access.\nSchwabish, Jonathan A. 2021. Better Data Visualizations. Read Chapter 2, “Five Guidelines for Better Data Visualizations,” pp. 17–42. UT Libraries/Canvas.\nAAPOR. “Disclosure Standards.” Read sections 1–3 and use them to assess the assigned polling release. Open access.\nApplied comparison: The two polling releases named on Canvas. Read the complete toplines and methodology statements before class. Canvas.\n\nRecommended\n\nCairo, Alberto. 2019. How Charts Lie, Chapter 2, “How Charts Lie: Poor Design,” pp. 23–49. UT Libraries/Canvas."
   },
   {
     "objectID": "readings.html#session-13-reporting-peer-review-and-partner-briefing",
     "href": "readings.html#session-13-reporting-peer-review-and-partner-briefing",
     "title": "Readings",
     "section": "Session 13 · Reporting, peer review, and partner briefing",
-    "text": "Session 13 · Reporting, peer review, and partner briefing\nRequired\n\nAAPOR Transparency Initiative disclosure checklist.\nSelected high-quality public polling reports from Univision, Pew Research Center, and other news or research organizations.\nCourse report style guide and reproducibility checklist.\n\nNo additional long reading will be assigned so teams can concentrate on the full report draft."
+    "text": "Session 13 · Reporting, peer review, and partner briefing\nRequired\n\nAAPOR. “Transparency Initiative.” Read “What must be disclosed?” and the disclosure elements. Open access.\nPew Research Center. “Writing Survey Questions.” Re-read “Measuring change over time” and review how the page documents question wording and order. Open access.\nCourse report style guide and reproducibility checklist. Read both documents in full and apply them to the team draft. Canvas.\n\nNo additional long reading is assigned so teams can concentrate on the complete report draft."
   },
   {
     "objectID": "readings.html#session-14-presentation-and-retrospective",
     "href": "readings.html#session-14-presentation-and-retrospective",
     "title": "Readings",
     "section": "Session 14 · Presentation and retrospective",
-    "text": "Session 14 · Presentation and retrospective\nThere is no new reading. Students will review the final report, peer feedback, decision log, and their own contribution record before class."
-  },
-  {
-    "objectID": "readings.html#reading-list-principles",
-    "href": "readings.html#reading-list-principles",
-    "title": "Readings",
-    "section": "Reading-list principles",
-    "text": "Reading-list principles\nThe final list will be adjusted to:\n\nkeep weekly workload realistic;\nprovide accessible alternatives for highly technical material;\ninclude work by a diverse set of survey methodologists;\nconnect readings directly to that week’s project decision;\ndistinguish required selections from useful reference works; and\nincorporate timely materials that emerge during the 2026 polling cycle."
+    "text": "Session 14 · Presentation and retrospective\nThere is no new reading. Review the final report, peer feedback, decision log, and your individual contribution record before class."
   },
   {
     "objectID": "project.html",
