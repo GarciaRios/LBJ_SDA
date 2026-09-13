@@ -1,116 +1,215 @@
 ---
-title: "Fall 2026 Schedule"
+title: "Schedule"
+subtitle: "Fall 2026"
+toc: true
 ---
 
-The schedule follows the official UT Austin Fall 2026 calendar and the anticipated Univision polling cycle. Because this is a live project, milestone dates may shift. Changes will be announced in class and posted here.
+The schedule is the main course hub. Each session lists the required preparation, class focus, and principal product or lab. Because this course includes a live Univision polling project, production milestones may shift. Changes will be announced in class and posted here.
 
-## At a glance
+**Access:** Open-access readings are linked directly. For items marked **UT Libraries/Canvas**, sign in through [UT Libraries](https://www.lib.utexas.edu/) or use the course copy posted on Canvas. Page ranges refer to the editions listed in the [complete reading reference](readings.qmd).
 
-| Session | Date | Survey-production focus | R/statistics lab or principal product |
-|---:|---|---|---|
-| 1 | Aug. 24 | Why polls fail and what good survey design requires | [Initial Survey Autopsy diagnostic](assignments/fall2026/initial-survey-autopsy.qmd); R/Quarto setup |
-| 2 | Aug. 31 | Research objectives, ethics, and total survey error | **Lab 1:** R workflow and survey data |
-| — | Sept. 7 | **Labor Day—no class** | |
-| 3 | Sept. 14 | Concepts, measurement, and questionnaire architecture | Construct map |
-| 4 | Sept. 21 | Question wording, response options, order, and sensitive questions | Draft question module |
-| 5 | Sept. 28 | Cognitive interviewing, multilingual equivalence, and revision | **Lab 2:** Descriptives, measures, and visualization |
-| 6 | Oct. 5 | Target populations, frames, probability and nonprobability samples | Sampling assessment |
-| 7 | Oct. 12 | Modes, recruitment, coverage, nonresponse, and inference | **Lab 3:** Sampling, uncertainty, and comparisons |
-| 8 | Oct. 19 | Questionnaire integration, programming, randomization, and QA | Programmed instrument and QA log |
-| 9 | Oct. 26 | Fieldwork, paradata, fraud, respondent quality, and documentation | Fieldwork dashboard plan |
-| 10 | Nov. 2 | Cleaning, coding, missing data, weights, and design effects | **Lab 4:** Weighted survey estimates |
-| 11 | Nov. 9 | Estimation, uncertainty, subgroup comparisons, and modeling | Analysis plan and production sprint |
-| 12 | Nov. 16 | Modeling, visualization, interpretation, and communication | **Lab 5:** Regression and reproducible reporting |
-| — | Nov. 23 | **Fall break—no class** | |
-| 13 | Nov. 30 | Report production, peer review, and partner briefing rehearsal | Full report draft |
-| 14 | Dec. 7 | Final presentations, project retrospective, and handoff | Final report and presentation |
+## Foundations: Evidence, error, and measurement
 
-## Detailed schedule
+### Session 1 · August 24
 
-### Session 1 · August 24  
-**Why polls fail—and what good survey design requires**
+**Why polls fail and what good survey design requires**
 
-We begin with the [Initial Survey Autopsy diagnostic](assignments/fall2026/initial-survey-autopsy.qmd), completed before formal instruction in survey methodology. Students work backward from a published report's claims to the design information provided—or omitted. The goal is to establish a shared language for evaluating survey evidence and introduce the semester partnership.
+**Required preparation**
 
-### Session 2 · August 31  
+- AAPOR. 2025. [“2024 Pre-Election Polling: An Evaluation of the 2024 General Election Polls,” Executive Summary](https://aapor.org/wp-content/uploads/2025/10/Task-Force-on-2024-Pre-Election-Polling-Report-Executive-Summary.pdf). Read the complete executive summary. **Open access.**
+- AAPOR. [“Polling Accuracy.”](https://aapor.org/polling-accuracy/) Read the complete webpage. **Open access.**
+- Groves et al. 2009. *Survey Methodology*, Chapter 2, “Inference and Error in Surveys,” pp. 39–64. **UT Libraries/Canvas.**
+
+**In class:** Complete the [Initial Survey Autopsy diagnostic](assignments/fall2026/initial-survey-autopsy.qmd), establish a shared language for evaluating survey evidence, and introduce the Univision partnership and R/Quarto workflow.
+
+### Session 2 · August 31
+
 **Research objectives, stakeholders, ethics, and total survey error**
 
-We translate stakeholder questions into researchable objectives, identify the target population and intended claims, and use total survey error to anticipate threats before writing questions.
+**Required preparation**
 
-**Lab 1 begins in class:** RStudio projects, Quarto, importing survey data, reading a codebook, missing values, recoding, summarizing, and reproducible workflow.
+- AAPOR. [“Code of Professional Ethics and Practices.”](https://aapor.org/standards-and-ethics/) Read sections I–III. **Open access.**
+- AAPOR. [“Best Practices for Survey Research.”](https://aapor.org/standards-and-ethics/best-practices/) Read the complete webpage. **Open access.**
+- Groves et al. 2009. Re-read Chapter 2, pp. 48–64, focusing on Figure 2.5 and the components of total survey error. **UT Libraries/Canvas.**
 
-### September 7  
-**Labor Day—no class**
+**In class:** Translate stakeholder questions into researchable objectives and identify threats to the intended claims.
 
-### Session 3 · September 14  
+**Lab 1:** RStudio projects, Quarto, importing survey data, reading a codebook, missing values, recoding, summarizing, and reproducible workflow. [Lab guide](Labs/fall2026/lab1/lab1.qmd) · [Student template](Labs/fall2026/templates/lab1-template.qmd){download="lab1-template.qmd"}
+
+### September 7
+
+**Labor Day: no class**
+
+### Session 3 · September 14
+
 **Concepts, measurement, and questionnaire architecture**
 
-We move from abstract concepts to indicators, distinguish measurement from operational convenience, and design the overall flow of a questionnaire.
+**Required preparation**
 
-### Session 4 · September 21  
+- Groves et al. 2009. Chapter 7, “Questions and Answers in Surveys,” pp. 217–253. Focus on constructs, measurements, responses, and response error. **UT Libraries/Canvas.**
+- Krosnick, Jon A., and Stanley Presser. 2010. [“Question and Questionnaire Design.”](https://www.betterevaluation.org/tools-resources/question-questionnaire-design) In *Handbook of Survey Research*, 2nd ed. Read pp. 263–286, through the end of the section on open versus closed questions. **Course PDF on Canvas.**
+- Pew Research Center. [“Writing Survey Questions.”](https://www.pewresearch.org/writing-survey-questions/) Read “Question development,” “Measuring change over time,” and “Open- and closed-ended questions.” **Open access.**
+
+**In class:** Move from abstract concepts to indicators, distinguish measurement from operational convenience, and design the overall flow of a questionnaire.
+
+**Principal product:** Construct map.
+
+### Session 4 · September 21
+
 **Question wording and response design**
 
-We examine comprehension, retrieval, judgment, response mapping, acquiescence, social desirability, question order, response scales, and treatment of uncertainty.
+**Required preparation**
 
-### Session 5 · September 28  
+- Schwarz, Norbert. 1999. [“Self-Reports: How the Questions Shape the Answers.”](https://doi.org/10.1037/0003-066X.54.2.93) *American Psychologist* 54(2): 93–105. Read the complete article. **UT Libraries.**
+- Tourangeau, Roger, and Ting Yan. 2007. [“Sensitive Questions in Surveys.”](https://doi.org/10.1037/0033-2909.133.5.859) *Psychological Bulletin* 133(5): 859–883. Read pp. 859–870 and 878–879. **UT Libraries.**
+- Pew Research Center. 2018. [“Methods 101: Survey Question Wording.”](https://www.pewresearch.org/methods/2018/03/21/methods-101-video-question-wording/) Watch the video and review the examples. **Open access.**
+
+**In class:** Examine comprehension, retrieval, judgment, response mapping, acquiescence, social desirability, question order, response scales, and treatment of uncertainty.
+
+**Principal product:** Draft question module.
+
+### Session 5 · September 28
+
 **Testing and multilingual equivalence**
 
-Students conduct and evaluate cognitive interviews, identify systematic problems, and revise modules. We address translation, cultural adaptation, and equivalence across English and Spanish instruments.
+**Required preparation**
 
-**Lab 2 begins in class:** distributions, proportions, cross-tabulations, grouped summaries, measurement, scales, and accurate visualization with ggplot2.
+- Willis, Gordon B. 2005. *Cognitive Interviewing: A Tool for Improving Questionnaire Design*, Chapter 1, pp. 1–15, and Chapter 4, pp. 42–65. **UT Libraries/Canvas.**
+- Survey Research Center. 2016. [*Guidelines for Best Practice in Cross-Cultural Surveys*](https://ccsg.isr.umich.edu/wp-content/uploads/2019/06/CCSG_Full_Guidelines_2016_Version.pdf). Read “Pretesting: Cognitive Interviewing,” including its guidelines, rationales, and procedural steps. **Open access.**
+- Survey Research Center. 2016. [“Translation: Overview.”](https://ccsg.isr.umich.edu/chapters/translation/overview/) Read Guidelines 1–4 and their rationales. **Open access.**
 
-### Session 6 · October 5  
+**In class:** Conduct and evaluate cognitive interviews, identify systematic problems, and revise English and Spanish modules for conceptual equivalence.
+
+**Lab 2:** Distributions, proportions, cross-tabulations, grouped summaries, measurement, scales, and accurate visualization with `ggplot2`. [Lab guide](Labs/fall2026/lab2/lab2.qmd) · [Student template](Labs/fall2026/templates/lab2-template.qmd){download="lab2-template.qmd"}
+
+## Representation and survey production
+
+### Session 6 · October 5
+
 **Sampling and representation**
 
-We define the inferential population, compare sampling frames and recruitment sources, and assess probability and nonprobability approaches.
+**Required preparation**
 
-### Session 7 · October 12  
+- Groves et al. 2009. Chapter 3, “Target Populations, Sampling Frames, and Coverage Error,” pp. 69–94. **UT Libraries/Canvas.**
+- Groves et al. 2009. Chapter 4, “Sample Design and Sampling Error,” pp. 97–118, stopping before “Systematic Sampling.” **UT Libraries/Canvas.**
+- Pew Research Center. 2023. [“Comparing Two Types of Online Survey Samples.”](https://www.pewresearch.org/methods/2023/09/07/comparing-two-types-of-online-survey-samples/) Read the overview and “How the probability and opt-in samples compare.” **Open access.**
+
+**In class:** Define the inferential population, compare sampling frames and recruitment sources, and assess probability and nonprobability approaches.
+
+**Principal product:** Sampling assessment.
+
+### Session 7 · October 12
+
 **Modes, recruitment, and nonresponse**
 
-We analyze mode effects, coverage, contact strategies, incentives, accessibility, response rates, and nonresponse bias.
+**Required preparation**
 
-**Lab 3 begins in class:** simulation, sampling distributions, standard errors, margins of error, confidence intervals, hypothesis tests, and subgroup comparisons.
+- Groves et al. 2009. Chapter 5, “Methods of Data Collection,” pp. 149–177. **UT Libraries/Canvas.**
+- Groves, Robert M., and Emilia Peytcheva. 2008. [“The Impact of Nonresponse Rates on Nonresponse Bias.”](https://doi.org/10.1093/poq/nfn011) *Public Opinion Quarterly* 72(2): 167–189. Read pp. 167–181 and 186–187. **UT Libraries.**
+- Pew Research Center. 2015. [“From Telephone to the Web: The Challenge of Mode-of-Interview Effects in Public Opinion Polls.”](https://www.pewresearch.org/methods/2015/05/13/from-telephone-to-the-web-the-challenge-of-mode-of-interview-effects-in-public-opinion-polls/) Read the overview and “Mode differences by question content.” **Open access.**
 
-**Individual Assignment 1: Poll Autopsy assigned. Due Sunday, October 18, by 11:59 p.m.**
+**In class:** Analyze mode effects, coverage, contact strategies, incentives, accessibility, response rates, and nonresponse bias.
 
-### Session 8 · October 19  
+**Lab 3:** Simulation, sampling distributions, standard errors, margins of error, confidence intervals, hypothesis tests, and subgroup comparisons.
+
+**Assignment:** [Individual Poll Autopsy](assignments/fall2026/poll-autopsy.qmd) assigned. Due Sunday, October 18, at 11:59 p.m.
+
+### Session 8 · October 19
+
 **Programming and quality assurance**
 
-The class integrates modules, reviews logic and randomization, tests mobile and bilingual displays, and maintains a formal issue log.
+**Required preparation**
 
-### Session 9 · October 26  
+- U.S. Census Bureau. 2026. [*Design Guidelines for U.S. Census Bureau Web Surveys and Censuses*](https://www.census.gov/about/what/transformation/maximizing-operational-efficiency/data-centric-business-ecosystem/dice-overview/dice.html). Read “Overall Look and Feel,” “Screen Elements,” and the entries for single-select, multi-select, grids, and open-text questions. **Open access.**
+- Martin, Elizabeth, et al. 2007. [“Guidelines for Designing Questionnaires for Administration in Different Modes.”](https://www.census.gov/library/working-papers/2007/adrm/rsm2007-42.html) Read the introduction and Guidelines 1–12. **Open access.**
+- Course instrument QA protocol. Read the complete checklist posted on Canvas and bring it to class.
+
+**In class:** Integrate modules, review logic and randomization, test mobile and bilingual displays, and maintain a formal issue log.
+
+**Principal product:** Programmed instrument and QA log.
+
+### Session 9 · October 26
+
 **Fieldwork and data quality**
 
-We establish fieldwork monitoring rules, examine paradata and fraud indicators, and distinguish defensible quality controls from post hoc deletion of inconvenient respondents.
+**Required preparation**
 
-### Session 10 · November 2  
+- AAPOR. 2022. [*Data Quality Metrics for Online Samples*](https://aapor.org/wp-content/uploads/2023/02/Task-Force-Report-FINAL.pdf). Read Section 1, pp. 1–2, and Section 6, pp. 49–51. **Open access.**
+- Kennedy, Courtney, et al. 2020. [*Assessing the Risks to Online Polls From Bogus Respondents*](https://www.pewresearch.org/methods/wp-content/uploads/sites/10/2020/02/PM_02.18.20_dataquality_FULL.REPORT.pdf). Read the overview, pp. 2–8, and the concluding recommendations. **Open access.**
+- AAPOR. 2020. [“Falsification in Surveys.”](https://aapor.org/publications-resources/reports/) Open the report from the AAPOR reports page and read the executive summary and recommendations. **Open access.**
+
+**In class:** Establish fieldwork monitoring rules, examine paradata and fraud indicators, and distinguish defensible quality controls from post hoc deletion.
+
+**Principal product:** Fieldwork dashboard plan.
+
+## Analysis and communication
+
+### Session 10 · November 2
+
 **Cleaning, coding, and weighting**
 
-Students develop a reproducible workflow for labels, missingness, derived variables, open-ended coding, weighting, effective sample size, and documentation.
+**Required preparation**
 
-**Lab 4 begins in class:** the R `survey` package, weighted and unweighted estimates, design effects, effective sample size, and defensible toplines.
+- Groves et al. 2009. Chapter 10, “Postcollection Processing of Survey Data,” pp. 343–365. **UT Libraries/Canvas.**
+- Pew Research Center. 2018. [“For Weighting Online Opt-In Samples, What Matters Most?”](https://www.pewresearch.org/methods/2018/01/26/for-weighting-online-opt-in-samples-what-matters-most/) Read the overview and conclusion. **Open access.**
+- Pew Research Center. 2018. [“How Different Weighting Methods Work.”](https://www.pewresearch.org/methods/2018/01/26/how-different-weighting-methods-work/) Read the complete explainer. **Open access.**
 
-### Session 11 · November 9  
+**In class:** Develop a reproducible workflow for labels, missingness, derived variables, open-ended coding, weighting, effective sample size, and documentation.
+
+**Lab 4:** Use the R `survey` package to compare weighted and unweighted estimates, design effects, effective sample size, and defensible toplines.
+
+### Session 11 · November 9
+
 **Analysis and uncertainty**
 
-We estimate toplines, compare subgroups, quantify uncertainty, account for weights and design effects, and avoid common errors in interpreting close differences.
+**Required preparation**
 
-### Session 12 · November 16  
+- Pew Research Center. 2021. [“Why Pew Research Center Will Display Margins of Error in Some Graphics.”](https://www.pewresearch.org/decoded/2021/10/25/why-pew-research-center-will-display-margins-of-error-in-some-graphics/) Read the complete explainer. **Open access.**
+- Pew Research Center. 2018. [“Variability of Survey Estimates.”](https://www.pewresearch.org/methods/2018/01/26/variability-of-survey-estimates/) Read the complete explainer. **Open access.**
+- Wasserstein, Ronald L., Allen L. Schirm, and Nicole A. Lazar. 2019. [“Moving to a World Beyond ‘p < 0.05.’”](https://doi.org/10.1080/00031305.2019.1583913) *The American Statistician* 73(sup1): 1–19. Read pp. 1–10. **Open access.**
+
+**In class:** Estimate toplines, compare subgroups, quantify uncertainty, account for weights and design effects, and avoid common errors in interpreting close differences.
+
+**Principal product:** Analysis plan and production sprint.
+
+### Session 12 · November 16
+
 **Visualization and public interpretation**
 
-Students turn results into accurate, accessible graphics and write claims that match the strength of the design and evidence.
+**Required preparation**
 
-**Lab 5 begins in class:** introductory linear and logistic regression, categorical predictors, interactions, predicted probabilities, model-based graphics, and reproducible Quarto reporting.
+- Healy, Kieran. 2018. [*Data Visualization: A Practical Introduction*](https://socviz.co/). Read Chapter 1, “Look at Data,” and Chapter 2, “Get Started.” **Open access.**
+- Schwabish, Jonathan A. 2021. *Better Data Visualizations*, Chapter 2, “Five Guidelines for Better Data Visualizations,” pp. 17–42. **UT Libraries/Canvas.**
+- AAPOR. [“Disclosure Standards.”](https://aapor.org/standards-and-ethics/disclosure-standards/) Read sections 1–3 and use them to assess the polling releases posted on Canvas. **Open access.**
 
-### November 23  
-**Fall break—no class**
+**In class:** Turn results into accurate, accessible graphics and write claims that match the strength of the design and evidence.
 
-### Session 13 · November 30  
+**Lab 5:** Introductory linear and logistic regression, categorical predictors, interactions, predicted probabilities, model-based graphics, and reproducible Quarto reporting.
+
+### November 23
+
+**Fall break: no class**
+
+### Session 13 · November 30
+
 **Report production and briefing rehearsal**
 
-Teams integrate the substantive narrative, methods statement, tables, graphics, limitations, and partner feedback into a coherent report.
+**Required preparation**
 
-### Session 14 · December 7  
+- AAPOR. [“Transparency Initiative.”](https://aapor.org/standards-and-ethics/transparency-initiative/) Read “What must be disclosed?” and the disclosure elements. **Open access.**
+- Pew Research Center. [“Writing Survey Questions.”](https://www.pewresearch.org/writing-survey-questions/) Re-read “Measuring change over time” and review how the page documents wording and order. **Open access.**
+- Course report style guide and reproducibility checklist. Read both documents in full and apply them to the team draft. **Canvas.**
+
+**In class:** Integrate the substantive narrative, methods statement, tables, graphics, limitations, and partner feedback into a coherent report.
+
+**Principal product:** Full report draft and partner-briefing rehearsal.
+
+### Session 14 · December 7
+
 **Final presentation and project retrospective**
 
-The class presents the final work, evaluates the production process, documents remaining decisions, and completes the project handoff.
+There is no new reading. Review the final report, peer feedback, decision log, and your individual contribution record before class.
+
+**In class:** Present the final work, evaluate the production process, document remaining decisions, and complete the project handoff.
+
+**Principal product:** Final report and presentation.
