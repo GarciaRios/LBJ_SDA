@@ -30,7 +30,8 @@ The schedule is the main course hub. Each session lists the required preparation
 
 - AAPOR. [“Code of Professional Ethics and Practices.”](https://aapor.org/standards-and-ethics/) Read sections I–III. **Open access.**
 - AAPOR. [“Best Practices for Survey Research.”](https://aapor.org/standards-and-ethics/best-practices/) Read the complete webpage. **Open access.**
-- Groves et al. 2009. Re-read Chapter 2, pp. 48–64, focusing on Figure 2.5 and the components of total survey error. **UT Libraries/Canvas.**
+
+The Groves total survey error review is recommended rather than required on this lab day.
 
 **In class:** Translate stakeholder questions into researchable objectives and identify threats to the intended claims.
 
@@ -74,8 +75,7 @@ The schedule is the main course hub. Each session lists the required preparation
 
 **Required preparation**
 
-- Willis, Gordon B. 2005. *Cognitive Interviewing: A Tool for Improving Questionnaire Design*, Chapter 1, pp. 1–15, and Chapter 4, pp. 42–65. **UT Libraries/Canvas.**
-- Survey Research Center. 2016. [*Guidelines for Best Practice in Cross-Cultural Surveys*](https://ccsg.isr.umich.edu/wp-content/uploads/2019/06/CCSG_Full_Guidelines_2016_Version.pdf). Read “Pretesting: Cognitive Interviewing,” including its guidelines, rationales, and procedural steps. **Open access.**
+- Willis, Gordon B. 2005. *Cognitive Interviewing: A Tool for Improving Questionnaire Design*, Chapter 1, pp. 1–15. **UT Libraries/Canvas.**
 - Survey Research Center. 2016. [“Translation: Overview.”](https://ccsg.isr.umich.edu/chapters/translation/overview/) Read Guidelines 1–4 and their rationales. **Open access.**
 
 **In class:** Conduct and evaluate cognitive interviews, identify systematic problems, and revise English and Spanish modules for conceptual equivalence.
@@ -104,8 +104,7 @@ The schedule is the main course hub. Each session lists the required preparation
 
 **Required preparation**
 
-- Groves et al. 2009. Chapter 5, “Methods of Data Collection,” pp. 149–177. **UT Libraries/Canvas.**
-- Groves, Robert M., and Emilia Peytcheva. 2008. [“The Impact of Nonresponse Rates on Nonresponse Bias.”](https://doi.org/10.1093/poq/nfn011) *Public Opinion Quarterly* 72(2): 167–189. Read pp. 167–181 and 186–187. **UT Libraries.**
+- Groves et al. 2009. Chapter 5, “Methods of Data Collection,” pp. 149–162, focusing on the comparison of survey modes. **UT Libraries/Canvas.**
 - Pew Research Center. 2015. [“From Telephone to the Web: The Challenge of Mode-of-Interview Effects in Public Opinion Polls.”](https://www.pewresearch.org/methods/2015/05/13/from-telephone-to-the-web-the-challenge-of-mode-of-interview-effects-in-public-opinion-polls/) Read the overview and “Mode differences by question content.” **Open access.**
 
 **In class:** Analyze mode effects, coverage, contact strategies, incentives, accessibility, response rates, and nonresponse bias.
@@ -150,7 +149,6 @@ The schedule is the main course hub. Each session lists the required preparation
 
 **Required preparation**
 
-- Groves et al. 2009. Chapter 10, “Postcollection Processing of Survey Data,” pp. 343–365. **UT Libraries/Canvas.**
 - Pew Research Center. 2018. [“For Weighting Online Opt-In Samples, What Matters Most?”](https://www.pewresearch.org/methods/2018/01/26/for-weighting-online-opt-in-samples-what-matters-most/) Read the overview and conclusion. **Open access.**
 - Pew Research Center. 2018. [“How Different Weighting Methods Work.”](https://www.pewresearch.org/methods/2018/01/26/how-different-weighting-methods-work/) Read the complete explainer. **Open access.**
 
@@ -178,9 +176,7 @@ The schedule is the main course hub. Each session lists the required preparation
 
 **Required preparation**
 
-- Healy, Kieran. 2018. [*Data Visualization: A Practical Introduction*](https://socviz.co/). Read Chapter 1, “Look at Data,” and Chapter 2, “Get Started.” **Open access.**
-- Schwabish, Jonathan A. 2021. *Better Data Visualizations*, Chapter 2, “Five Guidelines for Better Data Visualizations,” pp. 17–42. **UT Libraries/Canvas.**
-- AAPOR. [“Disclosure Standards.”](https://aapor.org/standards-and-ethics/disclosure-standards/) Read sections 1–3 and use them to assess the polling releases posted on Canvas. **Open access.**
+- Healy, Kieran. 2018. [*Data Visualization: A Practical Introduction*](https://socviz.co/). Read Chapter 1, “Look at Data.” **Open access.**
 
 **In class:** Turn results into accurate, accessible graphics and write claims that match the strength of the design and evidence.
 
@@ -194,11 +190,7 @@ The schedule is the main course hub. Each session lists the required preparation
 
 **Report production and briefing rehearsal**
 
-**Required preparation**
-
-- AAPOR. [“Transparency Initiative.”](https://aapor.org/standards-and-ethics/transparency-initiative/) Read “What must be disclosed?” and the disclosure elements. **Open access.**
-- Pew Research Center. [“Writing Survey Questions.”](https://www.pewresearch.org/writing-survey-questions/) Re-read “Measuring change over time” and review how the page documents wording and order. **Open access.**
-- Course report style guide and reproducibility checklist. Read both documents in full and apply them to the team draft. **Canvas.**
+**Required preparation:** No new reading. Bring the complete team draft and apply the course report style guide and reproducibility checklist before class.
 
 **In class:** Integrate the substantive narrative, methods statement, tables, graphics, limitations, and partner feedback into a coherent report.
 
