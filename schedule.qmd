@@ -120,7 +120,7 @@ The Groves total survey error review is recommended rather than required on this
 **Required preparation**
 
 - U.S. Census Bureau. 2026. [*Design Guidelines for U.S. Census Bureau Web Surveys and Censuses*](https://www.census.gov/about/what/transformation/maximizing-operational-efficiency/data-centric-business-ecosystem/dice-overview/dice.html). Read “Overall Look and Feel,” “Screen Elements,” and the entries for single-select, multi-select, grids, and open-text questions. **Open access.**
-- Martin, Elizabeth, et al. 2007. [“Guidelines for Designing Questionnaires for Administration in Different Modes.”](https://www.census.gov/library/working-papers/2007/adrm/rsm2007-42.html) Read the introduction and Guidelines 1–12. **Open access.**
+- Dillman, Don A., Jolene D. Smyth, and Leah Melani Christian. 2014. *Internet, Phone, Mail, and Mixed-Mode Surveys*, Chapter 9, “Web Questionnaires and Implementation.” **UT Libraries.**
 - Course instrument QA protocol. Read the complete checklist posted on Canvas and bring it to class.
 
 **In class:** Integrate modules, review logic and randomization, test mobile and bilingual displays, and maintain a formal issue log.
@@ -133,9 +133,9 @@ The Groves total survey error review is recommended rather than required on this
 
 **Required preparation**
 
+- Dillman, Smyth, and Christian. 2014. Chapter 2, “Reducing People’s Reluctance to Respond to Surveys,” pp. 19–55. **UT Libraries.**
 - AAPOR. 2022. [*Data Quality Metrics for Online Samples*](https://aapor.org/wp-content/uploads/2023/02/Task-Force-Report-FINAL.pdf). Read Section 1, pp. 1–2, and Section 6, pp. 49–51. **Open access.**
 - Kennedy, Courtney, et al. 2020. [*Assessing the Risks to Online Polls From Bogus Respondents*](https://www.pewresearch.org/methods/wp-content/uploads/sites/10/2020/02/PM_02.18.20_dataquality_FULL.REPORT.pdf). Read the overview, pp. 2–8, and the concluding recommendations. **Open access.**
-- AAPOR. 2020. [“Falsification in Surveys.”](https://aapor.org/publications-resources/reports/) Open the report from the AAPOR reports page and read the executive summary and recommendations. **Open access.**
 
 **In class:** Establish fieldwork monitoring rules, examine paradata and fraud indicators, and distinguish defensible quality controls from post hoc deletion.
 
