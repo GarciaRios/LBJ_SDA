@@ -204,4 +204,5 @@ Generative AI may be used to improve organization or edit prose if such use is d
 - [AAPOR Best Practices for Survey Research](https://aapor.org/standards-and-ethics/best-practices/)
 - [AAPOR Disclosure Standards](https://aapor.org/standards-and-ethics/disclosure-standards/)
 - [AAPOR Polling Accuracy](https://aapor.org/polling-accuracy/)
+- Asher, Herbert. 2017. *Polling and the Public*, 9th ed., Chapters 6 and 9, “The Media and the Polls” and “Polling and Democracy.” Course PDF on Canvas.
 - Course readings on total survey error, question wording, sampling, modes, and uncertainty
