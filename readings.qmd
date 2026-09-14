@@ -52,7 +52,7 @@ Students are not expected to read these books cover to cover. Only the chapters 
 **Required**
 
 - Groves et al. 2009. Chapter 7, “Questions and Answers in Surveys,” pp. 217–253. Focus on the relationship among constructs, measurements, responses, and response error. **UT Libraries/Canvas.**
-- Krosnick, Jon A., and Stanley Presser. 2010. [“Question and Questionnaire Design.”](https://www.betterevaluation.org/tools-resources/question-questionnaire-design) In *Handbook of Survey Research*, 2nd ed., pp. 263–313. Read pp. 263–286, through the end of the section on open versus closed questions. **Open-access resource page; course PDF on Canvas.**
+- Krosnick, Jon A., and Stanley Presser. 2010. “Question and Questionnaire Design.” In *Handbook of Survey Research*, 2nd ed., pp. 263–313. Read pp. 263–286, through the end of the section on open versus closed questions. **Course PDF on Canvas.**
 - Pew Research Center. [“Writing Survey Questions.”](https://www.pewresearch.org/writing-survey-questions/) Read the sections “Question development,” “Measuring change over time,” and “Open- and closed-ended questions.” **Open access.**
 
 **Recommended**
