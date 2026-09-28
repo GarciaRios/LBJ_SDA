@@ -34,7 +34,9 @@ class(lns$poor_work)
 class(lns$discrimination_index)
 ```
 
-[Classify each variable here.]
+Classify each variable substantively, not only by the way R stores it. Why might an ordinal response be stored as a factor rather than as a number?
+
+>
 
 ## Exercise 2: Describe age
 
@@ -42,6 +44,7 @@ class(lns$discrimination_index)
 lns |>
   summarize(
     valid_n = sum(!is.na(age)),
+    missing_n = sum(is.na(age)),
     mean = mean(age, na.rm = TRUE),
     median = median(age, na.rm = TRUE),
     standard_deviation = sd(age, na.rm = TRUE),
@@ -57,7 +60,9 @@ ggplot(lns, aes(x = age)) +
   theme_minimal()
 ```
 
-[Describe the distribution here.]
+Describe the center, spread, and shape of the age distribution. Are there values you would investigate before publishing?
+
+>
 
 ## Exercise 3: Counts and percentages
 
@@ -70,74 +75,119 @@ problem_table <- lns |>
 problem_table
 ```
 
-[Explain the denominator here.]
+Explain the denominator used to calculate `percent`.
+
+>
+
+Create a bar chart displaying the ten most common substantive responses.
+
+```{r}
+# Create the top-ten bar chart here
+```
 
 ## Exercise 4: Prepare an ordinal measure
 
 ```{r}
-# Inspect poor_work and create an ordered analysis version
+# Inspect poor_work, create poor_work_analysis, and verify the recode
 ```
 
-[Enter your response here.]
+Why is the ordering important for both analysis and visualization? Why should `poor_work` be preserved?
+
+>
 
 ## Exercise 5: Cross-tabulation
 
 ```{r}
-# Compare poor_work across generation groups
+# Compare poor_work_analysis across generations using within-generation percentages
+
+# Verify that percentages sum to 100% within each generation
 ```
 
-[Enter your interpretation here.]
+Explain the denominator used in the cross-tabulation.
+
+>
 
 ## Exercise 6: Visualize the comparison
 
 ```{r}
-# Build the subgroup visualization here
+# Build a visualization comparing the response distribution across generations
 ```
 
-[Enter your interpretation here.]
+Which display best communicates the substantive pattern? State one conclusion the figure supports and one conclusion it does not support.
+
+>
 
 ## Exercise 7: Measurement
 
 ```{r}
-# Inspect the discrimination items and index here
+# Inspect discrimination_index and create any_discrimination
 ```
 
-[Explain the difference between an item, index, and scale here.]
+What information is lost when the index is converted into a yes/no indicator? When might the simpler indicator still be useful?
+
+>
 
 * * *
 
 # On Your Own
 
-Repeat the workflow using `latino_work`.
+Complete this section alone. Use `latino_work`, which asks whether Latinos can get ahead in life if they work hard.
 
-## 1. Inspect and recode the measure
+## Question 1: Inspect and prepare the measure
 
-```{r}
-# Enter your code here
-```
-
-## 2. Produce the overall distribution
+Produce a complete frequency table for `latino_work`. Create `latino_work_analysis` by handling non-substantive responses and ordering the substantive categories. Show a table that verifies the recode.
 
 ```{r}
 # Enter your code here
 ```
 
-[Enter your interpretation here.]
+Explain each decision:
 
-## 3. Compare two groups
+>
 
-```{r}
-# Enter your code here
-```
+## Question 2: Describe the distribution
 
-[Enter your interpretation here.]
-
-## 4. Create a visualization
+Create a table containing counts and percentages for `latino_work_analysis`. Then create a clearly labelled bar chart.
 
 ```{r}
 # Enter your code here
 ```
 
-## 5. Write a concise finding
+Write two or three sentences describing the distribution. Identify the denominator and state that the estimates are unweighted.
 
-[Enter your response here.]
+>
+
+## Question 3: Compare generations
+
+Create a cross-tabulation of `latino_work_analysis` by generation with percentages calculated within generation. Verify that percentages sum to 100% within each generation.
+
+```{r}
+# Enter your code here
+```
+
+## Question 4: Visualize and interpret
+
+Create one graphic that communicates the comparison across generations. You may adapt either guided example, but make deliberate choices about labels, ordering, colors, and the legend.
+
+```{r}
+# Enter your code here
+```
+
+Write a short interpretation containing:
+
+1. the principal descriptive pattern;
+2. one comparison supported by the figure;
+3. one claim the analysis cannot support; and
+4. one question you would investigate next.
+
+>
+
+## Question 5: Measurement reflection
+
+The survey asks separately whether poor people and Latinos can get ahead through hard work. In one paragraph, explain why these are not interchangeable measures. Discuss what each might capture and what we could learn by analyzing them together.
+
+>
+
+# Submission
+
+Submit the completed QMD source file and rendered HTML file. Restart R and render from a clean session before submitting.
