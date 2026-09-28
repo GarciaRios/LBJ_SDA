@@ -259,7 +259,7 @@ ggplot(
     fill = poor_work_analysis
   )
 ) +
-  geom_col(position = "fill") +
+  geom_col() +
   scale_y_continuous(labels = scales::percent) +
   scale_fill_brewer(palette = "Blues", direction = 1) +
   labs(
