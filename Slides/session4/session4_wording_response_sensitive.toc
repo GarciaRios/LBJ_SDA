@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{Schwarz: how questions shape answers}{18}{0}{1}
+\beamer@sectionintoc {2}{Pew: translating mechanisms into design decisions}{42}{0}{2}
+\beamer@sectionintoc {3}{Tourangeau and Yan: when respondents may edit the truth}{54}{0}{3}

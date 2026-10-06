@@ -1,0 +1,949 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Session 4: Wording, Response Options, Order, and Sensitive Questions
+% LBJ Survey Design and Analysis, Fall 2026
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetheme[titleformat=smallcaps,progressbar=frametitle,block=fill]{metropolis}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Course colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\xdefinecolor{custom_blue}{rgb}{0.01, 0.31, 0.52}
+\xdefinecolor{custom_darkBlue}{rgb}{0.20, 0.20, 0.39}
+\xdefinecolor{custom_orange}{rgb}{0.96, 0.57, 0.42}
+\xdefinecolor{custom_green}{rgb}{0, 0.47, 0.52}
+\xdefinecolor{custom_red}{rgb}{0.58, 0.32, 0.32}
+\xdefinecolor{custom_lightGray}{rgb}{0.78, 0.80, 0.80}
+\xdefinecolor{custom_darkGray}{rgb}{0.35, 0.39, 0.43}
+
+\setbeamercolor{alerted text}{fg=custom_orange}
+\setbeamercolor{item}{fg=custom_blue}
+\setbeamercolor{subitem}{fg=custom_blue}
+\setbeamerfont{frametitle}{size=\small}
+\setbeamerfont{title}{size=\Large}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{%
+  \raisebox{4pt}{\makebox[\paperwidth][r]{\makebox[24pt]{\color{gray}\scriptsize\insertframenumber}}}
+}
+
+\newcommand{\hl}[1]{\textcolor{custom_blue}{#1}}
+\newcommand{\orange}[1]{\textcolor{custom_orange}{#1}}
+\newcommand{\green}[1]{\textcolor{custom_green}{#1}}
+\newcommand{\red}[1]{\textcolor{custom_red}{#1}}
+\newcommand{\gray}[1]{\textcolor{custom_darkGray}{#1}}
+\newcommand{\ct}[1]{\vfill{\tiny\color{custom_darkGray}#1}}
+
+\newcommand{\yourturn}[1]{%
+\setbeamercolor{block title}{fg=white,bg=custom_blue}
+\setbeamercolor{block body}{fg=black,bg=custom_blue!10}
+\begin{block}{Your turn}
+#1
+\end{block}}
+
+\newcommand{\groupwork}[2]{%
+\setbeamercolor{block title}{fg=white,bg=custom_green}
+\setbeamercolor{block body}{fg=black,bg=custom_green!10}
+\begin{block}{Small-group work: #1}
+#2
+\end{block}}
+
+\newcommand{\keypoint}[2]{%
+\setbeamercolor{block title}{fg=white,bg=custom_orange}
+\setbeamercolor{block body}{fg=black,bg=custom_orange!10}
+\begin{block}{#1}
+#2
+\end{block}}
+
+\title{Wording, Response Options, Order, and Sensitive Questions}
+\subtitle{From a measurement instrument to a respondent's answer}
+\author{Sergio I. Garc\'ia-R\'ios}
+\institute{LBJ School of Public Affairs \;|\; Survey Design and Analysis}
+\date{September 21, 2026}
+
+\begin{document}
+
+% ------------------------------------------------------------------
+\maketitle
+
+% ------------------------------------------------------------------
+\begin{frame}[standout]
+\Large Last week: What are we trying to measure?\\[0.8em]
+\Large Today: What happens when a \alert{human respondent} encounters our measure?
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Where we stopped}
+Last week we moved from:
+
+\begin{center}
+\large Research objective $\rightarrow$ construct $\rightarrow$ dimensions $\rightarrow$ indicators
+\end{center}
+
+\pause
+Today we finish the right-hand side of the chain:
+
+\begin{center}
+\large indicators $\rightarrow$ \alert{question} $\rightarrow$ \alert{respondent process} $\rightarrow$ observed response
+\end{center}
+
+\vfill
+\keypoint{Continuity, not recap}{We are not starting a second topic. We are opening up the mechanism that turns a question into data.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Finish the reading workshop}
+\small
+\begin{columns}[T]
+\column{0.32\textwidth}
+\textbf{Group 1: Groves Ch. 7}
+
+What model of survey measurement is being proposed? Where can error enter?
+
+\column{0.32\textwidth}
+\textbf{Group 2: Krosnick \& Presser}
+
+What principles govern the move from a construct to a question and response format?
+
+\column{0.32\textwidth}
+\textbf{Group 3: Pew}
+
+How are those principles translated into professional questionnaire practice?
+\end{columns}
+
+\vspace{1em}
+\groupwork{8 minutes}{Return to the reading with your group. Your job is to teach us the \textbf{argument}, not summarize pages.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Four questions for every reading}
+Each group should be ready to answer:
+
+\begin{enumerate}
+\item What is the central \alert{methodological claim}?
+\item What assumption about respondents or measurement is underneath it?
+\item What \alert{design decision} follows from that claim?
+\item What kind of error could result if we ignore it?
+\end{enumerate}
+
+\vfill
+\yourturn{When another group reports, prepare one challenge: \textit{When might that recommendation fail, or create a different problem?}}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Cross-examination}
+Graduate methods should not end with ``best practices.''
+
+\begin{itemize}
+\item Does the recommendation depend on the \alert{construct}?
+\item Does it depend on the \alert{population}?
+\item Does it depend on \alert{mode}?
+\item What is the tradeoff between respondent burden and measurement precision?
+\item Could reducing one source of error increase another?
+\end{itemize}
+
+\vfill
+\keypoint{The standard}{A design rule is useful only if you understand the mechanism it is trying to control.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{What Groves adds to the measurement chain}
+\centering
+\begin{tikzpicture}[
+  node distance=0.48cm,
+  box/.style={draw=custom_blue, rounded corners, minimum height=.95cm, minimum width=2.25cm, align=center, fill=custom_blue!6, font=\scriptsize},
+  arr/.style={-{Latex[length=2.5mm]}, thick, draw=custom_darkGray}
+]
+\node[box] (q) {Question presented};
+\node[box, right=of q] (comp) {Comprehend};
+\node[box, right=of comp] (ret) {Retrieve};
+\node[box, right=of ret] (jud) {Judge / estimate};
+\node[box, right=of jud] (map) {Map to response};
+\draw[arr] (q) -- (comp);
+\draw[arr] (comp) -- (ret);
+\draw[arr] (ret) -- (jud);
+\draw[arr] (jud) -- (map);
+\end{tikzpicture}
+
+\vspace{1.4em}
+\pause
+Each stage can introduce error --- even if the respondent is cooperative and trying to answer well.
+
+\vfill
+\ct{Groves et al. (2009), Ch. 7; Tourangeau, Rips, and Rasinski (2000).}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{A perfect sample does not solve measurement error}
+Suppose we draw a flawless probability sample of the target population.
+
+\pause
+\begin{center}
+\Large $\widehat{Y}$ can still be a very precise estimate\\[0.4em]
+\Large of the \alert{wrong quantity}.
+\end{center}
+
+\pause
+Why?
+\begin{itemize}
+\item the construct was underspecified;
+\item the item captures only one dimension;
+\item respondents interpret the question differently;
+\item retrieval is difficult;
+\item the response options distort mapping;
+\item context changes the judgment being reported.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Open and closed questions: same construct?}
+\small
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Open}
+
+\medskip
+What do you think is the most important problem facing the country today?
+
+\column{0.48\textwidth}
+\textbf{Closed}
+
+\medskip
+Which of the following is the most important problem facing the country today?
+
+\begin{itemize}
+\item Cost of living
+\item Immigration
+\item Health care
+\item Crime
+\item Education
+\item Something else
+\end{itemize}
+\end{columns}
+
+\vfill
+\yourturn{Are these two instruments measuring the same thing? Defend your answer.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Open versus closed is a measurement choice}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries}lXX}
+\toprule
+ & Open-ended & Closed-ended \\
+\midrule
+Cognitive task & Recall / generate & Recognize / select \\
+Researcher control & Low & High \\
+Respondent burden & Often higher & Often lower \\
+Standardization & Lower & Higher \\
+Risk & Coding + articulation & Omission + framing \\
+What becomes salient? & Respondent-generated & Researcher-provided \\
+\bottomrule
+\end{tabularx}
+
+\vfill
+\keypoint{Not a commandment}{Choose the format that best matches the inferential task and the respondent's cognitive task.}
+\ct{Krosnick and Presser (2010); Pew Research Center, ``Writing Survey Questions.''}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Response options are part of the measure}
+Imagine asking:
+
+\begin{center}
+\large How often have you felt very irritated during the past month?
+\end{center}
+
+Two researchers provide very different frequency ranges.
+
+\pause
+\begin{center}
+\Large Why might the \alert{range itself} alter the answer?
+\end{center}
+
+\vfill
+\keypoint{Bridge to Schwarz}{Respondents can use response alternatives as information about what the researcher means, what counts as typical, and which distinctions matter.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}[standout]
+\Large The questionnaire is not a neutral container.\\[0.8em]
+\Large It is part of the \alert{stimulus} respondents are reacting to.
+\end{frame}
+
+% ------------------------------------------------------------------
+\section{Schwarz: how questions shape answers}
+
+% ------------------------------------------------------------------
+\begin{frame}{This week's readings}
+\begin{enumerate}
+\item \textbf{Schwarz (1999)} --- cognitive and communicative processes underlying self-reports.
+\item \textbf{Pew Methods 101 (2018)} --- practical consequences for wording and ordering.
+\item \textbf{Tourangeau \& Yan (2007)} --- what changes when respondents may not want to report truthfully.
+\end{enumerate}
+
+\vfill
+\keypoint{The common problem}{The observed answer depends not only on the respondent's underlying state, but on the task we create for them.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Schwarz's central claim}
+\large
+Self-reports of attitudes and behaviors are shaped by features of the research instrument --- including \alert{wording, format, and context}.
+
+\vspace{1em}
+\pause
+The important part is not merely that ``wording matters.''
+
+\begin{center}
+\Large The effects arise from \alert{systematic cognitive and communicative processes}.
+\end{center}
+
+\vfill
+\ct{Schwarz (1999), pp. 93--105.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Respondents answer more than the literal sentence}
+Consider:
+
+\begin{center}
+\large ``How often do you exercise regularly?''
+\end{center}
+
+\pause
+The respondent must infer:
+\begin{itemize}
+\item What counts as \alert{exercise}?
+\item What does \alert{regularly} mean?
+\item Which time period is relevant?
+\item What level of precision is expected?
+\item Why is the researcher asking this question here?
+\end{itemize}
+
+\vfill
+\keypoint{Literal + pragmatic meaning}{Survey answering is a constrained conversation. Respondents infer the researcher's intended meaning from the words and the surrounding instrument.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{The questionnaire as a conversation}
+Schwarz draws on the logic of ordinary conversation: respondents generally assume that the researcher is trying to be meaningful and informative.
+
+\pause
+That means features we may treat as ``formatting'' can be interpreted as \alert{information}:
+
+\begin{itemize}
+\item response categories;
+\item numeric endpoints;
+\item examples included in the stem;
+\item reference periods;
+\item questions that came immediately before;
+\item what the questionnaire appears to be about.
+\end{itemize}
+
+\vfill
+\yourturn{What information might a respondent infer from a scale that ranges from ``0 times'' to ``more than 10 times''?}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Behavior reports: retrieval or estimation?}
+Suppose I ask:
+
+\begin{center}
+\large ``How many times have you eaten at a restaurant in the past six months?''
+\end{center}
+
+\pause
+Are you retrieving six months of discrete episodes from memory?
+
+\pause
+Probably not. For frequent, mundane behaviors, respondents often construct an estimate using:
+
+\begin{itemize}
+\item typical rates (``about twice a week'');
+\item partial retrieval;
+\item category-based inference;
+\item cues provided by the question and response options.
+\end{itemize}
+
+\vfill
+\ct{Schwarz (1999), section on behavioral frequency reports.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Reference periods change the cognitive task}
+Compare:
+
+\begin{enumerate}
+\item How many times did you eat at a restaurant \alert{during the past seven days}?
+\item How many times did you eat at a restaurant \alert{during the past six months}?
+\end{enumerate}
+
+\pause
+\begin{center}
+\Large Same behavior. Different retrieval problem.
+\end{center}
+
+\vfill
+\keypoint{Design implication}{A reference period is not just a calendar boundary. It determines whether respondents can retrieve events or must estimate them.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Small-group Schwarz lab}
+\small
+\begin{columns}[T]
+\column{0.32\textwidth}
+\textbf{Group A: Comprehension}
+
+``How often have you exercised regularly during the past year?''
+
+Diagnose literal and pragmatic ambiguity.
+
+\column{0.32\textwidth}
+\textbf{Group B: Retrieval}
+
+Compare a 7-day and 6-month restaurant-use question.
+
+Explain how the response strategy changes.
+
+\column{0.32\textwidth}
+\textbf{Group C: Response scale}
+
+Design two different frequency scales for the same behavior.
+
+Predict how each scale could alter reports.
+\end{columns}
+
+\vspace{1em}
+\groupwork{10 minutes}{Do not merely rewrite the question. Identify the \textbf{cognitive or communicative mechanism} that creates the problem.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Schwarz lab: debrief standard}
+For each diagnosis, we want four pieces:
+
+\begin{enumerate}
+\item What is the respondent trying to infer or retrieve?
+\item What feature of the instrument changes that task?
+\item What direction of error or heterogeneity might result?
+\item What redesign would reduce the problem --- and what might that redesign sacrifice?
+\end{enumerate}
+
+\vfill
+\keypoint{Graduate-level diagnosis}{``Bad wording'' is not a mechanism. Tell me \textbf{why} the observed answer changes.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Response scales can communicate meaning}
+A response scale does at least two jobs:
+
+\begin{enumerate}
+\item It gives respondents a way to \alert{map} a judgment into an answer.
+\item It signals what the researcher thinks is a plausible or meaningful range.
+\end{enumerate}
+
+\pause
+Therefore, two scales with the same verbal question can induce different interpretations of:
+
+\begin{itemize}
+\item what counts as ``often'';
+\item what counts as ``normal'';
+\item which distinctions the researcher wants the respondent to make.
+\end{itemize}
+
+\ct{Schwarz (1999).}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Question order can change the judgment itself}
+Suppose respondents answer:
+
+\begin{enumerate}
+\item How satisfied are you with your dating life?
+\item How satisfied are you with your life as a whole?
+\end{enumerate}
+
+versus the reverse order.
+
+\pause
+The first question can make dating information unusually accessible when answering the second.
+
+\pause
+\begin{center}
+\large The later answer may reflect a different \alert{information set}, not a different person.
+\end{center}
+
+\vfill
+\ct{Schwarz (1999), discussion of context effects in attitude measurement.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Assimilation and contrast}
+Context effects are not always ``more of the same.''
+
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Assimilation}
+
+Previously activated information is \alert{included} in the target judgment.
+
+\medskip
+Example logic: ``My dating life is good, so my life feels good.''
+
+\column{0.48\textwidth}
+\textbf{Contrast}
+
+Previously activated information becomes a \alert{comparison standard} or is excluded from the target.
+
+\medskip
+Example logic: ``Compared with that unusually good case, this seems worse.''
+\end{columns}
+
+\vfill
+\keypoint{Why order effects are substantive}{Question order can change what respondents treat as evidence for the judgment.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Order experiment: predict before we test}
+Imagine a survey contains these two modules:
+
+\begin{itemize}
+\item detailed questions about personal financial strain;
+\item overall evaluation of one's quality of life.
+\end{itemize}
+
+\yourturn{Would you expect the quality-of-life measure to differ if the financial-strain module comes first? Under what theory?}
+
+\pause
+Possible mechanisms:
+\begin{itemize}
+\item accessibility / priming;
+\item conversational inference about what ``quality of life'' is supposed to mean;
+\item assimilation or contrast;
+\item fatigue or satisficing --- a different mechanism entirely.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}[standout]
+\Large Survey respondents do not simply ``reveal'' an answer.\\[0.8em]
+\Large They \alert{construct} an answer under the conditions we design.
+\end{frame}
+
+% ------------------------------------------------------------------
+\section{Pew: translating mechanisms into design decisions}
+
+% ------------------------------------------------------------------
+\begin{frame}{Pew turns theory into production rules}
+Pew emphasizes that sound questionnaire design requires attention to:
+
+\begin{itemize}
+\item clear, specific, answerable wording;
+\item exhaustive and mutually exclusive categories;
+\item question order and context;
+\item wording and context when measuring change over time;
+\item mode when interpreting trends;
+\item social desirability for sensitive behaviors and attitudes.
+\end{itemize}
+
+\vfill
+\keypoint{Ask the deeper question}{What failure in the response process is each practice trying to prevent?}
+\ct{Pew Research Center (2018), Methods 101: Survey Question Wording; Pew, ``Writing Survey Questions.''}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Map the ``rule'' to the mechanism}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries}lX}
+\toprule
+Design practice & Measurement problem it is trying to control \\
+\midrule
+Clear, specific wording & Heterogeneous comprehension \\
+Concrete reference period & Retrieval / estimation error \\
+Exhaustive categories & Forced misclassification \\
+Non-overlapping categories & Ambiguous response mapping \\
+Attention to order & Context-dependent judgment \\
+Same wording for trends & Changes in the measurement instrument \\
+Self-administration for sensitive items & Social desirability / disclosure pressure \\
+\bottomrule
+\end{tabularx}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{A wording change can change the estimand}
+Pew's historical example asks about support for U.S. military action in Iraq in 2003.
+
+\medskip
+One version asked about military action to end Saddam Hussein's rule. Another explicitly added the possibility of thousands of U.S. casualties.
+
+\pause
+\begin{center}
+\Large Support: \alert{68\%} without the casualty clause\\[0.2em]
+\Large versus \alert{43\%} with it.
+\end{center}
+
+\pause
+\yourturn{Is one version ``biased''? Or are they asking respondents to evaluate different policy scenarios?}
+
+\ct{Pew Research Center, ``Writing Survey Questions,'' historical January 2003 wording experiment.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Not every wording effect is a defect}
+A wording difference can reveal several different things:
+
+\begin{enumerate}
+\item one version is genuinely confusing or leading;
+\item the versions activate different considerations;
+\item the versions define different hypothetical conditions;
+\item the construct itself is conditional on information respondents receive.
+\end{enumerate}
+
+\pause
+\keypoint{Analytic discipline}{Before calling a wording effect ``bias,'' specify the construct and the estimand each version is supposed to measure.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Trend measurement creates a different problem}
+Suppose an item has been asked identically for 15 years, but today you believe you can write it better.
+
+\pause
+Two goals now conflict:
+
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Improve current measurement}
+\begin{itemize}
+\item clearer wording
+\item better categories
+\item new mode / device realities
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Preserve comparability}
+\begin{itemize}
+\item same wording
+\item same context
+\item same response task
+\end{itemize}
+\end{columns}
+
+\vfill
+\keypoint{Measurement invariance problem}{A better item today may break the time series you care about.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Small-group design decision: fix it or preserve it?}
+A client has a long-running question:
+
+\begin{center}
+\large ``How would you rate the state of your household finances today: excellent, good, only fair, or poor?''
+\end{center}
+
+The client wants to add explicit language about ``paying bills and handling unexpected expenses'' because they think respondents interpret ``finances'' inconsistently.
+
+\groupwork{8 minutes}{Choose a recommendation. Keep the old item, replace it, run both, or do something else. State what evidence you would want before changing the trend.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Debrief: there is no free redesign}
+A defensible transition strategy might involve:
+
+\begin{itemize}
+\item a split-ballot bridge experiment;
+\item running old and new measures in parallel for one or more waves;
+\item testing mode-by-wording interactions;
+\item documenting a series break rather than disguising it;
+\item deciding explicitly whether the priority is \alert{level estimation} or \alert{change over time}.
+\end{itemize}
+
+\vfill
+\keypoint{Production lesson}{Questionnaire design includes preserving the meaning of a measure across versions of the instrument.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\section{Tourangeau and Yan: when respondents may edit the truth}
+
+% ------------------------------------------------------------------
+\begin{frame}{Sensitive questions are not one category}
+Tourangeau and Yan distinguish several ways a question can be sensitive.
+
+\begin{enumerate}
+\item \alert{Intrusiveness}: the topic itself feels private or inappropriate to ask.
+\item \alert{Threat of disclosure}: truthful reporting could have consequences if disclosed.
+\item \alert{Social desirability}: one response is normatively more acceptable than another.
+\end{enumerate}
+
+\pause
+\yourturn{Is household income sensitive for the same reason as illegal drug use? What about voting?}
+
+\ct{Tourangeau and Yan (2007), pp. 859--870.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Sensitivity is relational and situational}
+A question is not simply ``sensitive'' in the abstract.
+
+Sensitivity can depend on:
+\begin{itemize}
+\item what the respondent's true answer is;
+\item who appears to be asking;
+\item whether an interviewer is present;
+\item who else is nearby;
+\item perceived confidentiality;
+\item legal, social, or interpersonal consequences;
+\item norms within the respondent's social context.
+\end{itemize}
+
+\vfill
+\keypoint{Tourangeau \& Yan's important move}{Misreporting is often better understood as a \textbf{situational response strategy} than as a stable tendency of ``dishonest respondents.''}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Sensitive questions add an editing stage}
+\centering
+\begin{tikzpicture}[
+  node distance=0.38cm,
+  box/.style={draw=custom_blue, rounded corners, minimum height=.88cm, minimum width=1.7cm, align=center, fill=custom_blue!6, font=\scriptsize},
+  edit/.style={draw=custom_red, rounded corners, minimum height=.88cm, minimum width=1.7cm, align=center, fill=custom_red!8, font=\scriptsize},
+  arr/.style={-{Latex[length=2.4mm]}, thick, draw=custom_darkGray}
+]
+\node[box] (comp) {Comprehend};
+\node[box, right=of comp] (ret) {Retrieve};
+\node[box, right=of ret] (jud) {Judge};
+\node[edit, right=of jud] (edit) {Edit /\ self-present};
+\node[box, right=of edit] (map) {Report};
+\draw[arr] (comp) -- (ret);
+\draw[arr] (ret) -- (jud);
+\draw[arr] (jud) -- (edit);
+\draw[arr] (edit) -- (map);
+\end{tikzpicture}
+
+\vspace{1.2em}
+For sensitive items, respondents can know the truthful answer perfectly well and still choose not to report it.
+
+\vfill
+\ct{Tourangeau and Yan (2007), conclusion.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Sensitivity can produce different kinds of missingness and error}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries}lX}
+\toprule
+Response & What happened? \\
+\midrule
+Unit nonresponse & Person declines the survey, perhaps because of the topic. \\
+Item nonresponse & Person participates but refuses / skips the sensitive item. \\
+Misreporting & Person answers, but edits in a socially safer direction. \\
+Heaping / categorization & Person provides a less precise answer that feels safer. \\
+Mode selection / breakoff & Person changes engagement or leaves when privacy feels insufficient. \\
+\bottomrule
+\end{tabularx}
+
+\vfill
+\keypoint{Why this matters}{Item response is not evidence that measurement succeeded.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Directional error is especially dangerous}
+Ordinary reporting errors can sometimes add noise in both directions.
+
+Sensitive-question editing often has a directional component:
+
+\begin{itemize}
+\item socially desirable behavior may be \alert{overreported};
+\item socially undesirable behavior may be \alert{underreported};
+\item stigmatized attitudes may be softened;
+\item threatening disclosures may be concealed.
+\end{itemize}
+
+\pause
+\begin{center}
+\large That creates \alert{bias in estimates}, not merely larger variance.
+\end{center}
+
+\ct{Tourangeau and Yan (2007).}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Design features can change reporting}
+The evidence reviewed by Tourangeau and Yan implies that reporting is responsive to survey design.
+
+Common levers include:
+\begin{itemize}
+\item self-administration rather than interviewer administration;
+\item physical / social privacy;
+\item credible confidentiality protections;
+\item response formats that reduce the interpersonal act of disclosure;
+\item wording that lowers unnecessary judgment or threat;
+\item specialized techniques for highly sensitive behaviors.
+\end{itemize}
+
+\vfill
+\keypoint{Important caution}{No technique makes sensitivity disappear. Each intervention changes the response task and may introduce new costs.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Small-group sensitive-question lab}
+Your client wants an accurate measure of household financial strain.
+
+They want to ask about:
+\begin{itemize}
+\item annual household income;
+\item missed housing or utility payments;
+\item debt burden;
+\item receipt of public assistance;
+\item inability to pay for necessities.
+\end{itemize}
+
+\groupwork{12 minutes}{Design a short module that you would be willing to defend methodologically and ethically.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Sensitive-question lab: required decisions}
+Your group must specify:
+
+\begin{enumerate}
+\item Which items are sensitive --- and \alert{why}?
+\item Where do you expect item nonresponse versus misreporting?
+\item Would interviewer presence change the problem?
+\item Exact values or categories? Why?
+\item What introduction, privacy cue, or response design would you use?
+\item What information are you willing to sacrifice to reduce respondent burden or threat?
+\item How would you know whether your redesign actually improved measurement?
+\end{enumerate}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Debrief: ``more disclosure'' is not the only objective}
+A strong design has to balance at least four goals:
+
+\begin{enumerate}
+\item \alert{Validity}: does the response correspond to the target construct?
+\item \alert{Accuracy}: are respondents reporting what actually happened?
+\item \alert{Respondent protection}: are we minimizing unnecessary risk and intrusion?
+\item \alert{Usability}: can the resulting data support the intended analysis?
+\end{enumerate}
+
+\vfill
+\keypoint{Ethics and measurement are linked}{A design that makes respondents feel unsafe can be both ethically weaker and methodologically worse.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{One integrated model}
+\centering
+\begin{tikzpicture}[
+  node distance=0.28cm,
+  box/.style={draw=custom_blue, rounded corners, minimum height=.88cm, minimum width=1.55cm, align=center, fill=custom_blue!6, font=\tiny},
+  redbox/.style={draw=custom_red, rounded corners, minimum height=.88cm, minimum width=1.55cm, align=center, fill=custom_red!8, font=\tiny},
+  arr/.style={-{Latex[length=2.3mm]}, thick, draw=custom_darkGray}
+]
+\node[box] (c) {Construct};
+\node[box, right=of c] (q) {Question};
+\node[box, right=of q] (co) {Comprehend};
+\node[box, right=of co] (r) {Retrieve};
+\node[box, right=of r] (j) {Judge};
+\node[redbox, right=of j] (e) {Edit?};
+\node[box, right=of e] (m) {Map / report};
+\draw[arr] (c) -- (q);
+\draw[arr] (q) -- (co);
+\draw[arr] (co) -- (r);
+\draw[arr] (r) -- (j);
+\draw[arr] (j) -- (e);
+\draw[arr] (e) -- (m);
+\end{tikzpicture}
+
+\vspace{1.2em}
+\begin{itemize}
+\item \textbf{Groves:} distinguish constructs, measurement, response, and error.
+\item \textbf{Schwarz:} the instrument changes comprehension, retrieval, judgment, and mapping.
+\item \textbf{Tourangeau \& Yan:} sensitivity can add motivated editing before reporting.
+\item \textbf{Pew:} professional design choices try to control these mechanisms in practice.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{From an item to a defensible module}
+For your own survey work, every proposed item should survive five questions:
+
+\begin{enumerate}
+\item What construct / dimension is this intended to measure?
+\item What cognitive task does the respondent need to perform?
+\item What information does the wording, scale, and context communicate?
+\item Is there a reason the respondent might edit or withhold the answer?
+\item What claim will we make from the resulting variable?
+\end{enumerate}
+
+\vfill
+\keypoint{The production standard}{If you cannot answer these five questions, the item is not ready for fielding.}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{What we intentionally did not reduce this to}
+\begin{center}
+\Large ``Avoid double-barreled questions.''\\[0.5em]
+\Large ``Use neutral wording.''\\[0.5em]
+\Large ``Put sensitive questions at the end.''
+\end{center}
+
+\pause
+Those can be useful heuristics. But the methodological goal is to understand:
+
+\begin{center}
+\large \alert{what response process the design creates, for whom, and with what consequences.}
+\end{center}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Four ideas to leave with}
+\begin{enumerate}
+\item A response is \alert{constructed}, not simply retrieved from a mental file.
+\item Wording, response alternatives, and order can change the \alert{meaning of the task}.
+\item Sensitive questions create not only nonresponse but \alert{motivated reporting error}.
+\item Good questionnaire design is the design of the \alert{conditions under which measurement occurs}.
+\end{enumerate}
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{Exit ticket}
+\large
+You are handed a survey item that seems clear and grammatically clean.
+
+\vspace{1em}
+\yourturn{What are the \textbf{three most important questions} you would now ask before deciding that it is a good measure?}
+
+\vfill
+\small Next: cognitive testing and multilingual equivalence --- how we find out whether respondents are actually doing what we think they are doing.
+\end{frame}
+
+% ------------------------------------------------------------------
+\begin{frame}{References for today's class}
+\footnotesize
+\begin{itemize}
+\item Groves, Robert M., et al. 2009. \textit{Survey Methodology}, 2nd ed., Ch. 7.
+\item Krosnick, Jon A., and Stanley Presser. 2010. ``Question and Questionnaire Design.'' In \textit{Handbook of Survey Research}, 2nd ed.
+\item Pew Research Center. 2018. ``Methods 101: Survey Question Wording.''
+\item Pew Research Center. ``Writing Survey Questions.''
+\item Schwarz, Norbert. 1999. ``Self-Reports: How the Questions Shape the Answers.'' \textit{American Psychologist} 54(2): 93--105.
+\item Tourangeau, Roger, and Ting Yan. 2007. ``Sensitive Questions in Surveys.'' \textit{Psychological Bulletin} 133(5): 859--883.
+\end{itemize}
+\end{frame}
+
+\end{document}
