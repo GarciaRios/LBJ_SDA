@@ -128,6 +128,24 @@ The Groves total survey error review is recommended rather than required on this
 
 ### Session 9 · October 26
 
+**Lab 3: From a Sample to an Estimate**
+
+**In class:** Sampling variability, standard errors, margins of error, confidence intervals, and subgroup comparisons using the October Univision/YouGov Texas Poll.
+
+**Lab 3:** [Lab guide](Labs/fall2026/lab3/lab3.html) · [Student template](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/Labs/fall2026/templates/lab3-template.qmd) · [Texas poll data](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv)
+
+## Analysis and communication
+
+### November 2
+
+**No class — additional lab recording online**
+
+There is no in-person class. An additional lab recording will be posted online for review and practice.
+
+**No submission is required.** Use the recording to review the Lab 3 material, practice the workflow, and come back ready to work with the Texas poll.
+
+### Session 10 · November 9
+
 **Fieldwork and data quality**
 
 **Required preparation**
@@ -136,73 +154,47 @@ The Groves total survey error review is recommended rather than required on this
 - AAPOR. 2022. [*Data Quality Metrics for Online Samples*](https://aapor.org/wp-content/uploads/2023/02/Task-Force-Report-FINAL.pdf). Read Section 1, pp. 1–2, and Section 6, pp. 49–51. **Open access.**
 - Kennedy, Courtney, et al. 2020. [*Assessing the Risks to Online Polls From Bogus Respondents*](https://www.pewresearch.org/methods/wp-content/uploads/sites/10/2020/02/PM_02.18.20_dataquality_FULL.REPORT.pdf). Read the overview, pp. 2–8, and the concluding recommendations. **Open access.**
 
-**In class:** Establish fieldwork monitoring rules, examine paradata and fraud indicators, and distinguish defensible quality controls from post hoc deletion.
+**In class:** Establish fieldwork monitoring rules, examine paradata and respondent-quality indicators, and distinguish defensible quality controls from post hoc deletion.
 
-**Principal product:** Fieldwork dashboard plan.
-**Lab 3:** Sampling variability, standard errors, margins of error, confidence intervals, and subgroup comparisons using the October Univision/YouGov Texas Poll. [Lab guide](Labs/fall2026/lab3/lab3.html) · [Student template](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/Labs/fall2026/templates/lab3-template.qmd) · [Texas poll data](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv)
+**Principal product:** Fieldwork and data-quality protocol.
 
+### Session 11 · November 16
 
-## Analysis and communication
-
-### Session 10 · November 2
-
-**Cleaning, coding, and weighting**
+**Weighting and poll estimates**
 
 **Required preparation**
 
 - Pew Research Center. 2018. [“For Weighting Online Opt-In Samples, What Matters Most?”](https://www.pewresearch.org/methods/2018/01/26/for-weighting-online-opt-in-samples-what-matters-most/) Read the overview and conclusion. **Open access.**
 - Pew Research Center. 2018. [“How Different Weighting Methods Work.”](https://www.pewresearch.org/methods/2018/01/26/how-different-weighting-methods-work/) Read the complete explainer. **Open access.**
 
-**In class:** Develop a reproducible workflow for labels, missingness, derived variables, open-ended coding, weighting, effective sample size, and documentation.
+**In class:** Compare weighted and unweighted estimates from the Texas poll, introduce the logic of survey weights, examine effective sample size and design effects, and produce defensible toplines.
 
-**Lab 4:** Use the R `survey` package to compare weighted and unweighted estimates, design effects, effective sample size, and defensible toplines.
-
-### Session 11 · November 9
-
-**Analysis and uncertainty**
-
-**Required preparation**
-
-- Pew Research Center. 2021. [“Why Pew Research Center Will Display Margins of Error in Some Graphics.”](https://www.pewresearch.org/decoded/2021/10/25/why-pew-research-center-will-display-margins-of-error-in-some-graphics/) Read the complete explainer. **Open access.**
-- Pew Research Center. 2018. [“Variability of Survey Estimates.”](https://www.pewresearch.org/methods/2018/01/26/variability-of-survey-estimates/) Read the complete explainer. **Open access.**
-- Wasserstein, Ronald L., Allen L. Schirm, and Nicole A. Lazar. 2019. [“Moving to a World Beyond ‘p < 0.05.’”](https://doi.org/10.1080/00031305.2019.1583913) *The American Statistician* 73(sup1): 1–19. Read pp. 1–10. **Open access.**
-
-**In class:** Estimate toplines, compare subgroups, quantify uncertainty, account for weights and design effects, and avoid common errors in interpreting close differences.
-
-**Principal product:** Analysis plan and production sprint.
-
-### Session 12 · November 16
-
-**Visualization and public interpretation**
-
-**Required preparation**
-
-- Healy, Kieran. 2018. [*Data Visualization: A Practical Introduction*](https://socviz.co/). Read Chapter 1, “Look at Data.” **Open access.**
-
-**In class:** Turn results into accurate, accessible graphics and write claims that match the strength of the design and evidence.
-
-**Lab 5:** Introductory linear and logistic regression, categorical predictors, interactions, predicted probabilities, model-based graphics, and reproducible Quarto reporting.
+**Lab 4:** Weighting and poll estimates using the Texas poll.
 
 ### November 23
 
 **Fall break: no class**
 
-### Session 13 · November 30
+### Session 12 · November 30
 
-**Report production and briefing rehearsal**
+**From results to claims**
 
-**Required preparation:** No new reading. Bring the complete team draft and apply the course report style guide and reproducibility checklist before class.
+**Required preparation**
 
-**In class:** Integrate the substantive narrative, methods statement, tables, graphics, limitations, and partner feedback into a coherent report.
+- Pew Research Center. 2021. [“Why Pew Research Center Will Display Margins of Error in Some Graphics.”](https://www.pewresearch.org/decoded/2021/10/25/why-pew-research-center-will-display-margins-of-error-in-some-graphics/) Read the complete explainer. **Open access.**
+- Pew Research Center. 2018. [“Variability of Survey Estimates.”](https://www.pewresearch.org/methods/2018/01/26/variability-of-survey-estimates/) Read the complete explainer. **Open access.**
+- Healy, Kieran. 2018. [*Data Visualization: A Practical Introduction*](https://socviz.co/). Read Chapter 1, “Look at Data.” **Open access.**
 
-**Principal product:** Full report draft and partner-briefing rehearsal.
+**In class:** Move from estimates and subgroup comparisons to defensible public claims. Evaluate uncertainty, choose which findings matter, build clear graphics, and make sure the language of each claim matches the strength of the evidence.
 
-### Session 14 · December 7
+**Principal product:** Priority findings, claims, and graphics for the Univision report.
 
-**Final presentation and project retrospective**
+### Session 13 · December 7
 
-There is no new reading. Review the final report, peer feedback, decision log, and your individual contribution record before class.
+**Analyzing the Univision poll: report workshop**
 
-**In class:** Present the final work, evaluate the production process, document remaining decisions, and complete the project handoff.
+**Required preparation:** No new reading. Bring your working analysis, tables, graphics, and draft findings.
 
-**Principal product:** Final report and presentation.
+**In class:** Analyze the Univision poll in teams, refine subgroup comparisons and interpretations, resolve remaining methodological questions, and work directly on the final report.
+
+**Principal product:** Substantive analysis and report draft.
