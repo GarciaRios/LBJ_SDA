@@ -1,0 +1,780 @@
+---
+title: "Lab 3: From a Sample to an Estimate"
+subtitle: "Sampling variability, confidence intervals, and subgroup comparisons"
+format:
+  html:
+    toc: true
+    code-fold: false
+execute:
+  enabled: false
+  echo: true
+  warning: false
+  message: false
+---
+
+## Purpose
+
+Poll estimates change from sample to sample even when nothing about the population has changed. Statistical inference helps us describe that expected variation and decide how much uncertainty surrounds an estimate.
+
+In this lab, we will keep the R code simple and focus on the statistical logic. We will:
+
+1. simulate a Texas poll;
+2. repeat the poll many times;
+3. see a sampling distribution;
+4. calculate a standard error and margin of error;
+5. construct a confidence interval; and
+6. compare two subgroups in the October 2026 Univision/YouGov Texas Poll.
+
+::: {.callout-important}
+For now, we use formulas that treat observations as if they came from a simple random sample. This is a teaching simplification. The Texas poll uses weights and a more complex design. **Lab 4 will return to this same poll and introduce weighted, design-aware estimates.**
+:::
+
+## Learning objectives
+
+By the end of this lab, you should be able to:
+
+- explain why two samples from the same population can give different estimates;
+- distinguish a population parameter from a sample estimate;
+- explain a sampling distribution;
+- interpret a standard error;
+- calculate an approximate margin of sampling error;
+- construct and interpret a 95% confidence interval;
+- explain why larger samples generally produce more precise estimates;
+- compare two subgroup proportions; and
+- explain what sampling uncertainty does **not** capture.
+
+# Part I: Why poll estimates vary
+
+## 1. Setup
+
+We only need the `tidyverse` package.
+
+```{r}
+library(tidyverse)
+
+set.seed(20261102)
+```
+
+`set.seed()` makes the random simulation reproducible.
+
+## 2. Imagine the Texas electorate
+
+Suppose that in the full population of Texas voters, exactly **50%** support a candidate.
+
+```{r}
+p_true <- 0.50
+```
+
+This is the **population parameter**.
+
+In a real poll, we do not know the true population value. That is why we take a sample.
+
+## 3. Conduct one simulated Texas poll
+
+The October Univision/YouGov Texas poll interviewed about 1,000 voters statewide.
+
+Let's simulate a poll with 1,000 respondents.
+
+```{r}
+support <- rbinom(
+  1000,
+  1,
+  0.50
+)
+```
+
+Each simulated respondent receives:
+
+- `1` = supports the candidate
+- `0` = does not support the candidate
+
+Calculate the sample estimate:
+
+```{r}
+mean(support)
+```
+
+Because the variable contains only 0s and 1s, the mean is the proportion who support the candidate.
+
+**Checkpoint 1:** Is the sample estimate exactly 50%? Why or why not?
+
+Your response:
+
+## 4. Conduct the poll many times
+
+Now imagine conducting the same 1,000-person poll 500 times.
+
+```{r}
+estimates <- replicate(
+  500,
+  mean(rbinom(1000, 1, 0.50))
+)
+```
+
+Look at the first several estimates:
+
+```{r}
+head(estimates)
+```
+
+Summarize them:
+
+```{r}
+mean(estimates)
+sd(estimates)
+```
+
+The estimates are not identical. Their distribution is called a **sampling distribution**.
+
+Create a simple graph:
+
+```{r}
+tibble(estimate = estimates) |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram(binwidth = 0.01) +
+  geom_vline(
+    xintercept = 0.50,
+    linetype = "dashed"
+  ) +
+  scale_x_continuous(
+    labels = scales::percent
+  ) +
+  labs(
+    title = "500 simulated Texas polls",
+    x = "Estimated support",
+    y = "Number of polls"
+  ) +
+  theme_minimal()
+```
+
+**Checkpoint 2:** Where is the sampling distribution centered? What does its spread represent?
+
+Your response:
+
+# Part II: Standard errors and confidence intervals
+
+## 5. Standard error
+
+The **standard error** describes how much an estimate would vary across repeated samples.
+
+For a proportion:
+
+\[
+SE(\hat{p}) =
+\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\]
+
+Return to our first simulated poll.
+
+```{r}
+p_hat <- mean(support)
+```
+
+Calculate its standard error:
+
+```{r}
+se <- sqrt(
+  p_hat * (1 - p_hat) / 1000
+)
+
+se
+```
+
+Compare it with the variability across our 500 simulated polls:
+
+```{r}
+sd(estimates)
+```
+
+They should be fairly similar.
+
+**Checkpoint 3:** In plain language, what does the standard error describe?
+
+Your response:
+
+## 6. Margin of error
+
+For a 95% confidence interval, an approximate margin of sampling error is:
+
+\[
+1.96 \times SE
+\]
+
+Calculate it:
+
+```{r}
+moe <- 1.96 * se
+
+moe
+```
+
+Convert it to percentage points:
+
+```{r}
+moe * 100
+```
+
+::: {.callout-note}
+This is a **margin of sampling error** under the simple assumptions used here. It is not a measure of total survey error.
+:::
+
+## 7. Build a 95% confidence interval
+
+Calculate the lower and upper bounds:
+
+```{r}
+lower <- p_hat - moe
+upper <- p_hat + moe
+```
+
+Display them:
+
+```{r}
+tibble(
+  estimate = p_hat,
+  lower = lower,
+  upper = upper
+)
+```
+
+**Checkpoint 4:** Write the result as you might report it in a poll story.
+
+> Support is estimated at XX%, with an approximate 95% confidence interval from XX% to XX%.
+
+Your response:
+
+## 8. What does 95% confidence mean?
+
+A 95% confidence procedure is designed so that, across many repeated samples, about 95% of the intervals produced by the procedure will contain the true population value.
+
+It does **not** mean that 95% of respondents fall inside the interval.
+
+It also does **not** mean that there is a 95% chance that this one fixed interval contains the population value.
+
+We can see the repeated-sampling idea directly.
+
+Calculate a standard error for each of our 500 simulated polls:
+
+```{r}
+sim_se <- sqrt(
+  estimates * (1 - estimates) / 1000
+)
+```
+
+Calculate 500 lower and upper bounds:
+
+```{r}
+sim_lower <- estimates - 1.96 * sim_se
+sim_upper <- estimates + 1.96 * sim_se
+```
+
+Check how often the intervals contain the true value of 0.50:
+
+```{r}
+mean(
+  sim_lower <= 0.50 &
+  sim_upper >= 0.50
+)
+```
+
+The result should be close to 0.95.
+
+**Checkpoint 5:** Why is it not necessarily exactly 0.95?
+
+Your response:
+
+# Part III: Why sample size matters
+
+## 9. Compare a small and large poll
+
+First simulate 500 polls with only 250 respondents:
+
+```{r}
+small_polls <- replicate(
+  500,
+  mean(rbinom(250, 1, 0.50))
+)
+```
+
+Now simulate 500 polls with 2,000 respondents:
+
+```{r}
+large_polls <- replicate(
+  500,
+  mean(rbinom(2000, 1, 0.50))
+)
+```
+
+Compare the spread of the estimates:
+
+```{r}
+sd(small_polls)
+sd(estimates)
+sd(large_polls)
+```
+
+Remember:
+
+- `small_polls` uses n = 250
+- `estimates` uses n = 1,000
+- `large_polls` uses n = 2,000
+
+**Checkpoint 6:** What happens to sampling variability as sample size increases?
+
+Your response:
+
+::: {.callout-warning}
+A larger sample reduces **sampling variability**.
+
+It does not automatically fix:
+
+- coverage error;
+- nonresponse bias;
+- self-selection;
+- measurement error;
+- weighting problems; or
+- poor respondent quality.
+
+A large sample can still give a very precise estimate of the wrong quantity.
+:::
+
+# Part IV: Work with the October Texas poll
+
+## 10. Download the Texas poll files and set the working directory
+
+The October 2026 Univision/YouGov Texas poll materials are posted with the course:
+
+- [Download the respondent-level CSV](../../../materials/texas_october_2026/Univision_Texas%20October%20Poll.csv){download="Univision_Texas October Poll.csv"}
+- [Open the codebook](../../../materials/texas_october_2026/Univision_Texas-October-Poll_codebook.pdf)
+- [Open the statewide crosstabs](../../../materials/texas_october_2026/N%2B%20Univision_Texas%20October%20Poll_crosstabs_Base.pdf)
+- [Open the Latino crosstabs](../../../materials/texas_october_2026/N%2B%20Univision_Texas%20October%20Poll_crosstabs_Hisp.pdf)
+
+Download all four files to a single folder on your computer.
+
+Save your Lab 3 `.qmd` file in that same folder.
+
+Then tell R where that folder is located.
+
+You can check your current working directory with:
+
+```{r}
+getwd()
+```
+
+Set the working directory to your Lab 3 folder.
+
+```{r}
+setwd(
+  "C:/Users/YourName/Documents/Lab3"
+)
+```
+
+**Change the path above to the location of your own folder.**
+
+You can also use the RStudio menus:
+
+**Session > Set Working Directory > Choose Directory**
+
+Check again:
+
+```{r}
+getwd()
+```
+
+::: {.callout-tip}
+Once the working directory is the folder containing the data, we can refer to the file by its filename instead of writing a long path every time.
+:::
+
+## 11. Read the Texas poll
+
+```{r}
+texas <- read_csv(
+  "Univision_Texas October Poll.csv"
+)
+```
+
+Take a quick look:
+
+```{r}
+dim(texas)
+names(texas)[1:20]
+```
+
+The October survey contains a statewide Texas voter sample and a large Latino oversample. Keep the codebook and crosstabs open while working so you can connect variable names to the actual survey questions and compare your unweighted teaching estimates with the published weighted results.
+
+For today, we will use the **unweighted respondent data** to learn the logic of uncertainty.
+
+::: {.callout-warning}
+The published Univision estimates use survey weights. Therefore, the unweighted estimates in this lab may not match the published toplines exactly. That is expected. **Lab 4 will introduce the weights.**
+:::
+
+# Part V: Estimate a real poll result
+
+## 12. Create the Latino sample
+
+In the production data, Latino respondents have a nonmissing Latino survey weight.
+
+For now we use that variable only to identify the Latino analytic sample.
+
+```{r}
+latino <- texas |>
+  filter(
+    !is.na(weight_hisp)
+  )
+```
+
+Check the number of Latino respondents:
+
+```{r}
+nrow(latino)
+```
+
+## 13. Estimate support for Hinojosa
+
+In `govvote26_full`:
+
+- `1` = Gina Hinojosa
+
+Create a simple 0/1 indicator.
+
+```{r}
+latino <- latino |>
+  mutate(
+    hinojosa = if_else(
+      govvote26_full == 1,
+      1,
+      0,
+      missing = NA_real_
+    )
+  )
+```
+
+Check the variable:
+
+```{r}
+count(latino, hinojosa)
+```
+
+Calculate the unweighted estimate:
+
+```{r}
+p_hat <- mean(
+  latino$hinojosa,
+  na.rm = TRUE
+)
+
+p_hat
+```
+
+Calculate the valid sample size:
+
+```{r}
+n <- sum(
+  !is.na(latino$hinojosa)
+)
+
+n
+```
+
+## 14. Add uncertainty
+
+Calculate the standard error:
+
+```{r}
+se <- sqrt(
+  p_hat * (1 - p_hat) / n
+)
+
+se
+```
+
+Calculate the approximate 95% margin of error:
+
+```{r}
+moe <- 1.96 * se
+
+moe
+```
+
+Calculate the confidence interval:
+
+```{r}
+lower <- p_hat - moe
+upper <- p_hat + moe
+```
+
+Display everything together:
+
+```{r}
+tibble(
+  n = n,
+  estimate = p_hat,
+  lower = lower,
+  upper = upper
+)
+```
+
+**Checkpoint 7:** Report the estimate and interval in plain language. Remember to describe this as an **unweighted sample estimate**.
+
+Your response:
+
+# Part VI: Compare Latino men and women
+
+## 15. Create a gender variable
+
+In this dataset:
+
+- `1` = men
+- `2` = women
+
+```{r}
+latino <- latino |>
+  mutate(
+    gender_group = case_when(
+      gender == 1 ~ "Men",
+      gender == 2 ~ "Women",
+      TRUE ~ NA_character_
+    )
+  )
+```
+
+Check the result:
+
+```{r}
+count(latino, gender_group)
+```
+
+## 16. Calculate support within each group
+
+```{r}
+gender_results <- latino |>
+  filter(
+    !is.na(gender_group)
+  ) |>
+  group_by(gender_group) |>
+  summarize(
+    n = sum(!is.na(hinojosa)),
+    estimate = mean(
+      hinojosa,
+      na.rm = TRUE
+    )
+  )
+
+gender_results
+```
+
+Add a standard error and confidence interval:
+
+```{r}
+gender_results <- gender_results |>
+  mutate(
+    se = sqrt(
+      estimate * (1 - estimate) / n
+    ),
+    lower = estimate - 1.96 * se,
+    upper = estimate + 1.96 * se
+  )
+
+gender_results
+```
+
+Create a simple figure:
+
+```{r}
+ggplot(
+  gender_results,
+  aes(
+    x = gender_group,
+    y = estimate,
+    ymin = lower,
+    ymax = upper
+  )
+) +
+  geom_pointrange() +
+  scale_y_continuous(
+    labels = scales::percent
+  ) +
+  labs(
+    title = "Hinojosa support among Latino voters",
+    subtitle = "Unweighted October 2026 Texas poll",
+    x = NULL,
+    y = "Estimated support"
+  ) +
+  theme_minimal()
+```
+
+**Checkpoint 8:** Which group has the higher sample estimate? About how large is the difference?
+
+Your response:
+
+# Part VII: Estimate the difference
+
+## 17. Pull out the two groups
+
+```{r}
+men <- gender_results |>
+  filter(gender_group == "Men")
+
+women <- gender_results |>
+  filter(gender_group == "Women")
+```
+
+Calculate the difference:
+
+```{r}
+difference <-
+  women$estimate -
+  men$estimate
+
+difference
+```
+
+A positive value means Hinojosa support is higher among women in this sample.
+
+## 18. Calculate uncertainty around the difference
+
+```{r}
+se_difference <- sqrt(
+  women$estimate *
+    (1 - women$estimate) /
+    women$n +
+  men$estimate *
+    (1 - men$estimate) /
+    men$n
+)
+```
+
+Calculate the confidence interval:
+
+```{r}
+difference - 1.96 * se_difference
+difference + 1.96 * se_difference
+```
+
+Interpretation:
+
+- If the interval includes `0`, the observed difference is compatible with no population difference under this simple model.
+- If the interval does not include `0`, the data provide evidence that the population proportions differ under this simple model.
+
+::: {.callout-tip}
+This is the same basic logic behind a two-sided hypothesis test. For this course, focus first on the **size of the difference** and the **uncertainty around it** rather than memorizing a p-value rule.
+:::
+
+**Checkpoint 9:** Does the interval include zero? What is the most defensible conclusion?
+
+Your response:
+
+# What a confidence interval does not tell us
+
+A confidence interval addresses uncertainty from the **sampling process under a statistical model**.
+
+It does not automatically account for:
+
+- coverage error;
+- nonresponse bias;
+- measurement error;
+- mode effects;
+- self-selection;
+- weighting error;
+- respondent-quality problems; or
+- mistakes in coding and analysis.
+
+That is why a narrow confidence interval does not automatically imply a high-quality survey.
+
+# On Your Own
+
+Use the same October Texas poll.
+
+This time analyze **James Talarico support in the U.S. Senate vote** among Latino men and women.
+
+In `senvote26_full`:
+
+- `1` = James Talarico
+
+## Question 1: Create the measure
+
+Create a variable called `talarico`:
+
+- Talarico = `1`
+- all other substantive responses = `0`
+- missing remains missing
+
+```{r}
+# Your code
+```
+
+Show a frequency table to verify your new variable.
+
+## Question 2: Estimate overall support
+
+Among Latino respondents, calculate:
+
+- valid sample size;
+- unweighted Talarico support;
+- standard error;
+- approximate 95% margin of error;
+- lower confidence bound; and
+- upper confidence bound.
+
+```{r}
+# Your code
+```
+
+Write a two- or three-sentence interpretation.
+
+## Question 3: Compare men and women
+
+Calculate the estimate and approximate 95% confidence interval separately for Latino men and women.
+
+```{r}
+# Your code
+```
+
+Create a pointrange figure.
+
+```{r}
+# Your code
+```
+
+## Question 4: Evaluate the difference
+
+Calculate:
+
+- the women-minus-men difference;
+- the standard error of that difference; and
+- an approximate 95% confidence interval for the difference.
+
+```{r}
+# Your code
+```
+
+Answer:
+
+1. Which group has the higher sample estimate?
+2. How large is the estimated difference?
+3. Does the interval around the difference include zero?
+4. What conclusion is justified?
+5. What conclusion would be too strong?
+
+## Question 5: Methodological reflection
+
+The published Texas poll uses survey weights, but this lab intentionally used unweighted observations.
+
+In one short paragraph:
+
+1. explain why our results might differ from the published toplines;
+2. explain why a narrow confidence interval does not prove that an estimate is unbiased; and
+3. identify one source of nonsampling error that could still matter.
+
+# Submission
+
+Submit the completed QMD source file and rendered HTML file.
+
+Before submitting:
+
+1. restart R;
+2. set the working directory;
+3. render the document;
+4. make sure every code chunk runs;
+5. check that every table and figure appears; and
+6. make sure your written interpretations match the output.
