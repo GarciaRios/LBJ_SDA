@@ -5,6 +5,7 @@ project:
   resources:
     - Labs/fall2026/templates/*.qmd
     - materials/*.pdf
+    - materials/texas_october_2026/*
   render:
     - index.qmd
     - schedule.qmd
@@ -16,6 +17,7 @@ project:
     - assignments/fall2026/poll-autopsy.qmd
     - Labs/fall2026/lab1/lab1.qmd
     - Labs/fall2026/lab2/lab2.qmd
+    - Labs/fall2026/lab3/lab3.qmd
 
 website:
   title: "LBJ Survey Design and Analysis"
