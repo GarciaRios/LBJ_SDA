@@ -109,35 +109,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../../course_style.css">
 </head>
@@ -413,10 +384,7 @@ Important
 <h2 class="anchored" data-anchor-id="standard-error">5. Standard error</h2>
 <p>The <strong>standard error</strong> describes how much an estimate would vary across repeated samples.</p>
 <p>For a proportion:</p>
-<p><span class="math display">\[
-SE(\hat{p}) =
-\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
-\]</span></p>
+<p>$ SE() = $</p>
 <p>Return to our first simulated poll.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p_hat <span class="ot">&lt;-</span> <span class="fu">mean</span>(support)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -440,9 +408,7 @@ SE(\hat{p}) =
 <section id="margin-of-error" class="level2">
 <h2 class="anchored" data-anchor-id="margin-of-error">6. Margin of error</h2>
 <p>For a 95% confidence interval, an approximate margin of sampling error is:</p>
-<p><span class="math display">\[
-1.96 \times SE
-\]</span></p>
+<p>$ 1.96 SE $</p>
 <p>Calculate it:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>moe <span class="ot">&lt;-</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>

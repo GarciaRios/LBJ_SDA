@@ -53,14 +53,14 @@
     "href": "Labs/fall2026/lab3/lab3.html#standard-error",
     "title": "Lab 3: From a Sample to an Estimate",
     "section": "5. Standard error",
-    "text": "5. Standard error\nThe standard error describes how much an estimate would vary across repeated samples.\nFor a proportion:\n\\[\nSE(\\hat{p}) =\n\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\n\\]\nReturn to our first simulated poll.\n\np_hat &lt;- mean(support)\n\nCalculate its standard error:\n\nse &lt;- sqrt(\n  p_hat * (1 - p_hat) / 1000\n)\n\nse\n\nCompare it with the variability across our 500 simulated polls:\n\nsd(estimates)\n\nThey should be fairly similar.\nCheckpoint 3: In plain language, what does the standard error describe?\nYour response:"
+    "text": "5. Standard error\nThe standard error describes how much an estimate would vary across repeated samples.\nFor a proportion:\n$ SE() = $\nReturn to our first simulated poll.\n\np_hat &lt;- mean(support)\n\nCalculate its standard error:\n\nse &lt;- sqrt(\n  p_hat * (1 - p_hat) / 1000\n)\n\nse\n\nCompare it with the variability across our 500 simulated polls:\n\nsd(estimates)\n\nThey should be fairly similar.\nCheckpoint 3: In plain language, what does the standard error describe?\nYour response:"
   },
   {
     "objectID": "Labs/fall2026/lab3/lab3.html#margin-of-error",
     "href": "Labs/fall2026/lab3/lab3.html#margin-of-error",
     "title": "Lab 3: From a Sample to an Estimate",
     "section": "6. Margin of error",
-    "text": "6. Margin of error\nFor a 95% confidence interval, an approximate margin of sampling error is:\n\\[\n1.96 \\times SE\n\\]\nCalculate it:\n\nmoe &lt;- 1.96 * se\n\nmoe\n\nConvert it to percentage points:\n\nmoe * 100\n\n\n\n\n\n\n\nNote\n\n\n\nThis is a margin of sampling error under the simple assumptions used here. It is not a measure of total survey error."
+    "text": "6. Margin of error\nFor a 95% confidence interval, an approximate margin of sampling error is:\n$ 1.96 SE $\nCalculate it:\n\nmoe &lt;- 1.96 * se\n\nmoe\n\nConvert it to percentage points:\n\nmoe * 100\n\n\n\n\n\n\n\nNote\n\n\n\nThis is a margin of sampling error under the simple assumptions used here. It is not a measure of total survey error."
   },
   {
     "objectID": "Labs/fall2026/lab3/lab3.html#build-a-95-confidence-interval",
