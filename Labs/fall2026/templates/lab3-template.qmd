@@ -159,10 +159,10 @@ The **standard error** describes how much an estimate would vary across repeated
 
 For a proportion:
 
-\[
+$$
 SE(\hat{p}) =
 \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
-\]
+$$
 
 Return to our first simulated poll.
 
@@ -196,9 +196,9 @@ Your response:
 
 For a 95% confidence interval, an approximate margin of sampling error is:
 
-\[
+$$
 1.96 \times SE
-\]
+$$
 
 Calculate it:
 

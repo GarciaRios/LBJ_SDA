@@ -109,9 +109,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../course_style.css">
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -385,7 +413,10 @@ Important
 <h2 class="anchored" data-anchor-id="standard-error">5. Standard error</h2>
 <p>The <strong>standard error</strong> describes how much an estimate would vary across repeated samples.</p>
 <p>For a proportion:</p>
-<p>\[SE(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]</p>
+<p><span class="math display">\[
+SE(\hat{p}) =
+\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\]</span></p>
 <p>Return to our first simulated poll.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p_hat <span class="ot">&lt;-</span> <span class="fu">mean</span>(support)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -409,7 +440,9 @@ Important
 <section id="margin-of-error" class="level2">
 <h2 class="anchored" data-anchor-id="margin-of-error">6. Margin of error</h2>
 <p>For a 95% confidence interval, an approximate margin of sampling error is:</p>
-<p>\[1.96 \times SE\]</p>
+<p><span class="math display">\[
+1.96 \times SE
+\]</span></p>
 <p>Calculate it:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>moe <span class="ot">&lt;-</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
@@ -547,10 +580,10 @@ Warning
 <h2 class="anchored" data-anchor-id="download-the-texas-poll-files-and-set-the-working-directory">10. Download the Texas poll files and set the working directory</h2>
 <p>The October 2026 Univision/YouGov Texas poll materials are posted with the course:</p>
 <ul>
-<li><a href="../../../materials/texas_october_2026/Univision_Texas October Poll.csv" download="Univision_Texas October Poll.csv">Download the respondent-level CSV</a></li>
-<li><a href="../../../materials/texas_october_2026/Univision_Texas-October-Poll_codebook.pdf">Open the codebook</a></li>
-<li><a href="../../../materials/texas_october_2026/N%2B Univision_Texas October Poll_crosstabs_Base.pdf">Open the statewide crosstabs</a></li>
-<li><a href="../../../materials/texas_october_2026/N%2B Univision_Texas October Poll_crosstabs_Hisp.pdf">Open the Latino crosstabs</a></li>
+<li><a href="https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv">Download the respondent-level CSV</a></li>
+<li><a href="https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll_codebook.pdf">Open the codebook</a></li>
+<li><a href="https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_statewide.pdf">Open the statewide crosstabs</a></li>
+<li><a href="https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_latino.pdf">Open the Latino crosstabs</a></li>
 </ul>
 <p>Download all four files to a single folder on your computer.</p>
 <p>Save your Lab 3 <code>.qmd</code> file in that same folder.</p>
@@ -590,7 +623,7 @@ Tip
 <h2 class="anchored" data-anchor-id="read-the-texas-poll">11. Read the Texas poll</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>texas <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Univision_Texas October Poll.csv"</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"texas_poll.csv"</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Take a quick look:</p>
