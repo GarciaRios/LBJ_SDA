@@ -95,7 +95,7 @@
     "href": "Labs/fall2026/lab3/lab3.html#read-the-texas-poll",
     "title": "Lab 3: From a Sample to an Estimate",
     "section": "11. Read the Texas poll",
-    "text": "11. Read the Texas poll\n\ntexas &lt;- read_csv(\n  \"Univision_Texas October Poll.csv\"\n)\n\nTake a quick look:\n\ndim(texas)\nnames(texas)[1:20]\n\nThe October survey contains a statewide Texas voter sample and a large Latino oversample. Keep the codebook and crosstabs open while working so you can connect variable names to the actual survey questions and compare your unweighted teaching estimates with the published weighted results.\nFor today, we will use the unweighted respondent data to learn the logic of uncertainty.\n\n\n\n\n\n\nWarning\n\n\n\nThe published Univision estimates use survey weights. Therefore, the unweighted estimates in this lab may not match the published toplines exactly. That is expected. Lab 4 will introduce the weights."
+    "text": "11. Read the Texas poll\n\ntexas &lt;- read_csv(\n  \"texas_poll.csv\"\n)\n\nTake a quick look:\n\ndim(texas)\nnames(texas)[1:20]\n\nThe October survey contains a statewide Texas voter sample and a large Latino oversample. Keep the codebook and crosstabs open while working so you can connect variable names to the actual survey questions and compare your unweighted teaching estimates with the published weighted results.\nFor today, we will use the unweighted respondent data to learn the logic of uncertainty.\n\n\n\n\n\n\nWarning\n\n\n\nThe published Univision estimates use survey weights. Therefore, the unweighted estimates in this lab may not match the published toplines exactly. That is expected. Lab 4 will introduce the weights."
   },
   {
     "objectID": "Labs/fall2026/lab3/lab3.html#create-the-latino-sample",
@@ -739,7 +739,7 @@
     "href": "labs.html#lab-materials",
     "title": "R and Statistics Labs",
     "section": "Lab materials",
-    "text": "Lab materials\n\nLab 1: Your First Reproducible Survey Analysis\nRead Lab 1 · Download the Lab 1 student template · Download the LNS data\n\n\nLab 2: Describing and Visualizing Survey Responses\nRead Lab 2 · Download the Lab 2 student template\n\n\nLab 3: From a Sample to an Estimate\nRead Lab 3 · Download the Lab 3 student template · Download the October Texas poll CSV · Codebook · Statewide crosstabs · Latino crosstabs\n\n\n\n\n\n\nNote\n\n\n\nThe website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning."
+    "text": "Lab materials\n\nLab 1: Your First Reproducible Survey Analysis\nRead Lab 1 · Download the Lab 1 student template · Download the LNS data\n\n\nLab 2: Describing and Visualizing Survey Responses\nRead Lab 2 · Download the Lab 2 student template\n\n\nLab 3: From a Sample to an Estimate\nRead Lab 3 · Lab 3 student template · October Texas poll CSV · Codebook · Statewide crosstabs · Latino crosstabs\n\n\n\n\n\n\nNote\n\n\n\nThe website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning."
   },
   {
     "objectID": "labs.html#lab-sequence",
