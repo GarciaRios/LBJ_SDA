@@ -111,6 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../../course_style.css">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -384,7 +385,7 @@ Important
 <h2 class="anchored" data-anchor-id="standard-error">5. Standard error</h2>
 <p>The <strong>standard error</strong> describes how much an estimate would vary across repeated samples.</p>
 <p>For a proportion:</p>
-<p>[ SE() = ]</p>
+<p>\[SE(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]</p>
 <p>Return to our first simulated poll.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p_hat <span class="ot">&lt;-</span> <span class="fu">mean</span>(support)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -408,7 +409,7 @@ Important
 <section id="margin-of-error" class="level2">
 <h2 class="anchored" data-anchor-id="margin-of-error">6. Margin of error</h2>
 <p>For a 95% confidence interval, an approximate margin of sampling error is:</p>
-<p>[ 1.96 SE ]</p>
+<p>\[1.96 \times SE\]</p>
 <p>Calculate it:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>moe <span class="ot">&lt;-</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
