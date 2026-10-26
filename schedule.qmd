@@ -109,7 +109,6 @@ The Groves total survey error review is recommended rather than required on this
 
 **In class:** Analyze mode effects, coverage, contact strategies, incentives, accessibility, response rates, and nonresponse bias.
 
-**Lab 3:** Simulation, sampling distributions, standard errors, margins of error, confidence intervals, hypothesis tests, and subgroup comparisons.
 
 **Assignment:** [Individual Poll Autopsy](assignments/fall2026/poll-autopsy.qmd) assigned. Due Sunday, October 18, at 11:59 p.m.
 
@@ -140,6 +139,8 @@ The Groves total survey error review is recommended rather than required on this
 **In class:** Establish fieldwork monitoring rules, examine paradata and fraud indicators, and distinguish defensible quality controls from post hoc deletion.
 
 **Principal product:** Fieldwork dashboard plan.
+**Lab 3:** Sampling variability, standard errors, margins of error, confidence intervals, and subgroup comparisons using the October Univision/YouGov Texas Poll. [Lab guide](Labs/fall2026/lab3/lab3.qmd) · [Student template](Labs/fall2026/templates/lab3-template.qmd){download="lab3-template.qmd"} · [Texas poll data and documentation](materials/texas_october_2026/)
+
 
 ## Analysis and communication
 
