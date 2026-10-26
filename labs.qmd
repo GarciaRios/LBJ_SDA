@@ -18,7 +18,7 @@ No prior mastery of R is required. Most lab work will be completed together duri
 
 ### Lab 3: From a Sample to an Estimate
 
-[Read Lab 3](Labs/fall2026/lab3/lab3.qmd) · [Download the Lab 3 student template](Labs/fall2026/templates/lab3-template.qmd){download="lab3-template.qmd"} · [Download the October Texas poll CSV](materials/texas_october_2026/Univision_Texas%20October%20Poll.csv){download="Univision_Texas October Poll.csv"} · [Codebook](materials/texas_october_2026/Univision_Texas-October-Poll_codebook.pdf) · [Statewide crosstabs](materials/texas_october_2026/N%2B%20Univision_Texas%20October%20Poll_crosstabs_Base.pdf) · [Latino crosstabs](materials/texas_october_2026/N%2B%20Univision_Texas%20October%20Poll_crosstabs_Hisp.pdf)
+[Read Lab 3](Labs/fall2026/lab3/lab3.html) · [Lab 3 student template](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/Labs/fall2026/templates/lab3-template.qmd) · [October Texas poll CSV](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv) · [Codebook](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll_codebook.pdf) · [Statewide crosstabs](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_statewide.pdf) · [Latino crosstabs](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_latino.pdf)
 
 ::: {.callout-note}
 The website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning.
