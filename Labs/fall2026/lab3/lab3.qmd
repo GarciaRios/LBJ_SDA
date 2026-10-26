@@ -344,10 +344,10 @@ A large sample can still give a very precise estimate of the wrong quantity.
 
 The October 2026 Univision/YouGov Texas poll materials are posted with the course:
 
-- [Download the respondent-level CSV](../../../materials/texas_october_2026/Univision_Texas%20October%20Poll.csv){download="Univision_Texas October Poll.csv"}
-- [Open the codebook](../../../materials/texas_october_2026/Univision_Texas-October-Poll_codebook.pdf)
-- [Open the statewide crosstabs](../../../materials/texas_october_2026/N%2B%20Univision_Texas%20October%20Poll_crosstabs_Base.pdf)
-- [Open the Latino crosstabs](../../../materials/texas_october_2026/N%2B%20Univision_Texas%20October%20Poll_crosstabs_Hisp.pdf)
+- [Download the respondent-level CSV](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv)
+- [Open the codebook](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll_codebook.pdf)
+- [Open the statewide crosstabs](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_statewide.pdf)
+- [Open the Latino crosstabs](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_latino.pdf)
 
 Download all four files to a single folder on your computer.
 
@@ -389,7 +389,7 @@ Once the working directory is the folder containing the data, we can refer to th
 
 ```{r}
 texas <- read_csv(
-  "Univision_Texas October Poll.csv"
+  "texas_poll.csv"
 )
 ```
 
