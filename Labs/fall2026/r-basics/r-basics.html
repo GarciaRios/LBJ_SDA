@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>R Basics Review</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; color:#2b2b2b; line-height:1.6; max-width:1180px; margin:0 auto; padding:32px 42px 80px; }
+main, .content { max-width:860px; }
+h1,h2,h3 { line-height:1.2; color:#1d3557; }
+h1 { font-size:2.4rem; margin-bottom:.25rem; }
+h2 { margin-top:2.2rem; border-bottom:1px solid #e6e8eb; padding-bottom:.3rem; }
+h3 { margin-top:1.5rem; }
+.subtitle { color:#666; font-size:1.2rem; }
+pre { background:#f6f8fa; border:1px solid #e1e4e8; border-radius:6px; padding:14px 16px; overflow:auto; }
+code { font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace; background:#f6f8fa; padding:.08rem .25rem; border-radius:3px; }
+pre code { background:transparent; padding:0; }
+blockquote { border-left:4px solid #3b82a0; margin-left:0; padding:.2rem 1rem; color:#444; background:#f7fbfc; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; }
+th,td { border-bottom:1px solid #ddd; text-align:left; padding:.55rem .7rem; }
+th { background:#f5f7f8; }
+.callout-tip,.callout-note,.callout-important,.callout-warning { border-left:5px solid #3b82a0; background:#f6fafc; padding:12px 16px; margin:1.1rem 0; border-radius:4px; }
+.callout-note { border-left-color:#6c757d; background:#f8f9fa; }
+.callout-important { border-left-color:#b45309; background:#fff8ed; }
+.callout-warning { border-left-color:#b91c1c; background:#fff6f6; }
+nav#TOC { position:fixed; right:18px; top:24px; width:260px; max-height:90vh; overflow:auto; font-size:.88rem; padding:12px 14px; background:white; border:1px solid #e5e7eb; border-radius:7px; }
+nav#TOC ul { padding-left:1rem; }
+nav#TOC a { color:#355b7a; text-decoration:none; }
+@media (max-width:1180px){ nav#TOC{position:static;width:auto;max-height:none;margin-bottom:24px;} body{max-width:900px;} }
+@media print { nav#TOC { position:static; width:auto; border:none; } body { padding:0; max-width:none; font-size:11pt; } pre { white-space:pre-wrap; } h1,h2,h3 { color:black; } }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">R Basics Review</h1>
+<p class="subtitle">A reference for working in R and RStudio</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#about-this-guide" id="toc-about-this-guide">About this
+guide</a></li>
+<li><a href="#the-basic-workflow" id="toc-the-basic-workflow">The basic
+workflow</a></li>
+<li><a href="#rstudio-source-and-console" id="toc-rstudio-source-and-console">1. RStudio: Source and
+Console</a></li>
+<li><a href="#objects" id="toc-objects">2. Objects</a></li>
+<li><a href="#vectors-and-functions" id="toc-vectors-and-functions">3.
+Vectors and Functions</a></li>
+<li><a href="#a-tiny-survey" id="toc-a-tiny-survey">4. A Tiny
+Survey</a></li>
+<li><a href="#inspect-before-you-analyze" id="toc-inspect-before-you-analyze">5. Inspect Before You
+Analyze</a></li>
+<li><a href="#accessing-one-variable" id="toc-accessing-one-variable">6.
+Accessing One Variable</a></li>
+<li><a href="#packages" id="toc-packages">7. Packages</a></li>
+<li><a href="#the-pipe" id="toc-the-pipe">8. The Pipe</a></li>
+<li><a href="#filtering-rows" id="toc-filtering-rows">9. Filtering
+Rows</a></li>
+<li><a href="#saving-a-new-dataset" id="toc-saving-a-new-dataset">10.
+Saving a New Dataset</a></li>
+<li><a href="#summarizing" id="toc-summarizing">11. Summarizing</a></li>
+<li><a href="#comparing-groups" id="toc-comparing-groups">12. Comparing
+Groups</a></li>
+<li><a href="#counting-categories" id="toc-counting-categories">13.
+Counting Categories</a></li>
+<li><a href="#missing-values" id="toc-missing-values">14. Missing
+Values</a></li>
+<li><a href="#basic-graphics" id="toc-basic-graphics">15. Basic
+Graphics</a></li>
+<li><a href="#working-directory-and-files" id="toc-working-directory-and-files">16. Working Directory and
+Files</a></li>
+<li><a href="#reading-a-csv" id="toc-reading-a-csv">17. Reading a
+CSV</a></li>
+<li><a href="#common-errors" id="toc-common-errors">18. Common
+Errors</a>
+<ul>
+<li><a href="#object-not-found" id="toc-object-not-found"><code>object not found</code></a></li>
+<li><a href="#could-not-find-function" id="t²È="25ÍØ™ÅÕ½Ðì¤ð½½‘”øð½Àø(ñÀù%µµ•‘¥…Ñ•±ä¥¹ÍÁ•ÐÑ¡”‘…Ñ„èð½Àø(ñÀøñ½‘”ùíÉô¡•…¡Ñ•á…Ì¤ð½½‘”øð½Àø(ñÀøñ½‘”ùíÉô¹…µ•Ì¡Ñ•á…Ì¤ð½½‘”øð½Àø(ñÀøñ½‘”ùíÉô±¥µÁÍ”¡Ñ•á…Ì¤ð½½‘”øð½Àø(ñ‘¥Ø±…ÍÌô‰…±±½ÕÐµÑ¥Àˆø(ñÀù%˜å½Ô‘¼¹½Ð­¹½Ü„Ù…É¥…‰±”¹…µ”°€ñÍÑÉ½¹œù‘¼¹½ÐÕ•ÍÌð½ÍÑÉ½¹œø¸)UÍ”€ñ½‘”ù¹…µ•Ì ¤ð½½‘”ø…¹½¹ÍÕ±ÐÑ¡”½‘•‰½½¬¸ð½Àø(ð½‘¥Øø(ñ Ä¥ô‰½µµ½¸µ•ÉÉ½ÉÌˆøÄà¸½µµ½¸ÉÉ½ÉÌð½ Äø(ñ È¥ô‰½‰©•Ðµ¹½Ðµ™½Õ¹ˆøñ½‘”ù½‰©•Ð¹½Ð™½Õ¹ð½½‘”øð½ Èø(ñÀùUÍÕ…±±äH…¹¹½Ð™¥¹…¸½‰©•ÐÝ¥Ñ Ñ¡”¹…µ”å½ÔÑåÁ•¸ð½Àø(ñÀù¡•¬èð½Àø(ñÕ°ø(ñ±¤ùÍÁ•±±¥¹œìð½±¤ø(ñ±¤ù…Á¥Ñ…±¥é…Ñ¥½¸ìð½±¤ø(ñ±¤ùÝ¡•Ñ¡•ÈÑ¡”±¥¹”Ñ¡…ÐÉ•…Ñ•Ñ¡”½‰©•ÐÝ…Ì…ÑÕ…±±äÉÕ¸¸ð½±¤ø(ð½Õ°ø(ñ È¥ô‰½Õ±µ¹½Ðµ™¥¹µ™Õ¹Ñ¥½¸ˆøñ½‘”ù½Õ±¹½Ð™¥¹™Õ¹Ñ¥½¸ð½½‘”øð½ Èø(ñÀùQ¡”Á…­…”½¹Ñ…¥¹¥¹œÑ¡”™Õ¹Ñ¥½¸µ…ä¹½Ð‰”±½…‘•¸ð½Àø(ñÀùQÉäèð½Àø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÄÈˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÄÈ´Äˆøñ„¡É•˜ôˆˆÄÈ´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„øñÍÁ…¸±…ÍÌô‰™Ôˆù±¥‰É…Éäð½ÍÁ…¸ø¡Ñ¥‘åÙ•ÉÍ”¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñ È¥ô‰™¥±”µ‘½•Ìµ¹½Ðµ•á¥ÍÐˆù¥±”‘½•Ì¹½Ð•á¥ÍÐð½ Èø(ñÀù¡•¬èð½Àø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÄÌˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÄÌ´Äˆøñ„¡É•˜ôˆˆÄÌ´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„øñÍÁ…¸±…ÍÌô‰™Ôˆù•ÑÝð½ÍÁ…¸ø ¤ð½ÍÁ…¸ø(ñÍÁ…¸¥ô‰ˆÄÌ´Èˆøñ„¡É•˜ôˆˆÄÌ´Èˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„øñÍÁ…¸±…ÍÌô‰™Ôˆù±¥ÍÐ¹™¥±•Ìð½ÍÁ…¸ø ¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñÀù5…­”ÍÕÉ”Ñ¡”™¥±”¥Ì…ÑÕ…±±ä¥¸Ñ¡”™½±‘•ÈH¥ÌÕÍ¥¹œ¸ð½Àø(ñ È¥ô‰…Á¥Ñ…±¥é…Ñ¥½¸µµ…ÑÑ•ÉÌˆù…Á¥Ñ…±¥é…Ñ¥½¸µ…ÑÑ•ÉÌð½ Èø(ñÀùQ¡•Í”…É”Ñ¡É•”‘¥™™•É•¹Ð¹…µ•Ìèð½Àø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÄÐˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÄÐ´Äˆøñ„¡É•˜ôˆˆÄÐ´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ùÍÕÉÙ•äð½ÍÁ…¸ø(ñÍÁ…¸¥ô‰ˆÄÐ´Èˆøñ„¡É•˜ôˆˆÄÐ´Èˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ùMÕÉÙ•äð½ÍÁ…¸ø(ñÍÁ…¸¥ô‰ˆÄÐ´Ìˆøñ„¡É•˜ôˆˆÄÐ´Ìˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ùMUIYdð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñÀùH¥Ì…Í”µÍ•¹Í¥Ñ¥Ù”¸ð½Àø(ñ È¥ô‰‘•‰Õœµ½¹”µÍÑ•Àµ…Ðµ„µÑ¥µ”ˆù•‰Õœ½¹”ÍÑ•À…Ð„Ñ¥µ”ð½ Èø(ñÀù¼¹½ÐÑÉäÑ¼™¥àÑ•¸±¥¹•Ì…Ð½¹”¸ð½Àø(ñÀùIÕ¸½¹”±¥¹”¸½¹™¥É´Ñ¡…Ð¥ÐÝ½É­Ì¸Q¡•¸µ½Ù”Ñ¼Ñ¡”¹•áÐ½¹”¸ð½Àø(ñ Ä¥ô‰ÁÉ…Ñ¥”µÝ¥Ñ¡½ÕÐµÍÕ‰µ¥ÑÑ¥¹œµ…¹åÑ¡¥¹œˆøÄä¸AÉ…Ñ¥”]¥Ñ¡½ÕÐ)MÕ‰µ¥ÑÑ¥¹œ¹åÑ¡¥¹œð½ Äø(ñÀùQÉäÑ¡•Í”ÕÍ¥¹œÑ¡”Ñ¥¹ä€ñ½‘”ùÍÕÉÙ•äð½½‘”ø‘…Ñ„èð½Àø(ñ½°ÑåÁ”ôˆÄˆø(ñ±¤ù…±Õ±…Ñ”…Ù•É…”…”¸ð½±¤ø(ñ±¤ù½Õ¹ÐÑ¡”¹Õµ‰•È½˜Ý½µ•¸¸ð½±¤ø(ñ±¤ù…±Õ±…Ñ”Ñ¡”½Ù•É…±°ÁÉ½Á½ÉÑ¥½¸…ÁÁÉ½Ù¥¹œ¸ð½±¤ø(ñ±¤ù…±Õ±…Ñ”…ÁÁÉ½Ù…°…µ½¹œÝ½µ•¸¸ð½±¤ø(ñ±¤ù…±Õ±…Ñ”…ÁÁÉ½Ù…°…µ½¹œµ•¸¸ð½±¤ø(ñ±¤ùÉ•…Ñ”„‘…Ñ…Í•Ð½¹Ñ…¥¹¥¹œ½¹±äÉ•ÍÁ½¹‘•¹ÑÌ½Ù•È…”€ÌÀ¸ð½±¤ø(ñ±¤ùÉ•…Ñ”„Ñ…‰±”Í¡½Ý¥¹œ…ÁÁÉ½Ù…°Í•Á…É…Ñ•±ä™½Èµ•¸…¹Ý½µ•¸¸ð½±¤ø(ð½½°ø(ñÀùQ¡•Í”…É”™½ÈÁÉ…Ñ¥”½¹±ä¸ð½Àø(ñ Ä¥ô‰ÑÉ…¹Í™•ÈµÑ¼µÑ¡”µÑ•á…ÌµÁ½±°ˆøÈÀ¸QÉ…¹Í™•ÈÑ¼Ñ¡”Q•á…ÌA½±°ð½ Äø(ñÀùQ¡”=Ñ½‰•ÈQ•á…ÌÁ½±°ÕÍ•ÌÑ¡”Í…µ”HÝ½É­™±½Ü¸ð½Àø(ñÀøñ„¡É•˜ô‰¡ÑÑÁÌè¼½É…Ü¹¥Ñ¡Õ‰ÕÍ•É½¹Ñ•¹Ð¹½´½…É¥…I¥½Ì½1	)}M½µ…¥¸½µ…Ñ•É¥…±Ì½Ñ•á…Í}½Ñ½‰•É|ÈÀÈØ½Ñ•á…Í}Á½±°¹ÍØˆù½Ý¹±½…)Ñ¡”Q•á…ÌÁ½±°MXð½„øð½Àø(ñÀøñ„¡É•˜ô‰¡ÑÑÁÌè¼½É…Ü¹¥Ñ¡Õ‰ÕÍ•É½¹Ñ•¹Ð¹½´½…É¥…I¥½Ì½1	)}M½µ…¥¸½µ…Ñ•É¥…±Ì½Ñ•á…Í}½Ñ½‰•É|ÈÀÈØ½Ñ•á…Í}Á½±±}½‘•‰½½¬¹Á‘˜ˆù=Á•¸)Ñ¡”½‘•‰½½¬ð½„øð½Àø(ñÀù1½…Ñ¡”™¥±”èð½Àø(ñÀøñ½‘”ùíÉôÑ•á…Ì€™±Ðì´É•…‘}ÍØ ™ÅÕ½ÐíÑ•á…Í}Á½±°¹ÍØ™ÅÕ½Ðì¤ð½½‘”øð½Àø(ñÀù%¹ÍÁ•Ð¥Ðèð½Àø(ñÀøñ½‘”ùíÉô¹…µ•Ì¡Ñ•á…Ì¤ð½½‘”øð½Àø(ñÀùÉ•…Ñ”Ñ¡”1…Ñ¥¹¼…¹…±åÑ¥ŒÍ…µÁ±”èð½Àø(ñÀøñ½‘”ùíÉô±…Ñ¥¹¼€™±Ðì´Ñ•á…Ìð™Ðì€€™¥±Ñ•È …¥Ì¹¹„¡Ý•¥¡Ñ}¡¥ÍÀ¤¤ð½½‘”øð½Àø(ñÀù¡•¬Ñ¡”½Ù•É¹½ÈÙ½Ñ”Ù…É¥…‰±”èð½Àø(ñÀøñ½‘”ùíÉô±…Ñ¥¹¼ð™Ðì€€½Õ¹Ð¡½ÙÙ½Ñ”ÈÙ}™Õ±°¤ð½½‘”øð½Àø(ñÀùÉ•…Ñ”„€À¼Ä!¥¹½©½Í„¥¹‘¥…Ñ½Èèð½Àø(ñÀøñ½‘”ùíÉô±…Ñ¥¹¼€™±Ðì´±…Ñ¥¹¼ð™Ðì€€µÕÑ…Ñ” €€€€¡¥¹½©½Í„€ô¥™}•±Í” €€€€€€½ÙÙ½Ñ”ÈÙ}™Õ±°€ôô€Ä°€€€€€€€Ä°€€€€€€€À°€€€€€€µ¥ÍÍ¥¹œ€ô9}É•…±|€€€€€¤€€€¤ð½½‘”øð½Àø(ñÀù…±Õ±…Ñ”Õ¹Ý•¥¡Ñ•ÍÕÁÁ½ÉÐèð½Àø(ñÀøñ½‘”ùíÉô±…Ñ¥¹¼ð™Ðì€€ÍÕµµ…É¥é” €€€€ÍÕÁÁ½ÉÐ€ôµ•…¸ €€€€€€¡¥¹½©½Í„°€€€€€€¹„¹É´€ôQIU€€€€€¤€€€¤ð½½‘”øð½Àø(ñÀù½µÁ…É”‰ä•¹‘•Èèð½Àø(ñÀøñ½‘”ùíÉô±…Ñ¥¹¼ð™Ðì€€É½ÕÁ}‰ä¡•¹‘•È¤ð™Ðì€€ÍÕµµ…É¥é” €€€€ÍÕÁÁ½ÉÐ€ôµ•…¸ €€€€€€¡¥¹½©½Í„°€€€€€€¹„¹É´€ôQIU€€€€€¤€€€¤ð½½‘”øð½Àø(ñ‘¥Ø±…ÍÌô‰…±±½ÕÐµ¹½Ñ”ˆø(ñÀùQ¡•Í”…É”€ñÍÑÉ½¹œùÕ¹Ý•¥¡Ñ•ÁÉ…Ñ¥”•ÍÑ¥µ…Ñ•Ìð½ÍÑÉ½¹œø¸Q¡”)Ý•¥¡Ñ¥¹œ±…ˆÍ¡½ÝÌ¡½ÜÑ¼ÁÉ½‘Õ”Ñ¡”ÍÕÉÙ•ä•ÍÑ¥µ…Ñ•ÌÕÍ•™½È)ÍÕ‰ÍÑ…¹Ñ¥Ù”É•Á½ÉÑ¥¹œ¸ð½Àø(ð½‘¥Øø(ñ Ä¥ô‰ÅÕ¥¬µÉ•™•É•¹”ˆùEÕ¥¬I•™•É•¹”ð½ Äø(ñ Ì¥ô‰±½…µ„µÁ…­…”ˆù1½…„Á…­…”ð½ Ìø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÄÔˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÄÔ´Äˆøñ„¡É•˜ôˆˆÄÔ´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„øñÍÁ…¸±…ÍÌô‰™Ôˆù±¥‰É…Éäð½ÍÁ…¸ø¡Ñ¥‘åÙ•ÉÍ”¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñ Ì¥ô‰É•…µ„µÍØˆùI•…„MXð½ Ìø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÄØˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÄØ´Äˆøñ„¡É•˜ôˆˆÄØ´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ù‘…Ñ„€ñÍÁ…¸±…ÍÌô‰½Ðˆø™±Ðì´ð½ÍÁ…¸ø€ñÍÁ…¸±…ÍÌô‰™ÔˆùÉ•…‘}ÍØð½ÍÁ…¸ø ñÍÁ…¸±…ÍÌô‰ÍÐˆø™ÅÕ½Ðí™¥±”¹ÍØ™ÅÕ½Ðìð½ÍÁ…¸ø¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñ Ì¥ô‰±½½¬µ…ÐµÙ…É¥…‰±•Ìˆù1½½¬…ÐÙ…É¥…‰±•Ìð½ Ìø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÄÜˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÄÜ´Äˆøñ„¡É•˜ôˆˆÄÜ´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„øñÍÁ…¸±…ÍÌô‰™Ôˆù¹…µ•Ìð½ÍÁ…¸ø¡‘…Ñ„¤ð½ÍÁ…¸ø(ñÍÁ…¸¥ô‰ˆÄÜ´Èˆøñ„¡É•˜ôˆˆÄÜ´Èˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„øñÍÁ…¸±…ÍÌô‰™Ôˆù±¥µÁÍ”ð½ÍÁ…¸ø¡‘…Ñ„¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñ Ì¥ô‰­••ÀµÍ½µ”µÉ½ÝÌˆù-••ÀÍ½µ”É½ÝÌð½ Ìø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÄàˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÄà´Äˆøñ„¡É•˜ôˆˆÄà´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ù‘…Ñ„€ñÍÁ…¸±…ÍÌô‰ÍŒˆùð™Ðìð½ÍÁ…¸øð½ÍÁ…¸ø(ñÍÁ…¸¥ô‰ˆÄà´Èˆøñ„¡É•˜ôˆˆÄà´Èˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ø€€ñÍÁ…¸±…ÍÌô‰™Ôˆù™¥±Ñ•Èð½ÍÁ…¸ø ¸¸¸¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñ Ì¥ô‰…±Õ±…Ñ”µ½¹”µÍÕµµ…Éäˆù…±Õ±…Ñ”½¹”ÍÕµµ…Éäð½ Ìø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÄäˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÄä´Äˆøñ„¡É•˜ôˆˆÄä´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ù‘…Ñ„€ñÍÁ…¸±…ÍÌô‰ÍŒˆùð™Ðìð½ÍÁ…¸øð½ÍÁ…¸ø(ñÍÁ…¸¥ô‰ˆÄä´Èˆøñ„¡É•˜ôˆˆÄä´Èˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ø€€ñÍÁ…¸±…ÍÌô‰™ÔˆùÍÕµµ…É¥é”ð½ÍÁ…¸ø ¸¸¸¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñ Ì¥ô‰½µÁ…É”µÉ½ÕÁÌˆù½µÁ…É”É½ÕÁÌð½ Ìø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÈÀˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÈÀ´Äˆøñ„¡É•˜ôˆˆÈÀ´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ù‘…Ñ„€ñÍÁ…¸±…ÍÌô‰ÍŒˆùð™Ðìð½ÍÁ…¸øð½ÍÁ…¸ø(ñÍÁ…¸¥ô‰ˆÈÀ´Èˆøñ„¡É•˜ôˆˆÈÀ´Èˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ø€€ñÍÁ…¸±…ÍÌô‰™ÔˆùÉ½ÕÁ}‰äð½ÍÁ…¸ø ¸¸¸¤€ñÍÁ…¸±…ÍÌô‰ÍŒˆùð™Ðìð½ÍÁ…¸øð½ÍÁ…¸ø(ñÍÁ…¸¥ô‰ˆÈÀ´Ìˆøñ„¡É•˜ôˆˆÈÀ´Ìˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ø€€ñÍÁ…¸±…ÍÌô‰™ÔˆùÍÕµµ…É¥é”ð½ÍÁ…¸ø ¸¸¸¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñ Ì¥ô‰½Õ¹Ðµ…Ñ•½É¥•Ìˆù½Õ¹Ð…Ñ•½É¥•Ìð½ Ìø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÈÄˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÈÄ´Äˆøñ„¡É•˜ôˆˆÈÄ´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ù‘…Ñ„€ñÍÁ…¸±…ÍÌô‰ÍŒˆùð™Ðìð½ÍÁ…¸øð½ÍÁ…¸ø(ñÍÁ…¸¥ô‰ˆÈÄ´Èˆøñ„¡É•˜ôˆˆÈÄ´Èˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„ø€€ñÍÁ…¸±…ÍÌô‰™Ôˆù½Õ¹Ðð½ÍÁ…¸ø ¸¸¸¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñ Ì¥ô‰É•µ½Ù”µµ¥ÍÍ¥¹œµÙ…±Õ•Ìµ™É½´µ„µ…±Õ±…Ñ¥½¸ˆùI•µ½Ù”µ¥ÍÍ¥¹œÙ…±Õ•Ì)™É½´„…±Õ±…Ñ¥½¸ð½ Ìø(ñ‘¥Ø±…ÍÌô‰Í½ÕÉ•½‘”ˆ¥ô‰ˆÈÈˆøñÁÉ”±…ÍÌô‰Í½ÕÉ•½‘”Èˆøñ½‘”±…ÍÌô‰Í½ÕÉ•½‘”ÈˆøñÍÁ…¸¥ô‰ˆÈÈ´Äˆøñ„¡É•˜ôˆˆÈÈ´Äˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆÑ…‰¥¹‘•àôˆ´Äˆøð½„øñÍÁ…¸±…ÍÌô‰™Ôˆùµ•…¸ð½ÍÁ…¸ø¡Ù…É¥…‰±”°€ñÍÁ…¸±…ÍÌô‰…Ðˆù¹„¹É´€ôð½ÍÁ…¸ø€ñÍÁ…¸±…ÍÌô‰¸ˆùQIUð½ÍÁ…¸ø¤ð½ÍÁ…¸øð½½‘”øð½ÁÉ”øð½‘¥Øø(ñÀùQ¡”­•äÝ½É­™±½Ü¥Ìèð½Àø(ñ‰±½­ÅÕ½Ñ”ø(ñÀøñÍÑÉ½¹œù1½…ƒŠH¥¹ÍÁ•ÐƒŠH™¥±Ñ•ÈƒŠHÍÕµµ…É¥é”ƒŠH½µÁ…É”ð½ÍÑÉ½¹œøð½Àø(ð½‰±½­ÅÕ½Ñ”ø(ð½‰½‘äø(ð½¡Ñµ°ø(
