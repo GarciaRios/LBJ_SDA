@@ -753,7 +753,7 @@
     "href": "labs.html#lab-materials",
     "title": "R and Statistics Labs",
     "section": "Lab materials",
-    "text": "Lab materials\n\nOptional R Basics Review\nR Basics Review: Working in R and RStudio · Video recording\nThis optional reference reviews the basic R workflow used throughout the course. There is nothing to submit. Use it while following the review recording, print it if useful, or return to individual sections when you need a reminder.\n\n\nLab 1: Your First Reproducible Survey Analysis\nRead Lab 1 · Download the Lab 1 student template · Download the LNS data\n\n\nLab 2: Describing and Visualizing Survey Responses\nRead Lab 2 · Download the Lab 2 student template\n\n\nLab 3: From a Sample to an Estimate\nRead Lab 3 · Lab 3 student template · October Texas poll CSV · Codebook · Statewide crosstabs · Latino crosstabs\n\n\n\n\n\n\nNote\n\n\n\nThe website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning."
+    "text": "Lab materials\n\nOptional R Basics Review\nR Basics Review: Working in R and RStudio · Video Part 1 · Video Part 2 — coming soon\nThis optional reference reviews the basic R workflow used throughout the course. There is nothing to submit. Use it while following the review recording, print it if useful, or return to individual sections when you need a reminder.\n\n\nLab 1: Your First Reproducible Survey Analysis\nRead Lab 1 · Download the Lab 1 student template · Download the LNS data\n\n\nLab 2: Describing and Visualizing Survey Responses\nRead Lab 2 · Download the Lab 2 student template\n\n\nLab 3: From a Sample to an Estimate\nRead Lab 3 · Lab 3 student template · October Texas poll CSV · Codebook · Statewide crosstabs · Latino crosstabs\n\n\n\n\n\n\nNote\n\n\n\nThe website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning."
   },
   {
     "objectID": "labs.html#lab-sequence",
@@ -1033,14 +1033,14 @@
     "href": "Labs/fall2026/r-basics/r-basics.html",
     "title": "R Basics Review",
     "section": "",
-    "text": "This page is an optional review of the basic R skills used throughout the course.\nIt introduces no new statistical material and there is nothing to submit. Use it while following the R Basics recording, print it if that is helpful, or return to individual sections when you need a reminder.\nThe examples begin with a tiny survey so the R commands are easy to see. At the end, we apply the same workflow to the October Univision/YouGov Texas Poll.\n\n\n\n\n\n\nNote\n\n\n\nVideo recording: Open the R Basics Review recording page. The recording link will be added there when it is available."
+    "text": "This page is an optional review of the basic R skills used throughout the course.\nIt introduces no new statistical material and there is nothing to submit. Use it while following the R Basics recording, print it if that is helpful, or return to individual sections when you need a reminder.\nThe examples begin with a tiny survey so the R commands are easy to see. At the end, we apply the same workflow to the October Univision/YouGov Texas Poll.\n\n\n\n\n\n\nNote\n\n\n\nVideo recordings: Part 1 · Part 2 — coming soon"
   },
   {
     "objectID": "Labs/fall2026/r-basics/r-basics.html#about-this-guide",
     "href": "Labs/fall2026/r-basics/r-basics.html#about-this-guide",
     "title": "R Basics Review",
     "section": "",
-    "text": "This page is an optional review of the basic R skills used throughout the course.\nIt introduces no new statistical material and there is nothing to submit. Use it while following the R Basics recording, print it if that is helpful, or return to individual sections when you need a reminder.\nThe examples begin with a tiny survey so the R commands are easy to see. At the end, we apply the same workflow to the October Univision/YouGov Texas Poll.\n\n\n\n\n\n\nNote\n\n\n\nVideo recording: Open the R Basics Review recording page. The recording link will be added there when it is available."
+    "text": "This page is an optional review of the basic R skills used throughout the course.\nIt introduces no new statistical material and there is nothing to submit. Use it while following the R Basics recording, print it if that is helpful, or return to individual sections when you need a reminder.\nThe examples begin with a tiny survey so the R commands are easy to see. At the end, we apply the same workflow to the October Univision/YouGov Texas Poll.\n\n\n\n\n\n\nNote\n\n\n\nVideo recordings: Part 1 · Part 2 — coming soon"
   },
   {
     "objectID": "Labs/fall2026/r-basics/r-basics.html#the-basic-workflow",
