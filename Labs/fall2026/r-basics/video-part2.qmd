@@ -1,0 +1,17 @@
+---
+title: "R Basics Review Video — Part 2"
+subtitle: "Optional course review"
+format:
+  html:
+    toc: false
+execute:
+  enabled: false
+---
+
+## Part 2
+
+The second R Basics Review recording will be posted here when it is available.
+
+For now, you can watch [Part 1](https://utexas.box.com/s/pqw4z8qwaoxbwve6fxhq1rcmug370vuh) and use the [R Basics Review reference guide](r-basics.html).
+
+There is **nothing to submit** for this review.
