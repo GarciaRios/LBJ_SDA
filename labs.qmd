@@ -10,7 +10,7 @@ No prior mastery of R is required. Most lab work will be completed together duri
 
 ### Optional R Basics Review
 
-[R Basics Review: Working in R and RStudio](Labs/fall2026/r-basics/r-basics.html) · [Video recording](Labs/fall2026/r-basics/video.html)
+[R Basics Review: Working in R and RStudio](Labs/fall2026/r-basics/r-basics.html) · [Video Part 1](https://utexas.box.com/s/pqw4z8qwaoxbwve6fxhq1rcmug370vuh) · [Video Part 2 — coming soon](Labs/fall2026/r-basics/video-part2.html)
 
 This optional reference reviews the basic R workflow used throughout the course. There is **nothing to submit**. Use it while following the review recording, print it if useful, or return to individual sections when you need a reminder.
 
