@@ -142,7 +142,7 @@ The Groves total survey error review is recommended rather than required on this
 
 There is no in-person class. Use the optional R Basics Review materials for additional practice with the R workflow used throughout the course.
 
-[R Basics Review: Working in R and RStudio](Labs/fall2026/r-basics/r-basics.html) · [Video recording](Labs/fall2026/r-basics/video.html)
+[R Basics Review: Working in R and RStudio](Labs/fall2026/r-basics/r-basics.html) · [Video Part 1](https://utexas.box.com/s/pqw4z8qwaoxbwve6fxhq1rcmug370vuh) · [Video Part 2 — coming soon](Labs/fall2026/r-basics/video-part2.html)
 
 **No submission is required.** Use the guide and recording for review and practice, and return to any sections you want to revisit before the next class.
 
