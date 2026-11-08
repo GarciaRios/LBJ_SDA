@@ -140,9 +140,11 @@ The Groves total survey error review is recommended rather than required on this
 
 **No class — additional lab recording online**
 
-There is no in-person class. An additional lab recording will be posted online for review and practice.
+There is no in-person class. Use the optional R Basics Review materials for additional practice with the R workflow used throughout the course.
 
-**No submission is required.** Use the recording to review the Lab 3 material, practice the workflow, and come back ready to work with the Texas poll.
+[R Basics Review: Working in R and RStudio](Labs/fall2026/r-basics/r-basics.html) · [Video recording](Labs/fall2026/r-basics/video.html)
+
+**No submission is required.** Use the guide and recording for review and practice, and return to any sections you want to revisit before the next class.
 
 ### Session 10 · November 9
 
