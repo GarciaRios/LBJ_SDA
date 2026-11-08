@@ -20,6 +20,10 @@ It introduces **no new statistical material** and there is **nothing to submit**
 
 The examples begin with a tiny survey so the R commands are easy to see. At the end, we apply the same workflow to the October Univision/YouGov Texas Poll.
 
+::: {.callout-note}
+**Video recording:** [Open the R Basics Review recording page](video.html). The recording link will be added there when it is available.
+:::
+
 ## The basic workflow
 
 Most of the R work in this course follows the same general sequence:
