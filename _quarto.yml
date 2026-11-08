@@ -18,6 +18,7 @@ project:
     - Labs/fall2026/lab1/lab1.qmd
     - Labs/fall2026/lab2/lab2.qmd
     - Labs/fall2026/lab3/lab3.qmd
+    - Labs/fall2026/r-basics/r-basics.qmd
 
 website:
   title: "LBJ Survey Design and Analysis"

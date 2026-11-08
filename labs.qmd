@@ -8,6 +8,12 @@ No prior mastery of R is required. Most lab work will be completed together duri
 
 ## Lab materials
 
+### Optional R Basics Review
+
+[R Basics Review: Working in R and RStudio](Labs/fall2026/r-basics/r-basics.qmd)
+
+This optional reference reviews the basic R workflow used throughout the course. There is **nothing to submit**. Use it while following the review recording, print it if useful, or return to individual sections when you need a reminder.
+
 ### Lab 1: Your First Reproducible Survey Analysis
 
 [Read Lab 1](Labs/fall2026/lab1/lab1.qmd) · [Download the Lab 1 student template](Labs/fall2026/templates/lab1-template.qmd){download=""} · [Download the LNS data](materials/lns_full.dta){download=""}
