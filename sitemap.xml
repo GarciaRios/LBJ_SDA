@@ -1,59 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/r-basics/video-part2.html</loc>
-    <lastmod>2026-11-08T22:06:25.729Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/r-basics/r-basics.html</loc>
-    <lastmod>2026-11-08T22:06:25.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/lab2/lab2.html</loc>
-    <lastmod>2026-11-08T22:06:25.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/assignments/fall2026/poll-autopsy.html</loc>
-    <lastmod>2026-11-08T22:06:25.922Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/labs.html</loc>
-    <lastmod>2026-11-08T22:06:25.922Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/assignments.html</loc>
-    <lastmod>2026-11-08T22:06:25.921Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/schedule.html</loc>
-    <lastmod>2026-11-08T22:06:26.018Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/index.html</loc>
-    <lastmod>2026-11-08T22:06:25.922Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/readings.html</loc>
-    <lastmod>2026-11-08T22:06:26.018Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/project.html</loc>
-    <lastmod>2026-11-08T22:06:26.018Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/assignments/fall2026/initial-survey-autopsy.html</loc>
-    <lastmod>2026-11-08T22:06:25.922Z</lastmod>
-  </url>
-  <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/lab1/lab1.html</loc>
-    <lastmod>2026-11-08T22:06:25.728Z</lastmod>
+    <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/r-basics/video.html</loc>
+    <lastmod>2026-11-08T22:06:23.545Z</lastmod>
   </url>
   <url>
     <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/lab3/lab3.html</loc>
-    <lastmod>2026-11-08T22:06:25.728Z</lastmod>
+    <lastmod>2026-11-08T22:06:23.545Z</lastmod>
   </url>
   <url>
-    <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/r-basics/video.html</loc>
-    <lastmod>2026-11-08T22:06:25.729Z</lastmod>
+    <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/lab1/lab1.html</loc>
+    <lastmod>2026-11-08T22:06:23.545Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/assignments/fall2026/initial-survey-autopsy.html</loc>
+    <lastmod>2026-11-08T22:06:23.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/project.html</loc>
+    <lastmod>2026-11-08T22:06:23.837Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/readings.html</loc>
+    <lastmod>2026-11-08T22:06:23.837Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/index.html</loc>
+    <lastmod>2026-11-08T22:06:23.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/schedule.html</loc>
+    <lastmod>2026-11-08T22:06:23.837Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/assignments.html</loc>
+    <lastmod>2026-11-08T22:06:23.739Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/labs.html</loc>
+    <lastmod>2026-11-08T22:06:23.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/assignments/fall2026/poll-autopsy.html</loc>
+    <lastmod>2026-11-08T22:06:23.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/lab2/lab2.html</loc>
+    <lastmod>2026-11-08T22:06:23.545Z</lastmod>
+  </url>
+  <url>
+    <loc>https://garciarios.github.io/LBJ_SDA/Labs/fall2026/r-basics/r-basics.html</loc>
+    <lastmod>2026-11-08T22:06:23.545Z</lastmod>
   </url>
 </urlset>
