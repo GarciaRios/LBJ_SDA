@@ -31,9 +31,6 @@ This optional reference reviews the basic R workflow used throughout the course.
 [Read Lab 4](Labs/fall2026/lab4/lab4.html) · [Lab 4 student template](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/Labs/fall2026/templates/lab4-template.qmd) · [October Texas poll CSV](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv) · [Codebook](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll_codebook.pdf)
 
 
-::: {.callout-note}
-The website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning.
-:::
 
 ## Lab sequence
 
