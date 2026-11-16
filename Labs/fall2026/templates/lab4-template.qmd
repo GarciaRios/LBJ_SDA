@@ -1,0 +1,728 @@
+---
+title: "Lab 4: From Respondents to Poll Estimates"
+subtitle: "A practical introduction to survey weights"
+format:
+  html:
+    toc: true
+    code-fold: false
+execute:
+  enabled: false
+  echo: true
+  warning: false
+  message: false
+---
+
+## Purpose
+
+In Lab 3, we treated each respondent as if every person contributed equally to the estimate.
+
+Real surveys often use **weights**. A weight changes how much each respondent contributes to the final poll estimate.
+
+This lab is intentionally practical. We will use R commands you already know and add only **one important new function**:
+
+```r
+weighted.mean()
+```
+
+The main question is:
+
+> **How does weighting change what we report from a poll?**
+
+There is no need to memorize a new set of survey commands. Focus on the workflow and the interpretation.
+
+## Learning objectives
+
+By the end of this lab, you should be able to:
+
+- explain in plain language what a survey weight does;
+- identify the correct weight for the statewide and Latino samples;
+- calculate an unweighted estimate;
+- calculate a weighted estimate;
+- compare weighted and unweighted results;
+- inspect whether some respondents receive more or less weight;
+- produce simple weighted subgroup estimates; and
+- explain what weighting can and cannot fix.
+
+::: {.callout-important}
+For the October Texas poll:
+
+- `weight_base` is the weight for the **statewide Texas voter sample**.
+- `weight_hisp` is the weight for the **Latino sample**.
+
+The weight you use depends on the population you want to describe.
+:::
+
+# Part I: Warm-up — use what you already know
+
+## 1. Load the data
+
+Use the same October Texas poll files from Lab 3:
+
+- [Download the respondent-level CSV](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv)
+- [Open the codebook](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll_codebook.pdf)
+- [Open the statewide crosstabs](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_statewide.pdf)
+- [Open the Latino crosstabs](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_latino.pdf)
+
+Download the CSV to your Lab 4 folder. Keep the codebook and crosstabs open for reference.
+
+```{r}
+library(tidyverse)
+```
+
+Check your working directory:
+
+```{r}
+getwd()
+```
+
+If needed, set it to the folder containing the poll file.
+
+```r
+setwd("C:/Users/YourName/Documents/Lab4")
+```
+
+Read the data:
+
+```{r}
+texas <- read_csv("texas_poll.csv")
+```
+
+Check the dimensions:
+
+```{r}
+dim(texas)
+```
+
+## 2. Create the Hinojosa indicator
+
+In `govvote26_full`:
+
+- `1` = Gina Hinojosa
+
+Create the same 0/1 indicator used in Lab 3.
+
+```{r}
+texas <- texas |>
+  mutate(
+    hinojosa = if_else(
+      govvote26_full == 1,
+      1,
+      0,
+      missing = NA_real_
+    )
+  )
+```
+
+Check it:
+
+```{r}
+count(texas, hinojosa)
+```
+
+This is all familiar code.
+
+# Part II: Build a simple weight ourselves
+
+Before using the weights supplied with the Texas poll, we will build a very simple weight from scratch.
+
+The goal is to understand the logic.
+
+## 3. Imagine a sample that does not match the population
+
+Suppose we have a small sample with:
+
+- 40% men
+- 60% women
+
+But suppose the population we want to describe is:
+
+- 50% men
+- 50% women
+
+The sample does not match the population.
+
+Men are **underrepresented**.
+
+Women are **overrepresented**.
+
+A simple post-stratification weight can be written as:
+
+$$
+\text{weight}
+=
+\frac{\text{population proportion}}
+{\text{sample proportion}}
+$$
+
+For men:
+
+$$
+\frac{0.50}{0.40}
+=
+1.25
+$$
+
+For women:
+
+$$
+\frac{0.50}{0.60}
+\approx
+0.83
+$$
+
+So:
+
+- each man receives a weight of about `1.25`;
+- each woman receives a weight of about `0.83`.
+
+::: {.callout-important}
+The logic is intuitive:
+
+- an **underrepresented** group receives a weight **greater than 1**;
+- an **overrepresented** group receives a weight **less than 1**.
+:::
+
+## 4. Create the toy dataset
+
+```{r}
+toy <- tibble(
+  gender = c(
+    "Man", "Man", "Man", "Man",
+    "Woman", "Woman", "Woman",
+    "Woman", "Woman", "Woman"
+  ),
+  support = c(
+    1, 1, 0, 0,
+    1, 0, 0, 0, 0, 0
+  )
+)
+```
+
+Look at the data:
+
+```{r}
+toy
+```
+
+Count the respondents:
+
+```{r}
+toy |>
+  count(gender)
+```
+
+We have:
+
+- 4 men = 40% of the sample;
+- 6 women = 60% of the sample.
+
+## 5. Calculate the weights
+
+The population target is 50% men and 50% women.
+
+For men:
+
+```{r}
+0.50 / 0.40
+```
+
+For women:
+
+```{r}
+0.50 / 0.60
+```
+
+Now add those weights to the data.
+
+```{r}
+toy <- toy |>
+  mutate(
+    weight = case_when(
+      gender == "Man" ~ 1.25,
+      gender == "Woman" ~ 0.83
+    )
+  )
+```
+
+Look at the result:
+
+```{r}
+toy
+```
+
+## 6. Compare the raw and weighted estimates
+
+First calculate the ordinary sample mean:
+
+```{r}
+mean(
+  toy$support
+)
+```
+
+Now calculate the weighted mean:
+
+```{r}
+weighted.mean(
+  toy$support,
+  toy$weight
+)
+```
+
+The two results differ because the weighted estimate gives relatively more influence to the underrepresented group and relatively less influence to the overrepresented group.
+
+::: {.callout-note}
+A weight does **not** change what a respondent answered.
+
+It changes **how much that respondent contributes to the final estimate**.
+:::
+
+**Checkpoint 1**
+
+1. Why did men receive a weight greater than 1?
+2. Why did women receive a weight less than 1?
+3. Why can the weighted estimate differ from the raw sample mean?
+
+Your response:
+
+## 7. What happens in a real poll?
+
+Real survey weights are usually more complicated than this example.
+
+A professional poll may adjust for several characteristics at the same time, such as:
+
+- age;
+- gender;
+- race and ethnicity;
+- education;
+- geography;
+- language; and
+- features of the sampling or recruitment design.
+
+Methods such as **post-stratification**, **raking**, or **calibration** can combine information from several variables.
+
+We do **not** need to program those procedures ourselves in this lab.
+
+The important idea is the same:
+
+> Respondents who are underrepresented relative to the target population generally receive more influence, while respondents who are overrepresented generally receive less.
+
+Now we will use the weights already constructed for the October Texas poll.
+
+# Part III: Statewide Texas estimate
+
+## 8. Create the statewide sample
+
+Keep respondents with a statewide weight:
+
+```{r}
+statewide <- texas |>
+  filter(!is.na(weight_base))
+```
+
+Check the number of respondents:
+
+```{r}
+nrow(statewide)
+```
+
+## 9. Calculate the unweighted estimate
+
+```{r}
+unweighted_statewide <- mean(
+  statewide$hinojosa,
+  na.rm = TRUE
+)
+
+unweighted_statewide
+```
+
+This gives every respondent equal influence.
+
+## 10. Calculate the weighted estimate
+
+Now use `weight_base`:
+
+```{r}
+weighted_statewide <- weighted.mean(
+  statewide$hinojosa,
+  statewide$weight_base,
+  na.rm = TRUE
+)
+
+weighted_statewide
+```
+
+Compare them:
+
+```{r}
+unweighted_statewide
+weighted_statewide
+```
+
+Calculate the difference in percentage points:
+
+```{r}
+(
+  weighted_statewide -
+  unweighted_statewide
+) * 100
+```
+
+**Checkpoint 2**
+
+1. Did weighting increase or decrease Hinojosa support?
+2. By about how many percentage points?
+3. Is the change large enough that it would change how you describe the result?
+
+Your response:
+
+::: {.callout-tip}
+Weighting does not have to produce a large change.
+
+If the weighted and unweighted estimates are similar, that is also an informative result.
+:::
+
+# Part IV: The Latino sample
+
+## 11. Create the Latino sample
+
+Use `weight_hisp`:
+
+```{r}
+latino <- texas |>
+  filter(!is.na(weight_hisp))
+```
+
+Check the sample size:
+
+```{r}
+nrow(latino)
+```
+
+## 12. Compare unweighted and weighted Latino estimates
+
+Unweighted:
+
+```{r}
+unweighted_latino <- mean(
+  latino$hinojosa,
+  na.rm = TRUE
+)
+
+unweighted_latino
+```
+
+Weighted:
+
+```{r}
+weighted_latino <- weighted.mean(
+  latino$hinojosa,
+  latino$weight_hisp,
+  na.rm = TRUE
+)
+
+weighted_latino
+```
+
+Compare:
+
+```{r}
+unweighted_latino
+weighted_latino
+```
+
+**Checkpoint 3:** How much does weighting change the Latino estimate?
+
+Your response:
+
+# Part V: What do the weights look like?
+
+## 13. Inspect the weights
+
+You already know `summary()`.
+
+```{r}
+summary(
+  latino$weight_hisp
+)
+```
+
+Look especially at:
+
+- minimum;
+- median;
+- mean; and
+- maximum.
+
+You can also look at a few individual values:
+
+```{r}
+head(
+  latino$weight_hisp
+)
+```
+
+::: {.callout-note}
+A respondent with a larger weight contributes more to the weighted estimate.
+
+A respondent with a smaller weight contributes less.
+:::
+
+**Checkpoint 4**
+
+Suppose one respondent has a weight of `2.0` and another has a weight of `0.5`.
+
+Which respondent contributes more to the estimate?
+
+Your response:
+
+## 14. Why would weights differ?
+
+Possible reasons include:
+
+- some groups were oversampled;
+- some groups were underrepresented among respondents;
+- the sample does not perfectly match known population characteristics;
+- the survey design intentionally gave some people different chances of entering the sample.
+
+We do **not** need to reconstruct every step of the weighting algorithm to use the supplied poll weights appropriately.
+
+# Part VI: Weighted subgroup comparisons
+
+## 15. Recreate the gender variable
+
+As in Lab 3:
+
+- `1` = men
+- `2` = women
+
+```{r}
+latino <- latino |>
+  mutate(
+    gender_group = case_when(
+      gender == 1 ~ "Men",
+      gender == 2 ~ "Women",
+      TRUE ~ NA_character_
+    )
+  )
+```
+
+Check it:
+
+```{r}
+count(
+  latino,
+  gender_group
+)
+```
+
+## 16. Create separate datasets
+
+Men:
+
+```{r}
+men <- latino |>
+  filter(gender_group == "Men")
+```
+
+Women:
+
+```{r}
+women <- latino |>
+  filter(gender_group == "Women")
+```
+
+## 17. Weighted estimate for men
+
+```{r}
+weighted.mean(
+  men$hinojosa,
+  men$weight_hisp,
+  na.rm = TRUE
+)
+```
+
+## 18. Weighted estimate for women
+
+```{r}
+weighted.mean(
+  women$hinojosa,
+  women$weight_hisp,
+  na.rm = TRUE
+)
+```
+
+**Checkpoint 5**
+
+1. Which group has higher weighted Hinojosa support?
+2. About how large is the difference?
+3. Is the weighted difference similar to what you found in Lab 3 using the raw respondents?
+
+Your response:
+
+# Part VII: What weighting can and cannot do
+
+## 19. What weighting can help with
+
+Weighting can help adjust for known differences between the sample and the population.
+
+For example, weights may account for differences in:
+
+- age;
+- gender;
+- race or ethnicity;
+- education;
+- region; or
+- features of the sampling design.
+
+## 20. What weighting cannot guarantee
+
+Weighting does **not** automatically fix:
+
+- a badly worded question;
+- respondents who misunderstood the question;
+- people who were completely excluded from the recruitment process;
+- bogus or low-quality interviews;
+- all forms of nonresponse bias; or
+- an important difference that was never measured or used in weighting.
+
+::: {.callout-warning}
+A weighted estimate is not automatically an unbiased estimate.
+
+Weighting is an adjustment tool, not a guarantee of perfect representation.
+:::
+
+## 21. A note about precision
+
+When weights differ substantially, some respondents contribute much more than others.
+
+That means a weighted sample can contain less statistical information than a simple sample of the same raw size.
+
+This is the idea behind **effective sample size** and **design effects**.
+
+We will discuss those concepts in lecture.
+
+For this lab, you do **not** need to calculate them by hand.
+
+# Part VIII: From output to a poll statement
+
+Suppose your output gives:
+
+- an unweighted estimate;
+- a weighted estimate; and
+- a published poll topline.
+
+Ask:
+
+1. Which estimate should be used to describe the target population?
+2. How different is it from the raw sample?
+3. Does weighting change the substantive story?
+4. What limitations still remain?
+
+**Checkpoint 6:** Write one or two sentences describing the weighted Hinojosa estimate. Do not simply report the number; explain what population it is intended to describe.
+
+Your response:
+
+# On Your Own
+
+Now repeat the same workflow for **James Talarico** in the U.S. Senate vote among Latino respondents.
+
+In `senvote26_full`:
+
+- `1` = James Talarico
+
+## Question 1: Create the variable
+
+Create a 0/1 variable called `talarico`.
+
+```{r}
+# Your code
+```
+
+Check it with `count()`.
+
+## Question 2: Compare raw and weighted estimates
+
+Calculate:
+
+1. the unweighted Latino estimate;
+2. the weighted Latino estimate using `weight_hisp`; and
+3. the difference between them in percentage points.
+
+```{r}
+# Your code
+```
+
+Write two or three sentences explaining what changed after weighting.
+
+## Question 3: Compare Latino men and women
+
+Using the `men` and `women` datasets, calculate weighted Talarico support for each group.
+
+```{r}
+# Your code
+```
+
+Answer:
+
+1. Which group has higher weighted support?
+2. About how large is the difference?
+3. Does the result tell the same substantive story as the unweighted comparison?
+
+## Question 4: Inspect the weights
+
+Use:
+
+```r
+summary(latino$weight_hisp)
+```
+
+In a short paragraph, explain what the range of weights tells you about how respondents contribute to the final estimate.
+
+## Question 5: Interpretation
+
+In one short paragraph:
+
+1. explain why the weighted estimate is more appropriate than the raw sample mean for reporting the poll result;
+2. identify one problem weighting can help address; and
+3. identify one survey-quality problem weighting cannot automatically solve.
+
+# What to remember
+
+The practical workflow is:
+
+```r
+# Raw estimate
+mean(outcome, na.rm = TRUE)
+
+# Weighted estimate
+weighted.mean(
+  outcome,
+  weight,
+  na.rm = TRUE
+)
+```
+
+The important questions are:
+
+> **Which population am I describing?**
+
+> **Which weight belongs to that population?**
+
+> **How much does weighting change the result?**
+
+> **What problems can weighting not solve?**
+
+# Submission
+
+Submit the completed QMD source file and rendered HTML file.
+
+Before submitting:
+
+1. restart R;
+2. set your working directory;
+3. render the document;
+4. make sure every code chunk runs;
+5. check that your written interpretations match the output; and
+6. make sure you used `weight_hisp` for the Latino analysis.
