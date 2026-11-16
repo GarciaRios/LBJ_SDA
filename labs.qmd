@@ -28,6 +28,8 @@ This optional reference reviews the basic R workflow used throughout the course.
 
 ### Lab 4: From Respondents to Poll Estimates
 
+**Due:** Wednesday, December 2, at 11:59 p.m.
+
 [Read Lab 4](Labs/fall2026/lab4/lab4.html) · [Lab 4 student template](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/Labs/fall2026/templates/lab4-template.qmd) · [October Texas poll CSV](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv) · [Codebook](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll_codebook.pdf)
 
 
