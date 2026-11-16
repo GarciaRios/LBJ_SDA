@@ -51,9 +51,9 @@ Specify priority outcomes, subgroup definitions, derived variables, use of weigh
 
 Create a common quality-controlled data file and shared functions or templates. Section teams conduct reproducible analysis, peer-check one another's estimates, and maintain a results log.
 
-### 9. Report and briefing
+### 9. Report production
 
-Integrate an executive summary, methods, substantive sections, tables, graphics, limitations, and supporting documentation. Rehearse the briefing and verify that every spoken and written claim is supported by an approved result.
+Integrate an executive summary, methods, substantive sections, tables, graphics, limitations, and supporting documentation. Verify that every written claim is supported by an approved result.
 
 ### 10. Handoff and retrospective
 
@@ -75,7 +75,7 @@ Each group will take primary responsibility for:
 - cognitive testing and revision of that module;
 - its portion of the analysis plan;
 - reproducible analysis of the corresponding results; and
-- one substantive section of the final report and presentation.
+- one substantive section of the final report.
 
 The substantive domains will be assigned after the research objectives and partner priorities are confirmed.
 
@@ -87,7 +87,7 @@ Several responsibilities affect the entire poll and should not belong permanentl
 - instrument programming and quality assurance;
 - data cleaning, weighting, and estimate verification;
 - graphics and editorial consistency; and
-- presentation and partner-briefing preparation.
+- final report integration and editorial review.
 
 This matrix structure gives groups continuity while distributing the less visible technical and editorial labor. Roles may rotate so students experience more than one part of the production process.
 
