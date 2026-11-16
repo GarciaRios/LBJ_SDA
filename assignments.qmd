@@ -6,26 +6,34 @@ Assignments are stages of one professional survey workflow. Students will demons
 
 ## Assessment map
 
-| Category | Weight | Responsibility |
-|---|---:|---|
-| Preparation and professional participation | 10% | Individual |
-| R and statistics labs | 25% | Individual, following guided class work |
-| Individual methods assignments | 15% | Individual |
-| Univision project milestones | 15% | Team |
-| Individual poll analysis memo | 10% | Individual |
-| Coauthored report and presentation | 20% | Class and section teams |
-| Reflection and contribution statement | 5% | Individual |
-| **Total** | **100%** | |
+| Category | Weight | Responsibility | Timing |
+|---|---:|---|---|
+| Preparation and professional participation | 10% | Individual | Throughout the semester, August 24–December 7 |
+| R and statistics labs | 25% | Individual, following guided class work | August 31, September 28, October 26, and November 16 |
+| Univision project work and milestones | 30% | Teams, with individual accountability | Throughout the semester, August 24–December 7 |
+| Individual poll analysis memo | 10% | Individual | Due December 6 at 11:59 p.m. |
+| Coauthored report and presentation | 20% | Class and section teams | Due and presented December 7 |
+| Reflection and contribution statement | 5% | Individual | Due December 11 at 11:59 p.m. |
+| **Total** | **100%** | | |
+
+The dates shown for Labs 1–4 are their class dates; the submission deadlines posted on Canvas remain controlling. Participation and Univision project work are evaluated across the semester, including the final production period.
+
+## Remaining work after November 16
+
+- Complete and submit Lab 4 according to the Canvas deadline.
+- Continue the Univision analysis and report work through December 7.
+- Submit the individual poll analysis memo by December 6 at 11:59 p.m.
+- Submit and present the coauthored report on December 7.
+- Submit the individual reflection and contribution statement by December 11 at 11:59 p.m.
 
 ## R and statistics labs · 25%
 
-Five substantial labs integrate R programming, statistical reasoning, and survey analysis:
+Four substantial labs integrate R programming, statistical reasoning, and survey analysis:
 
 1. R, Quarto, importing, cleaning, recoding, and documenting survey data.
 2. Descriptive statistics, cross-tabulations, measurement, and visualization.
 3. Sampling, simulation, margins of error, confidence intervals, and basic hypothesis tests.
 4. Survey weights, design effects, and weighted estimation.
-5. Regression, predicted probabilities, graphics, and reproducible reporting.
 
 Most lab work will be completed together during class. Each lab concludes with a shorter **On Your Own** section completed alone. Labs are graded on statistical reasoning, readable and functioning code, reproducibility, appropriate checks, and clear interpretation.
 
@@ -35,31 +43,21 @@ During the first class on August 24, all students will evaluate the same intenti
 
 [Open the Initial Survey Autopsy instructions and download the report](assignments/fall2026/initial-survey-autopsy.qmd)
 
-## Assignment materials
+## Completed individual assignment
 
 - [Individual Assignment 1: Poll Autopsy](assignments/fall2026/poll-autopsy.qmd)
-
-## Individual methods assignments · 15%
-
-Three concise assignments ask students to make and defend methodological decisions.
-
-### 1. Poll autopsy · 5%
 
 **Assigned:** October 12 · **Due:** October 18 at 11:59 p.m.
 
 Evaluate a published poll from its public release and methodological disclosure. Identify the target population, sample source, mode, field dates, question wording, weighting, reported uncertainty, principal claims, and important information that is absent. Conclude with what the poll does and does not permit readers to claim.
 
-### 2. Measurement and questionnaire critique · 5%
+The separately planned measurement critique and sampling/mode recommendation will not be assigned. Their central tasks were completed through the collaborative Univision project work described below.
 
-Diagnose a set of survey questions using principles of comprehension, retrieval, judgment, response mapping, question order, response-option design, and sensitive measurement. Revise selected questions and explain how the revisions improve validity, reliability, comparability, or respondent experience.
+The completed Poll Autopsy is incorporated into the preparation and professional-participation portion of the course rather than retained inside a separate 15% methods-assignment category.
 
-### 3. Sampling and mode recommendation · 5%
+## Univision project work and milestones · 30%
 
-Given a research objective, population, budget, timeline, and reporting needs, recommend a sample and data-collection design. Address coverage, recruitment, nonresponse, language access, feasibility, weighting, uncertainty, and the limitations that should accompany published results.
-
-## Univision project milestones · 15%
-
-Milestones make the collaborative process visible and keep the live project on schedule. They are working products rather than unrelated homework.
+The Univision project runs throughout the semester rather than functioning as one final assignment. Milestones make the collaborative process visible and keep the live project on schedule. They are working products rather than unrelated homework.
 
 | Milestone | Collaborative deliverable |
 |---|---|
@@ -81,6 +79,8 @@ Milestones will normally be evaluated with a short common rubric:
 
 ## Individual poll analysis memo · 10%
 
+**Due:** Sunday, December 6, at 11:59 p.m.
+
 Each student will independently answer one focused substantive question using the final poll data.
 
 The memo will normally include:
@@ -100,6 +100,8 @@ Students may work from a shared, quality-controlled analysis file, but the analy
 
 ## Coauthored LBJ/Univision report and presentation · 20%
 
+**Due and presented:** Monday, December 7.
+
 The class will produce one coherent professional report. Teams will take primary responsibility for substantive sections, but all students are responsible for reviewing the complete report and ensuring that its claims, methods, graphics, and tone are consistent.
 
 The report should include:
@@ -118,6 +120,8 @@ A section-team model gives students meaningful ownership without producing a col
 Public release, authorship order, branding, acknowledgement of student contributors, and access to the data after the semester will follow the final partnership agreement.
 
 ## Individual reflection and contribution statement · 5%
+
+**Due:** Friday, December 11, at 11:59 p.m.
 
 The final reflection will:
 
