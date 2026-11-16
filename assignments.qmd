@@ -12,7 +12,7 @@ Assignments are stages of one professional survey workflow. Students will demons
 | R and statistics labs | 25% | Individual, following guided class work | August 31, September 28, October 26, and November 16; Lab 4 due December 2 at 11:59 p.m. |
 | Univision project work and milestones | 30% | Teams, with individual accountability | Throughout the semester, August 24–December 14 |
 | Individual poll analysis memo | 10% | Individual | Due December 14 at 11:59 p.m. |
-| Coauthored report and presentation | 20% | Class and section teams | Due and presented December 14 |
+| Coauthored report | 20% | Class and section teams | Due December 14 at 11:59 p.m. |
 | Reflection and contribution statement | 5% | Individual | Due December 4 at 11:59 p.m. |
 | **Total** | **100%** | | |
 
@@ -23,7 +23,7 @@ The dates shown for Labs 1–4 are their class dates. Lab 4 is due December 2 at
 - Submit Lab 4 by December 2 at 11:59 p.m.
 - Continue the Univision analysis and report work through the December 14 final session.
 - Submit the individual poll analysis memo by December 14 at 11:59 p.m.
-- Submit and present the coauthored report on December 14.
+- Submit the coauthored report by December 14 at 11:59 p.m.
 - Submit the individual reflection and contribution statement by December 4 at 11:59 p.m.
 
 ## R and statistics labs · 25%
@@ -98,9 +98,9 @@ The memo will normally include:
 
 Students may work from a shared, quality-controlled analysis file, but the analytical choices, code, verification, and prose in the memo must be their own.
 
-## Coauthored LBJ/Univision report and presentation · 20%
+## Coauthored LBJ/Univision report · 20%
 
-**Due and presented:** Monday, December 14.
+**Due:** Monday, December 14, at 11:59 p.m.
 
 The class will produce one coherent professional report. Teams will take primary responsibility for substantive sections, but all students are responsible for reviewing the complete report and ensuring that its claims, methods, graphics, and tone are consistent.
 
@@ -113,7 +113,6 @@ The report should include:
 - accurate tables and accessible graphics;
 - appropriate discussion of uncertainty and limitations;
 - documentation sufficient to reproduce all published statistics; and
-- a short partner briefing or public presentation.
 
 A section-team model gives students meaningful ownership without producing a collection of disconnected papers. The final document must read as one report rather than several assignments pasted together.
 
