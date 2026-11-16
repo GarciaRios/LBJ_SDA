@@ -27,7 +27,7 @@ toc: true
   </a>
   <a class="quick-card" href="assignments.html">
     <strong>Assignments</strong>
-    <span>Individual methods work, project milestones, and the final report.</span>
+    <span>Four labs, individual analysis, semester-long project work, and the final report.</span>
   </a>
   <a class="quick-card" href="labs.html">
     <strong>R & Statistics Labs</strong>
@@ -109,44 +109,39 @@ Class meetings will combine discussion, methodological workshops, R labs, projec
 
 ## Assessment
 
-| Component | Weight |
-|---|---:|
-| Preparation and professional participation | 10% |
-| R and statistics labs | 25% |
-| Individual methods assignments | 15% |
-| Univision project milestones | 15% |
-| Individual poll analysis memo | 10% |
-| Coauthored LBJ/Univision report and presentation | 20% |
-| Individual reflection and contribution statement | 5% |
-| **Total** | **100%** |
+| Component | Weight | Timing |
+|---|---:|---|
+| Preparation and professional participation | 10% | Throughout the semester, August 24–December 7 |
+| R and statistics labs | 25% | August 31, September 28, October 26, and November 16 |
+| Univision project work and milestones | 30% | Throughout the semester, August 24–December 7 |
+| Individual poll analysis memo | 10% | Due December 6 at 11:59 p.m. |
+| Coauthored LBJ/Univision report and presentation | 20% | Due and presented December 7 |
+| Individual reflection and contribution statement | 5% | Due December 11 at 11:59 p.m. |
+| **Total** | **100%** | |
 
 ### Preparation and professional participation
 
-Participation includes arriving prepared, contributing constructively, giving useful feedback, meeting production deadlines, documenting decisions, and supporting the work of the project team. Attendance matters because many workshops and partner activities cannot be recreated individually.
+Participation is evaluated throughout the semester, from August 24 through December 7. It includes arriving prepared, contributing constructively, giving useful feedback, meeting production deadlines, documenting decisions, and supporting the work of the project team. Attendance matters because many workshops and partner activities cannot be recreated individually.
 
 ### R and statistics labs
 
-Five substantial labs teach R programming and the statistical foundations of survey analysis. Most of each lab is completed together during class through guided coding, interpretation, and troubleshooting. Students then complete a shorter “On Your Own” application individually. Topics include data wrangling, descriptive statistics, visualization, sampling and inference, survey weights, regression, predicted probabilities, and reproducible reporting.
+Four substantial labs teach R programming and the statistical foundations of survey analysis. Most of each lab is completed together during class through guided coding, interpretation, and troubleshooting. Students then complete a shorter “On Your Own” application individually. Topics include data wrangling, descriptive statistics, visualization, sampling and inference, survey weights, and reproducible reporting.
 
-### Individual methods assignments
+### Univision project work and milestones
 
-Three short assignments require students to evaluate a published poll, diagnose and improve survey measurement, and defend a sampling and mode recommendation. These assignments ensure that each student develops independent methodological judgment.
-
-### Univision project milestones
-
-Teams will complete staged products such as a project charter, measurement module, cognitive-testing report, representation plan, instrument quality-assurance review, and analysis plan. Milestones are working documents that feed directly into the live poll and final report.
+The Univision project runs throughout the semester, from August 24 through December 7. Teams complete staged products such as a project charter, measurement module, cognitive-testing work, representation assessment, instrument quality-assurance review, and analysis plan. These are working documents that feed directly into the live poll and final report rather than separate methods assignments.
 
 ### Individual poll analysis memo
 
-Each student will independently analyze a substantive question using the poll data. The memo must include reproducible R code, appropriate use of weights and uncertainty, at least one effective visualization, and a concise interpretation written for a policy or public audience.
+Due December 6 at 11:59 p.m. Each student will independently analyze a substantive question using the poll data. The memo must include reproducible R code, appropriate use of weights and uncertainty, at least one effective visualization, and a concise interpretation written for a policy or public audience.
 
 ### Coauthored report and presentation
 
-The class will produce one coherent report using data from the poll. Teams will take primary responsibility for different substantive sections while reviewing and revising the full document. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.
+Due and presented December 7. The class will produce one coherent report using data from the poll. Teams will take primary responsibility for different substantive sections while reviewing and revising the full document. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.
 
 ### Individual reflection and contribution statement
 
-Each student will document their contributions, explain important methodological decisions, evaluate the collaboration, and identify what they would change in a future survey project.
+Due December 11 at 11:59 p.m. Each student will document their contributions, explain important methodological decisions, evaluate the collaboration, and identify what they would change in a future survey project.
 
 ## Course materials and software
 
