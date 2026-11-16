@@ -26,6 +26,11 @@ This optional reference reviews the basic R workflow used throughout the course.
 
 [Read Lab 3](Labs/fall2026/lab3/lab3.html) · [Lab 3 student template](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/Labs/fall2026/templates/lab3-template.qmd) · [October Texas poll CSV](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv) · [Codebook](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll_codebook.pdf) · [Statewide crosstabs](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_statewide.pdf) · [Latino crosstabs](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_crosstabs_latino.pdf)
 
+### Lab 4: From Respondents to Poll Estimates
+
+[Read Lab 4](Labs/fall2026/lab4/lab4.html) · [Lab 4 student template](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/Labs/fall2026/templates/lab4-template.qmd) · [October Texas poll CSV](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll.csv) · [Codebook](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/materials/texas_october_2026/texas_poll_codebook.pdf)
+
+
 ::: {.callout-note}
 The website versions display the lab instructions without executing the R code. The downloadable student templates contain executable R cells. Save the template inside your local copy of the course repository before beginning.
 :::
@@ -37,7 +42,7 @@ The website versions display the lab instructions without executing the R code. 
 | 1 | RStudio projects, Quarto, objects, functions, packages, importing data, variable types, missing values, filtering, recoding, summarizing, and readable code | Importing a survey, reading its codebook, cleaning variables, and creating a documented analysis file |
 | 2 | Distributions, proportions, means and medians, cross-tabulations, grouped summaries, scales and indexes, and ggplot2 | Describing respondents, evaluating measures, and visualizing survey responses accurately |
 | 3 | Probability, random sampling, simulation, sampling distributions, standard errors, margins of error, confidence intervals, and basic hypothesis tests | Understanding why poll estimates vary and evaluating topline and subgroup differences |
-| 4 | Survey weights, weighted estimates, effective sample size, design effects, and the R `survey` package | Comparing weighted and unweighted results and producing defensible estimates from survey data |
+| 4 | Building a simple post-stratification weight, weighted means, weight distributions, and the logic of effective sample size/design effects | Comparing raw and weighted Texas poll estimates and producing defensible toplines |
 | 5 | Linear and logistic regression, categorical predictors, interactions, predicted probabilities, tables, graphics, and Quarto reporting | Explaining survey outcomes and producing a reproducible section of the final report |
 
 ## Lab format
