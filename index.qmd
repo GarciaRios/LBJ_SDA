@@ -115,7 +115,7 @@ Class meetings will combine discussion, methodological workshops, R labs, projec
 | R and statistics labs | 25% | August 31, September 28, October 26, and November 16; Lab 4 due December 2 |
 | Univision project work and milestones | 30% | Throughout the semester, August 24–December 14 |
 | Individual poll analysis memo | 10% | Due December 14 at 11:59 p.m. |
-| Coauthored LBJ/Univision report and presentation | 20% | Due and presented December 14 |
+| Coauthored LBJ/Univision report | 20% | Due December 14 at 11:59 p.m. |
 | Individual reflection and contribution statement | 5% | Due December 4 at 11:59 p.m. |
 | **Total** | **100%** | |
 
@@ -135,9 +135,9 @@ The Univision project runs throughout the semester, from August 24 through Decem
 
 Due December 14 at 11:59 p.m. Each student will independently analyze a substantive question using the poll data. The memo must include reproducible R code, appropriate use of weights and uncertainty, at least one effective visualization, and a concise interpretation written for a policy or public audience.
 
-### Coauthored report and presentation
+### Coauthored report
 
-Due and presented December 14. The class will produce one coherent report using data from the poll. Teams will take primary responsibility for different substantive sections while reviewing and revising the full document. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.
+Due December 14 at 11:59 p.m.. The class will produce one coherent report using data from the poll. Teams will take primary responsibility for different substantive sections while reviewing and revising the full document. The report will be designed for a public and policy audience and, subject to partner approval, carry LBJ and partner branding.
 
 ### Individual reflection and contribution statement
 
