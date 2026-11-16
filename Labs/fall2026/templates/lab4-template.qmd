@@ -5,6 +5,11 @@ format:
   html:
     toc: true
     code-fold: false
+execute:
+  enabled: false
+  echo: true
+  warning: false
+  message: false
 ---
 
 ## Purpose
