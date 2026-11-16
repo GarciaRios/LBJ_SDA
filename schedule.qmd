@@ -171,7 +171,7 @@ There is no in-person class. Use the optional R Basics Review materials for addi
 
 **In class:** Compare weighted and unweighted estimates from the Texas poll, introduce the logic of survey weights, examine effective sample size and design effects, and produce defensible toplines.
 
-**Lab 4:** Weighting and poll estimates using the Texas poll.
+**Lab 4:** [From Respondents to Poll Estimates](Labs/fall2026/lab4/lab4.html) · [Student template](https://raw.githubusercontent.com/GarciaRios/LBJ_SDA/main/Labs/fall2026/templates/lab4-template.qmd)
 
 ### November 23
 
